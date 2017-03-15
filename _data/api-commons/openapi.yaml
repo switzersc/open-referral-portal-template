@@ -14,8 +14,8 @@
       name: Open Data Commons Public Domain
       url: http://opendatacommons.org/licenses/pddl/
     version: v1
-  host: api.example.com
-  basePath: "/api/"
+  host: api.open.referral.adopta.agency
+  basePath: "/"
   schemes:
   - http
   produces:
