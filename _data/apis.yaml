@@ -1,5 +1,5 @@
 - name: Open Referral
-  description: This is a developer area for the Open Referral API, providing access to the raw data behind the Switchboard of Miami website. The purpose of this API is to allow anyone to develop web, mobile, or other types of applications that serve the mission of Switchboard of Miami. This portal is currently under development, and is not product ready yet.
+  description: This is a developer area for the Open Referral API, providing access to the raw data as part of an Open Referral demo. The purpose of this API is to allow anyone to develop web, mobile, or other types of applications that serve the mission of any Open 211 organization. This portal is just a demo, meant to demonstrate what is possible, if you'd like to launach an Open 211 API, feel free to reach out via one of the support channels.
   image: http://developer.open.referral.adopta.agency/images/switchboard-miami-logo.png
   tags:
     - Human Services
@@ -15,10 +15,10 @@
   specificationVersion: '0.14'
   apis:
   - name: Open Referral API
-    description: API access to the Open Referral human services data, including organizations, locations, and services.
+    description: API access to Open Referral human services data, including organizations, locations, and services.
     image: http://developer.open.referral.adopta.agency/images/switchboard-miami-logo.png
     humanURL: http://developer.open.referral.adopta.agency/
-    baseURL: "https://miamiopen211-api.herokuapp.com"
+    baseURL: "http://api.open.referral.adopta.agency"
     tags:
       - Human Services
       - Locations
@@ -38,7 +38,7 @@
   - type: x-authentication-overview
     url: /authentication/
   - type: x-base-url-for-api
-    url: http://api.kinlane.com
+    url: http://api.open.referral.adopta.agency
   - type: x-blog
     url: /blog/
   - type: x-blog-rss-feed
