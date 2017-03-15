@@ -1,0 +1,166 @@
+---
+layout: default
+title: Pull
+---
+
+<h1>Pull</h1>
+
+<script type="text/javascript">
+
+    // Reset the cookie manually
+    //Cookies.expire('token');
+
+    var $oAuthToken = getUrlVar('token');
+    var $label = getUrlVar('label');
+
+    if($label=='issues')
+      {
+      $data_store = '_data/api-commons/api-issues.yaml';
+      }
+
+    if($label=='road map')
+      {
+      $data_store = '_data/api-commons/api-road-map.yaml';
+      }
+
+    if($label=='change log')
+      {
+      $data_store = '_data/api-commons/api-change-log.yaml';
+      }
+
+    $filter_tag = $label;
+
+    console.log($data_store);
+
+    var $yaml_store = "";
+
+    // When you fork, make sure ad add your org / user and repo name to _config.yml
+    var $org = '{{ site.github_org }}';
+    var $repo = '{{ site.github_repo }}';
+
+    if($oAuthToken !='')
+      {
+      // Setting a cookie value
+      Cookies.set('token', $oAuthToken);
+      // Set with expiration
+      // Cookies.set('token', $oAuthToken, { expires: '01/01/2017' });
+      }
+
+    // Grab the token from cookie
+    $oAuthToken = Cookies.get('token');
+
+    key = "14OsbrDkjnr67J2TMzYO0EiFrixdYbf-UiMJ-HYNJhMI";
+
+    // Grab the token from cookie
+    $oAuthToken = Cookies.get('token');
+
+
+    // Setup the Github connection
+    var github = new Github({token: $oAuthToken,auth: "oauth"});
+
+    // REPOS
+    var repo = github.getRepo($org,$repo);
+
+    // Le'ts try to just get the Github Repo tree
+    var $yaml_store = '';
+
+    repo.getTree('master?recursive=true', function(err, tree) {
+
+      if(err == null && $oAuthToken != null)
+        {
+          // If no error we have access, read YAML store
+          repo.read('master', $data_store, function(err, data) {
+
+            $yaml_store_array = jsyaml.load(data);
+            $yaml_store = $yaml_store_array[0];
+
+            $dump = JSON.stringify($yaml_store, null, 4);
+            //console.log($dump);
+            var issues = github.getIssues($org,$repo);
+
+            $options = {};
+            $options['labels'] = $filter_tag;
+
+            $entries = [];
+
+            var issue = issues.list($options,function(err,issues) {
+
+              $total_issues = issues.length;
+              $issue_count = 0;
+
+              $.each(issues, function(issueKey, issueValue) {
+
+                $html_url = issueValue.html_url;
+                $number = issueValue.number;
+                $state = issueValue.state;
+                $title = issueValue.title;
+                $body = issueValue.body;
+                $labels = issueValue.labels;
+                $updated_at = issueValue.updated_at;
+
+                $.each($labels, function(labelKey, labelValue) {
+
+                  $label_name = labelValue.name;
+                  if($label_name == $filter_tag)
+                    {
+                    $c = {};
+                    $c['title'] = $title
+                    $c['description'] = $body;
+                    $c['url'] = $html_url;
+                    $c['date'] = $updated_at;
+
+                    $entries.push($c);
+                    }
+
+                  });
+
+                  $issue_count++;
+
+                });
+
+              if($issue_count==$total_issues)
+                {
+                $y = {};
+                $y['title'] = $yaml_store['title'];
+                $y['image'] = $yaml_store['image'];
+                $y['header'] = $yaml_store['header'];
+                $y['footer'] = $yaml_store['footer'];
+                $y['entries'] = $entries;
+                //$yaml_dump = JSON.stringify($y, null, 4);
+
+                $z = [];
+                $z[0] = $y;
+
+                $yaml_dump = jsyaml.dump($z);
+                var writerepo = github.getRepo($org,$repo);
+                writerepo.getTree('master?recursive=true', function(err, writetree) {
+
+                  $.each(writetree, function(treeKey, treeValue) {
+
+                    $writepath = $data_store;
+                    $path = treeValue['path'];
+                    $sha = treeValue['sha'];
+                    //console.log($path + ' == ' + $writepath);
+                    if($path==$writepath)
+                      {
+                      repo.writemanual('master',$writepath, $yaml_dump, 'Save', $sha, function(err) { });
+                      //console.log("writing " + $writepath);
+                      console.log("saved " + $writepath);
+                      }
+                    });
+                  });
+
+                }
+
+            });
+      });
+    }
+  else
+    {
+    // If error we DO NOT have access
+    alert('We have NO access to API & repo!');
+    }
+
+  });
+
+</script>
