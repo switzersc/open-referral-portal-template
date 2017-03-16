@@ -1,6 +1,6 @@
 - name: Open Referral
   description: This is a developer area for the Open Referral API, providing access to the raw data as part of an Open Referral demo. The purpose of this API is to allow anyone to develop web, mobile, or other types of applications that serve the mission of any Open 211 organization. This portal is just a demo, meant to demonstrate what is possible, if you'd like to launach an Open 211 API, feel free to reach out via one of the support channels.
-  image: http://developer.open.referral.adopta.agency/images/switchboard-miami-logo.png
+  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/open_referral_logo.png
   tags:
     - Human Services
     - Locations
@@ -16,7 +16,7 @@
   apis:
   - name: Open Referral API
     description: API access to Open Referral human services data, including organizations, locations, and services.
-    image: http://developer.open.referral.adopta.agency/images/switchboard-miami-logo.png
+    image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/open_referral_logo.png
     humanURL: http://developer.open.referral.adopta.agency/
     baseURL: "http://api.open.referral.adopta.agency"
     tags:
