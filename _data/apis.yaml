@@ -60,13 +60,13 @@
   - type: x-status
     url: /status/
   - type: x-login
-    url: https://miamiopen211-api.herokuapp.com/users/sign_in
+    url: http://developer.open.referral.adopta.agency//users/sign_in
   - type: x-privacy-policy-page
     url: /privacy-policy/
   - type: x-road-map
     url: /road-map/
   - type: x-selfservice-registration
-    url: https://miamiopen211-api.herokuapp.com/users/sign_up
+    url: http://developer.open.referral.adopta.agency//users/sign_up
   - type: x-status-dashboard
     url: /status/
   - type: x-api-science

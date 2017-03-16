@@ -15,7 +15,7 @@
       url: http://opendatacommons.org/licenses/pddl/
     version: v1
   host: api.open.referral.adopta.agency
-  basePath: "/"
+  basePath: ""
   schemes:
   - http
   produces:
