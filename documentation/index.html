@@ -368,10 +368,11 @@ layout: page
                                           {% for usesec in sec %}
                                             {% assign thissec = secdef[0] | strip | strip_newlines %}
                                             {% assign usesec = usesec | strip | strip_newlines %}
-                                            -{{ thissec }}- == -{{ usesec }}-<br />
+
                                             {% if thissec != usesec %}
+                                              {{ thissec }} == {{ usesec }}<br />
                                               USE11: {{ thissec }}<br />
-                                              {% assign usesec = security_definitions.[secdef[0]] %}
+                                              {% assign usesec = security_definitions[secdef[0]] %}
                                               USE22: {{ usesec }}<br />
                                             {% endif %}
                                           {% endfor %}
