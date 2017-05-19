@@ -362,7 +362,15 @@ layout: page
 
                                     {% assign security = method[1].security %}
 
-                                    <tr><td>debug1:{{ security }}</td></tr>
+                                    <tr><td>debug1:
+                                      {% assign thissec = "" %}
+                                      {% for sec in security %}
+                                        {% for secdef in security_definitions %}
+                                            {% assign thissec = thissec | append: ', ' | append: secdef[0] %}
+                                        {% endfor %}
+                                      {% endfor %}
+                                      USE: {{ thissec }}
+                                    </td></tr>
 
                                     {% assign tagarray = method[1].tags %}
                                     {% assign tag = tagarray[0] %}
