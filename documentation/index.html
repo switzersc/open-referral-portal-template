@@ -6,6 +6,7 @@ layout: page
   function loadClient($slug)
     {
     //console.log($slug);
+    $("#client-body").html('');
     $editor = $('#' + $slug + '-cell').html();
     $("#client-body").append( $editor );
     }
