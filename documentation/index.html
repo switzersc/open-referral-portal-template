@@ -3,6 +3,12 @@ layout: page
 ---
 <script type="text/javascript">
 
+  function loadClient($slug)
+    {
+    console.log($slug);
+    $editor = $('#' + $slug + '-cell').html();
+    $("#client-body").text( $editor );
+    }
   function showme($id)
     {
     if(document.getElementById($id).style.display=='none')
@@ -101,9 +107,9 @@ layout: page
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
+        <h4 class="modal-title">API Client</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" id="client-body">
         <p>One fine body&hellip;</p>
       </div>
       <div class="modal-footer">
@@ -426,7 +432,7 @@ layout: page
                                       </tr>
                                       <tr id="{{ slug }}-row" style="display: none;">
 
-                                        <td colspan="4" style="padding: 15px;">
+                                        <td colspan="4" style="padding: 15px;" id="{{ slug }}-cell">
 
                                           <table width="90%" border="0" align="center">
 
