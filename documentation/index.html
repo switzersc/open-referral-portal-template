@@ -362,13 +362,13 @@ layout: page
 
                                     {% assign security = method[1].security %}
 
-                                    <tr><td>debug: 
+                                    <tr><td>debug:
                                       {% for sec in security %}
                                         {% for secdef in security_definitions %}
                                           {% for usesec in sec %}
                                             {{ secdef[0] }} == {{ usesec }}<br />
                                             {% if secdef[0] == usesec %}
-                                              % assign usesec = secdef[1] %}
+                                              {% assign usesec = secdef[1] %}
                                             {% endif %}
                                           {% endfor %}
                                         {% endfor %}
