@@ -364,7 +364,9 @@ layout: page
 
                                     <tr><td>
                                       {% for sec in security %}
-                                        HEre: {{ security_definitions }} - {{ sec }}<br />
+                                        {% for secdef in security_definitions %}
+                                          Here: {{ secdef[0] }} == {{ sec[0] }}<br />
+                                        {% endfor %}
                                       {% endfor %}
                                     </td></tr>
 
