@@ -391,6 +391,7 @@ layout: page
 
                                     {% assign slug = path[0] | replace: '/','' | append: verb %}
 
+
                                       <tr>
                                         <td style="padding-left: 20px; font-size: 12px;">{{ summary }}</td>
                                         <td style="font-size: 12px;">{{ path[0] }}</td>
@@ -398,9 +399,22 @@ layout: page
                                           {{ verb }}
                                         </td>
                                         <td style="width: 25px;"></td>
-                                        <td><button type="button" class="btn btn-default" onclick="showme('{{ slug }}-row'); return false;">Try</button></tr>
+                                        <td>
+                                          <button type="button" class="btn btn-default" onclick="showme('{{ slug }}-row'); return false;">Try</button>
+                                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+                                        </td>
+                                      </tr>
                                       </tr>
                                       <tr id="{{ slug }}-row" style="display: none;">
+
+                                        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                                          <div class="modal-dialog modal-lg" role="document">
+                                            <div class="modal-content">
+                                              ...
+                                            </div>
+                                          </div>
+                                        </div>
+                                        
                                         <td colspan="4" style="padding: 15px;">
 
                                           <table width="90%" border="0" align="center">
