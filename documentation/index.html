@@ -366,7 +366,7 @@ layout: page
                                       {% assign thissec = '' %}
                                       {% for sec in security %}
                                         {% for usesec in sec %}
-                                          {% assign thissec = thissec | append: ', ' | append: usesec %}
+                                          {% assign thissec = thissec | append: ', ' | append: usesec[0] %}
                                         {% endfor %}
                                       {% endfor %}
                                       USE: {{ thissec }}
