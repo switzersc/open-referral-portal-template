@@ -362,10 +362,12 @@ layout: page
 
                                     {% assign security = method[1].security %}
 
-                                    <tr><td>debug1:
-                                      {% assign thissec = "" %}
+                                    <tr><td>
+                                      {% assign thissec = '' %}
                                       {% for sec in security %}
-                                        {% assign thissec = thissec | append: ', ' | append: sec[0] %}
+                                        {% for usesec in sec %}
+                                          {% assign thissec = thissec | append: ', ' | append: usesec %}
+                                        {% endfor %}
                                       {% endfor %}
                                       USE: {{ thissec }}
                                     </td></tr>
