@@ -86,7 +86,7 @@ layout: page
 
           $viewer = JSON.stringify(response, null, 2);
           //console.log($viewer);
-          document.getElementById($slug+'-loading-header').style.display = 'none';
+          document.getElementById($slug+'-response-header').style.display = 'none';
           document.getElementById($slug+'-response').value = $viewer;
           document.getElementById($slug+'-response').style.width = "100%";
           document.getElementById($slug+'-response').style.height = "450px";
@@ -95,7 +95,7 @@ layout: page
         error: function(XMLHttpRequest, textStatus, errorThrown) {
             document.getElementById($slug+'-loading').style.display = 'none';
             $message = "Status: " + textStatus + "\nError: " + errorThrown;
-            document.getElementById($slug+'-loading-header').style.display = 'none';
+            document.getElementById($slug+'-response-header').style.display = 'none';
             document.getElementById($slug+'-response').value = $message;
             document.getElementById($slug+'-response').style.width = "100%";
             document.getElementById($slug+'-response').style.height = "50px";
@@ -551,7 +551,7 @@ layout: page
                                             <!-- End Parameters -->
                                             </form>
 
-                                            <tr style="background-color: #CCC;" id="{{ slug }}-response-header">
+                                            <tr style="background-color: #CCC;" id="{{ slug }}-response-header" style="display: none;">
                                               <td style="font-size: 12px; padding: 5px;"><strong>Response:</strong></td>
                                             </tr>
                                             <tr>
