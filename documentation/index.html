@@ -5,9 +5,9 @@ layout: page
 
   function loadClient($slug)
     {
-    console.log($slug);
+    //console.log($slug);
     $editor = $('#' + $slug + '-cell').html();
-    $("#client-body").text( $editor );
+    $("#client-body").append( $editor );
     }
   function showme($id)
     {
