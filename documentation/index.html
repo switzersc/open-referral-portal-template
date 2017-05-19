@@ -365,8 +365,8 @@ layout: page
                                     <tr><td>
                                       {% for sec in security %}
                                         {% for secdef in security_definitions %}
-                                          {% assign usesec = sec %}
-                                          Here4: {{ secdef[0] }} == {{ usesec }}<br />
+                                          {% assign usesec = sec[0] %}
+                                          Here5: {{ secdef[0] }} == {{ usesec }}<br />
                                         {% endfor %}
                                       {% endfor %}
                                     </td></tr>
