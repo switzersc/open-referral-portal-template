@@ -368,7 +368,7 @@ layout: page
                                           {% for usesec in sec %}
                                             {{ secdef[0] }} == {{ usesec }}<br />
                                             {% if secdef[0] == usesec %}
-                                              {% assign usesec = secdef %}
+                                              {% assign usesec = security_definitions[secdef[0]] %}
                                             {% endif %}
                                           {% endfor %}
                                         {% endfor %}
