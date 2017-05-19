@@ -434,16 +434,7 @@ layout: page
 
                                           <table width="90%" border="0" align="center">
                                             <tr>
-                                              <td style="padding-left: 20px; font-size: 12px;">{{ summary }}</td>
-                                              <td style="font-size: 12px;">{{ path[0] }}</td>
-                                              <td align="center" style="padding: 1px; width: 75px; background-color:#{{ back_color }}; font-weight: bold; font-size: 11px; color: #FFF;">
-                                                {{ verb }}
-                                              </td>
-                                              <td style="width: 25px;"></td>
-                                              <td>
-                                                <button type="button" class="btn btn-default" onclick="showme('{{ slug }}-row'); return false;">Try</button>
-                                                <button type="button" onclick="loadClient('{{ slug }}');" class="btn btn-primary" data-toggle="modal" data-target=".api-client">Try</button>
-                                              </td>
+                                              <td align="center"><strong>{{ verb }} {{ summary }} at {{ api_host }}{{ api.baseURL }}{{ path[0] }}</strong></td>
                                             </tr>
                                           </table>
 
