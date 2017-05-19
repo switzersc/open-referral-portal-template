@@ -362,25 +362,7 @@ layout: page
 
                                     {% assign security = method[1].security %}
 
-                                    <tr><td>debug1:
-                                      {% for sec in security %}
-                                        {% for secdef in security_definitions %}
-                                          {% for usesec in sec %}
-                                            {% assign thissec = secdef[0] | strip | strip_newlines %}
-                                            {% assign usesec = usesec | strip | strip_newlines %}
-
-                                            {% if thissec != usesec %}
-                                              {{ thissec }} == {{ usesec }}<br />
-                                              USE11: {{ thissec }}<br />
-                                              {% assign usesec = security_definitions[secdef[0]] %}
-                                              USE22: {{ usesec }}<br />
-                                            {% endif %}
-                                          {% endfor %}
-                                        {% endfor %}
-                                      {% endfor %}
-
-                                      USE: {{ usesec }}
-                                    </td></tr>
+                                    <tr><td>debug1:{{ security }}</td></tr>
 
                                     {% assign tagarray = method[1].tags %}
                                     {% assign tag = tagarray[0] %}
