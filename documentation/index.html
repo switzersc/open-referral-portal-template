@@ -87,6 +87,7 @@ layout: page
           $viewer = JSON.stringify(response, null, 2);
           //console.log($viewer);
           document.getElementById($slug+'-response-header').style.display = 'none';
+          document.getElementById($slug+'-response-body').style.display = 'none';
           document.getElementById($slug+'-response').value = $viewer;
           document.getElementById($slug+'-response').style.width = "100%";
           document.getElementById($slug+'-response').style.height = "450px";
@@ -96,6 +97,7 @@ layout: page
             document.getElementById($slug+'-loading').style.display = 'none';
             $message = "Status: " + textStatus + "\nError: " + errorThrown;
             document.getElementById($slug+'-response-header').style.display = 'none';
+            document.getElementById($slug+'-response-body').style.display = 'none';
             document.getElementById($slug+'-response').value = $message;
             document.getElementById($slug+'-response').style.width = "100%";
             document.getElementById($slug+'-response').style.height = "50px";
@@ -555,7 +557,7 @@ layout: page
                                               <td style="font-size: 12px; padding: 5px;"><strong>Response:</strong></td>
                                             </tr>
                                             <tr>
-                                              <td style="font-size: 12px; padding: 10px;">
+                                              <td style="font-size: 12px; padding: 10px;" id="{{ slug }}-response-body" style="display: none;">
                                                 <textarea id="{{ slug }}-response" style="overflow: auto; height: 5px; width: 100%; border: 0px solid #FFF;"></textarea>
                                               </td>
                                             </tr>
