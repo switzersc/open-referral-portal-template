@@ -362,15 +362,13 @@ layout: page
 
                                     {% assign security = method[1].security %}
 
-                                    <tr><td>
-                                      {% assign thissec = '' %}
-                                      {% for sec in security %}
-                                        {% for usesec in sec %}
-                                          {% assign thissec = thissec | append: ', ' | append: usesec[0] %}
-                                        {% endfor %}
+                                    // pass thissec to the JS function to load from master security set above
+                                    {% assign thissec = '' %}
+                                    {% for sec in security %}
+                                      {% for usesec in sec %}
+                                        {% assign thissec = thissec | append: ', ' | append: usesec[0] %}
                                       {% endfor %}
-                                      USE: {{ thissec }}
-                                    </td></tr>
+                                    {% endfor %}
 
                                     {% assign tagarray = method[1].tags %}
                                     {% assign tag = tagarray[0] %}
