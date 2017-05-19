@@ -365,9 +365,7 @@ layout: page
                                     <tr><td>debug1:
                                       {% assign thissec = "" %}
                                       {% for sec in security %}
-                                        {% for secdef in security_definitions %}
-                                            {% assign thissec = thissec | append: ', ' | append: secdef[0] %}
-                                        {% endfor %}
+                                        {% assign thissec = thissec | append: ', ' | append: sec[0] %}
                                       {% endfor %}
                                       USE: {{ thissec }}
                                     </td></tr>
