@@ -87,7 +87,7 @@ layout: page
         error: function(XMLHttpRequest, textStatus, errorThrown) {
             document.getElementById($slug+'-loading').style.display = 'none';
             $message = "Status: " + textStatus + "\nError: " + errorThrown;
-            document.getElementById($slug+'-response').value = $$message;
+            document.getElementById($slug+'-response').value = $message;
             document.getElementById($slug+'-response').style.width = "100%";
             document.getElementById($slug+'-response').style.height = "50px";
         }
@@ -317,6 +317,13 @@ layout: page
                             </tr>
 
                               {% assign spec = openapi_spec_json %}
+
+                              {% assign security_definitions = spec.securityDefinitions %}
+                              {% for secdef in security_definitions %}
+                                <tr>
+                                  <td colspan="5" style="padding-top: 10px;"><strong>secdef: {{ secdef }}</strong></td>
+                                </tr>
+                              {% endfor %}
 
                               {% assign api_title = spec.info.title %}
                               {% assign api_description = spec.info.description %}
