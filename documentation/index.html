@@ -362,7 +362,11 @@ layout: page
 
                                     {% assign security = method[1].security %}
 
-                                    <tr><td><br />--{{ security }}--<br /></td></tr>
+                                    <tr><td>
+                                      {% for sec in security %}
+                                        <br />--{{{{ sec }}}}--<br />
+                                      {% endfor %}
+                                    </td></tr>
 
                                     {% assign tagarray = method[1].tags %}
                                     {% assign tag = tagarray[0] %}
