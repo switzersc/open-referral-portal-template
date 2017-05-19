@@ -360,6 +360,10 @@ layout: page
 
                                     {% assign parameters = method[1].parameters %}
 
+                                    {% assign security = method[1].security %}
+
+                                    <tr><td>{{ security }}</td></tr>
+
                                     {% assign tagarray = method[1].tags %}
                                     {% assign tag = tagarray[0] %}
 
