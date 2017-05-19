@@ -366,10 +366,14 @@ layout: page
                                       {% for sec in security %}
                                         {% for secdef in security_definitions %}
                                           {% for usesec in sec %}
-                                          Here1: {{ secdef[0] }} == {{ usesec }}<br />
-                                            {% endfor %}
+                                            {% if secdef[0] == usesec %}
+                                              % assign usesec = secdef[1] %}
+                                            {% endif %}
+                                          {% endfor %}
                                         {% endfor %}
                                       {% endfor %}
+
+                                      USE: {{ usesec }}
                                     </td></tr>
 
                                     {% assign tagarray = method[1].tags %}
