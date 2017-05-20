@@ -201,7 +201,7 @@ layout: page
                               <strong>{{ sec_def_values.name }}:</strong>
                             </td>
                             <td align="left" style="padding:3px;">
-                              <input type="text" class="form-control" id="{{ secdef[0] }}" name="{{ sec_def_values.in }}" alt="{{ sec_def_values.type }}" value="" style="width: 250px;" />
+                              <input type="text" class="form-control" id="{{ secdef[0] }}" altname="{{ sec_def_values.name }}" name="{{ sec_def_values.in }}" alt="{{ sec_def_values.type }}" value="" style="width: 250px;" />
                             </td>
                           </tr>
                           {% endfor %}
@@ -581,11 +581,11 @@ layout: page
           $value = $('#' + $definition).val();
           $id = $('#' + $definition).attr("id");
           $in = $('#' + $definition).attr("name");
+          $name = $('#' + $definition).attr("altname");
           $type = $('#' + $definition).attr("alt");
-          console.log("in:" + $in);
           if($in == 'header')
             {
-            $headers = $headers + "'" + $id + "': '" + $value + "',";
+            $headers = $headers + "'" + $name + "': '" + $value + "',";
             $any_headers = 1;
             console.log("IN!");
             }
