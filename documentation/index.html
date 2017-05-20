@@ -600,9 +600,10 @@ layout: page
 
       console.log($slug+'-path');
       var path_elements = document.getElementById($slug+'-path').elements;
-      console.log("path elements: " + path_elements);
+      console.log("path elements: " + path_elements + ' - ' +  path_elements.length());
       for(var i = 0, element; element = path_elements[i++];)
         {
+        console.log('IN!');
         console.log("type:" + element);
           if(element.type === "text")
             {
