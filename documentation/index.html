@@ -334,7 +334,7 @@ layout: page
                                       </td>
                                       <td style="width: 25px;"></td>
                                       <td>
-                                        <button type="button" class="btn btn-default" onclick="showme('{{ slug }}-row'); return false;">Try</button>
+                                        <button type="button" onclick="loadClient('{{ slug }}');" class="btn btn-primary" data-toggle="modal" data-target=".api-client">Try</button>
                                       </td>
                                     </tr>
                                       <tr id="{{ slug }}-row" style="display: none;">
