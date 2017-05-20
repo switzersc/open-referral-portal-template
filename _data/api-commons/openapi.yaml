@@ -25,14 +25,6 @@ paths:
       operationId: list-contacts
       parameters:
         - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
-        - in: query
           type: number
           name: page
           description: The particular page of results.
@@ -57,14 +49,6 @@ paths:
       description: Add contact
       operationId: add-contact
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: body
           name: body
           schema:
@@ -87,14 +71,6 @@ paths:
       description: Get Contact
       operationId: get-contact
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -117,14 +93,6 @@ paths:
       description: Update an existing contact.
       operationId: update-contact
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -151,14 +119,6 @@ paths:
       description: Delete Contact
       operationId: delete-contact
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -182,14 +142,6 @@ paths:
       description: Get Phones
       operationId: list-contact-phones
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -212,14 +164,6 @@ paths:
       description: Add Phone
       operationId: add-contact-phone
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -247,14 +191,6 @@ paths:
       description: get Phone
       operationId: get-contact-phone
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -282,14 +218,6 @@ paths:
       description: Update Phone
       operationId: update-contact-phone
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -321,14 +249,6 @@ paths:
       description: Delete Phone
       operationId: delete-contact-phone
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -358,14 +278,6 @@ paths:
       operationId: list-locations
       parameters:
         - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
-        - in: query
           type: number
           name: page
           description: The particular page of results.
@@ -390,14 +302,6 @@ paths:
       description: Add Location
       operationId: add-location
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: body
           name: body
           schema:
@@ -420,14 +324,6 @@ paths:
       description: Get Location
       operationId: get-location
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -450,14 +346,6 @@ paths:
       description: Update Location
       operationId: update-location
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -484,14 +372,6 @@ paths:
       description: Delete Location
       operationId: delete-location
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -515,14 +395,6 @@ paths:
       description: Get Holiday Schedule
       operationId: list-location-holiday-schedules
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -545,14 +417,6 @@ paths:
       description: Add Holiday Schedule
       operationId: add-location-holiday-schedule
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -580,14 +444,6 @@ paths:
       description: Get Holiday Schedule
       operationId: get-location-holiday-schedule
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -615,14 +471,6 @@ paths:
       description: Update Holiday Schedule
       operationId: update-location-holiday-schedule
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -654,14 +502,6 @@ paths:
       description: Delete Holiday Schedule
       operationId: delete-location-holiday-schedule
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -690,14 +530,6 @@ paths:
       description: Get Languages
       operationId: list-location-languages
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -720,14 +552,6 @@ paths:
       description: Add Languages
       operationId: add-location-languages
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -755,14 +579,6 @@ paths:
       description: Get Languages
       operationId: get-location-languages
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -790,14 +606,6 @@ paths:
       description: Update Languages
       operationId: update-location-languages
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -829,14 +637,6 @@ paths:
       description: Delete Languages
       operationId: delete-location-languages
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -865,14 +665,6 @@ paths:
       description: Get Postal Addresses
       operationId: list-location-postal-addresses
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -895,14 +687,6 @@ paths:
       description: Add Postal Adress
       operationId: add-location-postal-address
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -930,14 +714,6 @@ paths:
       description: Get Postal Address
       operationId: get-location-postal-address
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -965,14 +741,6 @@ paths:
       description: Postal Mailing Address
       operationId: update-location-postal-address
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1004,14 +772,6 @@ paths:
       description: Delete Postal Address
       operationId: delete-location-postal-address
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1040,14 +800,6 @@ paths:
       description: Get Physical Address
       operationId: list-location-physical-addresses
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1070,14 +822,6 @@ paths:
       description: Add Physical Adress
       operationId: add-location-physical-address
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1105,14 +849,6 @@ paths:
       description: Get Physical Address
       operationId: get-location-physical-address
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1140,14 +876,6 @@ paths:
       description: Postal Physical Address
       operationId: update-location-physical-address
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1179,14 +907,6 @@ paths:
       description: Delete Physical Address
       operationId: delete-location-physical-address
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1215,14 +935,6 @@ paths:
       description: Get Phones
       operationId: list-location-phones
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1245,14 +957,6 @@ paths:
       description: Add Phone
       operationId: add-location-phone
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1280,14 +984,6 @@ paths:
       description: get Phone
       operationId: get-location-phone
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1315,14 +1011,6 @@ paths:
       description: Update Phone
       operationId: update-location-phone
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1354,14 +1042,6 @@ paths:
       description: Delete Phone
       operationId: delete-location-phone
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1390,14 +1070,6 @@ paths:
       description: Get Regular Schedules
       operationId: list-location-regular-schedules
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1420,14 +1092,6 @@ paths:
       description: Add Regular Schedule
       operationId: add-location-regular-schedule
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1455,14 +1119,6 @@ paths:
       description: Get Regular Schedule
       operationId: get-location-regular-schedule
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1490,14 +1146,6 @@ paths:
       description: Update Regular Schedule
       operationId: update-location-regular-schedule
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1529,14 +1177,6 @@ paths:
       description: Delete Regular Schedule
       operationId: delete-location-regular-schedule
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1565,14 +1205,6 @@ paths:
       description: Get Services
       operationId: list-location-services
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1595,14 +1227,6 @@ paths:
       description: Add Service
       operationId: add-location-service
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1630,14 +1254,6 @@ paths:
       description: Get Service
       operationId: get-location-service
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1665,14 +1281,6 @@ paths:
       description: Update Service
       operationId: update-location-service
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1704,14 +1312,6 @@ paths:
       description: Delete Service
       operationId: delete-location-service
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1740,14 +1340,6 @@ paths:
       description: Get Accessibility For Disabilities
       operationId: list-location-accessibility-for-disabilities
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1770,14 +1362,6 @@ paths:
       description: Add Accessibility For Disabilities
       operationId: add-location-accessibility-for-disabilities
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1805,14 +1389,6 @@ paths:
       description: Get Accessibility For Disabilities
       operationId: get-location-accessibility-for-disabilities
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1840,14 +1416,6 @@ paths:
       description: Update Accessibility For Disabilities
       operationId: update-location-accessibility-for-disabilities
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -1881,14 +1449,6 @@ paths:
       parameters:
         - in: query
           type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
-        - in: query
-          type: string
           name: accessibility_for_disabilities_id
           description: 'The unique accessibility for disabilities id.'
         - in: query
@@ -1912,15 +1472,7 @@ paths:
       summary: Get Metadata
       description: Get Metadata
       operationId: list-meta-data
-      parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key. []
+      parameters: []
       security:
         - appid: []
         - appkey: []
@@ -1938,14 +1490,6 @@ paths:
       description: Add Metadata
       operationId: add-metadata
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: query
           type: string
           name: resource_id
@@ -1972,14 +1516,6 @@ paths:
       description: Get Service
       operationId: get-metadata
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2002,14 +1538,6 @@ paths:
       description: Delete Metadata
       operationId: delete-metadata
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2033,14 +1561,6 @@ paths:
       description: Get Organizations
       operationId: list-organizations
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: query
           type: number
           name: page
@@ -2066,14 +1586,6 @@ paths:
       description: Addorganization
       operationId: add-organization
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: body
           name: body
           schema:
@@ -2096,14 +1608,6 @@ paths:
       description: Get Organization
       operationId: get-organization
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2126,14 +1630,6 @@ paths:
       description: Update Organization
       operationId: update-organization
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2160,14 +1656,6 @@ paths:
       description: Delete Organization
       operationId: delete-organization
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2191,14 +1679,6 @@ paths:
       description: Get Contacts
       operationId: list-organization-contacts
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: query
           type: string
           name: accessibility
@@ -2283,14 +1763,6 @@ paths:
       description: Add Contact
       operationId: add-organization-contact
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2318,14 +1790,6 @@ paths:
       description: Get Contact
       operationId: get-organization-contact
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2353,14 +1817,6 @@ paths:
       description: Update Contact
       operationId: update-organization-contact
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2392,14 +1848,6 @@ paths:
       description: Delete Contact
       operationId: delete-organization-contact
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2428,14 +1876,6 @@ paths:
       description: Get Fundings
       operationId: list-organization-fundings
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2458,14 +1898,6 @@ paths:
       description: Add Funding
       operationId: add-organization-funding
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2493,14 +1925,6 @@ paths:
       description: Get Funding
       operationId: get-organization-funding
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2528,14 +1952,6 @@ paths:
       description: Update Funding
       operationId: update-organization-funding
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2567,14 +1983,6 @@ paths:
       description: Delete Funding
       operationId: delete-organization-funding
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2603,14 +2011,6 @@ paths:
       description: Get Location
       operationId: list-organization-locations
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2633,14 +2033,6 @@ paths:
       description: Add location
       operationId: add-organization-location
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2668,14 +2060,6 @@ paths:
       description: Get Location
       operationId: get-organization-location
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2703,14 +2087,6 @@ paths:
       description: Update location
       operationId: update-organization-location
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2742,14 +2118,6 @@ paths:
       description: Delete Location
       operationId: delete-organization-location
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2778,14 +2146,6 @@ paths:
       description: Get Phones
       operationId: list-organization-phones
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2808,14 +2168,6 @@ paths:
       description: Add Phone
       operationId: add-organization-phone
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2843,14 +2195,6 @@ paths:
       description: get Phone
       operationId: get-organization-phone
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2878,14 +2222,6 @@ paths:
       description: Update Phone
       operationId: update-organization-phone
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2917,14 +2253,6 @@ paths:
       description: Delete Phone
       operationId: delete-organization-phone
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2953,14 +2281,6 @@ paths:
       description: Get Programs
       operationId: list-organization-programs
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -2983,14 +2303,6 @@ paths:
       description: Add Program
       operationId: add-organization-program
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3018,14 +2330,6 @@ paths:
       description: Get Program
       operationId: get-organization-program
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3053,14 +2357,6 @@ paths:
       description: Update Program
       operationId: update-organization-program
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3092,14 +2388,6 @@ paths:
       description: Delete Program
       operationId: delete-organization-program
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3128,14 +2416,6 @@ paths:
       description: Get Service
       operationId: list-program-services
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3163,14 +2443,6 @@ paths:
       description: Add Service
       operationId: add-program-service
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3203,14 +2475,6 @@ paths:
       description: Get Service
       operationId: get-program-service
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3243,14 +2507,6 @@ paths:
       description: Update Service
       operationId: update-program-service
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3287,14 +2543,6 @@ paths:
       description: Delete Service
       operationId: delete-program-service
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3328,14 +2576,6 @@ paths:
       description: Get Services
       operationId: list-organization-services
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3358,14 +2598,6 @@ paths:
       description: Add Service
       operationId: add-organization-service
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3393,14 +2625,6 @@ paths:
       description: Get Service
       operationId: get-organization-service
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3428,14 +2652,6 @@ paths:
       description: Update Service
       operationId: update-organization-service
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3467,14 +2683,6 @@ paths:
       description: Delete Service
       operationId: delete-organization-service
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3503,14 +2711,6 @@ paths:
       description: Search
       operationId: search
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: query
           type: string
           name: category
@@ -3560,15 +2760,7 @@ paths:
       summary: Get Services
       description: Get Services
       operationId: list-services
-      parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key. []
+      parameters: []
       security:
         - appid: []
         - appkey: []
@@ -3586,14 +2778,6 @@ paths:
       description: Add Service
       operationId: add-service
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: body
           name: body
           schema:
@@ -3618,14 +2802,6 @@ paths:
       parameters:
         - in: query
           type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
-        - in: query
-          type: string
           name: service_id
           description: 'The unique service id.'
       security:
@@ -3645,14 +2821,6 @@ paths:
       description: Update Service
       operationId: update-service
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3679,14 +2847,6 @@ paths:
       description: Delete Service
       operationId: delete-service
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3710,14 +2870,6 @@ paths:
       description: Get Contacts
       operationId: list-service-contacts
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3740,14 +2892,6 @@ paths:
       description: Add Contact
       operationId: add-service-contact
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3775,14 +2919,6 @@ paths:
       description: Get Contact
       operationId: get-service-contact
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3810,14 +2946,6 @@ paths:
       description: Update Contact
       operationId: update-service-contact
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3849,14 +2977,6 @@ paths:
       description: Delete Contact
       operationId: delete-service-contact
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3885,14 +3005,6 @@ paths:
       description: Get Eligibilities
       operationId: list-service-eligibilities
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3915,14 +3027,6 @@ paths:
       description: Add Eligibility
       operationId: add-service-eligibility
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3950,14 +3054,6 @@ paths:
       description: Get Eligibility
       operationId: get-service-eligibility
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -3985,14 +3081,6 @@ paths:
       description: Update Eligibility
       operationId: update-service-eligibility
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4024,14 +3112,6 @@ paths:
       description: Delete Eligibility
       operationId: delete-service-eligibility
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4060,14 +3140,6 @@ paths:
       description: Get Fees
       operationId: list-service-fees
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4090,14 +3162,6 @@ paths:
       description: Add Fee
       operationId: add-service-fee
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4125,14 +3189,6 @@ paths:
       description: Get Fee
       operationId: get-service-fee
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4160,14 +3216,6 @@ paths:
       description: Update Fee
       operationId: update-service-fee
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4199,14 +3247,6 @@ paths:
       description: Delete Fee
       operationId: delete-service-fee
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4235,14 +3275,6 @@ paths:
       description: Get Funding
       operationId: list-service-fundings
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4265,14 +3297,6 @@ paths:
       description: Add Funding
       operationId: add-service-funding
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4300,14 +3324,6 @@ paths:
       description: Get Funding
       operationId: get-service-funding
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4335,14 +3351,6 @@ paths:
       description: Update Funding
       operationId: update-service-funding
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4376,14 +3384,6 @@ paths:
       parameters:
         - in: query
           type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
-        - in: query
-          type: string
           name: service_id
           description: 'The unique service id.'
         - in: query
@@ -4408,14 +3408,6 @@ paths:
       description: Get Holiday Schedule
       operationId: list-service-holiday-schedules
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4438,14 +3430,6 @@ paths:
       description: Add Holiday Schedule
       operationId: add-service-holiday-schedule
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4473,14 +3457,6 @@ paths:
       description: Get Holiday Schedule
       operationId: get-service-holiday-schedule
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4508,14 +3484,6 @@ paths:
       description: Update Holiday Schedule
       operationId: update-service-holiday-schedule
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4547,14 +3515,6 @@ paths:
       description: Delete Holiday Schedule
       operationId: delete-service-holiday-schedule
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4583,14 +3543,6 @@ paths:
       description: Get Interpretation Services
       operationId: list-service-interpretation-services
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4613,14 +3565,6 @@ paths:
       description: Add Interpretation Services
       operationId: add-service-interpretation-services
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4648,14 +3592,6 @@ paths:
       description: Get Interpretation Services
       operationId: get-service-interpretation-services
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4683,14 +3619,6 @@ paths:
       description: Update Interpretation Services
       operationId: update-service-interpretation-services
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4722,14 +3650,6 @@ paths:
       description: Delete Interpretation Services
       operationId: delete-service-interpretation-services
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4758,14 +3678,6 @@ paths:
       description: Get Languages
       operationId: list-service-languages
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4788,14 +3700,6 @@ paths:
       description: Add Languages
       operationId: add-service-language
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4820,14 +3724,6 @@ paths:
       description: Get Languages
       operationId: get-service-language
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4855,14 +3751,6 @@ paths:
       description: Update Languages
       operationId: update-service-language
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4894,14 +3782,6 @@ paths:
       description: Delete Languages
       operationId: delete-service-language
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4930,14 +3810,6 @@ paths:
       description: Get Payment Accepted
       operationId: list-service-payments-accepted
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4960,14 +3832,6 @@ paths:
       description: Add Payment Accepted
       operationId: add-service-payment-accepted
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -4995,14 +3859,6 @@ paths:
       description: Get Payment Accepted
       operationId: get-service-payment-accepted
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5030,14 +3886,6 @@ paths:
       description: Update Payment Accepted
       operationId: update-service-payment-accepted
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5069,14 +3917,6 @@ paths:
       description: Delete Payment Accepted
       operationId: delete-service-payment-accepted
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5105,14 +3945,6 @@ paths:
       description: Get Phones
       operationId: list-service-phones
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5135,14 +3967,6 @@ paths:
       description: Add Phone
       operationId: add-service-phone
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5170,14 +3994,6 @@ paths:
       description: get Phone
       operationId: get-service-phone
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5205,14 +4021,6 @@ paths:
       description: Update Phone
       operationId: update-service-phone
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5244,14 +4052,6 @@ paths:
       description: Delete Phone
       operationId: delete-service-phone
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5280,14 +4080,6 @@ paths:
       description: Get Regular Schedule
       operationId: list-service-regular-schedule
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5310,14 +4102,6 @@ paths:
       description: Add Regular Schedule
       operationId: add-service-regular-schedule
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5345,14 +4129,6 @@ paths:
       description: Get Regular Schedule
       operationId: get-service-regular-schedules
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5380,14 +4156,6 @@ paths:
       description: Update Regular Schedule
       operationId: update-service-regular-schedule
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5419,14 +4187,6 @@ paths:
       description: Delete Regular Schedule
       operationId: delete-service-regular-schedule
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5455,14 +4215,6 @@ paths:
       description: Get Required Document
       operationId: list-service-required-document
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5485,14 +4237,6 @@ paths:
       description: Add Required Document
       operationId: add-service-required-document
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5520,14 +4264,6 @@ paths:
       description: Get Required Document
       operationId: get-service-required-documents
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5555,14 +4291,6 @@ paths:
       description: Update Required Document
       operationId: update-service-required-document
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5594,14 +4322,6 @@ paths:
       description: Delete Required Document
       operationId: delete-service-required-document
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5630,14 +4350,6 @@ paths:
       description: Get Service Areas
       operationId: list-service-service-areas
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5660,14 +4372,6 @@ paths:
       description: Add Service Area
       operationId: add-service-service-areas
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5695,14 +4399,6 @@ paths:
       description: Get Service Area
       operationId: get-service-service-area
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5730,14 +4426,6 @@ paths:
       description: Update Service Area
       operationId: update-service-service-area
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
@@ -5769,14 +4457,6 @@ paths:
       description: Delete Service Area
       operationId: delete-service-service-area
       parameters:
-        - in: query
-          type: string
-          name: appid
-          description: The application id.
-        - in: query
-          type: string
-          name: appkey
-          description: The application key.
         - in: path
           required: true
           type: string
