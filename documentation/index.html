@@ -634,13 +634,13 @@ layout: page
       var response = $.ajax({
          url: $api_url,
          method: "get",
-         if ($any_headers==1) {
-            {
            beforeSend: function(xhrObj){
-                   xhrObj.setRequestHeader("x-appid","test");
-                   xhrObj.setRequestHeader("x-appkey","test2");
+           if ($any_headers==1) {
+              {
+                 xhrObj.setRequestHeader("x-appid","test");
+                 xhrObj.setRequestHeader("x-appkey","test2");
+              }
            },
-            }
          //headers: {'x-appid': 'test','x-appkey': 'test',},
          //contentType: 'application/json; charset=utf-8',
          //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
