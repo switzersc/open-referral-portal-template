@@ -567,8 +567,7 @@ layout: page
         for (var i = 0, element; element = $header_elements[i++];) {
             if (element.type === "text")
               {
-              console.log(element.type + ' - ' + element.name);
-              $headers = $headers + element.name + ': ' + element.value + ',';
+              $headers = $headers + "'" + element.name + "': '" + element.value + "',";
               $any_headers = 1;
             }
           }
@@ -588,7 +587,7 @@ layout: page
             console.log("in:" + $in);
             console.log("type:" + $type);
             console.log("value:" + $value);
-            $headers = $headers + $id + ': ' + $value + ',';
+            $headers = $headers + "'" + $id + "': '" + $value + "',";
             $any_headers = 1;
             }
           }
