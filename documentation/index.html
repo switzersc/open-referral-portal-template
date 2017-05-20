@@ -573,10 +573,11 @@ layout: page
         $headers = $headers.substring(1, $headers.length-1);
         }
 
-      $.each($security_array, function( $key, $value ) {
+      $.each($security_array, function( $key, $definition ) {
         if($value!='')
           {
-          console.log("3:" + $key);
+          console.log("4:" + $definition);
+          $value = $('#'$definition).val();
           console.log("4:" + $value);
           }
       });
