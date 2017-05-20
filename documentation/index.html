@@ -45,8 +45,11 @@ layout: page
       $headers = $headers.substring(1, $headers.length-1);
       }
 
-    $.each($security_array, function( k, v ) {
-      alert( "Key: " + k + ", Value: " + v );
+    $.each($security_array, function( $key, $value ) {
+      if($value!='')
+        {
+        console.log($security[$value]); 
+        }
     });
 
     var path_elements = document.getElementById($slug+'-path').elements;
