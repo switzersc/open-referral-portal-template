@@ -631,13 +631,15 @@ layout: page
 
       //console.log("loading: " + $api_url);
 
+      $.ajaxSetup({
+          headers: $headers
+      });
+
       var response = $.ajax({
          url: $api_url,
          method: "get",
-         dataType: 'json',
-         headers: $headers,
          //headers: {'x-appid': 'test','x-appkey': 'test',},
-         contentType: 'application/json; charset=utf-8',
+         //contentType: 'application/json; charset=utf-8',
          //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
          success:function(response){
 
