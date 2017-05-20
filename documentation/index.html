@@ -635,7 +635,7 @@ layout: page
          url: $api_url,
          method: "get",
            beforeSend: function(xhrObj){
-           if ($any_headers==1) {
+           if ($any_headers==1)
               {
                  xhrObj.setRequestHeader("x-appid","test");
                  xhrObj.setRequestHeader("x-appkey","test2");
