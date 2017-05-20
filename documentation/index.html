@@ -634,6 +634,7 @@ layout: page
       var response = $.ajax({
          url: $api_url,
          method: "get",
+         dataType: 'json',
          headers: $headers,
          //headers: {'x-appid': 'test','x-appkey': 'test',},
          contentType: 'application/json; charset=utf-8',
