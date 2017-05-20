@@ -574,6 +574,7 @@ layout: page
         }
 
       $.each($security_array, function( $key, $definition ) {
+        $definition = $definition.trim();
         if($definition != '')
           {
           console.log('#sec-' + $definition);
