@@ -583,10 +583,6 @@ layout: page
           $type = $('#' + $definition).attr("alt");
           if($in == 'header')
             {
-            console.log("id:" + $id);
-            console.log("in:" + $in);
-            console.log("type:" + $type);
-            console.log("value:" + $value);
             $headers = $headers + "'" + $id + "': '" + $value + "',";
             $any_headers = 1;
             }
@@ -595,8 +591,7 @@ layout: page
 
       if($any_headers == 1)
         {
-        //$headers = $headers.substring(1, $headers.length-1);
-        console.log("any headers: " + $any_headers);
+        $headers = '{' + $headers + '}';
         console.log("headers: " + $headers);
         }
 
@@ -636,7 +631,7 @@ layout: page
       var response = $.ajax({
          url: $api_url,
          method: "get",
-         headers: {$headers},
+         headers: $headers,
          success:function(response){
 
             document.getElementById($slug+'-loading').style.display = 'none';
