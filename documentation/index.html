@@ -200,8 +200,8 @@ layout: page
                             <td align="right" width="40%" style="padding:3px;">
                               <strong>{{ sec_def_values.name }}:</strong>
                             </td>
-                            <td align="left" style="padding:3px;">
-                              <input type="text" class="form-control" id="{{ sec_def_values.name }}" name="{{ sec_def_values.in }}" alt="{{ sec_def_values.type }}" value="" style="width: 250px;" />
+                            <td align="left" style="padding:3px;">sec-{{ sec_def_values.name }}
+                              <input type="text" class="form-control" id="sec-{{ sec_def_values.name }}" name="{{ sec_def_values.in }}" alt="{{ sec_def_values.type }}" value="" style="width: 250px;" />
                             </td>
                           </tr>
                           {% endfor %}
@@ -576,11 +576,11 @@ layout: page
       $.each($security_array, function( $key, $definition ) {
         if($definition != '')
           {
-          console.log("4:" + $definition);
-          $value = $('#' + $definition).val();
-          $id = $('#' + $definition).attr("id");
-          $name = $('#' + $definition).attr("name");
-          $type = $('#' + $definition).attr("alt");
+          console.log('#sec-' + $definition);
+          $value = $('#sec-' + $definition).val();
+          $id = $('#sec-' + $definition).attr("id");
+          $name = $('#sec-' + $definition).attr("name");
+          $type = $('#sec-' + $definition).attr("alt");
           console.log("4:" + $id);
           console.log("4:" + $name);
           console.log("4:" + $type);
