@@ -596,11 +596,9 @@ layout: page
 
       if($any_headers == 1)
         {
-        $headers = $headers.substring(1, $headers.length-1);
-
+        //$headers = $headers.substring(1, $headers.length-1);
         console.log("any headers: " + $any_headers);
         console.log("headers: " + $headers);
-
         }
 
       var path_elements = document.getElementById($slug+'-path').elements;
@@ -639,7 +637,7 @@ layout: page
       var response = $.ajax({
          url: $api_url,
          method: "get",
-         //headers: {$headers},
+         headers: {$headers},
          success:function(response){
 
             document.getElementById($slug+'-loading').style.display = 'none';
