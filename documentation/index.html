@@ -560,10 +560,10 @@ layout: page
       document.getElementById($slug+'-loading').style.display = '';
 
       $any_headers = 0;
+      $headers = '';
       var $header_elements = document.getElementById($slug+'-headers').elements;
       if($header_elements.length > 0)
         {
-        $headers = '';
         for (var i = 0, element; element = $header_elements[i++];) {
             if (element.type === "text")
               {
