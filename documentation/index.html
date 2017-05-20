@@ -180,10 +180,12 @@ layout: page
                     {% endif %}
 
                     <script type="text/javascript">
-                      var $mastersec = [];{% assign security_definitions = spec.securityDefinitions %}{% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}{% assign sec_def_values = secdef[1] %}
+                      $mastersec = [];{% assign security_definitions = spec.securityDefinitions %}{% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}
+                      {% assign sec_def_values = secdef[1] %}
                       $mastersec["{{ sec_def_name }}"] = [];{% for sec_element in sec_def_values %}
-                      $mastersec["{{ sec_def_name }}"]["{{ sec_element[0] }}"] = '{{ sec_element[1]}}';{% endfor %}{% endfor %}
-                      console.log("here111:" + $mastersec["appid"]);
+                      $mastersec["{{ sec_def_name }}"]["{{ sec_element[0] }}"] = '{{ sec_element[1]}}';{% endfor %}
+                      {% endfor %}
+                      console.log("here2:" + $mastersec["appid"]);
                     </script>
 
                     <tr style="background-color: #D3D3D3;">
