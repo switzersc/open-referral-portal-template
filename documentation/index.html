@@ -474,7 +474,7 @@ layout: page
                                             </tr>
                                             <tr>
                                               <td align="center"s tyle="font-size: 12px; padding: 25px;">
-                                                <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}',$mastersec,'{{ thissec }}');">Make API Request</button>
+                                                <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}','{{ thissec }}');">Make API Request</button>
                                               </td>
                                             </tr>
                                           </table>
@@ -552,11 +552,9 @@ layout: page
         }
       }
 
-     function getRequest($slug,$path,$url,$s,$si)
+     function getRequest($slug,$path,$url,$security)
       {
-      console.log("1:" + $s);
-      console.log("2:" + $si);
-      $security_array = $si.split(',');
+      $security_array = $security.split(',');
       $api_url = $url + $path;
 
       document.getElementById($slug+'-loading').style.display = '';
