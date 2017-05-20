@@ -353,7 +353,7 @@ layout: page
                                 {% assign sec_def_values = secdef[1] %}
                                 security["{{ sec_def_name }}"] = [];
                                 {% for sec_element in sec_def_values %}
-                                security["{{ sec_def_name }}"]["{{ sec_element[0] }}"] = sec_element[1];
+                                security["{{ sec_def_name }}"]["{{ sec_element[0] }}"] = {{ sec_element[1]}};
                                 {% endfor %}
                               {% endfor %}
                                 console.log(security);
