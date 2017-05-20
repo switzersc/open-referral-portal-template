@@ -593,7 +593,7 @@ layout: page
       if($any_headers == 1)
         {
         $headers  = $headers.substring(0, $headers.length - 1);
-        $headers = '{' + $headers + '}';
+        //$headers = '{' + $headers + '}';
 
         }
       console.log("headers: " + $headers);
@@ -632,7 +632,7 @@ layout: page
       //console.log("loading: " + $api_url);
 
       $.ajaxSetup({
-          headers: $headers
+          headers: { $headers }
       });
 
       var response = $.ajax({
