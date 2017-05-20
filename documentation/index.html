@@ -582,13 +582,13 @@ layout: page
           $id = $('#sec-' + $definition).attr("id");
           $in = $('#sec-' + $definition).attr("name");
           $type = $('#sec-' + $definition).attr("alt");
-          console.log("in: " + $in);
           if($in == 'header')
             {
             console.log("id:" + $id);
-            console.log("name:" + $name);
+            console.log("in:" + $in);
             console.log("type:" + $type);
             console.log("value:" + $value);
+            $headers = $headers + $id + ': ' + $value + ',';
             $any_headers = 1;
             }
           }
