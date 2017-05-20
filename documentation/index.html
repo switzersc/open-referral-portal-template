@@ -560,11 +560,11 @@ layout: page
       document.getElementById($slug+'-loading').style.display = '';
 
       $any_headers = 0;
-      var header_elements = document.getElementById($slug+'-headers').elements;
-      if(header_elements.length > 0)
+      var $header_elements = document.getElementById($slug+'-headers').elements;
+      if($header_elements.length > 0)
         {
         $headers = '';
-        for (var i = 0, element; element = header_elements[i++];) {
+        for (var i = 0, element; element = $header_elements[i++];) {
             if (element.type === "text")
               {
               console.log(element.type + ' - ' + element.name);
@@ -617,10 +617,10 @@ layout: page
           }
 
 
-      var param_elements = document.getElementById($slug+'-parameters').elements;
+      var $param_elements = document.getElementById($slug+'-parameters').elements;
       $anyparams = 0;
       $query_string = '';
-      for(var i = 0, element; element = param_elements[i++];)
+      for(var i = 0, element; element = $param_elements[i++];)
         {
           if(element.type === "text")
             {
@@ -632,7 +632,7 @@ layout: page
             }
           }
 
-      if(elements.length > 0 && $anyparams == 1){ $api_url = $api_url + '?' + $query_string; }
+      if($param_elements.length > 0 && $anyparams == 1){ $api_url = $api_url + '?' + $query_string; }
 
       console.log("loading: " + $api_url);
 
