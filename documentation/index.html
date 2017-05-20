@@ -560,14 +560,18 @@ layout: page
       document.getElementById($slug+'-loading').style.display = '';
 
       $any_headers = 0;
-      $headers = "";
+      $headers = [];
       var $header_elements = document.getElementById($slug+'-headers').elements;
       if($header_elements.length > 0)
         {
         for (var i = 0, element; element = $header_elements[i++];) {
             if (element.type === "text")
               {
-              $headers = $headers + "'" + element.name + "': '" + element.value + "',";
+              //$headers = $headers + "'" + element.name + "': '" + element.value + "',";
+              $h = [];
+              $h["name"] = element.name;
+              $h["value"] = element.value;
+              $headers.push($h);
               $any_headers = 1;
             }
           }
@@ -584,19 +588,15 @@ layout: page
           $type = $('#' + $definition).attr("alt");
           if($in == 'header')
             {
-            $headers = $headers + "'" + $name + "': '" + $value + "',";
+            //$headers = $headers + "'" + $name + "': '" + $value + "',";
+            $h = [];
+            $h["name"] = $name;
+            $h["value"] = $value;
+            $headers.push($h);
             $any_headers = 1;
             }
           }
       });
-
-      if($any_headers == 1)
-        {
-        $headers  = $headers.substring(0, $headers.length - 1);
-        //$headers = '{' + $headers + '}';
-
-        }
-      console.log("headers: " + $headers);
 
       var path_elements = document.getElementById($slug+'-path').elements;
       for(var i = 0, element; element = path_elements[i++];)
@@ -637,8 +637,9 @@ layout: page
            beforeSend: function(xhrObj){
            if ($any_headers==1)
               {
-                 xhrObj.setRequestHeader("x-appid","test");
-                 xhrObj.setRequestHeader("x-appkey","test2");
+              $.each($headers, function( $key, $definition ) {
+                 xhrObj.setRequestHeader($definition['name'],$definition['value']);
+               });
               }
            },
          //headers: {'x-appid': 'test','x-appkey': 'test',},
