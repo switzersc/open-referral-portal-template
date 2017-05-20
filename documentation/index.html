@@ -183,7 +183,7 @@ layout: page
                       var $mastersec = [];{% assign security_definitions = spec.securityDefinitions %}{% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}{% assign sec_def_values = secdef[1] %}
                       $mastersec["{{ sec_def_name }}"] = [];{% for sec_element in sec_def_values %}
                       $mastersec["{{ sec_def_name }}"]["{{ sec_element[0] }}"] = '{{ sec_element[1]}}';{% endfor %}{% endfor %}
-                      console.log("here1:" + $mastersec);
+                      console.log("here11:" + $mastersec);
                     </script>
 
                     <tr style="background-color: #D3D3D3;">
@@ -463,7 +463,7 @@ layout: page
                                             <tr>
                                               <td align="center"s tyle="font-size: 12px; padding: 25px;">
                                                 <script type="text/javascript">
-                                                  console.log("here1:" + $mastersec);
+                                                  console.log("here2:" + $mastersec);
                                                 </script>
                                                 <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}',$mastersec,'{{ thissec }}');">Make API Request</button>
                                               </td>
