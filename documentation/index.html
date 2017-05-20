@@ -462,7 +462,7 @@ layout: page
                                             <tr>
                                               <td align="center"s tyle="font-size: 12px; padding: 25px;">
                                                 <script type="text/javascript">
-                                                console.log($security);
+                                                  console.log("here before:" + $security);
                                                 </script>
                                                 <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}',$security,'{{ thissec }}');">Make API Request</button>
                                               </td>
@@ -568,8 +568,8 @@ layout: page
       $.each($security_array, function( $key, $value ) {
         if($value!='')
           {
-          console.log("1:" + $s);
-          console.log("2:" + $value);
+          console.log("3:" + $s);
+          console.log("4:" + $value);
           }
       });
 
