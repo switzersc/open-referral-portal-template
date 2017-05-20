@@ -346,7 +346,7 @@ layout: page
 
                               {% assign spec = openapi_spec_json %}
                               <script type="text/javascript">
-                              var security = [];
+                              var $security = [];
                               {% assign security_definitions = spec.securityDefinitions %}
                               {% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}{% assign sec_def_values = secdef[1] %}
                                 $security["{{ sec_def_name }}"] = [];{% for sec_element in sec_def_values %}
