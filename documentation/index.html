@@ -560,7 +560,7 @@ layout: page
       document.getElementById($slug+'-loading').style.display = '';
 
       $any_headers = 0;
-      $headers = "'X-Requested-With': 'XMLHttpRequest'";
+      $headers = "'X-Requested-With': 'XMLHttpRequest',";
       var $header_elements = document.getElementById($slug+'-headers').elements;
       if($header_elements.length > 0)
         {
@@ -632,9 +632,10 @@ layout: page
       var response = $.ajax({
          url: $api_url,
          method: "get",
-         //headers: $headers,
-         headers: {'x-appid': 'test','x-appkey': 'test',},
+         headers: $headers,
+         //headers: {'x-appid': 'test','x-appkey': 'test',},
          contentType: 'application/json; charset=utf-8',
+         crossDomain: false;
          success:function(response){
 
             document.getElementById($slug+'-loading').style.display = 'none';
