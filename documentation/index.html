@@ -22,10 +22,10 @@ layout: page
       }
     }
 
-   function getRequest($slug,$path,$url,$security)
+   function getRequest($slug,$path,$url,$s)
     {
 
-    $security_array = $security.split(',');
+    $security_array = $s.split(',');
     $api_url = $url + $path;
 
     document.getElementById($slug+'-loading').style.display = '';
