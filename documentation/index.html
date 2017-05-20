@@ -1,120 +1,6 @@
 ---
 layout: page
 ---
-<script type="text/javascript">
-
-  function loadClient($slug)
-    {
-    //console.log($slug);
-    $("#client-body").html('');
-    $editor = $('#' + $slug + '-cell').html();
-    $("#client-body").append( $editor );
-    }
-  function showme($id)
-    {
-    if(document.getElementById($id).style.display=='none')
-      {
-      document.getElementById($id).style.display = '';
-      }
-    else
-      {
-      document.getElementById($id).style.display = 'none';
-      }
-    }
-
-   function getRequest($slug,$path,$url,$s)
-    {
-
-    $security_array = $s.split(',');
-    $api_url = $url + $path;
-
-    document.getElementById($slug+'-loading').style.display = '';
-
-    var elements = document.getElementById($slug+'-headers').elements;
-    if(elements.length > 0)
-      {
-      $headers = '';
-      for (var i = 0, element; element = elements[i++];) {
-          if (element.type === "text")
-            {
-            console.log(element.type + ' - ' + element.name);
-            $headers = $headers + element.name + ': ' + element.value + ',';
-          }
-        }
-      $headers = $headers.substring(1, $headers.length-1);
-      }
-
-    $.each($security_array, function( $key, $value ) {
-      if($value!='')
-        {
-        console.log("1:" + $security);
-        console.log("2:" + $value);
-        }
-    });
-
-    var path_elements = document.getElementById($slug+'-path').elements;
-    for(var i = 0, element; element = path_elements[i++];)
-      {
-        if(element.type === "text")
-          {
-          if(element.value!='')
-            {
-            $replace_string = ':' + element.name;
-            $api_url = $api_url.replace($replace_string,element.value);
-            }
-          }
-        }
-
-
-    var param_elements = document.getElementById($slug+'-parameters').elements;
-    $anyparams = 0;
-    $query_string = '';
-    for(var i = 0, element; element = param_elements[i++];)
-      {
-        if(element.type === "text")
-          {
-          if(element.value!='')
-            {
-            $query_string = $query_string + element.name + '=' + element.value;
-            $anyparams = 1;
-            }
-          }
-        }
-
-    if(elements.length > 0 && $anyparams == 1){ $api_url = $api_url + '?' + $query_string; }
-
-    console.log("loading: " + $api_url);
-
-    var response = $.ajax({
-       url: $api_url,
-       method: "get",
-       //headers: {$headers},
-       success:function(response){
-
-          document.getElementById($slug+'-loading').style.display = 'none';
-
-          $viewer = JSON.stringify(response, null, 2);
-          //console.log($viewer);
-          document.getElementById($slug+'-response-header').style.display = '';
-          document.getElementById($slug+'-response-body').style.display = '';
-          document.getElementById($slug+'-response').value = $viewer;
-          document.getElementById($slug+'-response').style.width = "100%";
-          document.getElementById($slug+'-response').style.height = "450px";
-
-        },
-        error: function(XMLHttpRequest, textStatus, errorThrown) {
-            document.getElementById($slug+'-loading').style.display = 'none';
-            $message = "Status: " + textStatus + "\nError: " + errorThrown;
-            document.getElementById($slug+'-response-header').style.display = '';
-            document.getElementById($slug+'-response-body').style.display = '';
-            document.getElementById($slug+'-response').value = $message;
-            document.getElementById($slug+'-response').style.width = "100%";
-            document.getElementById($slug+'-response').style.height = "50px";
-        }
-      });
-
-    }
-</script>
 
 <div class="modal fade api-client" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
@@ -631,3 +517,118 @@ layout: page
       </td>
     </tr>
   </table>
+
+  <script type="text/javascript">
+
+    function loadClient($slug)
+      {
+      //console.log($slug);
+      $("#client-body").html('');
+      $editor = $('#' + $slug + '-cell').html();
+      $("#client-body").append( $editor );
+      }
+    function showme($id)
+      {
+      if(document.getElementById($id).style.display=='none')
+        {
+        document.getElementById($id).style.display = '';
+        }
+      else
+        {
+        document.getElementById($id).style.display = 'none';
+        }
+      }
+
+     function getRequest($slug,$path,$url,$s)
+      {
+
+      $security_array = $s.split(',');
+      $api_url = $url + $path;
+
+      document.getElementById($slug+'-loading').style.display = '';
+
+      var elements = document.getElementById($slug+'-headers').elements;
+      if(elements.length > 0)
+        {
+        $headers = '';
+        for (var i = 0, element; element = elements[i++];) {
+            if (element.type === "text")
+              {
+              console.log(element.type + ' - ' + element.name);
+              $headers = $headers + element.name + ': ' + element.value + ',';
+            }
+          }
+        $headers = $headers.substring(1, $headers.length-1);
+        }
+
+      $.each($security_array, function( $key, $value ) {
+        if($value!='')
+          {
+          console.log("1:" + $security);
+          console.log("2:" + $value);
+          }
+      });
+
+      var path_elements = document.getElementById($slug+'-path').elements;
+      for(var i = 0, element; element = path_elements[i++];)
+        {
+          if(element.type === "text")
+            {
+            if(element.value!='')
+              {
+              $replace_string = ':' + element.name;
+              $api_url = $api_url.replace($replace_string,element.value);
+              }
+            }
+          }
+
+
+      var param_elements = document.getElementById($slug+'-parameters').elements;
+      $anyparams = 0;
+      $query_string = '';
+      for(var i = 0, element; element = param_elements[i++];)
+        {
+          if(element.type === "text")
+            {
+            if(element.value!='')
+              {
+              $query_string = $query_string + element.name + '=' + element.value;
+              $anyparams = 1;
+              }
+            }
+          }
+
+      if(elements.length > 0 && $anyparams == 1){ $api_url = $api_url + '?' + $query_string; }
+
+      console.log("loading: " + $api_url);
+
+      var response = $.ajax({
+         url: $api_url,
+         method: "get",
+         //headers: {$headers},
+         success:function(response){
+
+            document.getElementById($slug+'-loading').style.display = 'none';
+
+            $viewer = JSON.stringify(response, null, 2);
+            //console.log($viewer);
+            document.getElementById($slug+'-response-header').style.display = '';
+            document.getElementById($slug+'-response-body').style.display = '';
+            document.getElementById($slug+'-response').value = $viewer;
+            document.getElementById($slug+'-response').style.width = "100%";
+            document.getElementById($slug+'-response').style.height = "450px";
+
+          },
+          error: function(XMLHttpRequest, textStatus, errorThrown) {
+              document.getElementById($slug+'-loading').style.display = 'none';
+              $message = "Status: " + textStatus + "\nError: " + errorThrown;
+              document.getElementById($slug+'-response-header').style.display = '';
+              document.getElementById($slug+'-response-body').style.display = '';
+              document.getElementById($slug+'-response').value = $message;
+              document.getElementById($slug+'-response').style.width = "100%";
+              document.getElementById($slug+'-response').style.height = "50px";
+          }
+        });
+
+      }
+  </script>
