@@ -598,11 +598,12 @@ layout: page
           }
       });
 
+      console.log(slug+'-path');
       var path_elements = document.getElementById($slug+'-path').elements;
       console.log("path elements: " + path_elements);
       for(var i = 0, element; element = path_elements[i++];)
         {
-        console.log("type:" + element.type);  
+        console.log("type:" + element.type);
           if(element.type === "text")
             {
             console.log("value:" + element.value);
