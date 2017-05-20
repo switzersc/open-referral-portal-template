@@ -190,12 +190,12 @@ layout: page
                       </td>
                     </tr>
 
-                    {% assign security_definitions = spec.securityDefinitions %}
-                    {% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}
-                    {% assign sec_def_values = secdef[1] %}
                     <tr>
                       <td align="center" colspan="2">
                         <table>
+                          {% assign security_definitions = spec.securityDefinitions %}
+                          {% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}
+                          {% assign sec_def_values = secdef[1] %}
                           <tr>
                             <td align="right">
                               <strong>{{ sec_def_values.name }}:</strong>
@@ -204,11 +204,10 @@ layout: page
                               <input type="text" class="form-control" id="{{ sec_def_values.name }}" name="{{ sec_def_values.in }}" alt="{{ sec_def_values.type }}" value="" />
                             </td>
                           </tr>
+                          {% endfor %}
                         </table>
                       </td>
                     </tr>
-                    {% endfor %}
-
                     <tr>
                       <td align="center" colspan="2" style="padding: 10px;"><strong>base url:</strong> {{ api.baseURL }}</td>
                     </tr>
