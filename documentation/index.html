@@ -559,18 +559,19 @@ layout: page
 
       document.getElementById($slug+'-loading').style.display = '';
 
-      var elements = document.getElementById($slug+'-headers').elements;
-      if(elements.length > 0)
+      $any_headers = 0;
+      var header_elements = document.getElementById($slug+'-headers').elements;
+      if(header_elements.length > 0)
         {
         $headers = '';
-        for (var i = 0, element; element = elements[i++];) {
+        for (var i = 0, element; element = header_elements[i++];) {
             if (element.type === "text")
               {
               console.log(element.type + ' - ' + element.name);
               $headers = $headers + element.name + ': ' + element.value + ',';
+              $any_headers = 1;
             }
           }
-        $headers = $headers.substring(1, $headers.length-1);
         }
 
       $.each($security_array, function( $key, $definition ) {
@@ -588,10 +589,17 @@ layout: page
             console.log("name:" + $name);
             console.log("type:" + $type);
             console.log("value:" + $value);
+            $any_headers = 1;
             }
           }
       });
 
+      if($any_headers == 1)
+        {
+        $headers = $headers.substring(1, $headers.length-1);
+        }
+      console.log("any headers: " + $any_headers);
+      console.log("headers: " + $headers);
       var path_elements = document.getElementById($slug+'-path').elements;
       for(var i = 0, element; element = path_elements[i++];)
         {
