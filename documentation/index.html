@@ -633,9 +633,7 @@ layout: page
          url: $api_url,
          method: "get",
          headers: $headers,
-         //headers: {'x-appid': 'test','x-appkey': 'test',},
-         contentType: 'application/json; charset=utf-8',
-         crossDomain: false,
+         crossDomain: true,
          success:function(response){
 
             document.getElementById($slug+'-loading').style.display = 'none';
