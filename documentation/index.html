@@ -137,7 +137,7 @@ layout: page
                         {% assign openapi_spec_json = site.data.api-commons.openapi %}
                         {% assign spec = openapi_spec_json %}
 
-                          $mastersec = [];{% assign security_definitions = spec.securityDefinitions %}
+                          {% assign security_definitions = spec.securityDefinitions %}
                           {% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}
                           {% assign sec_def_values = secdef[1] %}
                           {% for sec_element in sec_def_values %}
@@ -145,7 +145,7 @@ layout: page
                             <td align="center">
                               <table cellpadding="3" cellspacing="2">
                                 <tr>
-                                    <td align="right"><strong>{{ sec_element[1].name }}</strong>:</td>
+                                    <td align="right"><strong>{{ sec_element[1] }}</strong>:</td>
                                     <td align="left"><input type="text" id="{{ sec_element[1].name }}" name="{{ sec_element[1].in }}" placeholder="{{ sec_element[1].type }}" /></td>
                                 </tr>
                               </table>
