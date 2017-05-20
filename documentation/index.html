@@ -633,7 +633,8 @@ layout: page
          url: $api_url,
          method: "get",
          //headers: $headers,
-         headers: {'appid': 'test','appkey': 'test'},
+         headers: {'Access-Control-Request-Method': 'GET','Access-Control-Request-Headers:': 'accept, key'},
+         //headers: {'appid': 'test','appkey': 'test'},
          contentType: 'application/json; charset=utf-8',
          success:function(response){
 
