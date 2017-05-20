@@ -137,11 +137,22 @@ layout: page
                         {% assign openapi_spec_json = site.data.api-commons.openapi %}
                         {% assign spec = openapi_spec_json %}
 
-                        <script type="text/javascript">
-                          $mastersec = [];{% assign security_definitions = spec.securityDefinitions %}{% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}
+                          $mastersec = [];{% assign security_definitions = spec.securityDefinitions %}
+                          {% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}
                           {% assign sec_def_values = secdef[1] %}
-                          $mastersec["{{ sec_def_name }}"] = [];{% for sec_element in sec_def_values %}
-                          $mastersec["{{ sec_def_name }}"]["{{ sec_element[0] }}"] = '{{ sec_element[1]}}';{% endfor %}
+                          {% for sec_element in sec_def_values %}
+                          <tr>
+                            <td align="center">
+                              <table cellpadding="3" cellspacing="2">
+                                <tr>
+                                    <td align="right"><strong>{{ sec_element[1].name }}</strong>:</td>
+                                    <td align="left"><input type="text" id="{{ sec_element[1].name }}" name="{{ sec_element[1].in }}" placeholder="{{ sec_element[1].type }}" /></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+
+                          {% endfor %}
                           {% endfor %}
 
                           console.log("here1:" + $mastersec);
@@ -465,7 +476,7 @@ layout: page
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td align="center"s tyle="font-size: 12px; padding: 25px;">                                                
+                                              <td align="center"s tyle="font-size: 12px; padding: 25px;">
                                                 <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}',$mastersec,'{{ thissec }}');">Make API Request</button>
                                               </td>
                                             </tr>
