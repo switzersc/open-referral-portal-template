@@ -241,9 +241,9 @@ layout: page
 
                               {% assign spec = openapi_spec_json %}
                               <script type="text/javascript">
-                                var $security = [];{% assign security_definitions = spec.securityDefinitions %}{% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}{% assign sec_def_values = secdef[1] %}
-                                $security["{{ sec_def_name }}"] = [];{% for sec_element in sec_def_values %}
-                                $security["{{ sec_def_name }}"]["{{ sec_element[0] }}"] = '{{ sec_element[1]}}';{% endfor %}{% endfor %}
+                                var $master_sec = [];{% assign security_definitions = spec.securityDefinitions %}{% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}{% assign sec_def_values = secdef[1] %}
+                                $master_sec["{{ sec_def_name }}"] = [];{% for sec_element in sec_def_values %}
+                                $master_sec["{{ sec_def_name }}"]["{{ sec_element[0] }}"] = '{{ sec_element[1]}}';{% endfor %}{% endfor %}
                               </script>
 
                               {% assign api_title = spec.info.title %}
@@ -462,7 +462,7 @@ layout: page
                                             <tr>
                                               <td align="center"s tyle="font-size: 12px; padding: 25px;">
                                                 <script type="text/javascript">
-                                                  console.log("here before:" + $security);
+                                                  console.log("here before:" + $master_sec);
                                                 </script>
                                                 <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}',$security,'{{ thissec }}');">Make API Request</button>
                                               </td>
