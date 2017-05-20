@@ -140,19 +140,16 @@ layout: page
                           {% assign security_definitions = spec.securityDefinitions %}
                           {% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}
                           {% assign sec_def_values = secdef[1] %}
-                          {% for sec_element in sec_def_values %}
                           <tr>
                             <td align="center">
                               <table cellpadding="3" cellspacing="2">
                                 <tr>
-                                    <td align="right"><strong>{{ sec_element[1] }}</strong>:</td>
-                                    <td align="left"><input type="text" id="{{ sec_element[1].name }}" name="{{ sec_element[1].in }}" placeholder="{{ sec_element[1].type }}" /></td>
+                                    <td align="right"><strong>{{ sec_def_values.name }}</strong>:</td>
+                                    <td align="left"><input type="text" id="{{ sec_def_values.name }}" name="{{ sec_def_values.in }}" placeholder="{{ sec_def_values.type }}" /></td>
                                 </tr>
                               </table>
                             </td>
                           </tr>
-
-                          {% endfor %}
                           {% endfor %}
 
                           console.log("here1:" + $mastersec);
