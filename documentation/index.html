@@ -636,10 +636,10 @@ layout: page
       var response = $.ajax({
          url: $api_url,
          method: "get",
-         headers: $headers,
+         //headers: $headers,
          //headers: {'x-appid': 'test','x-appkey': 'test',},
          //contentType: 'application/json; charset=utf-8',
-         crossDomain: true,
+         beforeSend: function(xhr){xhr.setRequestHeader($headers);},
          success:function(response){
 
             document.getElementById($slug+'-loading').style.display = 'none';
