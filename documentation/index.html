@@ -600,6 +600,11 @@ layout: page
 
       console.log($slug+'-path');
       var path_elements = document.getElementById($slug+'-path').elements;
+
+      $.each(path_elements, function( $key, $value ) {
+          console.log($key + ' == ' + $value);
+        });
+
       console.log("path elements: " + path_elements + ' - ' +  path_elements.length);
       for(var i = 0, element; element = path_elements[i++];)
         {
