@@ -32,7 +32,6 @@ layout: page
     document.getElementById($slug+'-loading').style.display = '';
 
     var elements = document.getElementById($slug+'-headers').elements;
-    
     if(elements.length > 0)
       {
       $headers = '';
@@ -45,6 +44,11 @@ layout: page
         }
       $headers = $headers.substring(1, $headers.length-1);
       }
+
+    $.each($security_array, function( k, v ) {
+      alert( "Key: " + k + ", Value: " + v );
+    });
+
     var path_elements = document.getElementById($slug+'-path').elements;
     for(var i = 0, element; element = path_elements[i++];)
       {
