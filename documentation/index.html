@@ -200,8 +200,8 @@ layout: page
                             <td align="right" width="40%" style="padding:3px;">
                               <strong>{{ sec_def_values.name }}:</strong>
                             </td>
-                            <td align="left" style="padding:3px;">sec-{{ sec_def_values.name }}
-                              <input type="text" class="form-control" id="sec-{{ sec_def_values.name }}" name="{{ sec_def_values.in }}" alt="{{ sec_def_values.type }}" value="" style="width: 250px;" />
+                            <td align="left" style="padding:3px;">
+                              <input type="text" class="form-control" id="{{ sec_def_values.name }}" name="{{ sec_def_values.in }}" alt="{{ sec_def_values.type }}" value="" style="width: 250px;" />
                             </td>
                           </tr>
                           {% endfor %}
@@ -578,10 +578,10 @@ layout: page
         $definition = $definition.trim();
         if($definition != '')
           {
-          $value = $('#sec-' + $definition).val();
-          $id = $('#sec-' + $definition).attr("id");
-          $in = $('#sec-' + $definition).attr("name");
-          $type = $('#sec-' + $definition).attr("alt");
+          $value = $('#' + $definition).val();
+          $id = $('#' + $definition).attr("id");
+          $in = $('#' + $definition).attr("name");
+          $type = $('#' + $definition).attr("alt");
           if($in == 'header')
             {
             console.log("id:" + $id);
