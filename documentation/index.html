@@ -605,12 +605,14 @@ layout: page
             {
             if(element.value!='')
               {
+              console.log("url1: " + $api_url);
               $replace_string = '{' + element.name + '}';
               $api_url = $api_url.replace($replace_string,element.value);
+              console.log("url2: " + $api_url);
 
-              // Ecoding Type
               $replace_string = '%7B' + element.name + '%7D';
               $api_url = $api_url.replace($replace_string,element.value);
+              console.log("url3: " + $api_url);
 
               }
             }
