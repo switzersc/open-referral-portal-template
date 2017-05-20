@@ -325,6 +325,7 @@ layout: page
                                     {% if tag == grouptag %}
 
                                     {% assign slug = path[0] | replace: '/','' | append: verb %}
+                                    {% assign slug = slug | replace: '{','' | replace: '}','' %}
 
                                     <tr>
                                       <td style="padding-left: 20px; font-size: 12px;">{{ summary }}</td>
