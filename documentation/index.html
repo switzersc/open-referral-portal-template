@@ -634,14 +634,10 @@ layout: page
       $anyparams = 0;
       $query_string = '';
 
-      var allInputs = $( ":input" );
-      var formChildren = $( "#" + $slug + "-parameters" );
-      $( "#messages" ).text( "Found " + allInputs.length + " inputs and the form has " +
-        formChildren.length + " children." );
-
-      $.each($param_elements, function( $key, $value ) {
-        console.log($key + ' = ' + $value);
-      });
+      $("form#" + $slug + "-parameters :input").each(function(){
+        $input = $(this); // This is the jquery object of the input, do what you will
+        console.log($input);
+        });
 
       for(var i = 0, element; element = $param_elements[i++];)
         {
