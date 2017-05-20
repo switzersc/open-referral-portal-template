@@ -635,6 +635,7 @@ layout: page
       $query_string = '';
 
       console.log("publish:");
+      console.log("form#" + $slug + "-parameters :input");
       $("form#" + $slug + "-parameters :input").each(function(){
         $input = $(this); // This is the jquery object of the input, do what you will
         console.log($input);
