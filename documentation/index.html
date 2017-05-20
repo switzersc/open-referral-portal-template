@@ -573,6 +573,7 @@ layout: page
           }
         }
 
+      console.log($security_array);
       $.each($security_array, function( $key, $definition ) {
         $definition = $definition.trim();
         if($definition != '')
@@ -596,7 +597,7 @@ layout: page
 
         }
       console.log("headers: " + $headers);
-      
+
       var path_elements = document.getElementById($slug+'-path').elements;
       for(var i = 0, element; element = path_elements[i++];)
         {
