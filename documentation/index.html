@@ -578,7 +578,15 @@ layout: page
           {
           console.log("4:" + $definition);
           $value = $('#'$definition).val();
+          $id = $('#'$definition).attr("id");
+          $name = $('#'$definition).attr("name");
+          $type = $('#'$definition).attr("alt");
+          console.log("4:" + $id);
+          console.log("4:" + $name);
+          console.log("4:" + $type);
           console.log("4:" + $value);
+
+          $("#id").attr("name");
           }
       });
 
