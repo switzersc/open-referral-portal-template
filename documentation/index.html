@@ -22,8 +22,10 @@ layout: page
       }
     }
 
-   function getRequest($slug,$path,$url)
+   function getRequest($slug,$path,$url,$security)
     {
+
+    console.log("security: " + $security);
 
     $api_url = $url + $path;
 
@@ -346,12 +348,9 @@ layout: page
 
                               {% assign spec = openapi_spec_json %}
                               <script type="text/javascript">
-                              var $security = [];
-                              {% assign security_definitions = spec.securityDefinitions %}
-                              {% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}{% assign sec_def_values = secdef[1] %}
+                                var $security = [];{% assign security_definitions = spec.securityDefinitions %}{% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}{% assign sec_def_values = secdef[1] %}
                                 $security["{{ sec_def_name }}"] = [];{% for sec_element in sec_def_values %}
                                 $security["{{ sec_def_name }}"]["{{ sec_element[0] }}"] = '{{ sec_element[1]}}';{% endfor %}{% endfor %}
-                                console.log($security);
                               </script>
 
                               {% assign api_title = spec.info.title %}
@@ -388,7 +387,6 @@ layout: page
                                   {% for method in method_json %}
 
                                     {% assign parameters = method[1].parameters %}
-
                                     {% assign security = method[1].security %}
 
                                     <!-- inidividual - pass to JS -->
@@ -422,19 +420,18 @@ layout: page
 
                                     {% assign slug = path[0] | replace: '/','' | append: verb %}
 
-
-                                      <tr>
-                                        <td style="padding-left: 20px; font-size: 12px;">{{ summary }}</td>
-                                        <td style="font-size: 12px;">{{ path[0] }}</td>
-                                        <td align="center" style="padding: 1px; width: 75px; background-color:#{{ back_color }}; font-weight: bold; font-size: 11px; color: #FFF;">
-                                          {{ verb }}
-                                        </td>
-                                        <td style="width: 25px;"></td>
-                                        <td>
-                                          <button type="button" class="btn btn-default" onclick="showme('{{ slug }}-row'); return false;">Try</button>
-                                          <button type="button" onclick="loadClient('{{ slug }}');" class="btn btn-primary" data-toggle="modal" data-target=".api-client">Try</button>
-                                        </td>
-                                      </tr>
+                                    <tr>
+                                      <td style="padding-left: 20px; font-size: 12px;">{{ summary }}</td>
+                                      <td style="font-size: 12px;">{{ path[0] }}</td>
+                                      <td align="center" style="padding: 1px; width: 75px; background-color:#{{ back_color }}; font-weight: bold; font-size: 11px; color: #FFF;">
+                                        {{ verb }}
+                                      </td>
+                                      <td style="width: 25px;"></td>
+                                      <td>
+                                        <button type="button" class="btn btn-default" onclick="showme('{{ slug }}-row'); return false;">Try</button>
+                                        <button type="button" onclick="loadClient('{{ slug }}');" class="btn btn-primary" data-toggle="modal" data-target=".api-client">Try</button>
+                                      </td>
+                                    </tr>
                                       <tr id="{{ slug }}-row" style="display: none;">
 
                                         <td colspan="4" style="padding: 15px;" id="{{ slug }}-cell">
@@ -571,7 +568,7 @@ layout: page
                                             </tr>
                                             <tr>
                                               <td align="center"s tyle="font-size: 12px; padding: 25px;">
-                                                <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}');">Make API Request</button>
+                                                <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}','{{ thissec }}');">Make API Request</button>
                                               </td>
                                             </tr>
                                           </table>
