@@ -638,6 +638,10 @@ layout: page
       var response = $.ajax({
          url: $api_url,
          method: "get",
+         beforeSend: function(xhrObj){
+                 xhrObj.setRequestHeader("x-appid","test");
+                 xhrObj.setRequestHeader("x-appkey","test2");
+         }
          //headers: {'x-appid': 'test','x-appkey': 'test',},
          //contentType: 'application/json; charset=utf-8',
          //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
