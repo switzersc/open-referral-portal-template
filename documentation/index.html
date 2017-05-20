@@ -132,6 +132,7 @@ layout: page
                         {% assign json_schema_url = property.url %}
                       {% endif %}
 
+                      <form>
                       {% if property.type == 'x-openapi' %}
                         {% assign openapi_spec_url = property.url %}
                         {% assign openapi_spec_json = site.data.api-commons.openapi %}
@@ -142,20 +143,16 @@ layout: page
                           {% assign sec_def_values = secdef[1] %}
                           <tr>
                             <td align="center">
-                              <table cellpadding="3" cellspacing="2">
-                                <tr>
-                                    <td align="right"><strong>{{ sec_def_values.name }}</strong>:</td>
-                                    <td align="left"><input type="text" id="{{ sec_def_values.name }}" name="{{ sec_def_values.in }}" placeholder="{{ sec_def_values.type }}" /></td>
-                                </tr>
-                              </table>
+                              <form>
+                                <div class="form-group">
+                                  <label for="exampleInputEmail1">{{ sec_def_values.name }}</label>
+                                  <input type="text" class="form-control" id="{{ sec_def_values.name }}" name="{{ sec_def_values.in }}" alt="{{ sec_def_values.type }}" value="" />
+                                </div>
                             </td>
                           </tr>
                           {% endfor %}
-
-                          console.log("here1:" + $mastersec);
-                        </script>
-
                       {% endif %}
+                      </form>
 
                       {% if property.type == 'x-postman %}
                         {% assign postman_url = property.url %}
