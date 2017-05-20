@@ -631,10 +631,6 @@ layout: page
 
       //console.log("loading: " + $api_url);
 
-      $.ajaxSetup({
-          headers: { $headers }
-      });
-
       var response = $.ajax({
          url: $api_url,
          method: "get",
