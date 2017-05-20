@@ -143,6 +143,8 @@ layout: page
                           $mastersec["{{ sec_def_name }}"] = [];{% for sec_element in sec_def_values %}
                           $mastersec["{{ sec_def_name }}"]["{{ sec_element[0] }}"] = '{{ sec_element[1]}}';{% endfor %}
                           {% endfor %}
+
+                          console.log("here2:" + $mastersec);
                         </script>
 
                       {% endif %}
@@ -203,9 +205,7 @@ layout: page
                     </tr>
                     <tr id="methods-for-{{ pathname }}">
                       <td colspan="2">
-                        <script type="text/javascript">
-                            console.log("here2:" + $mastersec);
-                        </script>
+
                         <table width="95%" border="0" style="margin-left: 15px;">
                           {% assign taglist = '' %}
 
