@@ -577,17 +577,18 @@ layout: page
         $definition = $definition.trim();
         if($definition != '')
           {
-          console.log('#sec-' + $definition);
           $value = $('#sec-' + $definition).val();
           $id = $('#sec-' + $definition).attr("id");
           $name = $('#sec-' + $definition).attr("name");
           $type = $('#sec-' + $definition).attr("alt");
-          console.log("4:" + $id);
-          console.log("4:" + $name);
-          console.log("4:" + $type);
-          console.log("4:" + $value);
 
-          $("#id").attr("name");
+          if($type == 'header')
+            {
+            console.log("id:" + $id);
+            console.log("name:" + $name);
+            console.log("type:" + $type);
+            console.log("value:" + $value);
+            }
           }
       });
 
