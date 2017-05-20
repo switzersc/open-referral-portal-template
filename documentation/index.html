@@ -349,6 +349,7 @@ layout: page
                               {% assign security_definitions = spec.securityDefinitions %}
                               {% for secdef in security_definitions %}
                                 <!-- create some master JS reference we can use-->
+                                {{ secdef }}<br />
                               {% endfor %}
 
                               {% assign api_title = spec.info.title %}
