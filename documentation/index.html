@@ -26,7 +26,8 @@ layout: page
     {
 
     console.log("security: " + $security);
-
+    $security_array = $security.split(',');
+    console.log("security: " + $security_array);
     $api_url = $url + $path;
 
     document.getElementById($slug+'-loading').style.display = '';
