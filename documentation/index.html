@@ -136,6 +136,15 @@ layout: page
                         {% assign openapi_spec_url = property.url %}
                         {% assign openapi_spec_json = site.data.api-commons.openapi %}
                         {% assign spec = openapi_spec_json %}
+
+                        <script type="text/javascript">
+                          $mastersec = [];{% assign security_definitions = spec.securityDefinitions %}{% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}
+                          {% assign sec_def_values = secdef[1] %}
+                          $mastersec["{{ sec_def_name }}"] = [];{% for sec_element in sec_def_values %}
+                          $mastersec["{{ sec_def_name }}"]["{{ sec_element[0] }}"] = '{{ sec_element[1]}}';{% endfor %}
+                          {% endfor %}
+                        </script>
+
                       {% endif %}
 
                       {% if property.type == 'x-postman %}
@@ -178,14 +187,6 @@ layout: page
                         </td>
                       </tr>
                     {% endif %}
-
-                    <script type="text/javascript">
-                      $mastersec = [];{% assign security_definitions = spec.securityDefinitions %}{% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}
-                      {% assign sec_def_values = secdef[1] %}
-                      $mastersec["{{ sec_def_name }}"] = [];{% for sec_element in sec_def_values %}
-                      $mastersec["{{ sec_def_name }}"]["{{ sec_element[0] }}"] = '{{ sec_element[1]}}';{% endfor %}
-                      {% endfor %}
-                    </script>
 
                     <tr style="background-color: #D3D3D3;">
                       <td align="left" style="font-size: 18px; font-weight: bold; padding: 10px;">
