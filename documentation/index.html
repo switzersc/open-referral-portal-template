@@ -627,6 +627,11 @@ layout: page
       var $param_elements = document.getElementById($slug+'-parameters').elements;
       $anyparams = 0;
       $query_string = '';
+
+      $.each($param_elements, function( $key, $value ) {
+        console.log($key + ' = ' + $value);
+      });
+
       for(var i = 0, element; element = $param_elements[i++];)
         {
           if(element.type === "text")
