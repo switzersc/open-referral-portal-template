@@ -141,9 +141,9 @@ layout: page
                           {% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}
                           {% assign sec_def_values = secdef[1] %}
                           <tr>
-                            <td align="center">
+                            <td align="center" colspan="2">
                                 <div class="form-group">
-                                  <label class="col-sm-2 control-label">{{ sec_def_values.name }}</label>
+                                  <label class="col-sm-10 control-label">{{ sec_def_values.name }}</label>
                                   <div class="col-sm-10">
                                     <input type="text" class="form-control" id="{{ sec_def_values.name }}" name="{{ sec_def_values.in }}" alt="{{ sec_def_values.type }}" value="" />
                                   </div>
