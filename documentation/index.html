@@ -542,7 +542,7 @@ layout: page
      function getRequest($slug,$path,$url,$s,$si)
       {
 
-      $security_array = $s.split(',');
+      $security_array = $si.split(',');
       $api_url = $url + $path;
 
       document.getElementById($slug+'-loading').style.display = '';
