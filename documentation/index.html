@@ -632,8 +632,8 @@ layout: page
       var response = $.ajax({
          url: $api_url,
          method: "get",
-         //headers: $headers,
-         headers: {'x-appid': 'test','x-appkey': 'test',},
+         headers: $headers,
+         //headers: {'x-appid': 'test','x-appkey': 'test',},
          //contentType: 'application/json; charset=utf-8',
          //crossDomain: true,
          success:function(response){

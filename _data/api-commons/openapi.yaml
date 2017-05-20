@@ -4483,11 +4483,11 @@ securityDefinitions:
   appid:
     type: apiKey
     in: header
-    name: appid
+    name: x-appid
   appkey:
     type: apiKey
     in: header
-    name: appkey
+    name: x-appkey
 definitions:
   accessibility_for_disabilities:
     properties:
