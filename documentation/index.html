@@ -580,10 +580,10 @@ layout: page
           {
           $value = $('#sec-' + $definition).val();
           $id = $('#sec-' + $definition).attr("id");
-          $name = $('#sec-' + $definition).attr("name");
+          $in = $('#sec-' + $definition).attr("name");
           $type = $('#sec-' + $definition).attr("alt");
-          console.log("type: " + $type);
-          if($type == 'header')
+          console.log("in: " + $in);
+          if($in == 'header')
             {
             console.log("id:" + $id);
             console.log("name:" + $name);
