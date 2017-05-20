@@ -573,7 +573,6 @@ layout: page
           }
         }
 
-      console.log($security_array);
       $.each($security_array, function( $key, $definition ) {
         $definition = $definition.trim();
         if($definition != '')
@@ -587,7 +586,6 @@ layout: page
             {
             $headers = $headers + "'" + $name + "': '" + $value + "',";
             $any_headers = 1;
-            console.log("IN!");
             }
           }
       });
@@ -636,10 +634,10 @@ layout: page
       var response = $.ajax({
          url: $api_url,
          method: "get",
-         //headers: $headers,
+         headers: $headers,
          //headers: {'x-appid': 'test','x-appkey': 'test',},
          contentType: 'application/json; charset=utf-8',
-         beforeSend: function(xhr){xhr.setRequestHeader($headers);},
+         //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
          success:function(response){
 
             document.getElementById($slug+'-loading').style.display = 'none';
