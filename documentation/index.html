@@ -244,6 +244,7 @@ layout: page
                                 var $master_sec = [];{% assign security_definitions = spec.securityDefinitions %}{% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}{% assign sec_def_values = secdef[1] %}
                                 $master_sec["{{ sec_def_name }}"] = [];{% for sec_element in sec_def_values %}
                                 $master_sec["{{ sec_def_name }}"]["{{ sec_element[0] }}"] = '{{ sec_element[1]}}';{% endfor %}{% endfor %}
+                                console.log($master_sec);
                               </script>
 
                               {% assign api_title = spec.info.title %}
