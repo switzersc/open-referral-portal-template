@@ -582,6 +582,7 @@ layout: page
           $id = $('#' + $definition).attr("id");
           $in = $('#' + $definition).attr("name");
           $type = $('#' + $definition).attr("alt");
+          console.log("in:" + $in);
           if($in == 'header')
             {
             $headers = $headers + "'" + $id + "': '" + $value + "',";
