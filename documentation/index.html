@@ -25,7 +25,6 @@ layout: page
    function getRequest($slug,$path,$url,$security)
     {
 
-    console.log("security: " + $security);
     $security_array = $security.split(',');
     console.log("security: " + $security_array);
     $api_url = $url + $path;
@@ -33,7 +32,7 @@ layout: page
     document.getElementById($slug+'-loading').style.display = '';
 
     var elements = document.getElementById($slug+'-headers').elements;
-    console.log('headers:'+elements.length);
+    
     if(elements.length > 0)
       {
       $headers = '';
