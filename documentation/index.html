@@ -136,22 +136,8 @@ layout: page
                         {% assign openapi_spec_url = property.url %}
                         {% assign openapi_spec_json = site.data.api-commons.openapi %}
                         {% assign spec = openapi_spec_json %}
-
-                          {% assign security_definitions = spec.securityDefinitions %}
-                          {% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}
-                          {% assign sec_def_values = secdef[1] %}
-                          <tr>
-                            <td align="center" colspan="2">
-                                <div class="form-group">
-                                  <label class="col-sm-2 control-label">{{ sec_def_values.name }}</label>
-                                  <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="{{ sec_def_values.name }}" name="{{ sec_def_values.in }}" alt="{{ sec_def_values.type }}" value="" />
-                                  </div>
-                                </div>
-                            </td>
-                          </tr>
-                          {% endfor %}
                       {% endif %}
+
                       {% if property.type == 'x-postman %}
                         {% assign postman_url = property.url %}
                       {% endif %}
@@ -203,6 +189,22 @@ layout: page
                           (<a href="{{ site.url }}data/openapi.json" target="_blank" title="View OpenAPI Spec" style="font-size: 16px; font-weight: normal;">JSON</a>)
                       </td>
                     </tr>
+
+                    {% assign security_definitions = spec.securityDefinitions %}
+                    {% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}
+                    {% assign sec_def_values = secdef[1] %}
+                    <tr>
+                      <td align="center" colspan="2">
+                          <div class="form-group">
+                            <label class="col-sm-2 control-label">{{ sec_def_values.name }}</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" id="{{ sec_def_values.name }}" name="{{ sec_def_values.in }}" alt="{{ sec_def_values.type }}" value="" />
+                            </div>
+                          </div>
+                      </td>
+                    </tr>
+                    {% endfor %}
+
                     <tr>
                       <td align="center" colspan="2" style="padding: 10px;"><strong>base url:</strong> {{ api.baseURL }}</td>
                     </tr>
