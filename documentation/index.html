@@ -26,7 +26,6 @@ layout: page
     {
 
     $security_array = $security.split(',');
-    console.log("security: " + $security_array);
     $api_url = $url + $path;
 
     document.getElementById($slug+'-loading').style.display = '';
@@ -48,8 +47,8 @@ layout: page
     $.each($security_array, function( $key, $value ) {
       if($value!='')
         {
-        console.log($security);
-        console.log($value); 
+        console.log("1:" + $security);
+        console.log("2:" + $value);
         }
     });
 
