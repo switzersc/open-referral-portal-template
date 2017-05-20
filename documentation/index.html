@@ -116,7 +116,7 @@ layout: page
                 {% assign api_action_url = '' %}
                 {% for api in apijson.apis %}
 
-                <table cellpadding="3" cellspacing="2" width="100%" border="0">
+                <table cellpadding="3" cellspacing="2" width="100%" border="1">
 
                     {% assign api_action_spec = '' %}
                     {% assign api_action_url = '' %}
@@ -132,7 +132,6 @@ layout: page
                         {% assign json_schema_url = property.url %}
                       {% endif %}
 
-                      <form class="form-horizontal">
                       {% if property.type == 'x-openapi' %}
                         {% assign openapi_spec_url = property.url %}
                         {% assign openapi_spec_json = site.data.api-commons.openapi %}
@@ -143,20 +142,16 @@ layout: page
                           {% assign sec_def_values = secdef[1] %}
                           <tr>
                             <td align="center">
-                                <center>
                                 <div class="form-group">
-                                  <label class="col-sm-6 control-label">{{ sec_def_values.name }}</label>
-                                  <div class="col-sm-6">
+                                  <label class="col-sm-2 control-label">{{ sec_def_values.name }}</label>
+                                  <div class="col-sm-10">
                                     <input type="text" class="form-control" id="{{ sec_def_values.name }}" name="{{ sec_def_values.in }}" alt="{{ sec_def_values.type }}" value="" />
                                   </div>
                                 </div>
-                                </center>
                             </td>
                           </tr>
                           {% endfor %}
                       {% endif %}
-                      </form>
-
                       {% if property.type == 'x-postman %}
                         {% assign postman_url = property.url %}
                       {% endif %}
