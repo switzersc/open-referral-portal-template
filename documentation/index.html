@@ -135,6 +135,7 @@ layout: page
                       {% if property.type == 'x-openapi' %}
                         {% assign openapi_spec_url = property.url %}
                         {% assign openapi_spec_json = site.data.api-commons.openapi %}
+                        {% assign spec = openapi_spec_json %}
                       {% endif %}
 
                       {% if property.type == 'x-postman %}
@@ -177,6 +178,13 @@ layout: page
                         </td>
                       </tr>
                     {% endif %}
+
+                    <script type="text/javascript">
+                      var $mastersec = [];{% assign security_definitions = spec.securityDefinitions %}{% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}{% assign sec_def_values = secdef[1] %}
+                      $mastersec["{{ sec_def_name }}"] = [];{% for sec_element in sec_def_values %}
+                      $mastersec["{{ sec_def_name }}"]["{{ sec_element[0] }}"] = '{{ sec_element[1]}}';{% endfor %}{% endfor %}
+                      console.log("here1:" + $mastersec);
+                    </script>
 
                     <tr style="background-color: #D3D3D3;">
                       <td align="left" style="font-size: 18px; font-weight: bold; padding: 10px;">
@@ -238,8 +246,6 @@ layout: page
                             <tr>
                               <td colspan="5" style="padding-top: 10px;"><strong>{{ grouptag }}</strong></td>
                             </tr>
-
-                              {% assign spec = openapi_spec_json %}
 
                               {% assign api_title = spec.info.title %}
                               {% assign api_description = spec.info.description %}
@@ -457,9 +463,6 @@ layout: page
                                             <tr>
                                               <td align="center"s tyle="font-size: 12px; padding: 25px;">
                                                 <script type="text/javascript">
-                                                  var $mastersec = [];{% assign security_definitions = spec.securityDefinitions %}{% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}{% assign sec_def_values = secdef[1] %}
-                                                  $mastersec["{{ sec_def_name }}"] = [];{% for sec_element in sec_def_values %}
-                                                  $mastersec["{{ sec_def_name }}"]["{{ sec_element[0] }}"] = '{{ sec_element[1]}}';{% endfor %}{% endfor %}
                                                   console.log("here1:" + $mastersec);
                                                 </script>
                                                 <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}',$mastersec,'{{ thissec }}');">Make API Request</button>
