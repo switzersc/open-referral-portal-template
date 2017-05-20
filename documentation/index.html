@@ -456,12 +456,11 @@ layout: page
                                             </tr>
                                             <tr>
                                               <td align="center"s tyle="font-size: 12px; padding: 25px;">
-                                                HERE: {{ spec.securityDefinitions }}<br />
                                                 <script type="text/javascript">
-                                                  var $master_sec = [];{% assign security_definitions = spec.securityDefinitions %}{% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}{% assign sec_def_values = secdef[1] %}
-                                                  $master_sec["{{ sec_def_name }}"] = [];{% for sec_element in sec_def_values %}
-                                                  $master_sec["{{ sec_def_name }}"]["{{ sec_element[0] }}"] = '{{ sec_element[1]}}';{% endfor %}{% endfor %}
-                                                  console.log("here before:" + $master_sec);
+                                                  var $mastersec = [];{% assign security_definitions = spec.securityDefinitions %}{% for secdef in security_definitions %}{% assign sec_def_name = secdef[0] %}{% assign sec_def_values = secdef[1] %}
+                                                  $mastersec["{{ sec_def_name }}"] = [];{% for sec_element in sec_def_values %}
+                                                  $mastersec["{{ sec_def_name }}"]["{{ sec_element[0] }}"] = '{{ sec_element[1]}}';{% endfor %}{% endfor %}
+                                                  console.log("here:" + $mastersec);
                                                 </script>
                                                 <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}',$master_sec,'{{ thissec }}');">Make API Request</button>
                                               </td>
