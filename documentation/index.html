@@ -145,8 +145,10 @@ layout: page
                             <td align="center">
                               <form>
                                 <div class="form-group">
-                                  <label for="exampleInputEmail1">{{ sec_def_values.name }}</label>
-                                  <input type="text" class="form-control" id="{{ sec_def_values.name }}" name="{{ sec_def_values.in }}" alt="{{ sec_def_values.type }}" value="" />
+                                  <label class="col-sm-2 control-label">{{ sec_def_values.name }}</label>
+                                  <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="{{ sec_def_values.name }}" name="{{ sec_def_values.in }}" alt="{{ sec_def_values.type }}" value="" />
+                                  </div>
                                 </div>
                             </td>
                           </tr>
