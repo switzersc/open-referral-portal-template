@@ -622,7 +622,6 @@ layout: page
     $any_headers = 0;
     $headers = [];
     $sendbody = [];
-    $query_string = '';
 
     // process security definitions
     $.each($security_array, function( $key, $definition ) {
@@ -649,7 +648,7 @@ layout: page
     // loop through parameters
     $count = 0;
     $allfields = $("#client-body :input").length;
-    $("#client-body :input").each(function(index){
+    $("#client-body :input").each(function(index,$headers,$sendbody,$anyparams,$anypathparams,$any_headers){
 
       var input = $(this);
       $param_type = input.attr('type');
@@ -687,7 +686,7 @@ layout: page
           {
           if($param_value!='')
             {
-            $query_string = $query_string + "?" + $param_name + '=' + $param_value;
+            $query_string = "?" + $param_name + '=' + $param_value;
             }
           }
         else
@@ -716,60 +715,61 @@ layout: page
         $any_body = 1;
         }
 
-        $count++;
-        if($count == $allfields)
+      $count++;
+
+      if($count == $allfields)
+        {
+
+        if($query_string != '' && $anyparams == 1){ $api_url = $api_url + $query_string; }
+
+        console.log("a: " + $sendbody);
+
+        $send_body = '';
+        if($any_headers == 1)
           {
+          $send_body = JSON.stringify($sendbody);
+          }
 
-          if($query_string != '' && $anyparams == 1){ $api_url = $api_url + $query_string; }
+        console.log($send_body);
 
-          console.log("a: " + $sendbody);
-
-          $send_body = '';
-          if($any_headers == 1)
-            {
-            $send_body = JSON.stringify($sendbody);
-            }
-
-          console.log($send_body);
-
-            var response = $.ajax({
-               url: $api_url,
-               method: 'post',
-               beforeSend: function(xhrObj){
-               if ($any_headers==1)
-                  {
-                  $.each($headers, function( $key, $definition ) {
-                     xhrObj.setRequestHeader($definition['name'],$definition['value']);
-                   });
-                  }
-               },
-               //headers: {'x-appid': 'test','x-appkey': 'test',},
-               //contentType: 'application/json; charset=utf-8',
-               //contentType: 'application/json;',
-               contentType: 'application/x-www-form-urlencoded',
-               //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
-               success:function(response){
+          var response = $.ajax({
+             url: $api_url,
+             method: 'post',
+             beforeSend: function(xhrObj){
+             if ($any_headers==1)
+                {
+                $.each($headers, function( $key, $definition ) {
+                   xhrObj.setRequestHeader($definition['name'],$definition['value']);
+                 });
+                }
+             },
+             //headers: {'x-appid': 'test','x-appkey': 'test',},
+             //contentType: 'application/json; charset=utf-8',
+             //contentType: 'application/json;',
+             contentType: 'application/x-www-form-urlencoded',
+             //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
+             success:function(response){
+                document.getElementById($slug+'-loading').style.display = 'none';
+                $viewer = JSON.stringify(response, null, 2);
+                //console.log($viewer);
+                document.getElementById($slug+'-response-header').style.display = '';
+                document.getElementById($slug+'-response-body').style.display = '';
+                document.getElementById($slug+'-response').value = $viewer;
+                document.getElementById($slug+'-response').style.width = "100%";
+                document.getElementById($slug+'-response').style.height = "450px";
+              },
+              error: function(XMLHttpRequest, textStatus, errorThrown) {
                   document.getElementById($slug+'-loading').style.display = 'none';
-                  $viewer = JSON.stringify(response, null, 2);
-                  //console.log($viewer);
+                  $message = "Status: " + textStatus + "\nError: " + errorThrown;
                   document.getElementById($slug+'-response-header').style.display = '';
                   document.getElementById($slug+'-response-body').style.display = '';
-                  document.getElementById($slug+'-response').value = $viewer;
+                  document.getElementById($slug+'-response').value = $message;
                   document.getElementById($slug+'-response').style.width = "100%";
-                  document.getElementById($slug+'-response').style.height = "450px";
-                },
-                error: function(XMLHttpRequest, textStatus, errorThrown) {
-                    document.getElementById($slug+'-loading').style.display = 'none';
-                    $message = "Status: " + textStatus + "\nError: " + errorThrown;
-                    document.getElementById($slug+'-response-header').style.display = '';
-                    document.getElementById($slug+'-response-body').style.display = '';
-                    document.getElementById($slug+'-response').value = $message;
-                    document.getElementById($slug+'-response').style.width = "100%";
-                    document.getElementById($slug+'-response').style.height = "50px";
-                }
-              });
+                  document.getElementById($slug+'-response').style.height = "50px";
+              }
+            });
 
-          }
+        }
 
       });
 
