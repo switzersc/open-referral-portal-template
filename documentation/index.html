@@ -375,7 +375,7 @@ layout: page
                                                           {% if parameter.in == 'header' %}
                                                             <tr>
                                                               <td style="width: 40%;" align="right" style="padding: 5px;"><strong>{{ parameter.name }}:</strong></td>
-                                                              <td><input class="form-control" type="text" name="{{ parameter.name }}" value="" style="width: 100%;" /></td>
+                                                              <td><input class="form-control" type="text" name="{{ parameter.name }}" formtarget="{{ parameter.in }}" value="" style="width: 100%;" /></td>
                                                             </tr>
                                                           {% endif %}
                                                         {% endfor %}
@@ -411,7 +411,7 @@ layout: page
                                                           {% if parameter.in == 'path' %}
                                                             <tr>
                                                               <td style="width: 40%;" align="right" style="padding: 5px;"><strong>{{ parameter.name }}:</strong></td>
-                                                              <td><input class="form-control" type="text" name="{{ parameter.name }}" value="" style="width: 100%;" /></td>
+                                                              <td><input class="form-control" type="text" name="{{ parameter.name }}" formtarget="{{ parameter.in }}" value="" style="width: 100%;" /></td>
                                                             </tr>
                                                           {% endif %}
                                                         {% endfor %}
@@ -447,7 +447,7 @@ layout: page
                                                           {% if parameter.in == 'query' %}
                                                             <tr>
                                                               <td style="width: 40%;" align="right" style="padding: 5px;"><strong>{{ parameter.name }}:</strong></td>
-                                                              <td><input class="form-control" type="text" name="{{ parameter.name }}" value="" style="width: 100%;" /></td>
+                                                              <td><input class="form-control" type="text" name="{{ parameter.name }}" formtarget="{{ parameter.in }}" value="" style="width: 100%;" /></td>
                                                             </tr>
                                                           {% endif %}
                                                         {% endfor %}
@@ -566,7 +566,10 @@ layout: page
       console.log("2:");
       $("#" + $slug + "-cell :input").each(function(index){
         var input = $(this);
-        console.log('Type: ' + input.attr('type') + 'Name: ' + input.attr('name') + 'Value: ' + input.val());
+        console.log('Type: ' + input.attr('type'));
+        console.log('Name: ' + input.attr('name'));
+        console.log('In: ' + input.attr('formtarget'));
+        console.log('Value: ' + input.val());
         });
 
       //if($param_elements.length > 0 && $anyparams == 1){ $api_url = $api_url + '?' + $query_string; }
