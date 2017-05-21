@@ -488,8 +488,8 @@ layout: page
                                                               <td style="width: 40%;" align="right" style="padding: 5px;"><strong>{{ parameter.name }}:</strong></td>
                                                               <td>
                                                                 {% for schema in parameter.schema %}
-                                                                  {{ schema[0] }} == {{ schema[1] }} 
-                                                                {% endif %}
+                                                                  {{ schema[0] }} == {{ schema[1] }}
+                                                                {% endfor %}
                                                               </td>
                                                             </tr>
                                                           {% endif %}
