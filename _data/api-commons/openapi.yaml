@@ -26,6 +26,10 @@ paths:
       parameters:
         - in: query
           type: number
+          name: query
+          description: A query to filter list by.     
+        - in: query
+          type: number
           name: page
           description: The particular page of results.
         - in: query
