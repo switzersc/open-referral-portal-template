@@ -716,7 +716,7 @@ layout: page
         console.log($body_json);
         var response = $.ajax({
            url: $api_url,
-           method: 'post',
+           method: $verb,
            data: $body_json,
            beforeSend: function(xhrObj){
            if ($any_headers==1)
