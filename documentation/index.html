@@ -554,6 +554,7 @@ layout: page
 
      function getRequest($slug,$path,$url,$security)
       {
+
       $security_array = $security.split(',');
       $api_url = $url + $path;
 
@@ -561,15 +562,54 @@ layout: page
 
       $anyparams = 0;
       $any_headers = 0;
+      $headers = [];
       $query_string = '';
 
-      console.log("2:");
+      // process security definitions
+      $.each($security_array, function( $key, $definition ) {
+        $definition = $definition.trim();
+        if($definition != '')
+          {
+          $value = $('#' + $definition).val();
+          $id = $('#' + $definition).attr("id");
+          $in = $('#' + $definition).attr("name");
+          $name = $('#' + $definition).attr("altname");
+          $type = $('#' + $definition).attr("alt");
+          if($in == 'header')
+            {
+            //$headers = $headers + "'" + $name + "': '" + $value + "',";
+            $h = [];
+            $h["name"] = $name;
+            $h["value"] = $value;
+            $headers.push($h);
+            $any_headers = 1;
+            }
+          }
+      });
+
+      // loop through parameters
       $("#" + $slug + "-cell :input").each(function(index){
         var input = $(this);
-        console.log('Type: ' + input.attr('type'));
-        console.log('Name: ' + input.attr('name'));
-        console.log('In: ' + input.attr('formtarget'));
-        console.log('Value: ' + input.val());
+        $param_type = input.attr('type');
+        $param_name = input.attr('name');
+        $param_in = input.attr('formtarget');
+        $param_value = input.val();
+
+        if($param_type == 'text' && $param_in == 'header')
+          {
+          console.log($param_name + ' == ' + $param_value);
+          }
+
+        if($param_type == 'text' && $param_in == 'path')
+          {
+          console.log($param_name + ' == ' + $param_value);
+          }
+
+        if($param_type == 'text' && $param_in == 'parameters')
+          {
+          console.log($param_name + ' == ' + $param_value);
+          }
+
         });
 
       //if($param_elements.length > 0 && $anyparams == 1){ $api_url = $api_url + '?' + $query_string; }
