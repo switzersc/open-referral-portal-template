@@ -612,6 +612,8 @@ layout: page
    function getRequest($slug,$path,$url,$security,$verb)
     {
 
+    console.log($verb);
+
     $security_array = $security.split(',');
     $api_url = $url + $path;
 
@@ -621,12 +623,7 @@ layout: page
     $anypathparams = 0;
     $any_headers = 0;
     $headers = [];
-    //$h = [];
-    //$h["name"] = 'Allow';
-    //$h["value"] = 'POST';
-    //$headers.push($h);
-
-    $body = new Array();
+    $body = [];
     $query_string = '';
 
     // process security definitions
@@ -707,7 +704,7 @@ layout: page
       if($param_type == 'text' && $param_in == 'body')
         {
         //console.log($param_name + ' == ' + $param_value);
-        $b = new Array();
+        $b = [];
         $b["name"] = $param_name;
         $b["value"] = $param_value;
         $body.push($b);
@@ -726,28 +723,23 @@ layout: page
     if($any_headers == 1)
       {
       $send_body = JSON.stringify($body);
-      $send_body_2 = $body;
       }
-
-    console.log($verb);
-    console.log($send_body);
-    console.log($send_body_2);
 
     var response = $.ajax({
        url: $api_url,
-       data: $body,
+       data: $send_body,
        method: $verb,
-       crossDomain : true,
-       beforeSend: function(xhrObj){
-       if ($any_headers==1)
-          {
-          $.each($headers, function( $key, $definition ) {
-             xhrObj.setRequestHeader($definition['name'],$definition['value']);
-           });
-          }
-       },
-       contentType:"application/json; charset=utf-8",
-       dataType:"json",
+         beforeSend: function(xhrObj){
+         if ($any_headers==1)
+            {
+            $.each($headers, function( $key, $definition ) {
+               xhrObj.setRequestHeader($definition['name'],$definition['value']);
+             });
+            }
+         },
+       //headers: {'x-appid': 'test','x-appkey': 'test',},
+       //contentType: 'application/json; charset=utf-8',
+       //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
        success:function(response){
           document.getElementById($slug+'-loading').style.display = 'none';
           $viewer = JSON.stringify(response, null, 2);
