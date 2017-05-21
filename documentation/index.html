@@ -632,17 +632,9 @@ layout: page
 
       console.log("2:");
       $("#" + $slug + "-parameters :input").each(function(index){
-        $input = $(this);
-        console.log("here:" + $input);
+        var input = $(this);
+        lert('Type: ' + input.attr('type') + 'Name: ' + input.attr('name') + 'Value: ' + input.val());
         });
-
-      console.log("3:");
-      $("#" + $slug + "-parameters input").each(
-          function(index){
-              var input = $(this);
-              alert('Type: ' + input.attr('type') + 'Name: ' + input.attr('name') + 'Value: ' + input.val());
-          }
-      );
 
       for(var i = 0, element; element = $param_elements[i++];)
         {
