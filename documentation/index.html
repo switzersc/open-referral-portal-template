@@ -730,10 +730,9 @@ layout: page
 
     console.log($send_body);
 
-    var response = $.ajax({
-       url: $api_url,
-       data: $send_body,
-       method: $verb,
+      var response = $.ajax({
+         url: $api_url,
+         method: $verb,
          beforeSend: function(xhrObj){
          if ($any_headers==1)
             {
@@ -742,30 +741,30 @@ layout: page
              });
             }
          },
-       //headers: {'x-appid': 'test','x-appkey': 'test',},
-       //contentType: 'application/json; charset=utf-8',
-       //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
-       success:function(response){
-          document.getElementById($slug+'-loading').style.display = 'none';
-          $viewer = JSON.stringify(response, null, 2);
-          //console.log($viewer);
-          document.getElementById($slug+'-response-header').style.display = '';
-          document.getElementById($slug+'-response-body').style.display = '';
-          document.getElementById($slug+'-response').value = $viewer;
-          document.getElementById($slug+'-response').style.width = "100%";
-          document.getElementById($slug+'-response').style.height = "450px";
-        },
-        error: function(XMLHttpRequest, textStatus, errorThrown) {
+         //headers: {'x-appid': 'test','x-appkey': 'test',},
+         //contentType: 'application/json; charset=utf-8',
+         contentType: 'application/json;',
+         //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
+         success:function(response){
             document.getElementById($slug+'-loading').style.display = 'none';
-            $message = "Status: " + textStatus + "\nError: " + errorThrown;
+            $viewer = JSON.stringify(response, null, 2);
+            //console.log($viewer);
             document.getElementById($slug+'-response-header').style.display = '';
             document.getElementById($slug+'-response-body').style.display = '';
-            document.getElementById($slug+'-response').value = $message;
+            document.getElementById($slug+'-response').value = $viewer;
             document.getElementById($slug+'-response').style.width = "100%";
-            document.getElementById($slug+'-response').style.height = "50px";
-        }
-      });
-
+            document.getElementById($slug+'-response').style.height = "450px";
+          },
+          error: function(XMLHttpRequest, textStatus, errorThrown) {
+              document.getElementById($slug+'-loading').style.display = 'none';
+              $message = "Status: " + textStatus + "\nError: " + errorThrown;
+              document.getElementById($slug+'-response-header').style.display = '';
+              document.getElementById($slug+'-response-body').style.display = '';
+              document.getElementById($slug+'-response').value = $message;
+              document.getElementById($slug+'-response').style.width = "100%";
+              document.getElementById($slug+'-response').style.height = "50px";
+          }
+        });
     }
 
 </script>
