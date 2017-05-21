@@ -484,30 +484,30 @@ layout: page
                                                       <table style="width: 50%;">
                                                         {% for parameter in parameters %}
                                                           {% if parameter.in == 'body' %}
-                                                            <tr>
-                                                              <td style="width: 40%;" align="right" style="padding: 5px;"><strong>{{ parameter.name }}:</strong></td>
-                                                              <td>
-                                                                {% for schema in parameter.schema %}
-                                                                  {% assign schema_path = schema[1] | replace: '#/definitions/','' %}
 
-                                                                  {% for definition in openapi_spec_json.definitions %}
-                                                                  
-                                                                    {% assign definition_name = definition[0] %}
-                                                                    {% assign fields = definition[1] %}
+                                                            {% for schema in parameter.schema %}
+                                                              {% assign schema_path = schema[1] | replace: '#/definitions/','' %}
 
-                                                                    {% if definition_name == schema_path %}
-                                                                      <ul style='padding-left: 50px;'>
-                                                                        {% for property in fields.properties %}
-                                                                          {% assign property_name = property[0] %}
-                                                                          <li><strong>{{ property_name }}</strong> (<em>{{ property[1]["type"] }}</em>) - {{ property[1]["description"] }}</li>
-                                                                        {% endfor %}
-                                                                      </ul>
-                                                                    {% endif %}
-                                                                  {% endfor %}
+                                                              {% for definition in openapi_spec_json.definitions %}
 
-                                                                {% endfor %}
-                                                              </td>
-                                                            </tr>
+                                                                {% assign definition_name = definition[0] %}
+                                                                {% assign fields = definition[1] %}
+
+                                                                {% if definition_name == schema_path %}
+
+                                                                    {% for property in fields.properties %}
+                                                                      {% assign property_name = property[0] %}
+                                                                      <tr>
+                                                                        <td style="width: 40%;" align="right" style="padding: 5px;"><strong>{{ parameter.name }}:</strong></td>
+                                                                        <td><input class="form-control" type="text" id="{{ slug }}-{{ property_name }}" name="{{ property_name }}" formtarget="body" value="" style="width: 100%;" /></td>
+                                                                      </tr>
+                                                                    {% endfor %}
+
+                                                                {% endif %}
+                                                              {% endfor %}
+
+                                                            {% endfor %}
+
                                                           {% endif %}
                                                         {% endfor %}
                                                       </table>
