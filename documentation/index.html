@@ -648,6 +648,7 @@ layout: page
 
     // loop through parameters
     $count = 0;
+    $allfields = $("#client-body :input").length;
     $("#client-body :input").each(function(index){
 
       var input = $(this);
@@ -716,7 +717,7 @@ layout: page
         }
 
         $count++;
-        console.log($count);
+        console.log($count + ' == ' + $allfields);
 
       });
 
