@@ -631,12 +631,12 @@ layout: page
           }
 
 
-      var $param_elements = document.getElementById($slug+'-parameters').elements;
+      var $param_elements = document.getElementById($slug+'-parameters');
+      console.log("elements: " + $param_elements);
       $anyparams = 0;
       $query_string = '';
 
       console.log("2:");
-      console.log("#" + $slug + "-parameters input");
       $("#" + $slug + "-parameters input").each(function(index){
         $input = $(this);
         console.log("here:" + $input);
