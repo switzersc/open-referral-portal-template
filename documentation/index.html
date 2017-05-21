@@ -731,7 +731,6 @@ layout: page
            //contentType: 'application/json;',
            dataType: 'json',
            //contentType: 'application/x-www-form-urlencoded',
-           //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
            success:function(response){
               document.getElementById($slug+'-loading').style.display = 'none';
               $viewer = JSON.stringify(response, null, 2);
