@@ -636,10 +636,15 @@ layout: page
 
       console.log("publishing:");
       console.log("form#" + $slug + "-parameters :input");
-      $("#" + $slug + "-parameters input").each(
-        $input = $(this); // This is the jquery object of the input, do what you will
+      $("#" + $slug + "-parameters input").each(function(index){
+        $input = $(this);
         console.log("here:" + $input);
         });
+
+        console.log("getting read!");
+        $.each(path_elements, function( $key, $value ) {
+            console.log($key + ' == ' + $value);
+          });
 
       for(var i = 0, element; element = $param_elements[i++];)
         {
