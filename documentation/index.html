@@ -559,6 +559,11 @@ layout: page
 
       document.getElementById($slug+'-loading').style.display = '';
 
+      var $allInputs = $( ":input" );
+      $.each($allInputs, function( $key, $value ) {
+        console.log("all: " + $key + ' == ' + $value);
+        });
+
       $any_headers = 0;
       $headers = [];
       var $header_elements = document.getElementById($slug+'-headers').elements;
