@@ -624,6 +624,21 @@ layout: page
     $body_json = "";
     $query_string = '';
 
+    $h = [];
+    $h["name"] = 'Access-Control-Allow-Origin';
+    $h["value"] = '*';
+    $headers.push($h);
+
+    $h = [];
+    $h["name"] = 'Access-Control-Allow-Methods';
+    $h["value"] = 'POST, GET, OPTIONS, PUT, DELETE';
+    $headers.push($h);
+
+    $h = [];
+    $h["name"] = 'Access-Control-Allow-Headers';
+    $h["value"] = 'Content-Type  ';
+    $headers.push($h);
+
     // process security definitions
     $.each($security_array, function( $key, $definition ) {
       $definition = $definition.trim();
@@ -711,51 +726,47 @@ layout: page
 
       if($count == $allfields)
         {
-
         if($query_string != '' && $anyparams == 1){ $api_url = $api_url + $query_string; }
-
         $body_json = '[' + $body_json.substring(0,$body_json.length - 1) + ']';
-
-        console.log($body_json);
-
-          var response = $.ajax({
-             url: $api_url,
-             method: $verb,
-             data: JSON.stringify($body_json),
-             beforeSend: function(xhrObj){
-             if ($any_headers==1)
-                {
-                $.each($headers, function( $key, $definition ) {
-                   xhrObj.setRequestHeader($definition['name'],$definition['value']);
-                 });
-                }
-             },
-             //headers: {'x-appid': 'test','x-appkey': 'test',},
-             //contentType: 'application/json; charset=utf-8',
-             contentType: 'application/json;',
-             dataType: 'json',
-             //contentType: 'application/x-www-form-urlencoded',
-             //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
-             success:function(response){
+        //console.log($body_json);
+        var response = $.ajax({
+           url: $api_url,
+           method: $verb,
+           data: JSON.stringify($body_json),
+           beforeSend: function(xhrObj){
+           if ($any_headers==1)
+              {
+              $.each($headers, function( $key, $definition ) {
+                 xhrObj.setRequestHeader($definition['name'],$definition['value']);
+               });
+              }
+           },
+           //headers: {'x-appid': 'test','x-appkey': 'test',},
+           //contentType: 'application/json; charset=utf-8',
+           contentType: 'application/json;',
+           dataType: 'json',
+           //contentType: 'application/x-www-form-urlencoded',
+           //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
+           success:function(response){
+              document.getElementById($slug+'-loading').style.display = 'none';
+              $viewer = JSON.stringify(response, null, 2);
+              //console.log($viewer);
+              document.getElementById($slug+'-response-header').style.display = '';
+              document.getElementById($slug+'-response-body').style.display = '';
+              document.getElementById($slug+'-response').value = $viewer;
+              document.getElementById($slug+'-response').style.width = "100%";
+              document.getElementById($slug+'-response').style.height = "450px";
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
                 document.getElementById($slug+'-loading').style.display = 'none';
-                $viewer = JSON.stringify(response, null, 2);
-                //console.log($viewer);
+                $message = "Status: " + textStatus + "\nError: " + errorThrown;
                 document.getElementById($slug+'-response-header').style.display = '';
                 document.getElementById($slug+'-response-body').style.display = '';
-                document.getElementById($slug+'-response').value = $viewer;
+                document.getElementById($slug+'-response').value = $message;
                 document.getElementById($slug+'-response').style.width = "100%";
-                document.getElementById($slug+'-response').style.height = "450px";
-              },
-              error: function(XMLHttpRequest, textStatus, errorThrown) {
-                  document.getElementById($slug+'-loading').style.display = 'none';
-                  $message = "Status: " + textStatus + "\nError: " + errorThrown;
-                  document.getElementById($slug+'-response-header').style.display = '';
-                  document.getElementById($slug+'-response-body').style.display = '';
-                  document.getElementById($slug+'-response').value = $message;
-                  document.getElementById($slug+'-response').style.width = "100%";
-                  document.getElementById($slug+'-response').style.height = "50px";
-              }
-            });
+                document.getElementById($slug+'-response').style.height = "50px";
+            }
+          });
 
         }
 
