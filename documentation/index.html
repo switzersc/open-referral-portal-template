@@ -725,10 +725,10 @@ layout: page
     $send_body = '';
     if($any_headers == 1)
       {
-      //$send_body = JSON.stringify($sendbody);
+      $send_body = JSON.stringify($sendbody);
       }
 
-    console.log($sendbody);
+    console.log($send_body);
 
     var response = $.ajax({
        url: $api_url,
