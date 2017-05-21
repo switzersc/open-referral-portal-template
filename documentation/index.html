@@ -601,9 +601,11 @@ layout: page
       console.log($slug+'-path');
       var path_elements = document.getElementById($slug+'-path').elements;
 
-      console.log("getting read!");
-      $.each(path_elements, function( $key, $value ) {
-          console.log($key + ' == ' + $value);
+      console.log("publishing path parameters:");
+      console.log("form#" + $slug + "-path :input");
+      $("#" + $slug + "-path input").each(function(index){
+        $input = $(this);
+        console.log("here:" + $input);
         });
 
       console.log("path elements: " + path_elements + ' - ' +  path_elements.length);
@@ -634,7 +636,7 @@ layout: page
       $anyparams = 0;
       $query_string = '';
 
-      console.log("publishing:");
+      console.log("publishing parameters:");
       console.log("form#" + $slug + "-parameters :input");
       $("#" + $slug + "-parameters input").each(function(index){
         $input = $(this);
