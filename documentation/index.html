@@ -462,6 +462,42 @@ layout: page
                                             <!-- End Parameters -->
                                             </form>
 
+                                            <form id="{{ slug }}-body">
+                                            <!-- Begin Body -->
+                                            {% assign number_of_parameters = parameters | size %}
+                                            {% if number_of_parameters > 0 %}
+
+                                              {% assign any_body = 0 %}
+                                              {% for parameter in parameters %}
+                                                {% if parameter.in == 'body' %}
+                                                  {% assign any_body = 1 %}
+                                                {% endif %}
+                                              {% endfor %}
+
+                                              <!-- If there are any parameters -->
+                                              {% if any_body > 0 %}
+                                                <tr style="background-color: #CCC;">
+                                                  <td style="font-size: 12px; padding: 5px;"><strong>Body:</strong></td>
+                                                </tr>
+                                                <tr>
+                                                  <td align="left" style="font-size: 12px; padding: 10px;">
+                                                      <table style="width: 50%;">
+                                                        {% for parameter in parameters %}
+                                                          {% if parameter.in == 'body' %}
+                                                            <tr>
+                                                              <td style="width: 40%;" align="right" style="padding: 5px;"><strong>{{ parameter.name }}:</strong></td>
+                                                              <td>{{ parameter }}</td>
+                                                            </tr>
+                                                          {% endif %}
+                                                        {% endfor %}
+                                                      </table>
+                                                  </td>
+                                                </tr>
+                                              {% endif %}
+                                            {% endif %}
+                                            <!-- End Parameters -->
+                                            </form>
+
                                             <tr style="background-color: #CCC;" id="{{ slug }}-response-header" style="display: none;">
                                               <td style="font-size: 12px; padding: 5px;"><strong>Response:</strong></td>
                                             </tr>
@@ -645,11 +681,11 @@ layout: page
 
         });
 
-      console.log("query string: " + $query_string);
+      //console.log("query string: " + $query_string);
 
       if($query_string != '' && $anyparams == 1){ $api_url = $api_url + $query_string; }
 
-      console.log("loading: " + $api_url);
+      //console.log("loading: " + $api_url);
 
       var response = $.ajax({
          url: $api_url,
@@ -666,9 +702,7 @@ layout: page
          //contentType: 'application/json; charset=utf-8',
          //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
          success:function(response){
-
             document.getElementById($slug+'-loading').style.display = 'none';
-
             $viewer = JSON.stringify(response, null, 2);
             //console.log($viewer);
             document.getElementById($slug+'-response-header').style.display = '';
@@ -676,7 +710,6 @@ layout: page
             document.getElementById($slug+'-response').value = $viewer;
             document.getElementById($slug+'-response').style.width = "100%";
             document.getElementById($slug+'-response').style.height = "450px";
-
           },
           error: function(XMLHttpRequest, textStatus, errorThrown) {
               document.getElementById($slug+'-loading').style.display = 'none';
