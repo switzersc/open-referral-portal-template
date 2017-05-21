@@ -732,9 +732,8 @@ layout: page
 
     var response = $.ajax({
        url: $api_url,
-       verb: $verb,
        data: $send_body,
-       method: $send_body,
+       method: $verb,
          beforeSend: function(xhrObj){
          if ($any_headers==1)
             {
