@@ -620,8 +620,8 @@ layout: page
     $anyparams = 0;
     $anypathparams = 0;
     $any_headers = 0;
-    $headers = {};
-    $body = {};
+    $headers = [];
+    $body = [];
     $query_string = '';
 
     // process security definitions
@@ -637,7 +637,7 @@ layout: page
         if($in == 'header')
           {
           //$headers = $headers + "'" + $name + "': '" + $value + "',";
-          $h = {};
+          $h = [];
           $h["name"] = $name;
           $h["value"] = $value;
           $headers.push($h);
@@ -659,7 +659,7 @@ layout: page
       if($param_type == 'text' && $param_in == 'header')
         {
         //console.log($param_name + ' == ' + $param_value);
-        $h = {};
+        $h = [];
         $h["name"] = $param_name;
         $h["value"] = $param_value;
         $headers.push($h);
@@ -702,7 +702,7 @@ layout: page
       if($param_type == 'text' && $param_in == 'body')
         {
         console.log("body: " + $param_name + ' == ' + $param_value);
-        $b = {};
+        $b = [];
         $b["name"] = $param_name;
         $b["value"] = $param_value;
         console.log($b);
