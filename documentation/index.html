@@ -624,21 +624,6 @@ layout: page
     $body_json = "";
     $query_string = '';
 
-    $h = [];
-    $h["name"] = 'Access-Control-Allow-Origin';
-    $h["value"] = '*';
-    $headers.push($h);
-
-    $h = [];
-    $h["name"] = 'Access-Control-Allow-Methods';
-    $h["value"] = 'POST, GET, OPTIONS, PUT, DELETE';
-    $headers.push($h);
-
-    $h = [];
-    $h["name"] = 'Access-Control-Allow-Headers';
-    $h["value"] = 'Content-Type  ';
-    $headers.push($h);
-
     // process security definitions
     $.each($security_array, function( $key, $definition ) {
       $definition = $definition.trim();
