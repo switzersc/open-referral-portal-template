@@ -621,7 +621,7 @@ layout: page
     $anypathparams = 0;
     $any_headers = 0;
     $headers = [];
-    $body = new Array();
+    $body = [];
     $query_string = '';
 
     // process security definitions
@@ -705,6 +705,7 @@ layout: page
         $b = [];
         $b["name"] = $param_name;
         $b["value"] = $param_value;
+        console.log($b);
         $body.push($b);
         $any_body = 1;
         }
