@@ -589,10 +589,12 @@ layout: page
 
       // loop through parameters
       $("#" + $slug + "-cell :input").each(function(index){
+
         var input = $(this);
         $param_type = input.attr('type');
         $param_name = input.attr('name');
         $param_in = input.attr('formtarget');
+        $param_value_2 = input.attr('formtarget');
         $param_value = input.val();
 
         console.log($param_type + ' - ' + $param_in);
@@ -608,7 +610,7 @@ layout: page
 
         if($param_type == 'text' && $param_in == 'query')
           {
-          console.log($param_name + ' == ' + $param_value);
+          console.log($param_name + ' == ' + $param_value) + ' == ' + param_value_2);
           }
 
         });
