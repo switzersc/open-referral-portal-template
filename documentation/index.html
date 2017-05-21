@@ -623,6 +623,11 @@ layout: page
     $anypathparams = 0;
     $any_headers = 0;
     $headers = [];
+    $h = [];
+    $h["name"] = 'Allow';
+    $h["value"] = 'POST';
+    $headers.push($h);
+
     $body = [];
     $query_string = '';
 
