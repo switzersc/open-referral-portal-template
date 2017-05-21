@@ -608,7 +608,6 @@ layout: page
         console.log("here:" + $input);
         });
 
-      console.log("path elements: " + path_elements + ' - ' +  path_elements.length);
       for(var i = 0, element; element = path_elements[i++];)
         {
         console.log('IN!');
@@ -637,7 +636,7 @@ layout: page
       $query_string = '';
 
       console.log("publishing parameters:");
-      console.log("form#" + $slug + "-parameters :input");
+      console.log("#" + $slug + "-parameters input");
       $("#" + $slug + "-parameters input").each(function(index){
         $input = $(this);
         console.log("here:" + $input);
