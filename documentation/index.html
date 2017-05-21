@@ -612,8 +612,6 @@ layout: page
    function getRequest($slug,$path,$url,$security,$verb)
     {
 
-    console.log($verb);
-
     $security_array = $security.split(',');
     $api_url = $url + $path;
 
@@ -728,11 +726,12 @@ layout: page
     if($any_headers == 1)
       {
       $send_body = JSON.stringify($body);
-      //$send_body = $body;
+      $send_body_2 = $body;
       }
 
     console.log($verb);
     console.log($send_body);
+    console.log($send_body_2);
 
     var response = $.ajax({
        url: $api_url,
