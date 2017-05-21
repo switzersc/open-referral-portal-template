@@ -740,6 +740,8 @@ layout: page
        //headers: {'x-appid': 'test','x-appkey': 'test',},
        //contentType: 'application/json; charset=utf-8',
        //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
+       contentType:"application/json; charset=utf-8",
+       dataType:"json",
        success:function(response){
           document.getElementById($slug+'-loading').style.display = 'none';
           $viewer = JSON.stringify(response, null, 2);
