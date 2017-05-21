@@ -488,7 +488,8 @@ layout: page
                                                               <td style="width: 40%;" align="right" style="padding: 5px;"><strong>{{ parameter.name }}:</strong></td>
                                                               <td>
                                                                 {% for schema in parameter.schema %}
-                                                                  {{ schema[0] }} == {{ schema[1] }}
+                                                                  {% assign schema_path = schema[1] | replace: '#/definitions/','' %}
+                                                                  schema_path: {{ schema_path}}
                                                                 {% endfor %}
                                                               </td>
                                                             </tr>
