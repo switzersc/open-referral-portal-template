@@ -717,60 +717,62 @@ layout: page
         }
 
         $count++;
-        console.log($count + ' == ' + $allfields);
+        if($count == $allfields)
+          {
+
+          if($query_string != '' && $anyparams == 1){ $api_url = $api_url + $query_string; }
+
+          console.log("a: " + $sendbody);
+
+          $send_body = '';
+          if($any_headers == 1)
+            {
+            $send_body = JSON.stringify($sendbody);
+            }
+
+          console.log($send_body);
+
+            var response = $.ajax({
+               url: $api_url,
+               method: 'post',
+               beforeSend: function(xhrObj){
+               if ($any_headers==1)
+                  {
+                  $.each($headers, function( $key, $definition ) {
+                     xhrObj.setRequestHeader($definition['name'],$definition['value']);
+                   });
+                  }
+               },
+               //headers: {'x-appid': 'test','x-appkey': 'test',},
+               //contentType: 'application/json; charset=utf-8',
+               //contentType: 'application/json;',
+               contentType: 'application/x-www-form-urlencoded',
+               //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
+               success:function(response){
+                  document.getElementById($slug+'-loading').style.display = 'none';
+                  $viewer = JSON.stringify(response, null, 2);
+                  //console.log($viewer);
+                  document.getElementById($slug+'-response-header').style.display = '';
+                  document.getElementById($slug+'-response-body').style.display = '';
+                  document.getElementById($slug+'-response').value = $viewer;
+                  document.getElementById($slug+'-response').style.width = "100%";
+                  document.getElementById($slug+'-response').style.height = "450px";
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    document.getElementById($slug+'-loading').style.display = 'none';
+                    $message = "Status: " + textStatus + "\nError: " + errorThrown;
+                    document.getElementById($slug+'-response-header').style.display = '';
+                    document.getElementById($slug+'-response-body').style.display = '';
+                    document.getElementById($slug+'-response').value = $message;
+                    document.getElementById($slug+'-response').style.width = "100%";
+                    document.getElementById($slug+'-response').style.height = "50px";
+                }
+              });
+
+          }
 
       });
 
-    //console.log("query string: " + $query_string);
-
-    if($query_string != '' && $anyparams == 1){ $api_url = $api_url + $query_string; }
-
-    console.log("a: " + $sendbody);
-
-    $send_body = '';
-    if($any_headers == 1)
-      {
-      $send_body = JSON.stringify($sendbody);
-      }
-
-    console.log($send_body);
-
-      var response = $.ajax({
-         url: $api_url,
-         method: 'post',
-         beforeSend: function(xhrObj){
-         if ($any_headers==1)
-            {
-            $.each($headers, function( $key, $definition ) {
-               xhrObj.setRequestHeader($definition['name'],$definition['value']);
-             });
-            }
-         },
-         //headers: {'x-appid': 'test','x-appkey': 'test',},
-         //contentType: 'application/json; charset=utf-8',
-         //contentType: 'application/json;',
-         contentType: 'application/x-www-form-urlencoded',
-         //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
-         success:function(response){
-            document.getElementById($slug+'-loading').style.display = 'none';
-            $viewer = JSON.stringify(response, null, 2);
-            //console.log($viewer);
-            document.getElementById($slug+'-response-header').style.display = '';
-            document.getElementById($slug+'-response-body').style.display = '';
-            document.getElementById($slug+'-response').value = $viewer;
-            document.getElementById($slug+'-response').style.width = "100%";
-            document.getElementById($slug+'-response').style.height = "450px";
-          },
-          error: function(XMLHttpRequest, textStatus, errorThrown) {
-              document.getElementById($slug+'-loading').style.display = 'none';
-              $message = "Status: " + textStatus + "\nError: " + errorThrown;
-              document.getElementById($slug+'-response-header').style.display = '';
-              document.getElementById($slug+'-response-body').style.display = '';
-              document.getElementById($slug+'-response').value = $message;
-              document.getElementById($slug+'-response').style.width = "100%";
-              document.getElementById($slug+'-response').style.height = "50px";
-          }
-        });
     }
 
 </script>
