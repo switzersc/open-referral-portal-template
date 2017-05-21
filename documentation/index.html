@@ -735,17 +735,14 @@ layout: page
        url: $api_url,
        data: $send_body,
        method: $verb,
-         beforeSend: function(xhrObj){
-         if ($any_headers==1)
-            {
-            $.each($headers, function( $key, $definition ) {
-               xhrObj.setRequestHeader($definition['name'],$definition['value']);
-             });
-            }
-         },
-       //headers: {'x-appid': 'test','x-appkey': 'test',},
-       //contentType: 'application/json; charset=utf-8',
-       //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
+       beforeSend: function(xhrObj){
+       if ($any_headers==1)
+          {
+          $.each($headers, function( $key, $definition ) {
+             xhrObj.setRequestHeader($definition['name'],$definition['value']);
+           });
+          }
+       },
        contentType:"application/json; charset=utf-8",
        dataType:"json",
        success:function(response){
