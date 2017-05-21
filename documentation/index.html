@@ -728,7 +728,7 @@ layout: page
         {
 
         if($query_string != ''){ $api_url = $api_url + $query_string; }
-        console.log(api_url);
+        console.log($api_url);
         $body_json = '[' + $body_json.substring(0,$body_json.length - 1) + ']';
         console.log($body_json);
         var response = $.ajax({
