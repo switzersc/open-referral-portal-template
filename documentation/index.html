@@ -737,6 +737,7 @@ layout: page
        url: $api_url,
        data: $body,
        method: $verb,
+       crossDomain : true,
        beforeSend: function(xhrObj){
        if ($any_headers==1)
           {
