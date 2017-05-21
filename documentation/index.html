@@ -598,9 +598,6 @@ layout: page
           }
       });
 
-      console.log($slug+'-path');
-      var path_elements = document.getElementById($slug+'-path').elements;
-
       console.log("publishing path parameters:");
       console.log("form#" + $slug + "-path :input");
       $("#" + $slug + "-path input").each(function(index){
@@ -629,13 +626,6 @@ layout: page
               }
             }
           }
-
-
-      var $param_elements = document.getElementById($slug+'-parameters');
-      console.log("elements: " + $param_elements);
-      $.each($param_elements.elements, function(){
-         console.log($(this));
-      });
 
       $anyparams = 0;
       $query_string = '';
