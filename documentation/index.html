@@ -486,7 +486,11 @@ layout: page
                                                           {% if parameter.in == 'body' %}
                                                             <tr>
                                                               <td style="width: 40%;" align="right" style="padding: 5px;"><strong>{{ parameter.name }}:</strong></td>
-                                                              <td>{{ parameter.schema.$ref }}</td>
+                                                              <td>
+                                                                {% for schema in parameter.schema %}
+                                                                  {{ schema[0] }} == schema[1]
+                                                                {% endif %}
+                                                              </td>
                                                             </tr>
                                                           {% endif %}
                                                         {% endfor %}
