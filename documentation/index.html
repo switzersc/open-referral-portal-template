@@ -435,7 +435,7 @@ layout: page
                                                 {% endif %}
                                               {% endfor %}
 
-                                              <!-- If there are any headers -->
+                                              <!-- If there are any parameters -->
                                               {% if any_parameters > 0 %}
                                                 <tr style="background-color: #CCC;">
                                                   <td style="font-size: 12px; padding: 5px;"><strong>Parameters:</strong></td>
@@ -634,12 +634,12 @@ layout: page
       $anyparams = 0;
       $query_string = '';
 
-      console.log("publish:");
+      console.log("publishing:");
       console.log("form#" + $slug + "-parameters :input");
-      $("form#" + $slug + "-parameters :input").each(function(){
+      $("#" + $slug + "-parameters input").each(
         $input = $(this); // This is the jquery object of the input, do what you will
-        console.log($input);
-        });
+        console.log("here:" + $input);
+        });$('#formId input, #formId select').each(
 
       for(var i = 0, element; element = $param_elements[i++];)
         {
