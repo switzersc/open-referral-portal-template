@@ -701,15 +701,15 @@ layout: page
       //console.log($param_type + ' - ' + $param_in);
       if($param_type == 'text' && $param_in == 'body')
         {
-        console.log("body: " + $param_name + ' == ' + $param_value);
+        //console.log("body: " + $param_name + ' == ' + $param_value);
 
         $b = [];
         $b["name"] = $param_name;
         $b["value"] = $param_value;
 
-        console.log($b);
+        //console.log($b);
         $sendbody.push($b);
-        console.log($sendbody);
+        //console.log($sendbody);
 
         $any_body = 1;
         }
@@ -720,7 +720,7 @@ layout: page
 
     if($query_string != '' && $anyparams == 1){ $api_url = $api_url + $query_string; }
 
-    //console.log("loading: " + $api_url);
+    console.log("a: " + $sendbody);
 
     $send_body = '';
     if($any_headers == 1)
