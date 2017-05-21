@@ -636,7 +636,7 @@ layout: page
       $query_string = '';
 
       console.log("1 - #" + $slug + "-parameters");
-      $.each($("#" + $slug + "-parameters").elements, function(){
+      $.each($("#" + $slug + "-parameters").elements, function(index){
          console.log($(this));
       });
 
