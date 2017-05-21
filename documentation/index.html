@@ -720,7 +720,8 @@ layout: page
 
           var response = $.ajax({
              url: $api_url,
-             method: 'post',
+             method: $verb,
+             data: JSON.stringify($body_json),
              beforeSend: function(xhrObj){
              if ($any_headers==1)
                 {
@@ -731,8 +732,9 @@ layout: page
              },
              //headers: {'x-appid': 'test','x-appkey': 'test',},
              //contentType: 'application/json; charset=utf-8',
-             //contentType: 'application/json;',
-             contentType: 'application/x-www-form-urlencoded',
+             contentType: 'application/json;',
+             dataType: 'json',
+             //contentType: 'application/x-www-form-urlencoded',
              //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
              success:function(response){
                 document.getElementById($slug+'-loading').style.display = 'none';
