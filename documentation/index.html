@@ -626,7 +626,7 @@ layout: page
     //$h["value"] = 'POST';
     //$headers.push($h);
 
-    $body = [];
+    $body = new Array();
     $query_string = '';
 
     // process security definitions
@@ -707,7 +707,7 @@ layout: page
       if($param_type == 'text' && $param_in == 'body')
         {
         //console.log($param_name + ' == ' + $param_value);
-        $b = [];
+        $b = new Array();
         $b["name"] = $param_name;
         $b["value"] = $param_value;
         $body.push($b);
