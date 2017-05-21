@@ -727,7 +727,8 @@ layout: page
     $send_body = '';
     if($any_headers == 1)
       {
-      $send_body = JSON.stringify($body);
+      //$send_body = JSON.stringify($body);
+      $send_body = $body;
       }
 
     var response = $.ajax({
