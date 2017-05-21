@@ -559,74 +559,6 @@ layout: page
 
       document.getElementById($slug+'-loading').style.display = '';
 
-      $any_headers = 0;
-      $headers = [];
-      var $header_elements = document.getElementById($slug+'-headers').elements;
-      if($header_elements.length > 0)
-        {
-        for (var i = 0, element; element = $header_elements[i++];) {
-            if (element.type === "text")
-              {
-              //$headers = $headers + "'" + element.name + "': '" + element.value + "',";
-              $h = [];
-              $h["name"] = element.name;
-              $h["value"] = element.value;
-              $headers.push($h);
-              $any_headers = 1;
-            }
-          }
-        }
-
-      $.each($security_array, function( $key, $definition ) {
-        $definition = $definition.trim();
-        if($definition != '')
-          {
-          $value = $('#' + $definition).val();
-          $id = $('#' + $definition).attr("id");
-          $in = $('#' + $definition).attr("name");
-          $name = $('#' + $definition).attr("altname");
-          $type = $('#' + $definition).attr("alt");
-          if($in == 'header')
-            {
-            //$headers = $headers + "'" + $name + "': '" + $value + "',";
-            $h = [];
-            $h["name"] = $name;
-            $h["value"] = $value;
-            $headers.push($h);
-            $any_headers = 1;
-            }
-          }
-      });
-
-      console.log("publishing path parameters:");
-      console.log("form#" + $slug + "-path :input");
-      $("#" + $slug + "-path input").each(function(index){
-        $input = $(this);
-        console.log("here:" + $input);
-        });
-
-      for(var i = 0, element; element = path_elements[i++];)
-        {
-        console.log('IN!');
-        console.log("type:" + element);
-          if(element.type === "text")
-            {
-            console.log("value:" + element.value);
-            if(element.value!='')
-              {
-              console.log("url1: " + $api_url);
-              $replace_string = '{' + element.name + '}';
-              $api_url = $api_url.replace($replace_string,element.value);
-              console.log("url2: " + $api_url);
-
-              $replace_string = '%7B' + element.name + '%7D';
-              $api_url = $api_url.replace($replace_string,element.value);
-              console.log("url3: " + $api_url);
-
-              }
-            }
-          }
-
       $anyparams = 0;
       $query_string = '';
 
@@ -635,18 +567,6 @@ layout: page
         var input = $(this);
         lert('Type: ' + input.attr('type') + 'Name: ' + input.attr('name') + 'Value: ' + input.val());
         });
-
-      for(var i = 0, element; element = $param_elements[i++];)
-        {
-          if(element.type === "text")
-            {
-            if(element.value!='')
-              {
-              $query_string = $query_string + element.name + '=' + element.value;
-              $anyparams = 1;
-              }
-            }
-          }
 
       if($param_elements.length > 0 && $anyparams == 1){ $api_url = $api_url + '?' + $query_string; }
 
