@@ -717,7 +717,6 @@ layout: page
         var response = $.ajax({
            url: $api_url,
            method: 'post',
-           data: JSON.stringify($body_json),
            beforeSend: function(xhrObj){
            if ($any_headers==1)
               {
