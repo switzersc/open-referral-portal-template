@@ -636,7 +636,7 @@ layout: page
       $query_string = '';
 
       console.log("1 - #" + $slug + "-parameters");
-      $.each($("#" + $slug + "-parameters").elements, function(index){
+      $.each($("form").elements, function(index){
          console.log($(this));
       });
 
@@ -646,6 +646,14 @@ layout: page
         $input = $(this);
         console.log("here:" + $input);
         });
+
+      console.log("3:");
+      $("#" + $slug + "-parameters input").each(
+          function(index){
+              var input = $(this);
+              alert('Type: ' + input.attr('type') + 'Name: ' + input.attr('name') + 'Value: ' + input.val());
+          }
+      );
 
       for(var i = 0, element; element = $param_elements[i++];)
         {
