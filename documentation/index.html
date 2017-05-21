@@ -621,7 +621,7 @@ layout: page
     $anypathparams = 0;
     $any_headers = 0;
     $headers = [];
-    $sendbody = [];
+    $body_json = "";
     $query_string = '';
 
     // process security definitions
@@ -703,16 +703,7 @@ layout: page
       //console.log($param_type + ' - ' + $param_in);
       if($param_type == 'text' && $param_in == 'body')
         {
-        //console.log("body: " + $param_name + ' == ' + $param_value);
-
-        $b = [];
-        $b["name"] = $param_name;
-        $b["value"] = $param_value;
-
-        console.log($b);
-        $sendbody.push($b);
-        console.log($sendbody);
-
+        $body_json = $body_json + '{' + $param_name + ': "' + $param_value + '"},';
         $any_body = 1;
         }
 
@@ -723,19 +714,9 @@ layout: page
 
         if($query_string != '' && $anyparams == 1){ $api_url = $api_url + $query_string; }
 
-        $.each($sendbody, function( $key, $value ) {
-          console.log($key + ' == ' + $value);
-         });
+        $body_json = '[' + $body_json.substring(0,$body_json.length - 1) + ']';
 
-        console.log($sendbody);
-
-        $send_body = '';
-        if($any_body == 1)
-          {
-          $send_body = JSON.stringify($sendbody);
-          }
-
-        console.log($send_body);
+        console.log($body_json);
 
           var response = $.ajax({
              url: $api_url,
