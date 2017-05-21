@@ -723,10 +723,10 @@ layout: page
 
         if($query_string != '' && $anyparams == 1){ $api_url = $api_url + $query_string; }
 
-        console.log("a: " + $sendbody);
+        console.log($sendbody);
 
         $send_body = '';
-        if($any_headers == 1)
+        if($any_body == 1)
           {
           $send_body = JSON.stringify($sendbody);
           }
