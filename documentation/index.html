@@ -725,6 +725,8 @@ layout: page
       $send_body = JSON.stringify($body);
       }
 
+    console.log($send_body);
+
     var response = $.ajax({
        url: $api_url,
        data: $send_body,
