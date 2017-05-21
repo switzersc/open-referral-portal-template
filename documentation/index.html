@@ -707,6 +707,7 @@ layout: page
         $b["value"] = $param_value;
         console.log($b);
         $body.push($b);
+        console.log($body);
         $any_body = 1;
         }
 
@@ -717,7 +718,7 @@ layout: page
     if($query_string != '' && $anyparams == 1){ $api_url = $api_url + $query_string; }
 
     //console.log("loading: " + $api_url);
-    
+
     $send_body = '';
     if($any_headers == 1)
       {
