@@ -660,7 +660,7 @@ layout: page
       //console.log($param_type + ' - ' + $param_in);
       if($param_type == 'text' && $param_in == 'header')
         {
-        //console.log($param_name + ' == ' + $param_value);
+        console.log($param_name + ' == ' + $param_value);
         $h = [];
         $h["name"] = $param_name;
         $h["value"] = $param_value;
@@ -717,7 +717,7 @@ layout: page
 
     if($query_string != '' && $anyparams == 1){ $api_url = $api_url + $query_string; }
 
-    console.log("loading: " + $body);
+    console.log("body: " + $body);
 
     $send_body = '';
     if($any_headers == 1)
