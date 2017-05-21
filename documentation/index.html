@@ -595,11 +595,11 @@ layout: page
         $param_type = input.attr('type');
         $param_name = input.attr('name');
         $param_in = input.attr('formtarget');
+        $param_value = input.val();
 
         //console.log($param_type + ' - ' + $param_in);
         if($param_type == 'text' && $param_in == 'header')
           {
-          $param_value = input.val();
           //console.log($param_name + ' == ' + $param_value);
           $h = [];
           $h["name"] = $param_name;
@@ -610,7 +610,6 @@ layout: page
 
         if($param_type == 'text' && $param_in == 'path')
           {
-          $param_value = input.val();
           //console.log($param_name + ' == ' + $param_value);
           $replace_string = '{' + $param_name + '}';
           $api_url = $api_url.replace($replace_string,$param_value);
@@ -623,15 +622,14 @@ layout: page
 
         if($param_type == 'text' && $param_in == 'query')
           {
-          $param_value = input.val();
           //console.log($param_name + ' == ' + $param_value);
           if($query_string=='')
             {
-            $query_string = "?" + element.name + '=' + element.value;
+            $query_string = "?" + $param_name + '=' + $param_value;
             }
           else
             {
-            $query_string = $query_string + "&" + element.name + '=' + element.value;
+            $query_string = $query_string + "&" + $param_name + '=' + $param_value;
             }
           $anyparams = 1;
           }
