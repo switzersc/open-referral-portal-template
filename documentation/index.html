@@ -702,12 +702,15 @@ layout: page
       if($param_type == 'text' && $param_in == 'body')
         {
         console.log("body: " + $param_name + ' == ' + $param_value);
+
         $b = [];
         $b["name"] = $param_name;
         $b["value"] = $param_value;
+
         console.log($b);
         $body = $body.push($b);
         console.log($body);
+
         $any_body = 1;
         }
 
