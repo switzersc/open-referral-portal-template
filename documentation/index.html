@@ -636,9 +636,11 @@ layout: page
 
         });
 
+      console.log("query string: " + $query_string);
+
       if($query_string != '' && $anyparams == 1){ $api_url = $api_url + $query_string; }
 
-      //console.log("loading: " + $api_url);
+      console.log("loading: " + $api_url);
 
       var response = $.ajax({
          url: $api_url,
