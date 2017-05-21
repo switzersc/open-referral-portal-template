@@ -723,6 +723,10 @@ layout: page
 
         if($query_string != '' && $anyparams == 1){ $api_url = $api_url + $query_string; }
 
+        $.each($sendbody, function( $key, $value ) {
+          console.log($key + ' == ' + $value);
+         });
+
         console.log($sendbody);
 
         $send_body = '';
