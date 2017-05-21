@@ -635,7 +635,12 @@ layout: page
       $anyparams = 0;
       $query_string = '';
 
-      console.log("publishing parameters:");
+      console.log("1");
+      $.each($("#" + $slug + "-parameters").elements, function(){
+         console.log($(this));
+      }
+
+      console.log("2:");
       console.log("#" + $slug + "-parameters input");
       $("#" + $slug + "-parameters input").each(function(index){
         $input = $(this);
