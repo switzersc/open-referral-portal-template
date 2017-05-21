@@ -637,7 +637,7 @@ layout: page
     $h = [];
     $h["name"] = 'Access-Control-Allow-Headers';
     $h["value"] = 'Content-Type  ';
-    $headers.push($h);    
+    $headers.push($h);
 
     // process security definitions
     $.each($security_array, function( $key, $definition ) {
@@ -745,6 +745,7 @@ layout: page
            //contentType: 'application/json; charset=utf-8',
            //contentType: 'application/json;',
            dataType: 'json',
+           async: false,
            //contentType: 'application/x-www-form-urlencoded',
            contentType: "application/x-www-form-urlencoded",
            success:function(response){
