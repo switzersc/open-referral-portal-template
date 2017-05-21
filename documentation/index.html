@@ -532,7 +532,7 @@ layout: page
                                             </tr>
                                             <tr>
                                               <td align="center"s tyle="font-size: 12px; padding: 25px;">
-                                                <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}','{{ thissec }}','{{ verb }}');">Make API Request</button>
+                                                  <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}','{{ thissec }}','{{ verb }}');">Make API Request</button>
                                               </td>
                                             </tr>
                                           </table>
@@ -612,8 +612,6 @@ layout: page
    function getRequest($slug,$path,$url,$security,$verb)
     {
 
-    console.log($verb);
-
     $security_array = $security.split(',');
     $api_url = $url + $path;
 
@@ -660,7 +658,7 @@ layout: page
       //console.log($param_type + ' - ' + $param_in);
       if($param_type == 'text' && $param_in == 'header')
         {
-        console.log($param_name + ' == ' + $param_value);
+        //console.log($param_name + ' == ' + $param_value);
         $h = [];
         $h["name"] = $param_name;
         $h["value"] = $param_value;
@@ -703,7 +701,7 @@ layout: page
       //console.log($param_type + ' - ' + $param_in);
       if($param_type == 'text' && $param_in == 'body')
         {
-        //console.log($param_name + ' == ' + $param_value);
+        console.log("body: " + $param_name + ' == ' + $param_value);
         $b = [];
         $b["name"] = $param_name;
         $b["value"] = $param_value;
@@ -717,7 +715,7 @@ layout: page
 
     if($query_string != '' && $anyparams == 1){ $api_url = $api_url + $query_string; }
 
-    console.log("body: " + $body);
+    //console.log("loading: " + $api_url);
 
     $send_body = '';
     if($any_headers == 1)
@@ -729,16 +727,16 @@ layout: page
 
     var response = $.ajax({
        url: $api_url,
-       data: $send_body,
-       method: $verb,
-       beforeSend: function(xhrObj){
-       if ($any_headers==1)
-          {
-          $.each($headers, function( $key, $definition ) {
-             xhrObj.setRequestHeader($definition['name'],$definition['value']);
-           });
-          }
-       },
+       data: $api_url,
+       method: $send_body,
+         beforeSend: function(xhrObj){
+         if ($any_headers==1)
+            {
+            $.each($headers, function( $key, $definition ) {
+               xhrObj.setRequestHeader($definition['name'],$definition['value']);
+             });
+            }
+         },
        //headers: {'x-appid': 'test','x-appkey': 'test',},
        //contentType: 'application/json; charset=utf-8',
        //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
