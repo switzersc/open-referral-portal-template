@@ -532,7 +532,12 @@ layout: page
                                             </tr>
                                             <tr>
                                               <td align="center"s tyle="font-size: 12px; padding: 25px;">
-                                                <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}','{{ thissec }}');">Make API Request</button>
+                                                {% if verb == 'GET' %}
+                                                  <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}','{{ thissec }}');">Make API Request</button>
+                                                {% endif %}
+                                                {% if verb == 'POST' %}
+                                                  <button type="button" class="btn btn-success" onclick="putRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}','{{ thissec }}');">Make API Request</button>
+                                                {% endif %}
                                               </td>
                                             </tr>
                                           </table>
@@ -559,22 +564,20 @@ layout: page
                           </td>
                         </tr>
                         {% assign taglist = '' %}
-                        {% for spec in openapi_spec_json %}
-                          {% for definition in spec.definitions %}
-                            {% assign definition_name = definition[0] %}
-                            {% assign fields = definition[1] %}
-                            <tr>
-                              <td style="padding: 0px 25px 0px 25px;" colspan='5'>
-                                <strong>{{ definition_name }}</strong>
-                                <ul style='padding-left: 50px;'>
-                                  {% for property in fields.properties %}
-                                    {% assign property_name = property[0] %}
-                                    <li><strong>{{ property_name }}</strong> (<em>{{ property[1]["type"] }}</em>) - {{ property[1]["description"] }}</li>
-                                  {% endfor %}
-                                </ul>
-                              </td>
-                            </tr>
-                          {% endfor %}
+                        {% for definition in openapi_spec_json.definitions %}
+                          {% assign definition_name = definition[0] %}
+                          {% assign fields = definition[1] %}
+                          <tr>
+                            <td style="padding: 0px 25px 0px 25px;" colspan='5'>
+                              <strong>{{ definition_name }}</strong>
+                              <ul style='padding-left: 50px;'>
+                                {% for property in fields.properties %}
+                                  {% assign property_name = property[0] %}
+                                  <li><strong>{{ property_name }}</strong> (<em>{{ property[1]["type"] }}</em>) - {{ property[1]["description"] }}</li>
+                                {% endfor %}
+                              </ul>
+                            </td>
+                          </tr>
                         {% endfor %}
 
                         </table>
@@ -589,157 +592,178 @@ layout: page
     </tr>
   </table>
 
-  <script type="text/javascript">
+<script type="text/javascript">
 
-    function loadClient($slug)
+  function loadClient($slug)
+    {
+    //console.log($slug);
+    $("#client-body").html('');
+    $editor = $('#' + $slug + '-cell').html();
+    $("#client-body").append( $editor );
+    }
+
+  function showme($id)
+    {
+    if(document.getElementById($id).style.display=='none')
       {
-      //console.log($slug);
-      $("#client-body").html('');
-      $editor = $('#' + $slug + '-cell').html();
-      $("#client-body").append( $editor );
+      document.getElementById($id).style.display = '';
       }
-    function showme($id)
+    else
       {
-      if(document.getElementById($id).style.display=='none')
-        {
-        document.getElementById($id).style.display = '';
-        }
-      else
-        {
-        document.getElementById($id).style.display = 'none';
-        }
+      document.getElementById($id).style.display = 'none';
       }
+    }
 
-     function getRequest($slug,$path,$url,$security)
-      {
+   function getRequest($slug,$path,$url,$security,$verb)
+    {
 
-      $security_array = $security.split(',');
-      $api_url = $url + $path;
+    $security_array = $security.split(',');
+    $api_url = $url + $path;
 
-      document.getElementById($slug+'-loading').style.display = '';
+    document.getElementById($slug+'-loading').style.display = '';
 
-      $anyparams = 0;
-      $anypathparams = 0;
-      $any_headers = 0;
-      $headers = [];
-      $query_string = '';
+    $anyparams = 0;
+    $anypathparams = 0;
+    $any_headers = 0;
+    $headers = [];
+    $body = [];
+    $query_string = '';
 
-      // process security definitions
-      $.each($security_array, function( $key, $definition ) {
-        $definition = $definition.trim();
-        if($definition != '')
+    // process security definitions
+    $.each($security_array, function( $key, $definition ) {
+      $definition = $definition.trim();
+      if($definition != '')
+        {
+        $value = $('#' + $definition).val();
+        $id = $('#' + $definition).attr("id");
+        $in = $('#' + $definition).attr("name");
+        $name = $('#' + $definition).attr("altname");
+        $type = $('#' + $definition).attr("alt");
+        if($in == 'header')
           {
-          $value = $('#' + $definition).val();
-          $id = $('#' + $definition).attr("id");
-          $in = $('#' + $definition).attr("name");
-          $name = $('#' + $definition).attr("altname");
-          $type = $('#' + $definition).attr("alt");
-          if($in == 'header')
-            {
-            //$headers = $headers + "'" + $name + "': '" + $value + "',";
-            $h = [];
-            $h["name"] = $name;
-            $h["value"] = $value;
-            $headers.push($h);
-            $any_headers = 1;
-            }
-          }
-      });
-
-      // loop through parameters
-      $("#client-body :input").each(function(index){
-
-        var input = $(this);
-        $param_type = input.attr('type');
-        $param_name = input.attr('name');
-        $param_in = input.attr('formtarget');
-        $param_value = input.val();
-
-        //console.log($param_type + ' - ' + $param_in);
-        if($param_type == 'text' && $param_in == 'header')
-          {
-          //console.log($param_name + ' == ' + $param_value);
+          //$headers = $headers + "'" + $name + "': '" + $value + "',";
           $h = [];
-          $h["name"] = $param_name;
-          $h["value"] = $param_value;
+          $h["name"] = $name;
+          $h["value"] = $value;
           $headers.push($h);
           $any_headers = 1;
           }
+        }
+    });
 
-        if($param_type == 'text' && $param_in == 'path')
+    // loop through parameters
+    $("#client-body :input").each(function(index){
+
+      var input = $(this);
+      $param_type = input.attr('type');
+      $param_name = input.attr('name');
+      $param_in = input.attr('formtarget');
+      $param_value = input.val();
+
+      //console.log($param_type + ' - ' + $param_in);
+      if($param_type == 'text' && $param_in == 'header')
+        {
+        //console.log($param_name + ' == ' + $param_value);
+        $h = [];
+        $h["name"] = $param_name;
+        $h["value"] = $param_value;
+        $headers.push($h);
+        $any_headers = 1;
+        }
+
+      if($param_type == 'text' && $param_in == 'path')
+        {
+        //console.log($param_name + ' == ' + $param_value);
+        $replace_string = '{' + $param_name + '}';
+        $api_url = $api_url.replace($replace_string,$param_value);
+
+        $replace_string = '%7B' + $param_name + '%7D';
+        $api_url = $api_url.replace($replace_string,$param_value);
+
+        $anypathparams = 1;
+        }
+
+      if($param_type == 'text' && $param_in == 'query')
+        {
+        //console.log($param_name + ' == ' + $param_value);
+        if($query_string=='')
           {
-          //console.log($param_name + ' == ' + $param_value);
-          $replace_string = '{' + $param_name + '}';
-          $api_url = $api_url.replace($replace_string,$param_value);
-
-          $replace_string = '%7B' + $param_name + '%7D';
-          $api_url = $api_url.replace($replace_string,$param_value);
-
-          $anypathparams = 1;
+          if($param_value!='')
+            {
+            $query_string = $query_string + "?" + $param_name + '=' + $param_value;
+            }
           }
-
-        if($param_type == 'text' && $param_in == 'query')
+        else
           {
-          //console.log($param_name + ' == ' + $param_value);
-          if($query_string=='')
+          if($param_value!='')
             {
-            if($param_value!='')
-              {
-              $query_string = $query_string + "?" + $param_name + '=' + $param_value;
-              }
+            $query_string = $query_string + "&" + $param_name + '=' + $param_value;
             }
-          else
-            {
-            if($param_value!='')
-              {
-              $query_string = $query_string + "&" + $param_name + '=' + $param_value;
-              }
-            }
-          $anyparams = 1;
           }
+        $anyparams = 1;
+        }
 
-        });
+      //console.log($param_type + ' - ' + $param_in);
+      if($param_type == 'text' && $param_in == 'body')
+        {
+        //console.log($param_name + ' == ' + $param_value);
+        $b = [];
+        $b["name"] = $param_name;
+        $b["value"] = $param_value;
+        $body.push($b);
+        $any_body = 1;
+        }
 
-      //console.log("query string: " + $query_string);
+      });
 
-      if($query_string != '' && $anyparams == 1){ $api_url = $api_url + $query_string; }
+    //console.log("query string: " + $query_string);
 
-      //console.log("loading: " + $api_url);
+    if($query_string != '' && $anyparams == 1){ $api_url = $api_url + $query_string; }
 
-      var response = $.ajax({
-         url: $api_url,
-         method: "get",
-           beforeSend: function(xhrObj){
-           if ($any_headers==1)
-              {
-              $.each($headers, function( $key, $definition ) {
-                 xhrObj.setRequestHeader($definition['name'],$definition['value']);
-               });
-              }
-           },
-         //headers: {'x-appid': 'test','x-appkey': 'test',},
-         //contentType: 'application/json; charset=utf-8',
-         //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
-         success:function(response){
+    //console.log("loading: " + $api_url);
+
+    $send_body = '';
+    if($any_headers == 1)
+      {
+      $send_body = JSON.stringify($body);
+      }
+
+    var response = $.ajax({
+       url: $api_url,
+       data: $api_url,
+       method: $send_body,
+         beforeSend: function(xhrObj){
+         if ($any_headers==1)
+            {
+            $.each($headers, function( $key, $definition ) {
+               xhrObj.setRequestHeader($definition['name'],$definition['value']);
+             });
+            }
+         },
+       //headers: {'x-appid': 'test','x-appkey': 'test',},
+       //contentType: 'application/json; charset=utf-8',
+       //beforeSend: function(xhr){xhr.setRequestHeader($headers);},
+       success:function(response){
+          document.getElementById($slug+'-loading').style.display = 'none';
+          $viewer = JSON.stringify(response, null, 2);
+          //console.log($viewer);
+          document.getElementById($slug+'-response-header').style.display = '';
+          document.getElementById($slug+'-response-body').style.display = '';
+          document.getElementById($slug+'-response').value = $viewer;
+          document.getElementById($slug+'-response').style.width = "100%";
+          document.getElementById($slug+'-response').style.height = "450px";
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
             document.getElementById($slug+'-loading').style.display = 'none';
-            $viewer = JSON.stringify(response, null, 2);
-            //console.log($viewer);
+            $message = "Status: " + textStatus + "\nError: " + errorThrown;
             document.getElementById($slug+'-response-header').style.display = '';
             document.getElementById($slug+'-response-body').style.display = '';
-            document.getElementById($slug+'-response').value = $viewer;
+            document.getElementById($slug+'-response').value = $message;
             document.getElementById($slug+'-response').style.width = "100%";
-            document.getElementById($slug+'-response').style.height = "450px";
-          },
-          error: function(XMLHttpRequest, textStatus, errorThrown) {
-              document.getElementById($slug+'-loading').style.display = 'none';
-              $message = "Status: " + textStatus + "\nError: " + errorThrown;
-              document.getElementById($slug+'-response-header').style.display = '';
-              document.getElementById($slug+'-response-body').style.display = '';
-              document.getElementById($slug+'-response').value = $message;
-              document.getElementById($slug+'-response').style.width = "100%";
-              document.getElementById($slug+'-response').style.height = "50px";
-          }
-        });
+            document.getElementById($slug+'-response').style.height = "50px";
+        }
+      });
 
-      }
-  </script>
+    }
+
+</script>
