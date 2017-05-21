@@ -561,6 +561,7 @@ layout: page
       document.getElementById($slug+'-loading').style.display = '';
 
       $anyparams = 0;
+      $anypathparams = 0;
       $any_headers = 0;
       $headers = [];
       $query_string = '';
@@ -595,28 +596,49 @@ layout: page
         $param_name = input.attr('name');
         $param_in = input.attr('formtarget');
 
-        console.log($param_type + ' - ' + $param_in);
+        //console.log($param_type + ' - ' + $param_in);
         if($param_type == 'text' && $param_in == 'header')
           {
           $param_value = input.val();
-          console.log($param_name + ' == ' + $param_value);
+          //console.log($param_name + ' == ' + $param_value);
+          $h = [];
+          $h["name"] = $param_name;
+          $h["value"] = $param_value;
+          $headers.push($h);
+          $any_headers = 1;
           }
 
         if($param_type == 'text' && $param_in == 'path')
           {
           $param_value = input.val();
-          console.log($param_name + ' == ' + $param_value);
+          //console.log($param_name + ' == ' + $param_value);
+          $replace_string = '{' + $param_name + '}';
+          $api_url = $api_url.replace($replace_string,$param_value);
+
+          $replace_string = '%7B' + $param_name + '%7D';
+          $api_url = $api_url.replace($replace_string,$param_value);
+
+          $anypathparams = 1;
           }
 
         if($param_type == 'text' && $param_in == 'query')
           {
           $param_value = input.val();
-          console.log($param_name + ' == ' + $param_value);
+          //console.log($param_name + ' == ' + $param_value);
+          if($query_string=='')
+            {
+            $query_string = "?" + element.name + '=' + element.value;
+            }
+          else
+            {
+            $query_string = $query_string + "&" + element.name + '=' + element.value;
+            }
+          $anyparams = 1;
           }
 
         });
 
-      //if($param_elements.length > 0 && $anyparams == 1){ $api_url = $api_url + '?' + $query_string; }
+      if($query_string != '' && $anyparams == 1){ $api_url = $api_url + $query_string; }
 
       //console.log("loading: " + $api_url);
 
