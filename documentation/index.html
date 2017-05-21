@@ -725,14 +725,14 @@ layout: page
     $send_body = '';
     if($any_headers == 1)
       {
-      $send_body = JSON.stringify($body);
+      //$send_body = JSON.stringify($body);
       }
 
-    console.log($send_body);
+    console.log($body);
 
     var response = $.ajax({
        url: $api_url,
-       data: $api_url,
+       data: $send_body,
        method: $send_body,
          beforeSend: function(xhrObj){
          if ($any_headers==1)
