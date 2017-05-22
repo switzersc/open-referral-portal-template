@@ -312,8 +312,7 @@ layout: page
                               <li style="font-size: 14px; padding-bottom: 5px; list-style: none;"><strong>{{ grouptag }}</strong></li><ul style="font-size: 12px; margin-left: 25px;">
                             {% endif %}
 
-                            {% for spec in openapi_spec_json %}
-                              {% for path in spec.paths %}
+                              {% for path in openapi_spec_json.paths %}
 
                                 {% assign path_name = path[0] %}
                                 {% assign method_json = path[1] %}
@@ -351,7 +350,6 @@ layout: page
 
                                 {% endfor %}
                               {% endfor %}
-                            {% endfor %}
                             </ul></li>
                           {% endfor %}
                         </ul>
