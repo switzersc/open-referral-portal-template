@@ -292,18 +292,16 @@ layout: page
 
                           {% assign taglist = '' %}
 
-                          {% for spec in openapi_spec_json %}
-                            {% for path in spec.paths %}
-                              {% assign method_json = path[1] %}
-                              {% for method in method_json %}
-                                {% assign tagarray = method[1].tags %}
-                                {% assign tag = tagarray[0] %}
-                                {% if taglist contains tag %}
-                                {% else %}
-                                  {% assign taglist = taglist | append:',' %}
-                                  {% assign taglist = taglist | append:tag %}
-                                {% endif %}
-                              {% endfor %}
+                          {% for path in openapi_spec_json.paths %}
+                            {% assign method_json = path[1] %}
+                            {% for method in method_json %}
+                              {% assign tagarray = method[1].tags %}
+                              {% assign tag = tagarray[0] %}
+                              {% if taglist contains tag %}
+                              {% else %}
+                                {% assign taglist = taglist | append:',' %}
+                                {% assign taglist = taglist | append:tag %}
+                              {% endif %}
                             {% endfor %}
                           {% endfor %}
 
