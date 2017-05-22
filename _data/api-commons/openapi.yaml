@@ -12,13 +12,13 @@ info:
     url: http://opendatacommons.org/licenses/pddl/
   version: v1.1
 host: api.open.referral.adopta.agency
-basePath: "/"
+basePath: /"
 schemes:
 - http
 produces:
 - application/json
 paths:
-  "/contacts/":
+  /contacts/:
     get:
       summary: Get Contacts
       description: Get Contacts
@@ -42,7 +42,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/contact"
+              $ref: "#/definitions/contact"
       tags:
       - Contacts
     post:
@@ -63,10 +63,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/contact"
+              $ref: "#/definitions/contact"
       tags:
       - Contacts
-  "/contacts/{contact_id}/":
+  /contacts/{contact_id}/:
     get:
       summary: Get Contact
       description: Get Contact
@@ -83,7 +83,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/contact"
+              $ref: "#/definitions/contact"
       tags:
       - Contacts
     put:
@@ -109,7 +109,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/contact"
+              $ref: "#/definitions/contact"
       tags:
       - Contacts
     delete:
@@ -133,8 +133,8 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/contact"
-  "/contacts/{contact_id}/phones/":
+              $ref: "#/definitions/contact"
+  /contacts/{contact_id}/phones/:
     get:
       summary: Get Phones
       description: Get Phones
@@ -151,7 +151,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/phone"
+              $ref: "#/definitions/phone"
       tags:
       - Contact - Phones
     post:
@@ -177,10 +177,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/phone"
+              $ref: "#/definitions/phone"
       tags:
       - Contact - Phones
-  "/contacts/{contact_id}/phones/{phone_id}/":
+  /contacts/{contact_id}/phones/{phone_id}/:
     get:
       summary: Get Phone
       description: get Phone
@@ -202,7 +202,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/phone"
+              $ref: "#/definitions/phone"
       tags:
       - Contact - Phones
     put:
@@ -233,7 +233,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/phone"
+              $ref: "#/definitions/phone"
       tags:
       - Contact - Phones
     delete:
@@ -260,10 +260,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/phone"
+              $ref: "#/definitions/phone"
       tags:
       - Contact - Phones
-  "/locations/":
+  /locations/:
     get:
       summary: Get Locations
       description: Get Locations
@@ -283,7 +283,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/location"
+              $ref: "#/definitions/location"
       tags:
       - Locations
     post:
@@ -304,10 +304,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/location"
+              $ref: "#/definitions/location"
       tags:
       - Locations
-  "/locations/{location_id}/":
+  /locations/{location_id}/:
     get:
       summary: Get Location
       description: Get Location
@@ -324,7 +324,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/location"
+              $ref: "#/definitions/location"
       tags:
       - Locations
     put:
@@ -350,7 +350,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/location"
+              $ref: "#/definitions/location"
       tags:
       - Locations
     delete:
@@ -372,10 +372,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/location"
+              $ref: "#/definitions/location"
       tags:
       - Locations
-  "/locations/{location_id}/holiday-schedule/":
+  /locations/{location_id}/holiday-schedule/:
     get:
       summary: Get Holiday Schedule
       description: Get Holiday Schedule
@@ -392,7 +392,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/holiday_schedule"
+              $ref: "#/definitions/holiday_schedule"
       tags:
       - Location - Holiday Schedule
     post:
@@ -418,10 +418,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/holiday_schedule"
+              $ref: "#/definitions/holiday_schedule"
       tags:
       - Location - Holiday Schedule
-  "/locations/{location_id}/holiday-schedule/{holiday_schedule_id}/":
+  /locations/{location_id}/holiday-schedule/{holiday_schedule_id}/:
     get:
       summary: Get Holiday Schedule
       description: Get Holiday Schedule
@@ -443,7 +443,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/holiday_schedule"
+              $ref: "#/definitions/holiday_schedule"
       tags:
       - Location - Holiday Schedule
     put:
@@ -474,7 +474,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/holiday_schedule"
+              $ref: "#/definitions/holiday_schedule"
       tags:
       - Location - Holiday Schedule
     delete:
@@ -501,10 +501,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/holiday_schedule"
+              $ref: "#/definitions/holiday_schedule"
       tags:
       - Location - Holiday Schedule
-  "/locations/{location_id}/languages/":
+  /locations/{location_id}/languages/:
     get:
       summary: Get Languages
       description: Get Languages
@@ -521,7 +521,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/language"
+              $ref: "#/definitions/language"
       tags:
       - Location - Language
     post:
@@ -547,10 +547,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/language"
+              $ref: "#/definitions/language"
       tags:
       - Location - Language
-  "/locations/{location_id}/languages/{language_id}/":
+  /locations/{location_id}/languages/{language_id}/:
     get:
       summary: Get Languages
       description: Get Languages
@@ -572,7 +572,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/language"
+              $ref: "#/definitions/language"
       tags:
       - Location - Language
     put:
@@ -603,7 +603,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/language"
+              $ref: "#/definitions/language"
       tags:
       - Location - Language
     delete:
@@ -630,10 +630,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/language"
+              $ref: "#/definitions/language"
       tags:
       - Location - Language
-  "/locations/{location_id}/postal-address/":
+  /locations/{location_id}/postal-address/:
     get:
       summary: Get Postal Addresses
       description: Get Postal Addresses
@@ -650,7 +650,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/postal_address"
+              $ref: "#/definitions/postal_address"
       tags:
       - Location - Postal Address
     post:
@@ -676,10 +676,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/postal_address"
+              $ref: "#/definitions/postal_address"
       tags:
       - Location - Postal Address
-  "/locations/{location_id}/postal-address/{postal_address_id}/":
+  /locations/{location_id}/postal-address/{postal_address_id}/:
     get:
       summary: Get Postal Address
       description: Get Postal Address
@@ -701,7 +701,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/postal_address"
+              $ref: "#/definitions/postal_address"
       tags:
       - Location - Postal Address
     put:
@@ -732,7 +732,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/postal_address"
+              $ref: "#/definitions/postal_address"
       tags:
       - Location - Postal Address
     delete:
@@ -759,10 +759,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/postal_address"
+              $ref: "#/definitions/postal_address"
       tags:
       - Location - Postal Address
-  "/locations/{location_id}/physical-address/":
+  /locations/{location_id}/physical-address/:
     get:
       summary: Get Physical Address
       description: Get Physical Address
@@ -779,7 +779,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/postal_address"
+              $ref: "#/definitions/postal_address"
       tags:
       - Location - Physical Address
     post:
@@ -805,10 +805,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/postal_address"
+              $ref: "#/definitions/postal_address"
       tags:
       - Location - Physical Address
-  "/locations/{location_id}/physical-address/{postal_address_id}/":
+  /locations/{location_id}/physical-address/{postal_address_id}/:
     get:
       summary: Get Physical Address
       description: Get Physical Address
@@ -830,7 +830,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/postal_address"
+              $ref: "#/definitions/postal_address"
       tags:
       - Location - Physical Address
     put:
@@ -861,7 +861,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/postal_address"
+              $ref: "#/definitions/postal_address"
       tags:
       - Location - Physical Address
     delete:
@@ -888,10 +888,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/postal_address"
+              $ref: "#/definitions/postal_address"
       tags:
       - Location - Physical Address
-  "/locations/{location_id}/phones/":
+  /locations/{location_id}/phones/:
     get:
       summary: Get Phones
       description: Get Phones
@@ -908,7 +908,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/phone"
+              $ref: "#/definitions/phone"
       tags:
       - Location - Phones
     post:
@@ -934,10 +934,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/phone"
+              $ref: "#/definitions/phone"
       tags:
       - Location - Phones
-  "/locations/{location_id}/phones/{phone_id}/":
+  /locations/{location_id}/phones/{phone_id}/:
     get:
       summary: Get Phone
       description: get Phone
@@ -959,7 +959,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/phone"
+              $ref: "#/definitions/phone"
       tags:
       - Location - Phones
     put:
@@ -990,7 +990,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/phone"
+              $ref: "#/definitions/phone"
       tags:
       - Location - Phones
     delete:
@@ -1017,10 +1017,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/phone"
+              $ref: "#/definitions/phone"
       tags:
       - Location - Phones
-  "/locations/{location_id}/regular-schedule/":
+  /locations/{location_id}/regular-schedule/:
     get:
       summary: Get Regular Schedules
       description: Get Regular Schedules
@@ -1037,7 +1037,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/regular_schedule"
+              $ref: "#/definitions/regular_schedule"
       tags:
       - Location - Regular Schedule
     post:
@@ -1063,10 +1063,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/regular_schedule"
+              $ref: "#/definitions/regular_schedule"
       tags:
       - Location - Regular Schedule
-  "/locations/{location_id}/regular-schedule/{regular_schedule_id}/":
+  /locations/{location_id}/regular-schedule/{regular_schedule_id}/:
     get:
       summary: Get Regular Schedule
       description: Get Regular Schedule
@@ -1088,7 +1088,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/regular_schedule"
+              $ref: "#/definitions/regular_schedule"
       tags:
       - Location - Regular Schedule
     put:
@@ -1119,7 +1119,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/regular_schedule"
+              $ref: "#/definitions/regular_schedule"
       tags:
       - Location - Regular Schedule
     delete:
@@ -1146,10 +1146,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/regular_schedule"
+              $ref: "#/definitions/regular_schedule"
       tags:
       - Location - Regular Schedule
-  "/locations/{location_id}/services/":
+  /locations/{location_id}/services/:
     get:
       summary: Get Services
       description: Get Services
@@ -1166,7 +1166,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service"
+              $ref: "#/definitions/service"
       tags:
       - Location - Services
     post:
@@ -1192,10 +1192,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service"
+              $ref: "#/definitions/service"
       tags:
       - Location - Services
-  "/locations/{location_id}/services/{service_id}/":
+  /locations/{location_id}/services/{service_id}/:
     get:
       summary: Get Service
       description: Get Service
@@ -1217,7 +1217,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service"
+              $ref: "#/definitions/service"
       tags:
       - Location - Services
     put:
@@ -1248,7 +1248,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service"
+              $ref: "#/definitions/service"
       tags:
       - Location - Services
     delete:
@@ -1275,10 +1275,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service"
+              $ref: "#/definitions/service"
       tags:
       - Location - Services
-  "/locations/{location_id}/accessibility/":
+  /locations/{location_id}/accessibility/:
     get:
       summary: Get Accessibility For Disabilities
       description: Get Accessibility For Disabilities
@@ -1295,7 +1295,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/accessibility_for_disabilities"
+              $ref: "#/definitions/accessibility_for_disabilities"
       tags:
       - Location - Accessibility For Disabilities
     post:
@@ -1321,10 +1321,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/accessibility_for_disabilities"
+              $ref: "#/definitions/accessibility_for_disabilities"
       tags:
       - Location - Accessibility For Disabilities
-  "/locations/{location_id}/accessibility/{accessibility_id}/":
+  /locations/{location_id}/accessibility/{accessibility_id}/:
     get:
       summary: Get Accessibility For Disabilities
       description: Get Accessibility For Disabilities
@@ -1346,7 +1346,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/accessibility_for_disabilities"
+              $ref: "#/definitions/accessibility_for_disabilities"
       tags:
       - Location - Accessibility For Disabilities
     put:
@@ -1377,7 +1377,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/accessibility_for_disabilities"
+              $ref: "#/definitions/accessibility_for_disabilities"
       tags:
       - Location - Accessibility For Disabilities
     delete:
@@ -1404,10 +1404,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/accessibility_for_disabilities"
+              $ref: "#/definitions/accessibility_for_disabilities"
       tags:
       - Location - Accessibility For Disabilities
-  "/organizations/":
+  /organizations/:
     get:
       summary: Get Organizations
       description: Get Organizations
@@ -1427,7 +1427,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/organization"
+              $ref: "#/definitions/organization"
       tags:
       - Organizations
     post:
@@ -1448,10 +1448,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/organization"
+              $ref: "#/definitions/organization"
       tags:
       - Organizations
-  "/organizations/{organization_id}/":
+  /organizations/{organization_id}/:
     get:
       summary: Get Organization
       description: Get Organization
@@ -1468,7 +1468,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/organization"
+              $ref: "#/definitions/organization"
       tags:
       - Organizations
     put:
@@ -1494,7 +1494,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/organization"
+              $ref: "#/definitions/organization"
       tags:
       - Organizations
     delete:
@@ -1518,8 +1518,8 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/organization"
-  "/organizations/{organization_id}/contacts/":
+              $ref: "#/definitions/organization"
+  /organizations/{organization_id}/contacts/:
     get:
       summary: Get Contacts
       description: Get Contacts
@@ -1536,7 +1536,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/contact"
+              $ref: "#/definitions/contact"
       tags:
       - Organization - Contacts
     post:
@@ -1562,10 +1562,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/contact"
+              $ref: "#/definitions/contact"
       tags:
       - Organization - Contacts
-  "/organizations/{organization_id}/contacts/{contact_id}/":
+  /organizations/{organization_id}/contacts/{contact_id}/:
     get:
       summary: Get Contact
       description: Get Contact
@@ -1587,7 +1587,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/contact"
+              $ref: "#/definitions/contact"
       tags:
       - Organization - Contacts
     put:
@@ -1618,7 +1618,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/contact"
+              $ref: "#/definitions/contact"
       tags:
       - Organization - Contacts
     delete:
@@ -1645,10 +1645,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/contact"
+              $ref: "#/definitions/contact"
       tags:
       - Organization - Contacts
-  "/organizations/{organization_id}/funding/":
+  /organizations/{organization_id}/funding/:
     get:
       summary: Get Fundings
       description: Get Fundings
@@ -1665,7 +1665,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/funding"
+              $ref: "#/definitions/funding"
       tags:
       - Organization - Funding
     post:
@@ -1691,10 +1691,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/funding"
+              $ref: "#/definitions/funding"
       tags:
       - Organization - Funding
-  "/organizations/{organization_id}/funding/{funding_id}/":
+  /organizations/{organization_id}/funding/{funding_id}/:
     get:
       summary: Get Funding
       description: Get Funding
@@ -1716,7 +1716,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/funding"
+              $ref: "#/definitions/funding"
       tags:
       - Organization - Funding
     put:
@@ -1747,7 +1747,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/funding"
+              $ref: "#/definitions/funding"
       tags:
       - Organization - Funding
     delete:
@@ -1774,10 +1774,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/funding"
+              $ref: "#/definitions/funding"
       tags:
       - Organization - Funding
-  "/organizations/{organization_id}/locations/":
+  /organizations/{organization_id}/locations/:
     get:
       summary: Get Location
       description: Get Location
@@ -1794,7 +1794,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/location"
+              $ref: "#/definitions/location"
       tags:
       - Organization - Locations
     post:
@@ -1820,10 +1820,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/location"
+              $ref: "#/definitions/location"
       tags:
       - Organization - Locations
-  "/organizations/{organization_id}/locations/{location_id}/":
+  /organizations/{organization_id}/locations/{location_id}/:
     get:
       summary: Get Location
       description: Get Location
@@ -1845,7 +1845,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/location"
+              $ref: "#/definitions/location"
       tags:
       - Organization - Locations
     put:
@@ -1876,7 +1876,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/location"
+              $ref: "#/definitions/location"
       tags:
       - Organization - Locations
     delete:
@@ -1903,10 +1903,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/location"
+              $ref: "#/definitions/location"
       tags:
       - Organization - Locations
-  "/organizations/{organization_id}/phones/":
+  /organizations/{organization_id}/phones/:
     get:
       summary: Get Phones
       description: Get Phones
@@ -1923,7 +1923,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/phone"
+              $ref: "#/definitions/phone"
       tags:
       - Organization - Phones
     post:
@@ -1949,10 +1949,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/phone"
+              $ref: "#/definitions/phone"
       tags:
       - Organization - Phones
-  "/organizations/{organization_id}/phones/{phone_id}/":
+  /organizations/{organization_id}/phones/{phone_id}/:
     get:
       summary: Get Phone
       description: get Phone
@@ -1974,7 +1974,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/phone"
+              $ref: "#/definitions/phone"
       tags:
       - Organization - Phones
     put:
@@ -2005,7 +2005,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/phone"
+              $ref: "#/definitions/phone"
       tags:
       - Organization - Phones
     delete:
@@ -2032,10 +2032,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/phone"
+              $ref: "#/definitions/phone"
       tags:
       - Organization - Phones
-  "/organizations/{organization_id}/programs/":
+  /organizations/{organization_id}/programs/:
     get:
       summary: Get Programs
       description: Get Programs
@@ -2052,7 +2052,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/program"
+              $ref: "#/definitions/program"
       tags:
       - Organization - Programs
     post:
@@ -2078,10 +2078,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/program"
+              $ref: "#/definitions/program"
       tags:
       - Organization - Programs
-  "/organizations/{organization_id}/programs/{program_id}/":
+  /organizations/{organization_id}/programs/{program_id}/:
     get:
       summary: Get Program
       description: Get Program
@@ -2103,7 +2103,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/program"
+              $ref: "#/definitions/program"
       tags:
       - Organization - Programs
     put:
@@ -2134,7 +2134,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/program"
+              $ref: "#/definitions/program"
       tags:
       - Organization - Programs
     delete:
@@ -2161,10 +2161,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/program"
+              $ref: "#/definitions/program"
       tags:
       - Organization - Programs
-  "/organizations/{organization_id}/programs/{program_id}/services/":
+  /organizations/{organization_id}/programs/{program_id}/services/:
     get:
       summary: Get Service
       description: Get Service
@@ -2186,7 +2186,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service"
+              $ref: "#/definitions/service"
       tags:
       - Organization - Program Services
     post:
@@ -2217,10 +2217,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service"
+              $ref: "#/definitions/service"
       tags:
       - Organization - Program Services
-  "/organizations/{organization_id}/programs/{program_id}/services/{service_id}/":
+  /organizations/{organization_id}/programs/{program_id}/services/{service_id}/:
     get:
       summary: Get Service
       description: Get Service
@@ -2247,7 +2247,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service"
+              $ref: "#/definitions/service"
       tags:
       - Organization - Program Services
     put:
@@ -2283,7 +2283,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service"
+              $ref: "#/definitions/service"
       tags:
       - Organization - Program Services
     delete:
@@ -2315,10 +2315,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service"
+              $ref: "#/definitions/service"
       tags:
       - Organization - Program Services
-  "/organizations/{organization_id}/services/":
+  /organizations/{organization_id}/services/:
     get:
       summary: Get Services
       description: Get Services
@@ -2335,7 +2335,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service"
+              $ref: "#/definitions/service"
       tags:
       - Organization - Services
     post:
@@ -2361,10 +2361,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service"
+              $ref: "#/definitions/service"
       tags:
       - Organization - Services
-  "/organizations/{organization_id}/services/{service_id}/":
+  /organizations/{organization_id}/services/{service_id}/:
     get:
       summary: Get Service
       description: Get Service
@@ -2386,7 +2386,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service"
+              $ref: "#/definitions/service"
       tags:
       - Organization - Services
     put:
@@ -2417,7 +2417,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service"
+              $ref: "#/definitions/service"
       tags:
       - Organization - Services
     delete:
@@ -2444,10 +2444,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service"
+              $ref: "#/definitions/service"
       tags:
       - Organization - Services
-  "/search/":
+  /search/:
     get:
       summary: Search
       description: Search
@@ -2494,7 +2494,7 @@ paths:
           description: OK
       tags:
       - Search
-  "/services/":
+  /services/:
     get:
       summary: Get Services
       description: Get Services
@@ -2514,7 +2514,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service"
+              $ref: "#/definitions/service"
       tags:
       - Services
     post:
@@ -2535,10 +2535,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service"
+              $ref: "#/definitions/service"
       tags:
       - Services
-  "/services/{service_id}/":
+  /services/{service_id}/:
     get:
       summary: Get Service
       description: Get Service
@@ -2555,7 +2555,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/organization"
+              $ref: "#/definitions/organization"
       tags:
       - Services
     put:
@@ -2581,7 +2581,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service"
+              $ref: "#/definitions/service"
       tags:
       - Services
     delete:
@@ -2605,8 +2605,8 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service"
-  "/services/{service_id}/contacts/":
+              $ref: "#/definitions/service"
+  /services/{service_id}/contacts/:
     get:
       summary: Get Contacts
       description: Get Contacts
@@ -2623,7 +2623,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/contact"
+              $ref: "#/definitions/contact"
       tags:
       - Service - Contacts
     post:
@@ -2649,10 +2649,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/contact"
+              $ref: "#/definitions/contact"
       tags:
       - Service - Contacts
-  "/services/{service_id}/contacts/{contact_id}/":
+  /services/{service_id}/contacts/{contact_id}/:
     get:
       summary: Get Contact
       description: Get Contact
@@ -2674,7 +2674,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/contact"
+              $ref: "#/definitions/contact"
       tags:
       - Service - Contacts
     put:
@@ -2705,7 +2705,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/contact"
+              $ref: "#/definitions/contact"
       tags:
       - Service - Contacts
     delete:
@@ -2732,10 +2732,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/contact"
+              $ref: "#/definitions/contact"
       tags:
       - Service - Contacts
-  "/services/{service_id}/eligibility/":
+  /services/{service_id}/eligibility/:
     get:
       summary: Get Eligibilities
       description: Get Eligibilities
@@ -2752,7 +2752,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/eligibility"
+              $ref: "#/definitions/eligibility"
       tags:
       - Service - Eligibility
     post:
@@ -2778,10 +2778,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/eligibility"
+              $ref: "#/definitions/eligibility"
       tags:
       - Service - Eligibility
-  "/services/{service_id}/eligibility/{eligibility_id}/":
+  /services/{service_id}/eligibility/{eligibility_id}/:
     get:
       summary: Get Eligibility
       description: Get Eligibility
@@ -2803,7 +2803,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/eligibility"
+              $ref: "#/definitions/eligibility"
       tags:
       - Service - Eligibility
     put:
@@ -2834,7 +2834,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/eligibility"
+              $ref: "#/definitions/eligibility"
       tags:
       - Service - Eligibility
     delete:
@@ -2861,10 +2861,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/eligibility"
+              $ref: "#/definitions/eligibility"
       tags:
       - Service - Eligibility
-  "/services/{service_id}/fees/":
+  /services/{service_id}/fees/:
     get:
       summary: Get Fees
       description: Get Fees
@@ -2881,7 +2881,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/fee"
+              $ref: "#/definitions/fee"
       tags:
       - Service - Fees
     post:
@@ -2907,10 +2907,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/fee"
+              $ref: "#/definitions/fee"
       tags:
       - Service - Fees
-  "/services/{service_id}/fees/{feed_id}/":
+  /services/{service_id}/fees/{feed_id}/:
     get:
       summary: Get Fee
       description: Get Fee
@@ -2932,7 +2932,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/fee"
+              $ref: "#/definitions/fee"
       tags:
       - Service - Fees
     put:
@@ -2963,7 +2963,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/fee"
+              $ref: "#/definitions/fee"
       tags:
       - Service - Fees
     delete:
@@ -2990,10 +2990,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/fee"
+              $ref: "#/definitions/fee"
       tags:
       - Service - Fees
-  "/services/{service_id}/funding/":
+  /services/{service_id}/funding/:
     get:
       summary: Get Funding
       description: Get Funding
@@ -3010,7 +3010,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/funding"
+              $ref: "#/definitions/funding"
       tags:
       - Service - Funding
     post:
@@ -3036,10 +3036,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/funding"
+              $ref: "#/definitions/funding"
       tags:
       - Service - Funding
-  "/services/{service_id}/funding/{funding_id}/":
+  /services/{service_id}/funding/{funding_id}/:
     get:
       summary: Get Funding
       description: Get Funding
@@ -3061,7 +3061,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/funding"
+              $ref: "#/definitions/funding"
       tags:
       - Service - Funding
     put:
@@ -3092,7 +3092,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/funding"
+              $ref: "#/definitions/funding"
       tags:
       - Service - Funding
     delete:
@@ -3119,10 +3119,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/funding"
+              $ref: "#/definitions/funding"
       tags:
       - Service - Funding
-  "/services/{service_id}/holiday-schedule/":
+  /services/{service_id}/holiday-schedule/:
     get:
       summary: Get Holiday Schedule
       description: Get Holiday Schedule
@@ -3139,7 +3139,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/holiday_schedule"
+              $ref: "#/definitions/holiday_schedule"
       tags:
       - Service - Holiday Schedule
     post:
@@ -3165,10 +3165,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/holiday_schedule"
+              $ref: "#/definitions/holiday_schedule"
       tags:
       - Service - Holiday Schedule
-  "/services/{service_id}/holiday-schedule/{holiday_schedule_id}/":
+  /services/{service_id}/holiday-schedule/{holiday_schedule_id}/:
     get:
       summary: Get Holiday Schedule
       description: Get Holiday Schedule
@@ -3190,7 +3190,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/holiday_schedule"
+              $ref: "#/definitions/holiday_schedule"
       tags:
       - Service - Holiday Schedule
     put:
@@ -3221,7 +3221,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/holiday_schedule"
+              $ref: "#/definitions/holiday_schedule"
       tags:
       - Service - Holiday Schedule
     delete:
@@ -3248,10 +3248,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/holiday_schedule"
+              $ref: "#/definitions/holiday_schedule"
       tags:
       - Service - Holiday Schedule
-  "/services/{service_id}/languages/":
+  /services/{service_id}/languages/:
     get:
       summary: Get Languages
       description: Get Languages
@@ -3268,7 +3268,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/language"
+              $ref: "#/definitions/language"
       tags:
       - Service - Languages
     post:
@@ -3291,10 +3291,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/language"
+              $ref: "#/definitions/language"
       tags:
       - Service - Languages
-  "/services/{service_id}/languages/{language_id}/":
+  /services/{service_id}/languages/{language_id}/:
     get:
       summary: Get Languages
       description: Get Languages
@@ -3316,7 +3316,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/language"
+              $ref: "#/definitions/language"
       tags:
       - Service - Languages
     put:
@@ -3347,7 +3347,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/language"
+              $ref: "#/definitions/language"
       tags:
       - Service - Languages
     delete:
@@ -3374,10 +3374,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/language"
+              $ref: "#/definitions/language"
       tags:
       - Service - Languages
-  "/services/{service_id}/payment-accepted/":
+  /services/{service_id}/payment-accepted/:
     get:
       summary: Get Payment Accepted
       description: Get Payment Accepted
@@ -3394,7 +3394,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/payment_accepted"
+              $ref: "#/definitions/payment_accepted"
       tags:
       - Service - Payment Accepted
     post:
@@ -3420,10 +3420,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/payment_accepted"
+              $ref: "#/definitions/payment_accepted"
       tags:
       - Service - Payment Accepted
-  "/services/{service_id}/payment-accepted/{payment_accepted_id}/":
+  /services/{service_id}/payment-accepted/{payment_accepted_id}/:
     get:
       summary: Get Payment Accepted
       description: Get Payment Accepted
@@ -3445,7 +3445,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/payment_accepted"
+              $ref: "#/definitions/payment_accepted"
       tags:
       - Service - Payment Accepted
     put:
@@ -3476,7 +3476,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/payment_accepted"
+              $ref: "#/definitions/payment_accepted"
       tags:
       - Service - Payment Accepted
     delete:
@@ -3503,10 +3503,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/payment_accepted"
+              $ref: "#/definitions/payment_accepted"
       tags:
       - Service - Payment Accepted
-  "/services/{service_id}/phones/":
+  /services/{service_id}/phones/:
     get:
       summary: Get Phones
       description: Get Phones
@@ -3523,7 +3523,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/phone"
+              $ref: "#/definitions/phone"
       tags:
       - Service - Phones
     post:
@@ -3549,10 +3549,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/phone"
+              $ref: "#/definitions/phone"
       tags:
       - Service - Phones
-  "/services/{service_id}/phones/{phone_id}/":
+  /services/{service_id}/phones/{phone_id}/:
     get:
       summary: Get Phone
       description: get Phone
@@ -3574,7 +3574,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/phone"
+              $ref: "#/definitions/phone"
       tags:
       - Service - Phones
     put:
@@ -3605,7 +3605,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/phone"
+              $ref: "#/definitions/phone"
       tags:
       - Service - Phones
     delete:
@@ -3632,10 +3632,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/phone"
+              $ref: "#/definitions/phone"
       tags:
       - Service - Phones
-  "/services/{service_id}/regular-schedule/":
+  /services/{service_id}/regular-schedule/:
     get:
       summary: Get Regular Schedule
       description: Get Regular Schedule
@@ -3652,7 +3652,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/regular_schedule"
+              $ref: "#/definitions/regular_schedule"
       tags:
       - Service - Regular Schedule
     post:
@@ -3678,10 +3678,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/regular_schedule"
+              $ref: "#/definitions/regular_schedule"
       tags:
       - Service - Regular Schedule
-  "/services/{service_id}/regular-schedule/{regular_schedule_id}/":
+  /services/{service_id}/regular-schedule/{regular_schedule_id}/:
     get:
       summary: Get Regular Schedule
       description: Get Regular Schedule
@@ -3703,7 +3703,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/regular_schedule"
+              $ref: "#/definitions/regular_schedule"
       tags:
       - Service - Regular Schedule
     put:
@@ -3734,7 +3734,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/regular_schedule"
+              $ref: "#/definitions/regular_schedule"
       tags:
       - Service - Regular Schedule
     delete:
@@ -3761,10 +3761,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/regular_schedule"
+              $ref: "#/definitions/regular_schedule"
       tags:
       - Service - Regular Schedule
-  "/services/{service_id}/required-document/":
+  /services/{service_id}/required-document/:
     get:
       summary: Get Required Document
       description: Get Required Document
@@ -3781,7 +3781,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/required_document"
+              $ref: "#/definitions/required_document"
       tags:
       - Service - Required Document
     post:
@@ -3807,10 +3807,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/required_document"
+              $ref: "#/definitions/required_document"
       tags:
       - Service - Required Document
-  "/services/{service_id}/required-document/{required_document_id}/":
+  /services/{service_id}/required-document/{required_document_id}/:
     get:
       summary: Get Required Document
       description: Get Required Document
@@ -3832,7 +3832,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/required_document"
+              $ref: "#/definitions/required_document"
       tags:
       - Service - Required Document
     put:
@@ -3863,7 +3863,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/required_document"
+              $ref: "#/definitions/required_document"
       tags:
       - Service - Required Document
     delete:
@@ -3890,10 +3890,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/required_document"
+              $ref: "#/definitions/required_document"
       tags:
       - Service - Required Document
-  "/services/{service_id}/service-area/":
+  /services/{service_id}/service-area/:
     get:
       summary: Get Service Areas
       description: Get Service Areas
@@ -3910,7 +3910,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service_area"
+              $ref: "#/definitions/service_area"
       tags:
       - Service - Areas
     post:
@@ -3936,10 +3936,10 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service_area"
+              $ref: "#/definitions/service_area"
       tags:
       - Service - Areas
-  "/services/{service_id}/service-area/{service_area_id}/":
+  /services/{service_id}/service-area/{service_area_id}/:
     get:
       summary: Get Service Area
       description: Get Service Area
@@ -3961,7 +3961,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service_area"
+              $ref: "#/definitions/service_area"
       tags:
       - Service - Areas
     put:
@@ -3992,7 +3992,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service_area"
+              $ref: "#/definitions/service_area"
       tags:
       - Service - Areas
     delete:
@@ -4019,7 +4019,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/service_area"
+              $ref: "#/definitions/service_area"
       tags:
       - Service - Areas
 securityDefinitions:
