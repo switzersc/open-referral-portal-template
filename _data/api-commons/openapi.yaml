@@ -1560,7 +1560,7 @@ paths:
           schema:
             type: array
             items:
-              "$ref": "#/definitions/metadata"
+              "$ref": "#/definitions/metadata
   "/organizations/":
     get:
       summary: Get Organizations
