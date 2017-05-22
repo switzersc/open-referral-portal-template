@@ -339,6 +339,8 @@ layout: page
                                       <td>
                                         {% if verb == 'GET' %}
                                           <button type="button" onclick="loadClient('{{ slug }}');" class="btn btn-primary" data-toggle="modal" data-target=".api-client">Try</button>
+                                        {% else %}
+                                          <button type="button" onclick="alert('Need Admin Access')" class="btn btn-primary" data-toggle="modal" data-target=".api-client">Admi</button>
                                         {% endif %}
                                       </td>
                                     </tr>
