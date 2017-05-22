@@ -750,6 +750,7 @@ layout: page
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                 document.getElementById($slug+'-loading').style.display = 'none';
                 $message = "Status: " + textStatus + "\nError: " + errorThrown;
+                console.log($message);
                 document.getElementById($slug+'-response-header').style.display = '';
                 document.getElementById($slug+'-response-body').style.display = '';
                 document.getElementById($slug+'-response').value = $message;
