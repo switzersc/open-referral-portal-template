@@ -282,7 +282,7 @@ layout: page
                         (<a href="{{ site.url }}{{ documentation_url }}" title="View Documentation" style="padding: 3px;">Docs</a>)
                         <strong>OpenAPI:</strong>
                         (<a href="https://raw.githubusercontent.com/{{ site.github_org }}/{{ site.github_repo }}/master/_data/api-commons/openapi.yaml" target="_blank" title="YAML OpenAPI" style="padding: 3px;">YAML</a>)
-                        (<a href="{{ site.url }}/openapi.json" target="_blank" title="JSON OpenAPI" style="padding: 3px;">JSON</a>)
+                        (<a href="{{ site.url }}data/openapi.json" target="_blank" title="JSON OpenAPI" style="padding: 3px;">JSON</a>)
                       </td>
                     </tr>
                     <tr id="methods-for-{{ pathname }}">
@@ -291,6 +291,7 @@ layout: page
                         <ul style="margin-left: 25px;">
 
                           {% assign taglist = '' %}
+
 
                             {% for path in openapi_spec_json.paths %}
                               {% assign method_json = path[1] %}
@@ -304,6 +305,7 @@ layout: page
                                 {% endif %}
                               {% endfor %}
                             {% endfor %}
+                          
 
                           {% assign tagArray = taglist | split: "," %}
                           {% for grouptag in tagArray %}
@@ -312,7 +314,8 @@ layout: page
                               <li style="font-size: 14px; padding-bottom: 5px; list-style: none;"><strong>{{ grouptag }}</strong></li><ul style="font-size: 12px; margin-left: 25px;">
                             {% endif %}
 
-                              {% for path in openapi_spec_json.paths %}
+                            {% for spec in openapi_spec_json %}
+                              {% for path in spec.paths %}
 
                                 {% assign path_name = path[0] %}
                                 {% assign method_json = path[1] %}
@@ -350,6 +353,7 @@ layout: page
 
                                 {% endfor %}
                               {% endfor %}
+                            {% endfor %}
                             </ul></li>
                           {% endfor %}
                         </ul>
