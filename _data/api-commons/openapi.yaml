@@ -153,7 +153,7 @@ paths:
             items:
               $ref: "#/definitions/phone"
       tags:
-      - Contact - Phones
+      - Contacts
     post:
       summary: Add Phone
       description: Add Phone
@@ -179,7 +179,7 @@ paths:
             items:
               $ref: "#/definitions/phone"
       tags:
-      - Contact - Phones
+      - Contacts
   /contacts/{contact_id}/phones/{phone_id}/:
     get:
       summary: Get Phone
@@ -204,7 +204,7 @@ paths:
             items:
               $ref: "#/definitions/phone"
       tags:
-      - Contact - Phones
+      - Contacts
     put:
       summary: Update Phone
       description: Update Phone
@@ -235,7 +235,7 @@ paths:
             items:
               $ref: "#/definitions/phone"
       tags:
-      - Contact - Phones
+      - Contacts
     delete:
       summary: Delete Phone
       description: Delete Phone
@@ -262,7 +262,7 @@ paths:
             items:
               $ref: "#/definitions/phone"
       tags:
-      - Contact - Phones
+      - Contacts
   /locations/:
     get:
       summary: Get Locations
@@ -394,7 +394,7 @@ paths:
             items:
               $ref: "#/definitions/holiday_schedule"
       tags:
-      - Location - Holiday Schedule
+      - Locations
     post:
       summary: Add Holiday Schedule
       description: Add Holiday Schedule
@@ -420,7 +420,7 @@ paths:
             items:
               $ref: "#/definitions/holiday_schedule"
       tags:
-      - Location - Holiday Schedule
+      - Locations
   /locations/{location_id}/holiday-schedule/{holiday_schedule_id}/:
     get:
       summary: Get Holiday Schedule
@@ -445,7 +445,7 @@ paths:
             items:
               $ref: "#/definitions/holiday_schedule"
       tags:
-      - Location - Holiday Schedule
+      - Locations
     put:
       summary: Update Holiday Schedule
       description: Update Holiday Schedule
@@ -476,7 +476,7 @@ paths:
             items:
               $ref: "#/definitions/holiday_schedule"
       tags:
-      - Location - Holiday Schedule
+      - Locations
     delete:
       summary: Delete Holiday Schedule
       description: Delete Holiday Schedule
@@ -503,7 +503,7 @@ paths:
             items:
               $ref: "#/definitions/holiday_schedule"
       tags:
-      - Location - Holiday Schedule
+      - Locations
   /locations/{location_id}/languages/:
     get:
       summary: Get Languages
@@ -523,7 +523,7 @@ paths:
             items:
               $ref: "#/definitions/language"
       tags:
-      - Location - Language
+      - Locations
     post:
       summary: Add Languages
       description: Add Languages
@@ -549,7 +549,7 @@ paths:
             items:
               $ref: "#/definitions/language"
       tags:
-      - Location - Language
+      - Locations
   /locations/{location_id}/languages/{language_id}/:
     get:
       summary: Get Languages
@@ -574,7 +574,7 @@ paths:
             items:
               $ref: "#/definitions/language"
       tags:
-      - Location - Language
+      - Locations
     put:
       summary: Update Languages
       description: Update Languages
@@ -605,7 +605,7 @@ paths:
             items:
               $ref: "#/definitions/language"
       tags:
-      - Location - Language
+      - Locations
     delete:
       summary: Delete Languages
       description: Delete Languages
@@ -632,7 +632,7 @@ paths:
             items:
               $ref: "#/definitions/language"
       tags:
-      - Location - Language
+      - Locations
   /locations/{location_id}/postal-address/:
     get:
       summary: Get Postal Addresses
@@ -652,7 +652,7 @@ paths:
             items:
               $ref: "#/definitions/postal_address"
       tags:
-      - Location - Postal Address
+      - Locations
     post:
       summary: Add Postal Adress
       description: Add Postal Adress
@@ -678,7 +678,7 @@ paths:
             items:
               $ref: "#/definitions/postal_address"
       tags:
-      - Location - Postal Address
+      - Locations
   /locations/{location_id}/postal-address/{postal_address_id}/:
     get:
       summary: Get Postal Address
@@ -703,7 +703,7 @@ paths:
             items:
               $ref: "#/definitions/postal_address"
       tags:
-      - Location - Postal Address
+      - Locations
     put:
       summary: Update Postal Address
       description: Postal Mailing Address
@@ -734,7 +734,7 @@ paths:
             items:
               $ref: "#/definitions/postal_address"
       tags:
-      - Location - Postal Address
+      - Locations
     delete:
       summary: Delete Postal Address
       description: Delete Postal Address
@@ -761,7 +761,7 @@ paths:
             items:
               $ref: "#/definitions/postal_address"
       tags:
-      - Location - Postal Address
+      - Locations
   /locations/{location_id}/physical-address/:
     get:
       summary: Get Physical Address
@@ -781,7 +781,7 @@ paths:
             items:
               $ref: "#/definitions/postal_address"
       tags:
-      - Location - Physical Address
+      - Locations
     post:
       summary: Add Physical Adress
       description: Add Physical Adress
@@ -807,7 +807,7 @@ paths:
             items:
               $ref: "#/definitions/postal_address"
       tags:
-      - Location - Physical Address
+      - Locations
   /locations/{location_id}/physical-address/{postal_address_id}/:
     get:
       summary: Get Physical Address
@@ -832,7 +832,7 @@ paths:
             items:
               $ref: "#/definitions/postal_address"
       tags:
-      - Location - Physical Address
+      - Locations
     put:
       summary: Update Physical Address
       description: Postal Physical Address
@@ -863,7 +863,7 @@ paths:
             items:
               $ref: "#/definitions/postal_address"
       tags:
-      - Location - Physical Address
+      - Locations
     delete:
       summary: Delete Physical Address
       description: Delete Physical Address
@@ -890,7 +890,7 @@ paths:
             items:
               $ref: "#/definitions/postal_address"
       tags:
-      - Location - Physical Address
+      - Locations
   /locations/{location_id}/phones/:
     get:
       summary: Get Phones
@@ -910,7 +910,7 @@ paths:
             items:
               $ref: "#/definitions/phone"
       tags:
-      - Location - Phones
+      - Locations
     post:
       summary: Add Phone
       description: Add Phone
@@ -936,7 +936,7 @@ paths:
             items:
               $ref: "#/definitions/phone"
       tags:
-      - Location - Phones
+      - Locations
   /locations/{location_id}/phones/{phone_id}/:
     get:
       summary: Get Phone
@@ -961,7 +961,7 @@ paths:
             items:
               $ref: "#/definitions/phone"
       tags:
-      - Location - Phones
+      - Locations
     put:
       summary: Update Phone
       description: Update Phone
@@ -992,7 +992,7 @@ paths:
             items:
               $ref: "#/definitions/phone"
       tags:
-      - Location - Phones
+      - Locations
     delete:
       summary: Delete Phone
       description: Delete Phone
@@ -1019,7 +1019,7 @@ paths:
             items:
               $ref: "#/definitions/phone"
       tags:
-      - Location - Phones
+      - Locations
   /locations/{location_id}/regular-schedule/:
     get:
       summary: Get Regular Schedules
@@ -1039,7 +1039,7 @@ paths:
             items:
               $ref: "#/definitions/regular_schedule"
       tags:
-      - Location - Regular Schedule
+      - Locations
     post:
       summary: Add Regular Schedule
       description: Add Regular Schedule
@@ -1065,7 +1065,7 @@ paths:
             items:
               $ref: "#/definitions/regular_schedule"
       tags:
-      - Location - Regular Schedule
+      - Locations
   /locations/{location_id}/regular-schedule/{regular_schedule_id}/:
     get:
       summary: Get Regular Schedule
@@ -1090,7 +1090,7 @@ paths:
             items:
               $ref: "#/definitions/regular_schedule"
       tags:
-      - Location - Regular Schedule
+      - Locations
     put:
       summary: Update Regular Schedule
       description: Update Regular Schedule
@@ -1121,7 +1121,7 @@ paths:
             items:
               $ref: "#/definitions/regular_schedule"
       tags:
-      - Location - Regular Schedule
+      - Locations
     delete:
       summary: Delete Regular Schedule
       description: Delete Regular Schedule
@@ -1148,7 +1148,7 @@ paths:
             items:
               $ref: "#/definitions/regular_schedule"
       tags:
-      - Location - Regular Schedule
+      - Locations
   /locations/{location_id}/services/:
     get:
       summary: Get Services
@@ -1168,7 +1168,7 @@ paths:
             items:
               $ref: "#/definitions/service"
       tags:
-      - Location - Services
+      - Locations
     post:
       summary: Add Service
       description: Add Service
@@ -1194,7 +1194,7 @@ paths:
             items:
               $ref: "#/definitions/service"
       tags:
-      - Location - Services
+      - Locations
   /locations/{location_id}/services/{service_id}/:
     get:
       summary: Get Service
@@ -1219,7 +1219,7 @@ paths:
             items:
               $ref: "#/definitions/service"
       tags:
-      - Location - Services
+      - Locations
     put:
       summary: Update Service
       description: Update Service
@@ -1250,7 +1250,7 @@ paths:
             items:
               $ref: "#/definitions/service"
       tags:
-      - Location - Services
+      - Locations
     delete:
       summary: Delete Service
       description: Delete Service
@@ -1277,7 +1277,7 @@ paths:
             items:
               $ref: "#/definitions/service"
       tags:
-      - Location - Services
+      - Locations
   /locations/{location_id}/accessibility/:
     get:
       summary: Get Accessibility For Disabilities
@@ -1297,7 +1297,7 @@ paths:
             items:
               $ref: "#/definitions/accessibility_for_disabilities"
       tags:
-      - Location - Accessibility For Disabilities
+      - Locations
     post:
       summary: Add Accessibility For Disabilities
       description: Add Accessibility For Disabilities
@@ -1323,7 +1323,7 @@ paths:
             items:
               $ref: "#/definitions/accessibility_for_disabilities"
       tags:
-      - Location - Accessibility For Disabilities
+      - Locations
   /locations/{location_id}/accessibility/{accessibility_id}/:
     get:
       summary: Get Accessibility For Disabilities
@@ -1348,7 +1348,7 @@ paths:
             items:
               $ref: "#/definitions/accessibility_for_disabilities"
       tags:
-      - Location - Accessibility For Disabilities
+      - Locations
     put:
       summary: Update Accessibility For Disabilities
       description: Update Accessibility For Disabilities
@@ -1379,7 +1379,7 @@ paths:
             items:
               $ref: "#/definitions/accessibility_for_disabilities"
       tags:
-      - Location - Accessibility For Disabilities
+      - Locations
     delete:
       summary: Delete Accessibility For Disabilities
       description: Delete Accessibility For Disabilities
@@ -1406,7 +1406,7 @@ paths:
             items:
               $ref: "#/definitions/accessibility_for_disabilities"
       tags:
-      - Location - Accessibility For Disabilities
+      - Locations
   /organizations/:
     get:
       summary: Get Organizations
@@ -1538,7 +1538,7 @@ paths:
             items:
               $ref: "#/definitions/contact"
       tags:
-      - Organization - Contacts
+      - Organizations
     post:
       summary: Add Contact
       description: Add Contact
@@ -1564,7 +1564,7 @@ paths:
             items:
               $ref: "#/definitions/contact"
       tags:
-      - Organization - Contacts
+      - Organizations
   /organizations/{organization_id}/contacts/{contact_id}/:
     get:
       summary: Get Contact
@@ -1589,7 +1589,7 @@ paths:
             items:
               $ref: "#/definitions/contact"
       tags:
-      - Organization - Contacts
+      - Organizations
     put:
       summary: Update Contact
       description: Update Contact
@@ -1620,7 +1620,7 @@ paths:
             items:
               $ref: "#/definitions/contact"
       tags:
-      - Organization - Contacts
+      - Organizations
     delete:
       summary: Delete Contact
       description: Delete Contact
@@ -1647,7 +1647,7 @@ paths:
             items:
               $ref: "#/definitions/contact"
       tags:
-      - Organization - Contacts
+      - Organizations
   /organizations/{organization_id}/funding/:
     get:
       summary: Get Fundings
@@ -1667,7 +1667,7 @@ paths:
             items:
               $ref: "#/definitions/funding"
       tags:
-      - Organization - Funding
+      - Organizations
     post:
       summary: Add Funding
       description: Add Funding
@@ -1693,7 +1693,7 @@ paths:
             items:
               $ref: "#/definitions/funding"
       tags:
-      - Organization - Funding
+      - Organizations
   /organizations/{organization_id}/funding/{funding_id}/:
     get:
       summary: Get Funding
@@ -1718,7 +1718,7 @@ paths:
             items:
               $ref: "#/definitions/funding"
       tags:
-      - Organization - Funding
+      - Organizations
     put:
       summary: Update Funding
       description: Update Funding
@@ -1749,7 +1749,7 @@ paths:
             items:
               $ref: "#/definitions/funding"
       tags:
-      - Organization - Funding
+      - Organizations
     delete:
       summary: Delete Funding
       description: Delete Funding
@@ -1776,7 +1776,7 @@ paths:
             items:
               $ref: "#/definitions/funding"
       tags:
-      - Organization - Funding
+      - Organizations
   /organizations/{organization_id}/locations/:
     get:
       summary: Get Location
@@ -1796,7 +1796,7 @@ paths:
             items:
               $ref: "#/definitions/location"
       tags:
-      - Organization - Locations
+      - Organizations
     post:
       summary: Add location
       description: Add location
@@ -1822,7 +1822,7 @@ paths:
             items:
               $ref: "#/definitions/location"
       tags:
-      - Organization - Locations
+      - Organizations
   /organizations/{organization_id}/locations/{location_id}/:
     get:
       summary: Get Location
@@ -1847,7 +1847,7 @@ paths:
             items:
               $ref: "#/definitions/location"
       tags:
-      - Organization - Locations
+      - Organizations
     put:
       summary: Update location
       description: Update location
@@ -1878,7 +1878,7 @@ paths:
             items:
               $ref: "#/definitions/location"
       tags:
-      - Organization - Locations
+      - Organizations
     delete:
       summary: Delete Location
       description: Delete Location
@@ -1905,7 +1905,7 @@ paths:
             items:
               $ref: "#/definitions/location"
       tags:
-      - Organization - Locations
+      - Organizations
   /organizations/{organization_id}/phones/:
     get:
       summary: Get Phones
@@ -1925,7 +1925,7 @@ paths:
             items:
               $ref: "#/definitions/phone"
       tags:
-      - Organization - Phones
+      - Organizations
     post:
       summary: Add Phone
       description: Add Phone
@@ -1951,7 +1951,7 @@ paths:
             items:
               $ref: "#/definitions/phone"
       tags:
-      - Organization - Phones
+      - Organizations
   /organizations/{organization_id}/phones/{phone_id}/:
     get:
       summary: Get Phone
@@ -1976,7 +1976,7 @@ paths:
             items:
               $ref: "#/definitions/phone"
       tags:
-      - Organization - Phones
+      - Organizations
     put:
       summary: Update Phone
       description: Update Phone
@@ -2007,7 +2007,7 @@ paths:
             items:
               $ref: "#/definitions/phone"
       tags:
-      - Organization - Phones
+      - Organizations
     delete:
       summary: Delete Phone
       description: Delete Phone
@@ -2034,7 +2034,7 @@ paths:
             items:
               $ref: "#/definitions/phone"
       tags:
-      - Organization - Phones
+      - Organizations
   /organizations/{organization_id}/programs/:
     get:
       summary: Get Programs
@@ -2054,7 +2054,7 @@ paths:
             items:
               $ref: "#/definitions/program"
       tags:
-      - Organization - Programs
+      - Organizations
     post:
       summary: Add Program
       description: Add Program
@@ -2080,7 +2080,7 @@ paths:
             items:
               $ref: "#/definitions/program"
       tags:
-      - Organization - Programs
+      - Organizations
   /organizations/{organization_id}/programs/{program_id}/:
     get:
       summary: Get Program
@@ -2105,7 +2105,7 @@ paths:
             items:
               $ref: "#/definitions/program"
       tags:
-      - Organization - Programs
+      - Organizations
     put:
       summary: Update Program
       description: Update Program
@@ -2136,7 +2136,7 @@ paths:
             items:
               $ref: "#/definitions/program"
       tags:
-      - Organization - Programs
+      - Organizations
     delete:
       summary: Delete Program
       description: Delete Program
@@ -2163,7 +2163,7 @@ paths:
             items:
               $ref: "#/definitions/program"
       tags:
-      - Organization - Programs
+      - Organizations
   /organizations/{organization_id}/programs/{program_id}/services/:
     get:
       summary: Get Service
@@ -2188,7 +2188,7 @@ paths:
             items:
               $ref: "#/definitions/service"
       tags:
-      - Organization - Program Services
+      - Organizations
     post:
       summary: Add Service
       description: Add Service
@@ -2219,7 +2219,7 @@ paths:
             items:
               $ref: "#/definitions/service"
       tags:
-      - Organization - Program Services
+      - Organizations
   /organizations/{organization_id}/programs/{program_id}/services/{service_id}/:
     get:
       summary: Get Service
@@ -2249,7 +2249,7 @@ paths:
             items:
               $ref: "#/definitions/service"
       tags:
-      - Organization - Program Services
+      - Organizations
     put:
       summary: Update Service
       description: Update Service
@@ -2285,7 +2285,7 @@ paths:
             items:
               $ref: "#/definitions/service"
       tags:
-      - Organization - Program Services
+      - Organizations
     delete:
       summary: Delete Service
       description: Delete Service
@@ -2317,7 +2317,7 @@ paths:
             items:
               $ref: "#/definitions/service"
       tags:
-      - Organization - Program Services
+      - Organizations
   /organizations/{organization_id}/services/:
     get:
       summary: Get Services
@@ -2337,7 +2337,7 @@ paths:
             items:
               $ref: "#/definitions/service"
       tags:
-      - Organization - Services
+      - Organizations
     post:
       summary: Add Service
       description: Add Service
@@ -2363,7 +2363,7 @@ paths:
             items:
               $ref: "#/definitions/service"
       tags:
-      - Organization - Services
+      - Organizations
   /organizations/{organization_id}/services/{service_id}/:
     get:
       summary: Get Service
@@ -2388,7 +2388,7 @@ paths:
             items:
               $ref: "#/definitions/service"
       tags:
-      - Organization - Services
+      - Organizations
     put:
       summary: Update Service
       description: Update Service
@@ -2419,7 +2419,7 @@ paths:
             items:
               $ref: "#/definitions/service"
       tags:
-      - Organization - Services
+      - Organizations
     delete:
       summary: Delete Service
       description: Delete Service
@@ -2446,7 +2446,7 @@ paths:
             items:
               $ref: "#/definitions/service"
       tags:
-      - Organization - Services
+      - Organizations
   /search/:
     get:
       summary: Search
@@ -2625,7 +2625,7 @@ paths:
             items:
               $ref: "#/definitions/contact"
       tags:
-      - Service - Contacts
+      - Services
     post:
       summary: Add Contact
       description: Add Contact
@@ -2651,7 +2651,7 @@ paths:
             items:
               $ref: "#/definitions/contact"
       tags:
-      - Service - Contacts
+      - Services
   /services/{service_id}/contacts/{contact_id}/:
     get:
       summary: Get Contact
@@ -2676,7 +2676,7 @@ paths:
             items:
               $ref: "#/definitions/contact"
       tags:
-      - Service - Contacts
+      - Services
     put:
       summary: Update Contact
       description: Update Contact
@@ -2707,7 +2707,7 @@ paths:
             items:
               $ref: "#/definitions/contact"
       tags:
-      - Service - Contacts
+      - Services
     delete:
       summary: Delete Contact
       description: Delete Contact
@@ -2734,7 +2734,7 @@ paths:
             items:
               $ref: "#/definitions/contact"
       tags:
-      - Service - Contacts
+      - Services
   /services/{service_id}/eligibility/:
     get:
       summary: Get Eligibilities
@@ -2754,7 +2754,7 @@ paths:
             items:
               $ref: "#/definitions/eligibility"
       tags:
-      - Service - Eligibility
+      - Services
     post:
       summary: Add Eligibility
       description: Add Eligibility
@@ -2780,7 +2780,7 @@ paths:
             items:
               $ref: "#/definitions/eligibility"
       tags:
-      - Service - Eligibility
+      - Services
   /services/{service_id}/eligibility/{eligibility_id}/:
     get:
       summary: Get Eligibility
@@ -2805,7 +2805,7 @@ paths:
             items:
               $ref: "#/definitions/eligibility"
       tags:
-      - Service - Eligibility
+      - Services
     put:
       summary: Update Eligibility
       description: Update Eligibility
@@ -2836,7 +2836,7 @@ paths:
             items:
               $ref: "#/definitions/eligibility"
       tags:
-      - Service - Eligibility
+      - Services
     delete:
       summary: Eligibility Contact
       description: Delete Eligibility
@@ -2863,7 +2863,7 @@ paths:
             items:
               $ref: "#/definitions/eligibility"
       tags:
-      - Service - Eligibility
+      - Services
   /services/{service_id}/fees/:
     get:
       summary: Get Fees
@@ -2883,7 +2883,7 @@ paths:
             items:
               $ref: "#/definitions/fee"
       tags:
-      - Service - Fees
+      - Services
     post:
       summary: Add Fee
       description: Add Fee
@@ -2909,7 +2909,7 @@ paths:
             items:
               $ref: "#/definitions/fee"
       tags:
-      - Service - Fees
+      - Services
   /services/{service_id}/fees/{feed_id}/:
     get:
       summary: Get Fee
@@ -2934,7 +2934,7 @@ paths:
             items:
               $ref: "#/definitions/fee"
       tags:
-      - Service - Fees
+      - Services
     put:
       summary: Update Fee
       description: Update Fee
@@ -2965,7 +2965,7 @@ paths:
             items:
               $ref: "#/definitions/fee"
       tags:
-      - Service - Fees
+      - Services
     delete:
       summary: Delete Fee
       description: Delete Fee
@@ -2992,7 +2992,7 @@ paths:
             items:
               $ref: "#/definitions/fee"
       tags:
-      - Service - Fees
+      - Services
   /services/{service_id}/funding/:
     get:
       summary: Get Funding
@@ -3012,7 +3012,7 @@ paths:
             items:
               $ref: "#/definitions/funding"
       tags:
-      - Service - Funding
+      - Services
     post:
       summary: Add Funding
       description: Add Funding
@@ -3038,7 +3038,7 @@ paths:
             items:
               $ref: "#/definitions/funding"
       tags:
-      - Service - Funding
+      - Services
   /services/{service_id}/funding/{funding_id}/:
     get:
       summary: Get Funding
@@ -3063,7 +3063,7 @@ paths:
             items:
               $ref: "#/definitions/funding"
       tags:
-      - Service - Funding
+      - Services
     put:
       summary: Update Funding
       description: Update Funding
@@ -3094,7 +3094,7 @@ paths:
             items:
               $ref: "#/definitions/funding"
       tags:
-      - Service - Funding
+      - Services
     delete:
       summary: Delete Funding
       description: Delete Funding
@@ -3121,7 +3121,7 @@ paths:
             items:
               $ref: "#/definitions/funding"
       tags:
-      - Service - Funding
+      - Services
   /services/{service_id}/holiday-schedule/:
     get:
       summary: Get Holiday Schedule
@@ -3141,7 +3141,7 @@ paths:
             items:
               $ref: "#/definitions/holiday_schedule"
       tags:
-      - Service - Holiday Schedule
+      - Services
     post:
       summary: Add Holiday Schedule
       description: Add Holiday Schedule
@@ -3167,7 +3167,7 @@ paths:
             items:
               $ref: "#/definitions/holiday_schedule"
       tags:
-      - Service - Holiday Schedule
+      - Services
   /services/{service_id}/holiday-schedule/{holiday_schedule_id}/:
     get:
       summary: Get Holiday Schedule
@@ -3192,7 +3192,7 @@ paths:
             items:
               $ref: "#/definitions/holiday_schedule"
       tags:
-      - Service - Holiday Schedule
+      - Services
     put:
       summary: Update Holiday Schedule
       description: Update Holiday Schedule
@@ -3223,7 +3223,7 @@ paths:
             items:
               $ref: "#/definitions/holiday_schedule"
       tags:
-      - Service - Holiday Schedule
+      - Services
     delete:
       summary: Delete Holiday Schedule
       description: Delete Holiday Schedule
@@ -3250,7 +3250,7 @@ paths:
             items:
               $ref: "#/definitions/holiday_schedule"
       tags:
-      - Service - Holiday Schedule
+      - Services
   /services/{service_id}/languages/:
     get:
       summary: Get Languages
@@ -3270,7 +3270,7 @@ paths:
             items:
               $ref: "#/definitions/language"
       tags:
-      - Service - Languages
+      - Services
     post:
       summary: Add Languages
       description: Add Languages
@@ -3293,7 +3293,7 @@ paths:
             items:
               $ref: "#/definitions/language"
       tags:
-      - Service - Languages
+      - Services
   /services/{service_id}/languages/{language_id}/:
     get:
       summary: Get Languages
@@ -3318,7 +3318,7 @@ paths:
             items:
               $ref: "#/definitions/language"
       tags:
-      - Service - Languages
+      - Services
     put:
       summary: Update Languages
       description: Update Languages
@@ -3349,7 +3349,7 @@ paths:
             items:
               $ref: "#/definitions/language"
       tags:
-      - Service - Languages
+      - Services
     delete:
       summary: Delete Languages
       description: Delete Languages
@@ -3376,7 +3376,7 @@ paths:
             items:
               $ref: "#/definitions/language"
       tags:
-      - Service - Languages
+      - Services
   /services/{service_id}/payment-accepted/:
     get:
       summary: Get Payment Accepted
@@ -3396,7 +3396,7 @@ paths:
             items:
               $ref: "#/definitions/payment_accepted"
       tags:
-      - Service - Payment Accepted
+      - Services
     post:
       summary: Add Payment Accepted
       description: Add Payment Accepted
@@ -3422,7 +3422,7 @@ paths:
             items:
               $ref: "#/definitions/payment_accepted"
       tags:
-      - Service - Payment Accepted
+      - Services
   /services/{service_id}/payment-accepted/{payment_accepted_id}/:
     get:
       summary: Get Payment Accepted
@@ -3447,7 +3447,7 @@ paths:
             items:
               $ref: "#/definitions/payment_accepted"
       tags:
-      - Service - Payment Accepted
+      - Services
     put:
       summary: Update Payment Accepted
       description: Update Payment Accepted
@@ -3478,7 +3478,7 @@ paths:
             items:
               $ref: "#/definitions/payment_accepted"
       tags:
-      - Service - Payment Accepted
+      - Services
     delete:
       summary: Delete Payment Accepted
       description: Delete Payment Accepted
@@ -3505,7 +3505,7 @@ paths:
             items:
               $ref: "#/definitions/payment_accepted"
       tags:
-      - Service - Payment Accepted
+      - Services
   /services/{service_id}/phones/:
     get:
       summary: Get Phones
@@ -3525,7 +3525,7 @@ paths:
             items:
               $ref: "#/definitions/phone"
       tags:
-      - Service - Phones
+      - Services
     post:
       summary: Add Phone
       description: Add Phone
@@ -3551,7 +3551,7 @@ paths:
             items:
               $ref: "#/definitions/phone"
       tags:
-      - Service - Phones
+      - Services
   /services/{service_id}/phones/{phone_id}/:
     get:
       summary: Get Phone
@@ -3576,7 +3576,7 @@ paths:
             items:
               $ref: "#/definitions/phone"
       tags:
-      - Service - Phones
+      - Services
     put:
       summary: Update Phone
       description: Update Phone
@@ -3607,7 +3607,7 @@ paths:
             items:
               $ref: "#/definitions/phone"
       tags:
-      - Service - Phones
+      - Services
     delete:
       summary: Delete Phone
       description: Delete Phone
@@ -3634,7 +3634,7 @@ paths:
             items:
               $ref: "#/definitions/phone"
       tags:
-      - Service - Phones
+      - Services
   /services/{service_id}/regular-schedule/:
     get:
       summary: Get Regular Schedule
@@ -3654,7 +3654,7 @@ paths:
             items:
               $ref: "#/definitions/regular_schedule"
       tags:
-      - Service - Regular Schedule
+      - Services
     post:
       summary: Add Regular Schedule
       description: Add Regular Schedule
@@ -3680,7 +3680,7 @@ paths:
             items:
               $ref: "#/definitions/regular_schedule"
       tags:
-      - Service - Regular Schedule
+      - Services
   /services/{service_id}/regular-schedule/{regular_schedule_id}/:
     get:
       summary: Get Regular Schedule
@@ -3705,7 +3705,7 @@ paths:
             items:
               $ref: "#/definitions/regular_schedule"
       tags:
-      - Service - Regular Schedule
+      - Services
     put:
       summary: Update Regular Schedule
       description: Update Regular Schedule
@@ -3736,7 +3736,7 @@ paths:
             items:
               $ref: "#/definitions/regular_schedule"
       tags:
-      - Service - Regular Schedule
+      - Services
     delete:
       summary: Delete Regular Schedule
       description: Delete Regular Schedule
@@ -3763,7 +3763,7 @@ paths:
             items:
               $ref: "#/definitions/regular_schedule"
       tags:
-      - Service - Regular Schedule
+      - Services
   /services/{service_id}/required-document/:
     get:
       summary: Get Required Document
@@ -3783,7 +3783,7 @@ paths:
             items:
               $ref: "#/definitions/required_document"
       tags:
-      - Service - Required Document
+      - Services
     post:
       summary: Add Required Document
       description: Add Required Document
@@ -3809,7 +3809,7 @@ paths:
             items:
               $ref: "#/definitions/required_document"
       tags:
-      - Service - Required Document
+      - Services
   /services/{service_id}/required-document/{required_document_id}/:
     get:
       summary: Get Required Document
@@ -3834,7 +3834,7 @@ paths:
             items:
               $ref: "#/definitions/required_document"
       tags:
-      - Service - Required Document
+      - Services
     put:
       summary: Update Required Document
       description: Update Required Document
@@ -3865,7 +3865,7 @@ paths:
             items:
               $ref: "#/definitions/required_document"
       tags:
-      - Service - Required Document
+      - Services
     delete:
       summary: Delete Required Document
       description: Delete Required Document
@@ -3892,7 +3892,7 @@ paths:
             items:
               $ref: "#/definitions/required_document"
       tags:
-      - Service - Required Document
+      - Services
   /services/{service_id}/service-area/:
     get:
       summary: Get Service Areas
@@ -3912,7 +3912,7 @@ paths:
             items:
               $ref: "#/definitions/service_area"
       tags:
-      - Service - Areas
+      - Services
     post:
       summary: Add Service Area
       description: Add Service Area
@@ -3938,7 +3938,7 @@ paths:
             items:
               $ref: "#/definitions/service_area"
       tags:
-      - Service - Areas
+      - Services
   /services/{service_id}/service-area/{service_area_id}/:
     get:
       summary: Get Service Area
@@ -3963,7 +3963,7 @@ paths:
             items:
               $ref: "#/definitions/service_area"
       tags:
-      - Service - Areas
+      - Services
     put:
       summary: Update Service Area
       description: Update Service Area
@@ -3994,7 +3994,7 @@ paths:
             items:
               $ref: "#/definitions/service_area"
       tags:
-      - Service - Areas
+      - Services
     delete:
       summary: Delete Service Area
       description: Delete Service Area
@@ -4021,7 +4021,7 @@ paths:
             items:
               $ref: "#/definitions/service_area"
       tags:
-      - Service - Areas
+      - Services
 securityDefinitions:
   appid:
     type: apiKey
