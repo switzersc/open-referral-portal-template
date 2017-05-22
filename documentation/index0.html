@@ -1,17 +1,35 @@
----
-layout: page
----
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Swagger UI</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro:300,600|Titillium+Web:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  <style>
+    html
+    {
+        box-sizing: border-box;
+        overflow: -moz-scrollbars-vertical;
+        overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+        box-sizing: inherit;
+    }
 
-<style>
-.topbar
-  {
-  display:none;
-  }
-.info
-  {
-  display:none;
-  }
-</style>
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
 
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
   <defs>
@@ -47,18 +65,15 @@ layout: page
   </defs>
 </svg>
 
-<h2>API Documentation</h2>
-<p>The interactive documentation driven by <a href="http://developer.open.referral.adopta.agency/" target="_blank">the OpenAPI for the Human Services Data API (HSDA)</a>. All GET API paths are publicly available, where the POST, PUT, and DELETE require an appid and appkey.</p>
 <div id="swagger-ui"></div>
 
 <script src="./swagger-ui-bundle.js"> </script>
 <script src="./swagger-ui-standalone-preset.js"> </script>
-
 <script>
 window.onload = function() {
   // Build a system
   const ui = SwaggerUIBundle({
-    url: "http://developer.open.referral.adopta.agency/openapi.json",
+    url: "http://petstore.swagger.io/v2/swagger.json",
     dom_id: '#swagger-ui',
     presets: [
       SwaggerUIBundle.presets.apis,
@@ -70,10 +85,9 @@ window.onload = function() {
     layout: "StandaloneLayout"
   })
 
-  window.ui = ui;
-
-  //document.getElementsByClassName("topbar").style.display = 'none';
-  //document.getElementsByClassName("info").style.display = 'none';
-
+  window.ui = ui
 }
 </script>
+</body>
+
+</html>
