@@ -22,7 +22,7 @@ paths:
     get:
       summary: Get Contacts
       description: Get Contacts
-      operationId: list-contacts
+      operationId: listContacts
       parameters:
         - in: query
           type: number
@@ -70,7 +70,7 @@ paths:
     get:
       summary: Get Contact
       description: Get Contact
-      operationId: get-contact
+      operationId: getContact
       parameters:
         - in: path
           required: true
@@ -1411,7 +1411,7 @@ paths:
     get:
       summary: Get Organizations
       description: Get Organizations
-      operationId: list-organizations
+      operationId: listOrganizations
       parameters:
         - in: query
           type: number
