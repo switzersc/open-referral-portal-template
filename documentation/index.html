@@ -224,7 +224,7 @@ layout: page
                     <tr style="background-color: #D3D3D3;">
                       <td align="left" style="font-size: 18px; font-weight: bold; padding: 10px;"></td>
                       <td align="right" style="padding: 10px;"></td>
-                    </tr>                    
+                    </tr>
                     <tr id="methods-for-{{ pathname }}">
                       <td colspan="2">
 
@@ -764,19 +764,11 @@ layout: page
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                 document.getElementById($slug+'-loading').style.display = 'none';
-                $message = "Status: " + textStatus + "\nError: " + errorThrown;
+                $message = "Error: " + errorThrown;
                 console.log($message);
-                if(errorThrown=='Not Found')
-                  {
-                  $viewer = "404 Not Found - Check Your Parameters."
-                  }
-                else
-                  {
-                  $viewer = "Error - There was a problem with request."
-                  }
                 document.getElementById($slug+'-response-header').style.display = '';
                 document.getElementById($slug+'-response-body').style.display = '';
-                document.getElementById($slug+'-response').value = $viewer;
+                document.getElementById($slug+'-response').value = $message;
                 document.getElementById($slug+'-response').style.width = "100%";
                 document.getElementById($slug+'-response').style.height = "250px";
             }
