@@ -36,9 +36,6 @@ paths:
           type: number
           name: per_page
           description: Amount of locations to return per page, up to 100.
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Contact Response
@@ -80,9 +77,6 @@ paths:
           type: string
           name: contact_id
           description: 'The contact id.'
-      security:
-         - appid: []
-         - appkey: []
       responses:
         '200':
           description: Contact Response
@@ -151,9 +145,6 @@ paths:
           type: string
           name: contact_id
           description: 'The unique contact id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Phone Response
@@ -205,9 +196,6 @@ paths:
           type: string
           name: phone_id
           description: The unique phone id.
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Contact Response
@@ -289,9 +277,6 @@ paths:
           type: number
           name: per_page
           description: Amount of locations to return per page, up to 100.
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Location Response
@@ -333,9 +318,6 @@ paths:
           type: string
           name: location_id
           description: The location id.
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Location Response
@@ -404,9 +386,6 @@ paths:
           type: string
           name: location_id
           description: 'The unique location id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Holiday Schedule Response
@@ -458,9 +437,6 @@ paths:
           type: string
           name: holiday_schedule_id
           description: 'The unique holiday schedule id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Holiday Schedule Response
@@ -539,9 +515,6 @@ paths:
           type: string
           name: location_id
           description: 'The unique location id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Language Response
@@ -593,9 +566,6 @@ paths:
           type: string
           name: language_id
           description: 'The unique language id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Language Response
@@ -674,9 +644,6 @@ paths:
           type: string
           name: location_id
           description: 'The unique location id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Postal Address Response
@@ -728,9 +695,6 @@ paths:
           type: string
           name: postal_address_id
           description: 'The unique postal address id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Postal Address Response
@@ -809,9 +773,6 @@ paths:
           type: string
           name: location_id
           description: 'The unique location id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Postal Address Response
@@ -863,9 +824,6 @@ paths:
           type: string
           name: postal_address_id
           description: 'The unique postal address id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Postal Address Response
@@ -944,9 +902,6 @@ paths:
           type: string
           name: location_id
           description: 'The unique location id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Phone Response
@@ -998,9 +953,6 @@ paths:
           type: string
           name: phone_id
           description: 'The unique phone id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Phone Response
@@ -1079,9 +1031,6 @@ paths:
           type: string
           name: location_id
           description: 'The unique location id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Regular Schedule Response
@@ -1133,9 +1082,6 @@ paths:
           type: string
           name: regular_schedule_id
           description: 'The unique regular schedule id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Regular Schedule Response
@@ -1214,9 +1160,6 @@ paths:
           type: string
           name: location_id
           description: 'The unique location id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Service Response
@@ -1268,9 +1211,6 @@ paths:
           type: string
           name: service_id
           description: 'The unique service id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Service Response
@@ -1349,9 +1289,6 @@ paths:
           type: string
           name: location_id
           description: 'The unique location id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Accessibility For Disabilities Response
@@ -1403,9 +1340,6 @@ paths:
           type: string
           name: accessibility_id
           description: 'The unique accessibility for disabilities id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Accessibility For Disabilities Response
@@ -1487,9 +1421,6 @@ paths:
           type: number
           name: per_page
           description: Amount of locations to return per page, up to 100.
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Organization Response
@@ -1531,9 +1462,6 @@ paths:
           type: string
           name: organization_id
           description: The organization id.
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Organization Response
@@ -1602,9 +1530,6 @@ paths:
           type: string
           name: organization_id
           description: 'The unique organization id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Contact Response
@@ -1656,9 +1581,6 @@ paths:
           type: string
           name: contact_id
           description: 'The unique contact id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Contact Response
@@ -1737,9 +1659,6 @@ paths:
           type: string
           name: organization_id
           description: 'The unique organization id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Funding Response
@@ -1791,9 +1710,6 @@ paths:
           type: string
           name: funding_id
           description: 'The unique funding id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Funding Response
@@ -1872,9 +1788,6 @@ paths:
           type: string
           name: organization_id
           description: The id for the organization.
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Location Response
@@ -1926,9 +1839,6 @@ paths:
           type: string
           name: location_id
           description: 'The unique location id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Location Response
@@ -2007,9 +1917,6 @@ paths:
           type: string
           name: organization_id
           description: 'The unique organization id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Phone Response
@@ -2061,9 +1968,6 @@ paths:
           type: string
           name: phone_id
           description: 'The unique phone id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Phone Response
@@ -2142,9 +2046,6 @@ paths:
           type: string
           name: organization_id
           description: 'The unique organization id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Program Response
@@ -2196,9 +2097,6 @@ paths:
           type: string
           name: program_id
           description: 'The unique program id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Program Response
@@ -2282,9 +2180,6 @@ paths:
           type: string
           name: program_id
           description: 'The unique program id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Service Response
@@ -2346,9 +2241,6 @@ paths:
           type: string
           name: service_id
           description: 'The unique service id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Service Response
@@ -2437,9 +2329,6 @@ paths:
           type: string
           name: organization_id
           description: 'The unique organization id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Service Response
@@ -2491,9 +2380,6 @@ paths:
           type: string
           name: service_id
           description: 'The unique service id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Service Response
@@ -2603,9 +2489,6 @@ paths:
         - in: query
           type: string
           name: status
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: OK
@@ -2616,10 +2499,15 @@ paths:
       summary: Get Services
       description: Get Services
       operationId: list-services
-      parameters: []
-      security:
-        - appid: []
-        - appkey: []
+      parameters:
+        - in: query
+          type: number
+          name: page
+          description: The particular page of results.
+        - in: query
+          type: number
+          name: per_page
+          description: Amount of locations to return per page, up to 100.
       responses:
         '200':
           description: Service Response
@@ -2661,9 +2549,6 @@ paths:
           type: string
           name: service_id
           description: 'The unique service id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Organization Response
@@ -2732,9 +2617,6 @@ paths:
           type: string
           name: service_id
           description: 'The unique service id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Contact Response
@@ -2786,9 +2668,6 @@ paths:
           type: string
           name: contact_id
           description: 'The unique contact id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Contact Response
@@ -2867,9 +2746,6 @@ paths:
           type: string
           name: service_id
           description: 'The unique service id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Eligibility Response
@@ -2921,9 +2797,6 @@ paths:
           type: string
           name: service_id
           description: 'The unique service id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Eligibility Response
@@ -3002,9 +2875,6 @@ paths:
           type: string
           name: service_id
           description: 'The unique service id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Fees Response
@@ -3056,9 +2926,6 @@ paths:
           type: string
           name: feed_id
           description: 'The unique feed id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Fees Response
@@ -3137,9 +3004,6 @@ paths:
           type: string
           name: service_id
           description: 'The unique service id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Funding Response
@@ -3191,9 +3055,6 @@ paths:
           type: string
           name: funding_id
           description: 'The unique funding id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Funding Response
@@ -3272,9 +3133,6 @@ paths:
           type: string
           name: service_id
           description: 'The unique service id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Holiday Schedule Response
@@ -3326,9 +3184,6 @@ paths:
           type: string
           name: holiday_schedule_id
           description: 'The unique holiday schedule id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Holiday Schedule Response
@@ -3407,9 +3262,6 @@ paths:
           type: string
           name: service_id
           description: 'The unique service id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Language Response
@@ -3458,9 +3310,6 @@ paths:
           type: string
           name: language_id
           description: 'The unique language id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Language Response
@@ -3539,9 +3388,6 @@ paths:
           type: string
           name: service_id
           description: 'The unique service id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Payment Accepted Response
@@ -3593,9 +3439,6 @@ paths:
           type: string
           name: payment_accepted_id
           description: 'The unique payment accepted id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Payment Accepted Response
@@ -3674,9 +3517,6 @@ paths:
           type: string
           name: service_id
           description: 'The unique service id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Phone Response
@@ -3728,9 +3568,6 @@ paths:
           type: string
           name: phone_id
           description: 'The unique phone id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Phone Response
@@ -3809,9 +3646,6 @@ paths:
           type: string
           name: service_id
           description: 'The unique service id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Regular Schedule Response
@@ -3863,9 +3697,6 @@ paths:
           type: string
           name: regular_schedule_id
           description: 'The unique regular schedule id'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Regular Schedule Response
@@ -3944,9 +3775,6 @@ paths:
           type: string
           name: service_id
           description: 'The unique service id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Required Document Response
@@ -3998,9 +3826,6 @@ paths:
           type: string
           name: required_document_id
           description: 'The unique required document id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Required Document Response
@@ -4079,9 +3904,6 @@ paths:
           type: string
           name: service_id
           description: 'The unique service id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Required Document Response
@@ -4133,9 +3955,6 @@ paths:
           type: string
           name: service_area_id
           description: 'The unique service area id.'
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Service Area Response
