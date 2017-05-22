@@ -270,7 +270,7 @@ layout: page
                       {% if property.type == 'x-openapi' %}
                         {% assign openapi_spec_url = property.url %}
                         {% assign openapi_spec_json = site.data.api-commons.openapi %}
-                      {% endif %
+                      {% endif %}
 
                     {% endfor %}
 
@@ -292,8 +292,8 @@ layout: page
 
                           {% assign taglist = '' %}
 
-
-                            {% for path in openapi_spec_json.paths %}
+                          {% for spec in openapi_spec_json %}
+                            {% for path in spec.paths %}
                               {% assign method_json = path[1] %}
                               {% for method in method_json %}
                                 {% assign tagarray = method[1].tags %}
@@ -305,7 +305,7 @@ layout: page
                                 {% endif %}
                               {% endfor %}
                             {% endfor %}
-                          
+                          {% endfor %}
 
                           {% assign tagArray = taglist | split: "," %}
                           {% for grouptag in tagArray %}
