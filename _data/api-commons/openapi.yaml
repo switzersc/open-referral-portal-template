@@ -393,7 +393,7 @@ paths:
               "$ref": "#/definitions/location"
       tags:
       - Locations
-  "/locations/{location_id}/holiday_schedule/":
+  "/locations/{location_id}/holiday-schedule/":
     get:
       summary: Get Holiday Schedule
       description: Get Holiday Schedule
@@ -442,7 +442,7 @@ paths:
               "$ref": "#/definitions/holiday_schedule"
       tags:
       - Location - Holiday Schedule
-  "/locations/{location_id}/holiday_schedule/{holiday_schedule_id}/":
+  "/locations/{location_id}/holiday-schedule/{holiday_schedule_id}/":
     get:
       summary: Get Holiday Schedule
       description: Get Holiday Schedule
@@ -663,7 +663,7 @@ paths:
               "$ref": "#/definitions/language"
       tags:
       - Location - Language
-  "/locations/{location_id}/postal_address/":
+  "/locations/{location_id}/postal-address/":
     get:
       summary: Get Postal Addresses
       description: Get Postal Addresses
@@ -712,7 +712,7 @@ paths:
               "$ref": "#/definitions/postal_address"
       tags:
       - Location - Postal Address
-  "/locations/{location_id}/postal_address/{postal_address_id}/":
+  "/locations/{location_id}/postal-address/{postal_address_id}/":
     get:
       summary: Get Postal Address
       description: Get Postal Address
@@ -798,7 +798,7 @@ paths:
               "$ref": "#/definitions/postal_address"
       tags:
       - Location - Postal Address
-  "/locations/{location_id}/physical_address/":
+  "/locations/{location_id}/physical-address/":
     get:
       summary: Get Physical Address
       description: Get Physical Address
@@ -847,7 +847,7 @@ paths:
               "$ref": "#/definitions/postal_address"
       tags:
       - Location - Physical Address
-  "/locations/{location_id}/physical_address/{postal_address_id}/":
+  "/locations/{location_id}/physical-address/{postal_address_id}/":
     get:
       summary: Get Physical Address
       description: Get Physical Address
@@ -1068,7 +1068,7 @@ paths:
               "$ref": "#/definitions/phone"
       tags:
       - Location - Phones
-  "/locations/{location_id}/regular_schedule/":
+  "/locations/{location_id}/regular-schedule/":
     get:
       summary: Get Regular Schedules
       description: Get Regular Schedules
@@ -1117,7 +1117,7 @@ paths:
               "$ref": "#/definitions/regular_schedule"
       tags:
       - Location - Regular Schedule
-  "/locations/{location_id}/regular_schedule/{regular_schedule_id}/":
+  "/locations/{location_id}/regular-schedule/{regular_schedule_id}/":
     get:
       summary: Get Regular Schedule
       description: Get Regular Schedule
@@ -1338,7 +1338,7 @@ paths:
               "$ref": "#/definitions/service"
       tags:
       - Location - Services
-  "/locations/{location_id}/accessibility_for_disabilities/":
+  "/locations/{location_id}/accessibility/":
     get:
       summary: Get Accessibility For Disabilities
       description: Get Accessibility For Disabilities
@@ -1387,7 +1387,7 @@ paths:
               "$ref": "#/definitions/accessibility_for_disabilities"
       tags:
       - Location - Accessibility For Disabilities
-  "/locations/{location_id}/accessibility_for_disabilities/{accessibility_for_disabilities_id}/":
+  "/locations/{location_id}/accessibility/{accessibility_id}/":
     get:
       summary: Get Accessibility For Disabilities
       description: Get Accessibility For Disabilities
@@ -1401,7 +1401,7 @@ paths:
         - in: path
           required: true
           type: string
-          name: accessibility_for_disabilities_id
+          name: accessibility_id
           description: 'The unique accessibility for disabilities id.'
       security:
         - appid: []
@@ -1428,7 +1428,7 @@ paths:
         - in: path
           required: true
           type: string
-          name: accessibility_for_disabilities_id
+          name: accessibility_id
           description: 'The unique accessibility for disabilities id.'
         - in: body
           name: body
@@ -1451,14 +1451,16 @@ paths:
       description: Delete Accessibility For Disabilities
       operationId: delete-location-accessibility-for-disabilities
       parameters:
-        - in: query
-          type: string
-          name: accessibility_for_disabilities_id
-          description: 'The unique accessibility for disabilities id.'
-        - in: query
+        - in: path
+          required: true
           type: string
           name: location_id
           description: 'The unique location id.'
+        - in: path
+          required: true
+          type: string
+          name: accessibility_id
+          description: 'The unique accessibility for disabilities id.'
       security:
         - appid: []
         - appkey: []
@@ -1683,73 +1685,11 @@ paths:
       description: Get Contacts
       operationId: list-organization-contacts
       parameters:
-        - in: query
-          type: string
-          name: accessibility
-          description: Accessibility options available at the location. Accepted values
-            are cd, deaf_interpreter, disabled_parking, elevator, ramp, restroom, tape_braille,
-            tty, wheelchair, and wheelchair_van.
-        - in: query
-          type: string
-          name: address_attributes
-          description: required unless the location is marked as virtual
-        - in: query
-          type: string
-          name: admin_emails
-          description: Email address for a person allowed to administer the location
-            (via the Ohana API Admin interface for example).
-        - in: query
-          type: string
-          name: alternate_name
-          description: Another name this location might be known by.
-        - in: query
-          type: string
-          name: description
-          description: Description of services provided at the location
-        - in: query
-          type: string
-          name: email
-          description: General Email address for location. Emails that belong to contacts
-            should go in the Contact object.
-        - in: query
-          type: string
-          name: languages
-          description: Languages spoken at the location
-        - in: query
-          type: string
-          name: latitude
-          description: Latitude portion of the location’s coordinates. Note that the
-            app automatically geocodes addresses if the data doesn’t include coordinates
-        - in: query
-          type: string
-          name: longitude
-          description: Longitude portion of the location’s coordinates. Note that the
-            app automatically geocodes addresses if the data doesn’t include coordinates
-        - in: query
-          type: string
-          name: name
-          description: Name of the location
         - in: path
           required: true
           type: string
           name: organization_id
-          description: The organization id.
-        - in: query
-          type: string
-          name: short_desc
-          description: Succinct description of services provided at the location.
-        - in: query
-          type: string
-          name: transportation
-          description: Public transportation options near the location
-        - in: query
-          type: string
-          name: virtual
-          description: required if the location does not have a physical address
-        - in: query
-          type: string
-          name: website
-          description: The location’s website. Must include “http://” or “https://”
+          description: 'The unique organization id.'
       security:
         - appid: []
         - appkey: []
@@ -2804,7 +2744,8 @@ paths:
       description: Get Service
       operationId: get-service
       parameters:
-        - in: query
+        - in: path
+          required: true
           type: string
           name: service_id
           description: 'The unique service id.'
@@ -3386,11 +3327,13 @@ paths:
       description: Delete Funding
       operationId: delete-service-funding
       parameters:
-        - in: query
+        - in: path
+          required: true
           type: string
           name: service_id
           description: 'The unique service id.'
-        - in: query
+        - in: path
+          required: true
           type: string
           name: funding_id
           description: 'The unique funding id.'
@@ -3406,7 +3349,7 @@ paths:
               "$ref": "#/definitions/funding"
       tags:
       - Service - Funding
-  "/services/{service_id}/holiday_schedule/":
+  "/services/{service_id}/holiday-schedule/":
     get:
       summary: Get Holiday Schedule
       description: Get Holiday Schedule
@@ -3455,7 +3398,7 @@ paths:
               "$ref": "#/definitions/holiday_schedule"
       tags:
       - Service - Holiday Schedule
-  "/services/{service_id}/holiday_schedule/{holiday_schedule_id}/":
+  "/services/{service_id}/holiday-schedule/{holiday_schedule_id}/":
     get:
       summary: Get Holiday Schedule
       description: Get Holiday Schedule
@@ -3541,141 +3484,6 @@ paths:
               "$ref": "#/definitions/holiday_schedule"
       tags:
       - Service - Holiday Schedule
-  "/services/{service_id}/intepretation_services/":
-    get:
-      summary: Get Interpretation Services
-      description: Get Interpretation Services
-      operationId: list-service-interpretation-services
-      parameters:
-        - in: path
-          required: true
-          type: string
-          name: service_id
-          description: 'The unique service id.'
-      security:
-        - appid: []
-        - appkey: []
-      responses:
-        '200':
-          description: Interpretation Services Response
-          schema:
-            type: array
-            items:
-              "$ref": "#/definitions/intepretation_services"
-      tags:
-      - Service - Interpretation Services
-    post:
-      summary: Add Interpretation Services
-      description: Add Interpretation Services
-      operationId: add-service-interpretation-services
-      parameters:
-        - in: path
-          required: true
-          type: string
-          name: service_id
-          description: 'The unique service id.'
-        - in: body
-          name: body
-          schema:
-            $ref: '#/definitions/intepretation_services'
-      security:
-        - appid: []
-        - appkey: []
-      responses:
-        '200':
-          description: Interpretation Services Response
-          schema:
-            type: array
-            items:
-              "$ref": "#/definitions/intepretation_services"
-      tags:
-      - Service - Interpretation Services
-  "/services/{service_id}/intepretation_services/{intepretation_services_id}/":
-    get:
-      summary: Get Interpretation Services
-      description: Get Interpretation Services
-      operationId: get-service-interpretation-services
-      parameters:
-        - in: path
-          required: true
-          type: string
-          name: service_id
-          description: 'The unique service id.'
-        - in: path
-          required: true
-          type: string
-          name: intepretation_services_id
-          description: 'The unique interpretation services id.'
-      security:
-        - appid: []
-        - appkey: []
-      responses:
-        '200':
-          description: Interpretation Services Response
-          schema:
-            type: array
-            items:
-              "$ref": "#/definitions/intepretation_services"
-      tags:
-      - Service - Interpretation Services
-    put:
-      summary: Update Interpretation Services
-      description: Update Interpretation Services
-      operationId: update-service-interpretation-services
-      parameters:
-        - in: path
-          required: true
-          type: string
-          name: service_id
-          description: 'The unique service id.'
-        - in: path
-          required: true
-          type: string
-          name: intepretation_services_id
-          description: 'The unique interpretation services id.'
-        - in: body
-          name: body
-          schema:
-            $ref: '#/definitions/intepretation_services'
-      security:
-        - appid: []
-        - appkey: []
-      responses:
-        '200':
-          description: Interpretation Services Response
-          schema:
-            type: array
-            items:
-              "$ref": "#/definitions/intepretation_services"
-      tags:
-      - Service - Interpretation Services
-    delete:
-      summary: Delete Interpretation Services
-      description: Delete Interpretation Services
-      operationId: delete-service-interpretation-services
-      parameters:
-        - in: path
-          required: true
-          type: string
-          name: service_id
-          description: 'The unique service id.'
-        - in: path
-          required: true
-          type: string
-          name: intepretation_services_id
-          description: 'The unique interpretation services id.'
-      security:
-        - appid: []
-        - appkey: []
-      responses:
-        '200':
-          description: Interpretation Services Response
-          schema:
-            type: array
-            items:
-              "$ref": "#/definitions/intepretation_services"
-      tags:
-      - Service - Interpretation Services
   "/services/{service_id}/languages/":
     get:
       summary: Get Languages
@@ -3808,7 +3616,7 @@ paths:
               "$ref": "#/definitions/language"
       tags:
       - Service - Languages
-  "/services/{service_id}/payment_accepted/":
+  "/services/{service_id}/payment-accepted/":
     get:
       summary: Get Payment Accepted
       description: Get Payment Accepted
@@ -3857,7 +3665,7 @@ paths:
               "$ref": "#/definitions/payment_accepted"
       tags:
       - Service - Payment Accepted
-  "/services/{service_id}/payment_accepted/{payment_accepted_id}/":
+  "/services/{service_id}/payment-accepted/{payment_accepted_id}/":
     get:
       summary: Get Payment Accepted
       description: Get Payment Accepted
@@ -4078,7 +3886,7 @@ paths:
               "$ref": "#/definitions/phone"
       tags:
       - Service - Phones
-  "/services/{service_id}/regular_schedule/":
+  "/services/{service_id}/regular-schedule/":
     get:
       summary: Get Regular Schedule
       description: Get Regular Schedule
@@ -4127,7 +3935,7 @@ paths:
               "$ref": "#/definitions/regular_schedule"
       tags:
       - Service - Regular Schedule
-  "/services/{service_id}/regular_schedule/{required_document_id}/":
+  "/services/{service_id}/regular-schedule/{regular_schedule_id}/":
     get:
       summary: Get Regular Schedule
       description: Get Regular Schedule
@@ -4141,8 +3949,8 @@ paths:
         - in: path
           required: true
           type: string
-          name: required_document_id
-          description: 'The unique required document id.'
+          name: regular_schedule_id
+          description: 'The unique regular schedule id'
       security:
         - appid: []
         - appkey: []
@@ -4168,8 +3976,8 @@ paths:
         - in: path
           required: true
           type: string
-          name: required_document_id
-          description: 'The unique required document id.'
+          name: regular_schedule_id
+          description: 'The unique regular schedule id'
         - in: body
           name: body
           schema:
@@ -4199,8 +4007,8 @@ paths:
         - in: path
           required: true
           type: string
-          name: required_document_id
-          description: 'The unique required document id.'
+          name: regular_schedule_id
+          description: 'The unique regular schedule id'
       security:
         - appid: []
         - appkey: []
@@ -4213,7 +4021,7 @@ paths:
               "$ref": "#/definitions/regular_schedule"
       tags:
       - Service - Regular Schedule
-  "/services/{service_id}/required_document/":
+  "/services/{service_id}/required-document/":
     get:
       summary: Get Required Document
       description: Get Required Document
@@ -4262,7 +4070,7 @@ paths:
               "$ref": "#/definitions/required_document"
       tags:
       - Service - Required Document
-  "/services/{service_id}/required_document/{required_document_id}/":
+  "/services/{service_id}/required-document/{required_document_id}/":
     get:
       summary: Get Required Document
       description: Get Required Document
@@ -4348,7 +4156,7 @@ paths:
               "$ref": "#/definitions/required_document"
       tags:
       - Service - Required Document
-  "/services/{service_id}/service_area/":
+  "/services/{service_id}/service-area/":
     get:
       summary: Get Service Areas
       description: Get Service Areas
@@ -4397,7 +4205,7 @@ paths:
               "$ref": "#/definitions/service_area"
       tags:
       - Service - Areas
-  "/services/{service_id}/service_area/{service_area_id}/":
+  "/services/{service_id}/service-area/{service_area_id}/":
     get:
       summary: Get Service Area
       description: Get Service Area
