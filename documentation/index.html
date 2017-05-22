@@ -336,11 +336,11 @@ layout: page
                                         {{ verb }}
                                       </td>
                                       <td style="width: 25px;"></td>
-                                      <td>
+                                      <td align="center">
                                         {% if verb == 'GET' %}
                                           <button type="button" onclick="loadClient('{{ slug }}');" class="btn btn-primary" data-toggle="modal" data-target=".api-client">Try</button>
                                         {% else %}
-                                          <button type="button" onclick="alert('Need Admin Access')" class="btn btn-primary" data-toggle="modal" data-target=".api-client">Admi</button>
+                                          <a href="https://github.com/adopta-agency/open-referral-developer/issues/new">Request Access</a>
                                         {% endif %}
                                       </td>
                                     </tr>
