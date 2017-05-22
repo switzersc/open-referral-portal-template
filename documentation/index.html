@@ -337,7 +337,9 @@ layout: page
                                       </td>
                                       <td style="width: 25px;"></td>
                                       <td>
-                                        <button type="button" onclick="loadClient('{{ slug }}');" class="btn btn-primary" data-toggle="modal" data-target=".api-client">Try</button>
+                                        {% if verb == 'GET' %}
+                                          <button type="button" onclick="loadClient('{{ slug }}');" class="btn btn-primary" data-toggle="modal" data-target=".api-client">Try</button>
+                                        {% endif %}
                                       </td>
                                     </tr>
                                       <tr id="{{ slug }}-row" style="display: none;">
