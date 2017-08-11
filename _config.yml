@@ -1,5 +1,5 @@
-name: Open Referral API
-url: http://developer.open.referral.adopta.agency/
+name: Link [Anywhere]
+url: http://link.sf.adopta.agency/
 
 author:
   name: 'Kin Lane'
@@ -15,7 +15,7 @@ put_color: FF0080;
 delete_color: FF9900;
 
 github_org: adopta-agency
-github_repo: open-referral-developer
+github_repo: link-sf
 
 # URL to the issues page for this
 support_title: Support
