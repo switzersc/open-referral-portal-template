@@ -285,6 +285,14 @@ paths:
           type: number
           name: per_page
           description: Amount of locations to return per page, up to 100.
+        - in: query
+          type: string
+          name: sortby
+          description: Which field to sort by.
+        - in: query
+          type: number
+          name: order
+          description: Which order to sort by (asc,desc).          
       responses:
         '200':
           description: Location Response
