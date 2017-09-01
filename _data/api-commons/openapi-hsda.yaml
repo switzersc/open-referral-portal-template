@@ -270,9 +270,13 @@ paths:
       operationId: listLocations
       parameters:
         - in: query
-          type: number
+          type: string
           name: query
-          description: A query to filter list by.      
+          description: A query to filter list by (up to provider to determine what to search) 
+        - in: query
+          type: string
+          name: queries
+          description: A comma separate list of queries with specific fields.              
         - in: query
           type: number
           name: page
