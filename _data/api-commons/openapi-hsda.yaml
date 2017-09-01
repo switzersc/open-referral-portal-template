@@ -48,7 +48,7 @@ paths:
           default: name
           description: Which field to sort by.
         - in: query
-          type: number
+          type: string
           name: order
           default: asc
           description: Which order to sort by (asc,desc).
@@ -309,7 +309,7 @@ paths:
           default: name
           description: Which field to sort by.
         - in: query
-          type: number
+          type: string
           name: order
           default: asc
           description: Which order to sort by (asc,desc).
@@ -1473,7 +1473,7 @@ paths:
           default: name
           description: Which field to sort by.
         - in: query
-          type: number
+          type: string
           name: order
           default: asc
           description: Which order to sort by (asc,desc).
@@ -2582,7 +2582,7 @@ paths:
           default: name
           description: Which field to sort by.
         - in: query
-          type: number
+          type: string
           name: order
           default: asc
           description: Which order to sort by (asc,desc).
