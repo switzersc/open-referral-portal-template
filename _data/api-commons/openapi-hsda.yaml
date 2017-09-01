@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
-  title: "Open Referral API"
-  description: "This is a specification describing the Open Referral API, using the Human Services Specification. This has been extracted from the Ohana API deployment, but will be standardized to refer to the universal standard that will apply to any Open Referral compliant API."
+  title: "Human Services Data API"
+  description: "This is a specification describing the Human Services Data API, using the Human Services Data Specification (HSDS). This has been extracted from the Ohana API deployment, but will be standardized to refer to the universal standard that will apply to any HSDS/A compliant API."
   termsOfService: "https://openreferral.org/documentation/"
   contact:
     name: Open Referral
