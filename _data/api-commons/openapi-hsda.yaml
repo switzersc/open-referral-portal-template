@@ -10,7 +10,7 @@ info:
   license:
     name: Open Data Commons Public Domain
     url: http://opendatacommons.org/licenses/pddl/
-  version: v1.1
+  version: v1.2
 host: api.open.referral.adopta.agency
 basePath: /
 schemes:
@@ -25,9 +25,13 @@ paths:
       operationId: listContacts
       parameters:
         - in: query
-          type: number
+          type: string
           name: query
-          description: A query to filter list by.
+          description: A query to filter list by (up to provider to determine what to search)
+        - in: query
+          type: string
+          name: queries
+          description: A comma separate list of queries with specific fields.
         - in: query
           type: number
           name: page
@@ -35,7 +39,15 @@ paths:
         - in: query
           type: number
           name: per_page
-          description: Amount of locations to return per page, up to 100.
+          description: Number of records to return per page, up to 100.
+        - in: query
+          type: string
+          name: sortby
+          description: Which field to sort by.
+        - in: query
+          type: number
+          name: order
+          description: Which order to sort by (asc,desc).
       responses:
         '200':
           description: Contact Response
@@ -272,11 +284,11 @@ paths:
         - in: query
           type: string
           name: query
-          description: A query to filter list by (up to provider to determine what to search) 
+          description: A query to filter list by (up to provider to determine what to search)
         - in: query
           type: string
           name: queries
-          description: A comma separate list of queries with specific fields.              
+          description: A comma separate list of queries with specific fields.
         - in: query
           type: number
           name: page
@@ -292,7 +304,7 @@ paths:
         - in: query
           type: number
           name: order
-          description: Which order to sort by (asc,desc).          
+          description: Which order to sort by (asc,desc).
       responses:
         '200':
           description: Location Response
@@ -1430,13 +1442,29 @@ paths:
       operationId: listOrganizations
       parameters:
         - in: query
+          type: string
+          name: query
+          description: A query to filter list by (up to provider to determine what to search)
+        - in: query
+          type: string
+          name: queries
+          description: A comma separate list of queries with specific fields.
+        - in: query
           type: number
           name: page
           description: The particular page of results.
         - in: query
           type: number
           name: per_page
-          description: Amount of locations to return per page, up to 100.
+          description: Number of records to return per page, up to 100.
+        - in: query
+          type: string
+          name: sortby
+          description: Which field to sort by.
+        - in: query
+          type: number
+          name: order
+          description: Which order to sort by (asc,desc).
       responses:
         '200':
           description: Organization Response
@@ -2517,13 +2545,29 @@ paths:
       operationId: listServices
       parameters:
         - in: query
+          type: string
+          name: query
+          description: A query to filter list by (up to provider to determine what to search)
+        - in: query
+          type: string
+          name: queries
+          description: A comma separate list of queries with specific fields.
+        - in: query
           type: number
           name: page
           description: The particular page of results.
         - in: query
           type: number
           name: per_page
-          description: Amount of locations to return per page, up to 100.
+          description: Number of records return per page, up to 100.
+        - in: query
+          type: string
+          name: sortby
+          description: Which field to sort by.
+        - in: query
+          type: number
+          name: order
+          description: Which order to sort by (asc,desc).
       responses:
         '200':
           description: Service Response
