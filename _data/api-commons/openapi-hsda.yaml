@@ -35,18 +35,22 @@ paths:
         - in: query
           type: number
           name: page
+          default: 0
           description: The particular page of results.
         - in: query
           type: number
           name: per_page
+          default: 25
           description: Number of records to return per page, up to 100.
         - in: query
           type: string
           name: sortby
+          default: name
           description: Which field to sort by.
         - in: query
           type: number
           name: order
+          default: asc
           description: Which order to sort by (asc,desc).
       responses:
         '200':
@@ -292,18 +296,22 @@ paths:
         - in: query
           type: number
           name: page
+          default: 0
           description: The particular page of results.
         - in: query
           type: number
           name: per_page
+          default: 25
           description: Amount of locations to return per page, up to 100.
         - in: query
           type: string
           name: sortby
+          default: name
           description: Which field to sort by.
         - in: query
           type: number
           name: order
+          default: asc
           description: Which order to sort by (asc,desc).
       responses:
         '200':
@@ -1452,18 +1460,22 @@ paths:
         - in: query
           type: number
           name: page
+          default: 0
           description: The particular page of results.
         - in: query
           type: number
           name: per_page
+          default: 25
           description: Number of records to return per page, up to 100.
         - in: query
           type: string
           name: sortby
+          default: name
           description: Which field to sort by.
         - in: query
           type: number
           name: order
+          default: asc
           description: Which order to sort by (asc,desc).
       responses:
         '200':
@@ -2521,9 +2533,11 @@ paths:
         - in: query
           type: string
           name: page
+          default: 0
         - in: query
           type: string
           name: per_page
+          default: 25
         - in: query
           type: string
           name: radius
@@ -2555,18 +2569,22 @@ paths:
         - in: query
           type: number
           name: page
+          default: 0
           description: The particular page of results.
         - in: query
           type: number
           name: per_page
+          default: 25
           description: Number of records return per page, up to 100.
         - in: query
           type: string
           name: sortby
+          default: name
           description: Which field to sort by.
         - in: query
           type: number
           name: order
+          default: asc
           description: Which order to sort by (asc,desc).
       responses:
         '200':
