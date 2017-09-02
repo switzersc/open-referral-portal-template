@@ -82,6 +82,110 @@ paths:
               $ref: "#/definitions/contact"
       tags:
       - Contacts
+  /contacts/complete/:
+    get:
+      summary: Get Contacts (Complete)
+      description: Get Contacts (Complete)
+      operationId: listContactsComplete
+      parameters:
+        - in: query
+          type: string
+          name: query
+          description: A query to filter list by (up to provider to determine what to search)
+        - in: query
+          type: string
+          name: queries
+          description: A comma separate list of queries with specific fields.
+        - in: query
+          type: number
+          name: page
+          default: 0
+          description: The particular page of results.
+        - in: query
+          type: number
+          name: per_page
+          default: 25
+          description: Number of records to return per page, up to 100.
+        - in: query
+          type: string
+          name: sortby
+          default: name
+          description: Which field to sort by.
+        - in: query
+          type: string
+          name: order
+          default: asc
+          description: Which order to sort by (asc,desc).
+      responses:
+        '200':
+          description: Contact Complete Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/contact_complete"
+      tags:
+      - Contacts
+    post:
+      summary: Add Contact (Complete)
+      description: Add Contact (Complete)
+      operationId: addContactsComplete
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/contact_complete'
+      responses:
+        '200':
+          description: Contact Complete Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/contact_complete"
+      tags:
+      - Contacts
+  /contacts/complete/{contact_id}/:
+    put:
+      summary: Update Contact (Complete)
+      description: Update Contact (Complete)
+      operationId: updateContactsComplete
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: contact_id
+          description: The contact id.
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/contact_complete'
+      responses:
+        '200':
+          description: Contact Complete Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/contact_complete"
+      tags:
+      - Contacts
+    get:
+      summary: Get Contacts (Complete)
+      description: Get Contacts (Complete)
+      operationId: getContactComplete
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: contact_id
+          description: The contact id.
+      responses:
+        '200':
+          description: Contact Complete Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/contact_complete"
+      tags:
+      - Contacts
   /contacts/{contact_id}/:
     get:
       summary: Get Contact
@@ -4416,6 +4520,38 @@ disabilities.'
       email:
         description: 'The email address of the person.'
         type: string
+    required:
+      - id
+  contact_complete:
+    properties:
+      id:
+        description: 'Each contact must have a unique identifier.'
+        type: string
+      organization_id:
+        description: 'The identifier of the organization for which this is a contact.'
+        type: string
+      service_id:
+        description: 'The identifier of the service for which this is a contact.'
+        type: string
+      service_at_location_id:
+        description: 'The identifier of the ‘service at location’ table entry, when this contact is specific to a service in a particular location.'
+        type: string
+      name:
+        description: 'The name of the person.'
+        type: string
+      title:
+        description: 'The job title of the person.'
+        type: string
+      department:
+        description: 'The department that the person is part of.'
+        type: string
+      email:
+        description: 'The email address of the person.'
+        type: string
+      phones:
+        type: "array"
+        items:
+          $ref: "#/definitions/phone"
     required:
       - id
   eligibility:
