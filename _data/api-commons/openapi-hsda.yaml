@@ -1569,7 +1569,7 @@ paths:
       tags:
       - Organizations
   /organizations/complete/{organization_id}/:
-    post:
+    put:
       summary: Update Organization (Complete)
       description: Update Organization (Complete)
       operationId: updateOrganizationsComplete
