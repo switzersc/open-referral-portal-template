@@ -1549,7 +1549,25 @@ paths:
             items:
               $ref: "#/definitions/organization_complete"
       tags:
-      - Organizations      
+      - Organizations
+    post:
+      summary: Add Organization (Complete)
+      description: Add Organization (Complete)
+      operationId: addOrganizationsComplete
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/organization_coplete'
+      responses:
+        '200':
+          description: Organization Complete Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/organization_complete"
+      tags:
+      - Organizations
   /organizations/{organization_id}/:
     get:
       summary: Get Organization
