@@ -4347,7 +4347,7 @@ disabilities.'
         description: 'Alternative or commonly used name for the organization.'
         type: string
       description:
-        description: 'A brief summary about the organization. It can contain markup such as HTML or Markdown.'
+        description: 'A brief summary about the organization. It can contain markup such as HTML or Markdow.'
         type: string
       email:
         description: 'The contact e-mail address for the organization.'
@@ -4368,30 +4368,15 @@ disabilities.'
         description: 'The legal status defines the conditions that an organization is operating under; e.g. non-profit, private corporation or a government organization.'
         type: string
       contacts:
-        description: 'The contacts sub-subresource.'
-        type: array
-        schema:
-          $ref: "#/definitions/contact"
+        $ref: "#/definitions/contact"
       funding:
-        description: 'The funding sub-subresource.'
-        type: array
-        schema:
-          $ref: "#/definitions/funding"
+        $ref: "#/definitions/funding"
       locations:
-        description: 'The location sub-subresource.'
-        type: array
-        schema:
-          $ref: "#/definitions/location"
+        $ref: "#/definitions/location"
       programs:
-        description: 'The program sub-subresource.'
-        type: array
-        schema:
-          $ref: "#/definitions/program"
+        $ref: "#/definitions/program"
       services:
-        description: 'The service sub-subresource.'
-        type: array
-        schema:
-          $ref: "#/definitions/service"
+        $ref: "#/definitions/service"
     required:
       - id
       - description
