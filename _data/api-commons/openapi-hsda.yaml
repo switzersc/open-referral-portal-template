@@ -4713,7 +4713,7 @@ disabilities.'
         type: string
       extension:
         description: 'The extension of the phone number.'
-        type: number
+        type: string
       type:
         description: 'Whether the phone number relates to a fixed or cellular phone.'
         type: string
