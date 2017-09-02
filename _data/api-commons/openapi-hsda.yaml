@@ -2503,55 +2503,49 @@ paths:
               $ref: "#/definitions/service"
       tags:
       - Organizations
-  /search/:
+  /organizations/complete/:
     get:
-      summary: Search
-      description: Search
-      operationId: search
+      summary: Get Organizations (Complete)
+      description: Get Organizations (Complete)
+      operationId: listOrganizationsComplete
       parameters:
         - in: query
           type: string
-          name: category
+          name: query
+          description: A query to filter list by (up to provider to determine what to search)
         - in: query
           type: string
-          name: email
+          name: queries
+          description: A comma separate list of queries with specific fields.
         - in: query
-          type: string
-          name: keyword
-        - in: query
-          type: string
-          name: language
-        - in: query
-          type: string
-          name: lat_lng
-        - in: query
-          type: string
-          name: location
-        - in: query
-          type: string
-          name: org_name
-        - in: query
-          type: string
+          type: number
           name: page
           default: 0
+          description: The particular page of results.
         - in: query
-          type: string
+          type: number
           name: per_page
           default: 25
+          description: Number of records to return per page, up to 100.
         - in: query
           type: string
-          name: radius
+          name: sortby
+          default: name
+          description: Which field to sort by.
         - in: query
           type: string
-          name: service_area
-        - in: query
-          type: string
-          name: status
+          name: order
+          default: asc
+          description: Which order to sort by (asc,desc).
       responses:
         '200':
-          description: OK
+          description: Organization Complete Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/organization_complete"
       tags:
-      - Search
+      - Organizations
   /services/:
     get:
       summary: Get Services
@@ -4320,6 +4314,66 @@ disabilities.'
       legal_status:
         description: 'The legal status defines the conditions that an organization is operating under; e.g. non-profit, private corporation or a government organization.'
         type: string
+    required:
+      - id
+      - description
+  organization_complete:
+    properties:
+      id:
+        description: 'Each organization must have a unique identifier.'
+        type: string
+      name:
+        description: 'The official or public name of the organization.'
+        type: string
+      alternate_name:
+        description: 'Alternative or commonly used name for the organization.'
+        type: string
+      description:
+        description: 'A brief summary about the organization. It can contain markup such as HTML or Markdown.'
+        type: string
+      email:
+        description: 'The contact e-mail address for the organization.'
+        type: string
+      url:
+        description: 'The URL (website address) of the organization.'
+        type: string
+      tax_status:
+        description: 'Government assigned tax designation for for tax-exempt organizations.'
+        type: string
+      tax_id:
+        description: 'A government issued identifier used for the purpose of tax administration.'
+        type: string
+      year_incorporated:
+        description: 'The year in which the organization was legally formed.'
+        type: string
+      legal_status:
+        description: 'The legal status defines the conditions that an organization is operating under; e.g. non-profit, private corporation or a government organization.'
+        type: string
+      contacts:
+        description: 'The contacts sub-subresource.'
+        type: array
+        schema:
+          $ref: "#/definitions/contact"
+      funding:
+        description: 'The funding sub-subresource.'
+        type: array
+        schema:
+          $ref: "#/definitions/funding"
+      locations:
+        description: 'The location sub-subresource.'
+        type: array
+        schema:
+          $ref: "#/definitions/location"
+      programs:
+        description: 'The program sub-subresource.'
+        type: array
+        schema:
+          $ref: "#/definitions/program"
+      services:
+        description: 'The service sub-subresource.'
+        type: array
+        schema:
+          $ref: "#/definitions/service"
     required:
       - id
       - description
