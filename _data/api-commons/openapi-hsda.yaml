@@ -1592,6 +1592,25 @@ paths:
               $ref: "#/definitions/organization_complete"
       tags:
       - Organizations
+    get:
+      summary: Get Organizations (Complete)
+      description: Get Organizations (Complete)
+      operationId: listOrganizationsComplete
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: organization_id
+          description: The organization id.
+      responses:
+        '200':
+          description: Organization Complete Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/organization_complete"
+      tags:
+      - Organizations
   /organizations/{organization_id}/:
     get:
       summary: Get Organization
