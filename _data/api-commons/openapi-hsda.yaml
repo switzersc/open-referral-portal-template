@@ -1568,6 +1568,30 @@ paths:
               $ref: "#/definitions/organization_complete"
       tags:
       - Organizations
+  /organizations/complete/{organization_id}/:
+    post:
+      summary: Update Organization (Complete)
+      description: Update Organization (Complete)
+      operationId: updateOrganizationsComplete
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: organization_id
+          description: The organization id.
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/organization_complete'
+      responses:
+        '200':
+          description: Organization Complete Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/organization_complete"
+      tags:
+      - Organizations
   /organizations/{organization_id}/:
     get:
       summary: Get Organization
