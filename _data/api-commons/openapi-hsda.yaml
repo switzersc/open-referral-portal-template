@@ -343,110 +343,110 @@ paths:
               $ref: "#/definitions/location"
       tags:
       - Locations
-/locations/complete/:
-  get:
-    summary: Get Locations (Complete)
-    description: Get Locations (Complete)
-    operationId: listLocationsComplete
-    parameters:
-      - in: query
-        type: string
-        name: query
-        description: A query to filter list by (up to provider to determine what to search)
-      - in: query
-        type: string
-        name: queries
-        description: A comma separate list of queries with specific fields.
-      - in: query
-        type: number
-        name: page
-        default: 0
-        description: The particular page of results.
-      - in: query
-        type: number
-        name: per_page
-        default: 25
-        description: Number of records to return per page, up to 100.
-      - in: query
-        type: string
-        name: sortby
-        default: name
-        description: Which field to sort by.
-      - in: query
-        type: string
-        name: order
-        default: asc
-        description: Which order to sort by (asc,desc).
-    responses:
-      '200':
-        description: Location Complete Response
-        schema:
-          type: array
-          items:
-            $ref: "#/definitions/location_complete"
-    tags:
-    - Locations
-  post:
-    summary: Add Location (Complete)
-    description: Add Location (Complete)
-    operationId: addLocationsComplete
-    parameters:
-      - in: body
-        name: body
-        schema:
-          $ref: '#/definitions/location_complete'
-    responses:
-      '200':
-        description: Location Complete Response
-        schema:
-          type: array
-          items:
-            $ref: "#/definitions/location_complete"
-    tags:
-    - Locations
-/locations/complete/{location_id}/:
-  put:
-    summary: Update Location (Complete)
-    description: Update Location (Complete)
-    operationId: updateLocationsComplete
-    parameters:
-      - in: path
-        required: true
-        type: string
-        name: location_id
-        description: The location id.
-      - in: body
-        name: body
-        schema:
-          $ref: '#/definitions/location_complete'
-    responses:
-      '200':
-        description: Location Complete Response
-        schema:
-          type: array
-          items:
-            $ref: "#/definitions/location_complete"
-    tags:
-    - Locations
-  get:
-    summary: Get Locations (Complete)
-    description: Get Locations (Complete)
-    operationId: listLocationsComplete
-    parameters:
-      - in: path
-        required: true
-        type: string
-        name: location_id
-        description: The location id.
-    responses:
-      '200':
-        description: Location Complete Response
-        schema:
-          type: array
-          items:
-            $ref: "#/definitions/location_complete"
-    tags:
-    - Locations
+  /locations/complete/:
+    get:
+      summary: Get Locations (Complete)
+      description: Get Locations (Complete)
+      operationId: listLocationsComplete
+      parameters:
+        - in: query
+          type: string
+          name: query
+          description: A query to filter list by (up to provider to determine what to search)
+        - in: query
+          type: string
+          name: queries
+          description: A comma separate list of queries with specific fields.
+        - in: query
+          type: number
+          name: page
+          default: 0
+          description: The particular page of results.
+        - in: query
+          type: number
+          name: per_page
+          default: 25
+          description: Number of records to return per page, up to 100.
+        - in: query
+          type: string
+          name: sortby
+          default: name
+          description: Which field to sort by.
+        - in: query
+          type: string
+          name: order
+          default: asc
+          description: Which order to sort by (asc,desc).
+      responses:
+        '200':
+          description: Location Complete Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/location_complete"
+      tags:
+      - Locations
+    post:
+      summary: Add Location (Complete)
+      description: Add Location (Complete)
+      operationId: addLocationsComplete
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/location_complete'
+      responses:
+        '200':
+          description: Location Complete Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/location_complete"
+      tags:
+      - Locations
+  /locations/complete/{location_id}/:
+    put:
+      summary: Update Location (Complete)
+      description: Update Location (Complete)
+      operationId: updateLocationsComplete
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: location_id
+          description: The location id.
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/location_complete'
+      responses:
+        '200':
+          description: Location Complete Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/location_complete"
+      tags:
+      - Locations
+    get:
+      summary: Get Locations (Complete)
+      description: Get Locations (Complete)
+      operationId: getLocationComplete
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: location_id
+          description: The location id.
+      responses:
+        '200':
+          description: Location Complete Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/location_complete"
+      tags:
+      - Locations
   /locations/{location_id}/:
     get:
       summary: Get Location
@@ -1699,7 +1699,7 @@ paths:
     get:
       summary: Get Organizations (Complete)
       description: Get Organizations (Complete)
-      operationId: listOrganizationsComplete
+      operationId: getOrganizationComplete
       parameters:
         - in: path
           required: true
@@ -2775,110 +2775,110 @@ paths:
               $ref: "#/definitions/service"
       tags:
       - Services
-/services/complete/:
-  get:
-    summary: Get Services (Complete)
-    description: Get Services (Complete)
-    operationId: listServicesComplete
-    parameters:
-      - in: query
-        type: string
-        name: query
-        description: A query to filter list by (up to provider to determine what to search)
-      - in: query
-        type: string
-        name: queries
-        description: A comma separate list of queries with specific fields.
-      - in: query
-        type: number
-        name: page
-        default: 0
-        description: The particular page of results.
-      - in: query
-        type: number
-        name: per_page
-        default: 25
-        description: Number of records to return per page, up to 100.
-      - in: query
-        type: string
-        name: sortby
-        default: name
-        description: Which field to sort by.
-      - in: query
-        type: string
-        name: order
-        default: asc
-        description: Which order to sort by (asc,desc).
-    responses:
-      '200':
-        description: Service Complete Response
-        schema:
-          type: array
-          items:
-            $ref: "#/definitions/service_complete"
-    tags:
-    - Services
-  post:
-    summary: Add Service (Complete)
-    description: Add Service (Complete)
-    operationId: addServicesComplete
-    parameters:
-      - in: body
-        name: body
-        schema:
-          $ref: '#/definitions/service_complete'
-    responses:
-      '200':
-        description: Service Complete Response
-        schema:
-          type: array
-          items:
-            $ref: "#/definitions/service_complete"
-    tags:
-    - Services
-/services/complete/{service_id}/:
-  put:
-    summary: Update Service (Complete)
-    description: Update Service (Complete)
-    operationId: updateServicesComplete
-    parameters:
-      - in: path
-        required: true
-        type: string
-        name: service_id
-        description: The service id.
-      - in: body
-        name: body
-        schema:
-          $ref: '#/definitions/service_complete'
-    responses:
-      '200':
-        description: Service Complete Response
-        schema:
-          type: array
-          items:
-            $ref: "#/definitions/service_complete"
-    tags:
-    - Services
-  get:
-    summary: Get Services (Complete)
-    description: Get Services (Complete)
-    operationId: listServicesComplete
-    parameters:
-      - in: path
-        required: true
-        type: string
-        name: service_id
-        description: The service id.
-    responses:
-      '200':
-        description: Service Complete Response
-        schema:
-          type: array
-          items:
-            $ref: "#/definitions/service_complete"
-    tags:
-    - Services
+  /services/complete/:
+    get:
+      summary: Get Services (Complete)
+      description: Get Services (Complete)
+      operationId: listServicesComplete
+      parameters:
+        - in: query
+          type: string
+          name: query
+          description: A query to filter list by (up to provider to determine what to search)
+        - in: query
+          type: string
+          name: queries
+          description: A comma separate list of queries with specific fields.
+        - in: query
+          type: number
+          name: page
+          default: 0
+          description: The particular page of results.
+        - in: query
+          type: number
+          name: per_page
+          default: 25
+          description: Number of records to return per page, up to 100.
+        - in: query
+          type: string
+          name: sortby
+          default: name
+          description: Which field to sort by.
+        - in: query
+          type: string
+          name: order
+          default: asc
+          description: Which order to sort by (asc,desc).
+      responses:
+        '200':
+          description: Service Complete Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/service_complete"
+      tags:
+      - Services
+    post:
+      summary: Add Service (Complete)
+      description: Add Service (Complete)
+      operationId: addServicesComplete
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/service_complete'
+      responses:
+        '200':
+          description: Service Complete Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/service_complete"
+      tags:
+      - Services
+  /services/complete/{service_id}/:
+    put:
+      summary: Update Service (Complete)
+      description: Update Service (Complete)
+      operationId: updateServicesComplete
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: service_id
+          description: The service id.
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/service_complete'
+      responses:
+        '200':
+          description: Service Complete Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/service_complete"
+      tags:
+      - Services
+    get:
+      summary: Get Services (Complete)
+      description: Get Services (Complete)
+      operationId: getServiceComplete
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: service_id
+          description: The service id.
+      responses:
+        '200':
+          description: Service Complete Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/service_complete"
+      tags:
+      - Services
   /services/{service_id}/:
     get:
       summary: Get Service
@@ -4577,22 +4577,22 @@ disabilities.'
       longitude:
         description: 'X coordinate of location expressed in decimal degrees in WGS84 datum.'
         type: string
-      contacts:
+      regular_schedule:
         $ref: "#/definitions/regular_schedule"
-      contacts:
+      holiday_schedule:
         $ref: "#/definitions/holiday_schedule"
-      contacts:
-        $ref: "#/definitions/languages"
-      contacts:
+      languages:
+        $ref: "#/definitions/language"
+      postal_address:
         $ref: "#/definitions/postal_address"
-      contacts:
+      physical_address:
         $ref: "#/definitions/physical_address"
-      contacts:
-        $ref: "#/definitions/phones"
-      contacts:
-        $ref: "#/definitions/services"
-      contacts:
-        $ref: "#/definitions/accessibility"
+      phones:
+        $ref: "#/definitions/phone"
+      service:
+        $ref: "#/definitions/service"
+      accessibility_for_disabilities:
+        $ref: "#/definitions/accessibility_for_disabilities"
     required:
       - id
   organization:
@@ -4962,9 +4962,6 @@ disabilities.'
       wait_time:
         description: 'Time a client may expect to wait before receiving a service.'
         type: string
-      fees:
-        description: 'Details of any charges for service users to access this service.'
-        type: string
       accreditations:
         description: 'Details of any accreditations. Accreditation is the formal evaluation of an organization or program against best practice standards set by an accrediting organization.'
         type: string
@@ -4987,7 +4984,7 @@ disabilities.'
         $ref: "#/definitions/language"
       payment_accepted:
         $ref: "#/definitions/payment_accepted"
-      contacts:
+      phones:
         $ref: "#/definitions/phone"
       required_documents:
         $ref: "#/definitions/required_document"
