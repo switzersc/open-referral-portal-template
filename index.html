@@ -132,6 +132,28 @@ layout: page
   <p>This is the API management layer for the HSDA implementation, providing a simple solution that API providers can manage this aspect of operation. Behind the scenes this could be executed with off the shelf API management solutions. The purpose of this is to provide a common API for use across all HSDA implementations.</p>
 </section>
 
+<!-- Management -->
+<section>
+	<header>
+		<a name="platforms"></a>
+		<h2>Human Services Data API (HSDA) Utility</h2>
+	</header>
+  <p>This is a HSDA sevice specifically intended to house all utility based APIs, providing a way to develop APIs that assist in the operation of HSDA implementations. These will always be more utilitiy type APIs that don't fit into any other category of HSDA service.</p>
+  <div id="hsda-utility-ui"></div>
+  <p>We will be adding APIs into this service from time to time, but only if they do not fit into their own category of HSDA service. It is the general bucket for HSDA APIs that are useful, but don't have another home.</p>
+</section>
+
+<!-- Orchestration -->
+<section>
+	<header>
+		<a name="platforms"></a>
+		<h2>Human Services Data API (HSDA) Orchestration</h2>
+	</header>
+  <p>This is a HSDA sevice specifically intended to manage orchestration around HSDA operations, enabling the system to become a two-way street, pushing data outside individual implementations. The system uses webhooks, and events to understand changes made to the HSDA system, and the data stored within.</p>
+  <div id="hsda-orchestration-ui"></div>
+  <p>This system works in conjunction with the HSDA Meta, and requires access to the logging of all transactions to respond to any overall, or individual event. This makes any HSDA implementation work with one or many other HSDA implementations.</p>
+</section>
+
 <script>
 window.onload = function() {
 
@@ -225,6 +247,35 @@ window.onload = function() {
   })
   window.ui = hsda_management_ui;
 
+  // HSDS Utility
+  const hsda_utility_ui = SwaggerUIBundle({
+    url: "http://developer.open.referral.adopta.agency/openapi/hsda-utility.yaml",
+    dom_id: '#hsda-utility-ui',
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ],
+    plugins: [
+      SwaggerUIBundle.plugins.DownloadUrl
+    ],
+    layout: "StandaloneLayout"
+  })
+  window.ui = hsda_utility_ui;
+
+  // HSDS Orchestration
+  const hsda_orchestration_ui = SwaggerUIBundle({
+    url: "http://developer.open.referral.adopta.agency/openapi/hsda-orchestration.yaml",
+    dom_id: '#hsda-orchestration-ui',
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ],
+    plugins: [
+      SwaggerUIBundle.plugins.DownloadUrl
+    ],
+    layout: "StandaloneLayout"
+  })
+  window.ui = hsda_orchestration_ui;
 
 }
 </script>

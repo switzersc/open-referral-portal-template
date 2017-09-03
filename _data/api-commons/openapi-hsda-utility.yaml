@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
-  title: "Human Services Data Search API"
-  description: "This is a complimentary API to the HSDA API focusing just on search."
+  title: "Human Services Data Utility API"
+  description: "This is a complimentary API to the HSDA API focusing just on utility features."
   termsOfService: "https://openreferral.org/documentation/"
   contact:
     name: Open Referral
@@ -11,56 +11,55 @@ info:
     name: Open Data Commons Public Domain
     url: http://opendatacommons.org/licenses/pddl/
   version: v1.2
-host: hsda.api.adopta.agency
+host: hsda.utility.api.adopta.agency
 basePath: /
 schemes:
 - http
 produces:
 - application/json
 paths:
-  /search/:
+  /services/:
     get:
-      summary: Get Contacts
-      description: Get Contacts
-      operationId: listContacts
-      parameters:
-        - in: query
-          type: string
-          name: query
-          description: A query to filter list by (up to provider to determine what to search)
-        - in: query
-          type: string
-          name: queries
-          description: A comma separate list of queries with specific fields.
-        - in: query
-          type: number
-          name: page
-          default: 0
-          description: The particular page of results.
-        - in: query
-          type: number
-          name: per_page
-          default: 25
-          description: Number of records to return per page, up to 100.
-        - in: query
-          type: string
-          name: sortby
-          default: name
-          description: Which field to sort by.
-        - in: query
-          type: string
-          name: order
-          default: asc
-          description: Which order to sort by (asc,desc).
+      summary: Services
+      description: The services being used across ochestration.
+      operationId: getServices
       responses:
         '200':
-          description: Item Response
+          description: Service Response
           schema:
             type: array
             items:
-              $ref: "#/definitions/item"
+              $ref: "#/definitions/service"
       tags:
-      - Contacts
+      - Services
+  /validate/hsda/response/:
+    get:
+      summary: Validate HSDA Response
+      description: Validate HSDA Response
+      operationId: valiateHSDAResponse
+      responses:
+        '200':
+          description: Validate HSDA Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/validation"
+      tags:
+      - Validate
+  /validate/hsda/openapi/:
+    get:
+      summary: Validate HSDA OpenAPI
+      description: Validate HSDA OpenAPI
+      operationId: valiateHSDAOpenAPI
+      responses:
+        '200':
+          description: Validate HSDA OpenAPI Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/validation"
+      tags:
+      - Validate
 securityDefinitions:
   appid:
     type: apiKey
@@ -71,7 +70,14 @@ securityDefinitions:
     in: header
     name: x-appkey
 definitions:
-  item:
+  service:
+    properties:
+      id:
+        description: 'Each entry must have a unique identifier.'
+        type: string
+    required:
+      - id
+  validation:
     properties:
       id:
         description: 'Each entry must have a unique identifier.'

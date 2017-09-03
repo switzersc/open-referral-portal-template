@@ -87,12 +87,28 @@ definitions:
   service:
     properties:
       id:
+        description: 'Each entry must have a unique identifier.'
+        type: string
+    required:
+      - id
   event_type:
     properties:
       id:
+        description: 'Each entry must have a unique identifier.'
+        type: string
+    required:
+      - id
   event:
     properties:
       id:
+        description: 'Each entry must have a unique identifier.'
+        type: string
+    required:
+      - id
   webhook:
     properties:
       id:
+        description: 'Each entry must have a unique identifier.'
+        type: string
+    required:
+      - id
