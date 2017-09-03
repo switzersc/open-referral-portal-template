@@ -259,7 +259,7 @@ paths:
     delete:
       summary: Delete Contact
       description: Delete Contact
-      operationId: deleteContact
+      operationId: deleteContactComplete
       parameters:
         - in: path
           required: true
@@ -646,7 +646,7 @@ paths:
     delete:
       summary: Delete Location
       description: Delete Location
-      operationId: deleteLocation
+      operationId: deleteLocationComplete
       parameters:
         - in: path
           required: true
@@ -1936,7 +1936,7 @@ paths:
     delete:
       summary: Delete Organization
       description: Delete Organization
-      operationId: deleteOrganization
+      operationId: deleteOrganizationComplete
       parameters:
         - in: path
           required: true
@@ -3122,7 +3122,7 @@ paths:
     delete:
       summary: Delete Service
       description: Delete Service
-      operationId: deleteService
+      operationId: deleteServiceComplete
       parameters:
         - in: path
           required: true
