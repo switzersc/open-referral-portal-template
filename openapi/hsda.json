@@ -21,7 +21,7 @@ schemes:
 produces:
 {% for produce in openapi.produces %} - {{ produce }} {% endfor %}
 {% for path in openapi.paths %} {{ path[0]}}:
-    {% for verb in path[0] %}   {{ verb[0]}}:
+    {% for verb in path[1] %}   {{ verb[0]}}:
       summary: {{ verb.summary }}
       description: {{ verb.description }}
       operationId: {{ verb.description }}
