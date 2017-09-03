@@ -188,6 +188,28 @@ paths:
               $ref: "#/definitions/contact_complete"
       tags:
       - Contacts
+  delete:
+    summary: Delete Contact
+    description: Delete Contact
+    operationId: deleteContact
+    parameters:
+      - in: path
+        required: true
+        type: string
+        name: contact_id
+        description: 'The contact id.'
+    tags:
+    - Contacts
+    security:
+    - appid: []
+    - appkey: []
+    responses:
+      '200':
+        description: Contact Response
+        schema:
+          type: array
+          items:
+            $ref: "#/definitions/contact"
   /contacts/{contact_id}/:
     get:
       summary: Get Contact
@@ -551,6 +573,28 @@ paths:
             type: array
             items:
               $ref: "#/definitions/location_complete"
+      tags:
+      - Locations
+    delete:
+      summary: Delete Location
+      description: Delete Location
+      operationId: deleteLocation
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: location_id
+          description: The location id.
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Location Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/location"
       tags:
       - Locations
   /locations/{location_id}/:
@@ -1821,6 +1865,28 @@ paths:
               $ref: "#/definitions/organization_complete"
       tags:
       - Organizations
+    delete:
+      summary: Delete Organization
+      description: Delete Organization
+      operationId: deleteOrganization
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: organization_id
+          description: The organization id.
+      tags:
+      - Organizations
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Organization Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/organization"
   /organizations/{organization_id}/:
     get:
       summary: Get Organization
@@ -2985,6 +3051,28 @@ paths:
               $ref: "#/definitions/service_complete"
       tags:
       - Services
+    delete:
+      summary: Delete Service
+      description: Delete Service
+      operationId: deleteService
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: service_id
+          description: 'The unique service id.'
+      tags:
+      - Services
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Service Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/service"
   /services/{service_id}/:
     get:
       summary: Get Service
