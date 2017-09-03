@@ -21,5 +21,16 @@ schemes:
 produces:
 {% for produce in openapi.produces %}- {{ produce }} {% endfor %}
 {% for path in openapi.paths %}
-  {{ path }}<br />
+  {{ path[0]}}:
+    {% for verb in path[0] %}{{ verb[0]}}:
+      summary: {{ verb.summary }}
+      description: {{ verb.description }}
+      operationId: {{ verb.description }}
+      parameters:
+        {% for parameter in verb.parameters %}{{ verb[0]}}:- in: {{ parameter.in }}
+          type: {{ parameter.type }}
+          name: {{ parameter.name }}
+          description: {{ parameter.description }}
+        {% endfor %}
+    {% endfor %}
 {% endfor %}
