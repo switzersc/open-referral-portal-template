@@ -20,7 +20,7 @@ schemes:{% for scheme in openapi.schemes %}
  - {{ scheme }} {% endfor %}
 produces:{% for produce in openapi.produces %}
  - {{ produce }} {% endfor %}
-paths:{% for path in openapi.paths %}{% if {{ path[0]}} contains "/complete/" %}
+paths:{% for path in openapi.paths %}{% if path[0] contains "/complete/" %}
   {{ path[0]}}:{% for verb in path[1] %}
     {{ verb[0]}}:
       summary: {{ verb[1].summary }}
