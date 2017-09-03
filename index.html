@@ -92,8 +92,23 @@ layout: page
 window.onload = function() {
 
   // HSDS
-  const hsda_ui = SwaggerUIBundle({
+  const hsda_complete_ui = SwaggerUIBundle({
     url: "http://developer.open.referral.adopta.agency/openapi/hsda-complete.yaml",
+    dom_id: '#sda-complete-ui',
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ],
+    plugins: [
+      SwaggerUIBundle.plugins.DownloadUrl
+    ],
+    layout: "StandaloneLayout"
+  })
+  window.ui = hsda_complete_ui;
+
+  // HSDS
+  const hsda_ui = SwaggerUIBundle({
+    url: "http://developer.open.referral.adopta.agency/openapi/hsda.yaml",
     dom_id: '#hsda-ui',
     presets: [
       SwaggerUIBundle.presets.apis,
@@ -105,21 +120,6 @@ window.onload = function() {
     layout: "StandaloneLayout"
   })
   window.ui = hsda_ui;
-
-  // HSDS
-  const hsda_complete_ui = SwaggerUIBundle({
-    url: "http://developer.open.referral.adopta.agency/openapi/hsda.yaml",
-    dom_id: '#hsda-complete-ui',
-    presets: [
-      SwaggerUIBundle.presets.apis,
-      SwaggerUIStandalonePreset
-    ],
-    plugins: [
-      SwaggerUIBundle.plugins.DownloadUrl
-    ],
-    layout: "StandaloneLayout"
-  })
-  window.ui = hsda_complete_ui;
 
 
 }
