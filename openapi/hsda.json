@@ -49,5 +49,5 @@ definitions:{% for definition in openapi.definitions %}
   {{ definition[0] }}:
     properties:{% for property in definition[1].properties %}
       {{ property[0] }}:
-        description: '{{ securityDefinition[1].description }}''
-        type: {{ securityDefinition[1].type }}{% endfor %}{% endfor %}
+        description: '{{ property[1].description }}''
+        type: {{ property[1].type }}{% endfor %}{% endfor %}
