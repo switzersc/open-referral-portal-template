@@ -37,7 +37,7 @@ paths:{% for path in openapi.paths %}
           schema:
             type: {{ response[1].schema.type }}
             items:
-              $ref: "{{ response[1].schema.type.items.$ref }}"{% endfor %}
+              $ref: "{{ response[1].schema.type.items.['$ref'] }}"{% endfor %}
       tags:
       - Contacts
     {% endfor %}
