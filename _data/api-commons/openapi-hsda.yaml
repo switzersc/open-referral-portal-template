@@ -46,7 +46,7 @@ paths:
           description: Number of records to return per page, up to 100.
         - in: query
           type: string
-          name: sortby
+          name: sort_by
           default: name
           description: Which field to sort by.
         - in: query
@@ -110,7 +110,7 @@ paths:
           description: Number of records to return per page, up to 100.
         - in: query
           type: string
-          name: sortby
+          name: sort_by
           default: name
           description: Which field to sort by.
         - in: query
@@ -433,7 +433,7 @@ paths:
           description: Amount of locations to return per page, up to 100.
         - in: query
           type: string
-          name: sortby
+          name: sort_by
           default: name
           description: Which field to sort by.
         - in: query
@@ -497,7 +497,7 @@ paths:
           description: Number of records to return per page, up to 100.
         - in: query
           type: string
-          name: sortby
+          name: sort_by
           default: name
           description: Which field to sort by.
         - in: query
@@ -1723,7 +1723,7 @@ paths:
           description: Number of records to return per page, up to 100.
         - in: query
           type: string
-          name: sortby
+          name: sort_by
           default: name
           description: Which field to sort by.
         - in: query
@@ -1787,7 +1787,7 @@ paths:
           description: Number of records to return per page, up to 100.
         - in: query
           type: string
-          name: sortby
+          name: sort_by
           default: name
           description: Which field to sort by.
         - in: query
@@ -2909,7 +2909,7 @@ paths:
           description: Number of records return per page, up to 100.
         - in: query
           type: string
-          name: sortby
+          name: sort_by
           default: name
           description: Which field to sort by.
         - in: query
@@ -2973,7 +2973,7 @@ paths:
           description: Number of records to return per page, up to 100.
         - in: query
           type: string
-          name: sortby
+          name: sort_by
           default: name
           description: Which field to sort by.
         - in: query

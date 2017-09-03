@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
-  title: "Human Services Data API"
-  description: "This is a specification describing the Human Services Data API, using the Human Services Data Specification (HSDS). This has been extracted from the Ohana API deployment, but will be standardized to refer to the universal standard that will apply to any HSDS/A compliant API."
+  title: "Human Services Data Bulk API"
+  description: "This is a specification describing the Human Services Data API, using the Human Services Data Specification (HSDS). This is a service for handling bulk loading of data into any HSDA service, allowing each POST and PUT to be queued up as a job, and be run on schedule, or based upon other events."
   termsOfService: "https://openreferral.org/documentation/"
   contact:
     name: Open Referral
@@ -11,62 +11,18 @@ info:
     name: Open Data Commons Public Domain
     url: http://opendatacommons.org/licenses/pddl/
   version: v1.2
-host: hsda.api.adopta.agency
+host: hsda.buapi.adopta.agency
 basePath: /
 schemes:
 - http
 produces:
 - application/json
-- application/xml
-- text/csv
 paths:
   /contacts/:
-    get:
-      summary: Get Contacts
-      description: Get Contacts
-      operationId: listContacts
-      parameters:
-        - in: query
-          type: string
-          name: query
-          description: A query to filter list by (up to provider to determine what to search)
-        - in: query
-          type: string
-          name: queries
-          description: A comma separate list of queries with specific fields.
-        - in: query
-          type: number
-          name: page
-          default: 0
-          description: The particular page of results.
-        - in: query
-          type: number
-          name: per_page
-          default: 25
-          description: Number of records to return per page, up to 100.
-        - in: query
-          type: string
-          name: sortby
-          default: name
-          description: Which field to sort by.
-        - in: query
-          type: string
-          name: order
-          default: asc
-          description: Which order to sort by (asc,desc).
-      responses:
-        '200':
-          description: Contact Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/contact"
-      tags:
-      - Contacts
     post:
-      summary: Add Contact
-      description: Add Contact
-      operationId: addContacts
+      summary: Submit Bulk Contact
+      description: Submit Bulk Contact
+      operationId: submitBulkContacts
       parameters:
         - in: body
           name: body
@@ -81,234 +37,16 @@ paths:
               $ref: "#/definitions/contact"
       tags:
       - Contacts
-  /contacts/{contact_id}/:
-    put:
-      summary: Update Contact
-      description: Update Contact
-      operationId: updateContacts
-      parameters:
-        - in: path
-          required: true
-          type: string
-          name: contact_id
-          description: The contact id.
-        - in: body
-          name: body
-          schema:
-            $ref: '#/definitions/contact'
-      responses:
-        '200':
-          description: Contact Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/contact"
-      tags:
-      - Contacts
-    get:
-      summary: Get Contacts
-      description: Get Contacts
-      operationId: getContact
-      parameters:
-        - in: path
-          required: true
-          type: string
-          name: contact_id
-          description: The contact id.
-      responses:
-        '200':
-          description: Contact Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/contact"
-      tags:
-      - Contacts
-  /contacts/{contact_id}/:
-    get:
-      summary: Get Contact
-      description: Get Contact
-      operationId: getContact
-      parameters:
-        - in: path
-          required: true
-          type: string
-          name: contact_id
-          description: 'The contact id.'
-      responses:
-        '200':
-          description: Contact Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/contact"
-      tags:
-      - Contacts
-    put:
-      summary: Update Contact
-      description: Update an existing contact.
-      operationId: updateContact
-      parameters:
-        - in: path
-          required: true
-          type: string
-          name: contact_id
-          description: 'The contact id.'
-        - in: body
-          name: body
-          schema:
-            $ref: '#/definitions/contact'
-      security:
-        - appid: []
-        - appkey: []
-      responses:
-        '200':
-          description: Contact Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/contact"
-      tags:
-      - Contacts
-    delete:
-      summary: Delete Contact
-      description: Delete Contact
-      operationId: deleteContact
-      parameters:
-        - in: path
-          required: true
-          type: string
-          name: contact_id
-          description: 'The contact id.'
-      tags:
-      - Contacts
-      security:
-      - appid: []
-      - appkey: []
-      responses:
-        '200':
-          description: Contact Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/contact"
   /locations/:
-    get:
-      summary: Get Locations
-      description: Get Locations
-      operationId: listLocations
-      parameters:
-        - in: query
-          type: string
-          name: query
-          description: A query to filter list by (up to provider to determine what to search)
-        - in: query
-          type: string
-          name: queries
-          description: A comma separate list of queries with specific fields.
-        - in: query
-          type: number
-          name: page
-          default: 0
-          description: The particular page of results.
-        - in: query
-          type: number
-          name: per_page
-          default: 25
-          description: Number of records to return per page, up to 100.
-        - in: query
-          type: string
-          name: sortby
-          default: name
-          description: Which field to sort by.
-        - in: query
-          type: string
-          name: order
-          default: asc
-          description: Which order to sort by (asc,desc).
-      responses:
-        '200':
-          description: Location Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/location"
-      tags:
-      - Locations
     post:
-      summary: Add Location
-      description: Add Location
-      operationId: addLocations
+      summary: Submit Bulk Location
+      description: Submit Bulk Location
+      operationId: SubmitBulkLocations
       parameters:
         - in: body
           name: body
           schema:
             $ref: '#/definitions/location'
-      responses:
-        '200':
-          description: Location Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/location"
-      tags:
-      - Locations
-  /locations/{location_id}/:
-    put:
-      summary: Update Location
-      description: Update Location
-      operationId: updateLocations
-      parameters:
-        - in: path
-          required: true
-          type: string
-          name: location_id
-          description: The location id.
-        - in: body
-          name: body
-          schema:
-            $ref: '#/definitions/location'
-      responses:
-        '200':
-          description: Location Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/location"
-      tags:
-      - Locations
-    get:
-      summary: Get Locations
-      description: Get Locations
-      operationId: getLocation
-      parameters:
-        - in: path
-          required: true
-          type: string
-          name: location_id
-          description: The location id.
-      responses:
-        '200':
-          description: Location Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/location"
-      tags:
-      - Locations
-    delete:
-      summary: Delete Location
-      description: Delete Location
-      operationId: deleteLocation
-      parameters:
-        - in: path
-          required: true
-          type: string
-          name: location_id
-          description: The location id.
-      security:
-        - appid: []
-        - appkey: []
       responses:
         '200':
           description: Location Response
@@ -319,100 +57,15 @@ paths:
       tags:
       - Locations
   /organizations/:
-    get:
-      summary: Get Organizations
-      description: Get Organizations
-      operationId: listOrganizations
-      parameters:
-        - in: query
-          type: string
-          name: query
-          description: A query to filter list by (up to provider to determine what to search)
-        - in: query
-          type: string
-          name: queries
-          description: A comma separate list of queries with specific fields.
-        - in: query
-          type: number
-          name: page
-          default: 0
-          description: The particular page of results.
-        - in: query
-          type: number
-          name: per_page
-          default: 25
-          description: Number of records to return per page, up to 100.
-        - in: query
-          type: string
-          name: sortby
-          default: name
-          description: Which field to sort by.
-        - in: query
-          type: string
-          name: order
-          default: asc
-          description: Which order to sort by (asc,desc).
-      responses:
-        '200':
-          description: Organization Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/organization"
-      tags:
-      - Organizations
     post:
-      summary: Add Organization
-      description: Add Organization
-      operationId: addOrganizations
+      summary: Submit Bulk Organizations
+      description: Submit Bulk Organizations
+      operationId: submitBulkOrganizations
       parameters:
         - in: body
           name: body
           schema:
             $ref: '#/definitions/organization'
-      responses:
-        '200':
-          description: Organization Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/organization"
-      tags:
-      - Organizations
-  /organizations/{organization_id}/:
-    put:
-      summary: Update Organization
-      description: Update Organization
-      operationId: updateOrganizations
-      parameters:
-        - in: path
-          required: true
-          type: string
-          name: organization_id
-          description: The organization id.
-        - in: body
-          name: body
-          schema:
-            $ref: '#/definitions/organization'
-      responses:
-        '200':
-          description: Organization Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/organization"
-      tags:
-      - Organizations
-    get:
-      summary: Get Organizations
-      description: Get Organizations
-      operationId: getOrganization
-      parameters:
-        - in: path
-          required: true
-          type: string
-          name: organization_id
-          description: The organization id.
       responses:
         '200':
           description: Organization Response
@@ -423,52 +76,10 @@ paths:
       tags:
       - Organizations
   /services/:
-    get:
-      summary: Get Services
-      description: Get Services
-      operationId: listServices
-      parameters:
-        - in: query
-          type: string
-          name: query
-          description: A query to filter list by (up to provider to determine what to search)
-        - in: query
-          type: string
-          name: queries
-          description: A comma separate list of queries with specific fields.
-        - in: query
-          type: number
-          name: page
-          default: 0
-          description: The particular page of results.
-        - in: query
-          type: number
-          name: per_page
-          default: 25
-          description: Number of records to return per page, up to 100.
-        - in: query
-          type: string
-          name: sortby
-          default: name
-          description: Which field to sort by.
-        - in: query
-          type: string
-          name: order
-          default: asc
-          description: Which order to sort by (asc,desc).
-      responses:
-        '200':
-          description: Service Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/service"
-      tags:
-      - Services
     post:
-      summary: Add Service
-      description: Add Service
-      operationId: addServices
+      summary: Submit Bulk Service
+      description: Submit Bulk Service
+      operationId: submitBulkServices
       parameters:
         - in: body
           name: body
@@ -483,71 +94,6 @@ paths:
               $ref: "#/definitions/service"
       tags:
       - Services
-  /services/{service_id}/:
-    put:
-      summary: Update Service
-      description: Update Service
-      operationId: updateServices
-      parameters:
-        - in: path
-          required: true
-          type: string
-          name: service_id
-          description: The service id.
-        - in: body
-          name: body
-          schema:
-            $ref: '#/definitions/service'
-      responses:
-        '200':
-          description: Service Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/service"
-      tags:
-      - Services
-    get:
-      summary: Get Services
-      description: Get Services
-      operationId: getService
-      parameters:
-        - in: path
-          required: true
-          type: string
-          name: service_id
-          description: The service id.
-      responses:
-        '200':
-          description: Service Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/service"
-      tags:
-      - Services
-    delete:
-      summary: Delete Service
-      description: Delete Service
-      operationId: deleteService
-      parameters:
-        - in: path
-          required: true
-          type: string
-          name: service_id
-          description: 'The unique service id.'
-      tags:
-      - Services
-      security:
-        - appid: []
-        - appkey: []
-      responses:
-        '200':
-          description: Service Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/service"
 securityDefinitions:
   appid:
     type: apiKey
@@ -572,34 +118,6 @@ disabilities.'
         type: string
       details:
         description: 'Any further details relating to the relevant accessibility arrangements at this location. E.g. whether advance notice is required to use an accessibility facility.'
-        type: string
-    required:
-      - id
-  contact:
-    properties:
-      id:
-        description: 'Each contact must have a unique identifier.'
-        type: string
-      organization_id:
-        description: 'The identifier of the organization for which this is a contact.'
-        type: string
-      service_id:
-        description: 'The identifier of the service for which this is a contact.'
-        type: string
-      service_at_location_id:
-        description: 'The identifier of the ‘service at location’ table entry, when this contact is specific to a service in a particular location.'
-        type: string
-      name:
-        description: 'The name of the person.'
-        type: string
-      title:
-        description: 'The job title of the person.'
-        type: string
-      department:
-        description: 'The department that the person is part of.'
-        type: string
-      email:
-        description: 'The email address of the person.'
         type: string
     required:
       - id
@@ -1147,27 +665,6 @@ disabilities.'
       - organization_id
       - name
       - status
-  service_at_location:
-    properties:
-      id:
-        description: 'Each entry must have a unique identifier.'
-        type: string
-      service_id:
-        description: 'The identifier of the service at a given location.'
-        type: string
-      location_id:
-        description: 'The identifier of the location where this service operates.'
-        type: string
-      url:
-        description: 'If the service at this location has a specific URL, that can be provided here.'
-        type: string
-      email:
-        description: 'If the service at this location has a specific email address, that can be provided here.'
-        type: string
-    required:
-      - id
-      - service_id
-      - location_id
   service_area:
     properties:
       id:
@@ -1181,19 +678,6 @@ disabilities.'
         type: string
       description:
         description: 'A more detailed description of this service area. Used to provide any additional information that cannot be communicated using the structured area and geometry fields.'
-        type: string
-    required:
-      - id
-  taxonomy:
-    properties:
-      id:
-        description: 'Each taxonomy entry must have a unique identifier. If combining multiple taxonomies with overlapping identifiers, use a prefix to distinguish them.'
-        type: string
-      name:
-        description: 'The name of this taxonomy term or category.'
-        type: string
-      parent_id:
-        description: 'If this is a child category in a hierarchical taxonomy, give the identifier of the parent category. For top-level categories, this should be left blank.'
         type: string
     required:
       - id
