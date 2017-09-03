@@ -20,8 +20,9 @@ schemes:{% for scheme in openapi.schemes %}
  - {{ scheme }} {% endfor %}
 produces:{% for produce in openapi.produces %}
  - {{ produce }} {% endfor %}
-paths:{% for path in openapi.paths %} {{ path[0]}}:
-    {% for verb in path[1] %} {{ verb[0]}}:
+paths:{% for path in openapi.paths %}
+  {{ path[0]}}:{% for verb in path[1] %}
+    {{ verb[0]}}:
       summary: {{ verb.summary }}
       description: {{ verb.description }}
       operationId: {{ verb.description }}
