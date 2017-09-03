@@ -70,14 +70,25 @@ layout: page
 <section>
 	<header>
 		<a name="platforms"></a>
-		<h2>Human Services Data API (HSDA)</h2>
+		<h2>Human Services Data API (HSDA) Complete</h2>
 	</header>
-  <p>This is the interactive documentation for the core set of Human Services Data API (HSDA) resources. It provides you with everything you need to access 100% of the surface area of the Human Services Specification API (HSDS) using the web. Data is available in a CSV, JSON, or XML format.</p>
-  <div id="hsda-ui"></div>
+  <p>This is the interactive documentation for the core set of Human Services Data API (HSDA) resources. If you are looking to get a complete responses for all core resources, as well as their sub-resources in a single API call, these are the paths for you. These four endpoints will return complete responses for each resource in a single response.</p>
+  <div id="hsda-complete-ui"></div>
   <p>This set of paths are intended to be about working with core resouces (ie. organizations, locations, contacts and services), there are other spearate HSDA services that give you access to a variety of systems that support, augment, and work with the core set of Human Services Data API (HSDA) services.</p>
 </div>
 </section>
 
+<!-- Section -->
+<section>
+	<header>
+		<a name="platforms"></a>
+		<h2>Human Services Data API (HSDA)</h2>
+	</header>
+  <p>This is the interactive documentation for the core set of Human Services Data API (HSDA) resources. It provides you with everything you need to access 100% of the surface area of the Human Services Specification API (HSDS) using the web. Data is available in a CSV, JSON, or XML format. This set of paths gives you  more granular level of control over resources for developing single page application (SPA), mobile, voice, and other common applications.</p>
+  <div id="hsda-ui"></div>
+  <p>This set of paths are intended to be about working with core resouces (ie. organizations, locations, contacts and services), there are other spearate HSDA services that give you access to a variety of systems that support, augment, and work with the core set of Human Services Data API (HSDA) services.</p>
+</div>
+</section>
 
 <script>
 window.onload = function() {
@@ -97,6 +108,20 @@ window.onload = function() {
   })
   window.ui = hsda_ui;
 
+  // HSDS
+  const hsda_complete_ui = SwaggerUIBundle({
+    url: "http://developer.open.referral.adopta.agency/openapi/hsda-complete.yaml",
+    dom_id: '#hsda-complete-ui',
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ],
+    plugins: [
+      SwaggerUIBundle.plugins.DownloadUrl
+    ],
+    layout: "StandaloneLayout"
+  })
+  window.ui = hsda_complete_ui;
 
 
 }
