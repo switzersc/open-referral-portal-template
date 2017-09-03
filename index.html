@@ -99,7 +99,7 @@ layout: page
   <p>This service was split off the core HSDA specification with the evolution of v1.2, making it it's own project, and sepaate specification from the core set of resources for working with HSDA information within any implementation.</p>
 </section>
 
-<!-- Batch -->
+<!-- Bulk -->
 <section>
 	<header>
 		<a name="platforms"></a>
@@ -108,6 +108,28 @@ layout: page
   <p>This is a HSDA sevice specificaly intended to allow the bulk submission of all the core resouces. You can submit multiple organizations, locations, services, and contacts as a single JSON. Each POST to any of the paths will not be processed immediately, but a job will be created allowing it to be run on schedule, or based upon specific events.</p>
   <div id="hsda-bulk-ui"></div>
   <p>This is separated from the core set of resources allowing it to be run as separate set of services on a separate server allowing bulk loading of data to not impact core web, mobile, and other types of applications depending on the primary HSDA set of services.</p>
+</section>
+
+<!-- Meta -->
+<section>
+	<header>
+		<a name="platforms"></a>
+		<h2>Human Services Data API (HSDA) Meta</h2>
+	</header>
+  <p>This is a HSDA sevice specificaly intended to manage the meta data around human services data API operations. Essentially this is a logging system, providing access to data about what API calls are made, managing individual resources, as well as any other service in use association with HSDA operations.</p>
+  <div id="hsda-meta-ui"></div>
+  <p>Currently, the primary target of this system is to allow each transaction that occurs via any HSDA implementation, and provide a way to view, and work with this transactional data. We will be adding any other logging and meta related data in each implementation.</p>
+</section>
+
+<!-- Management -->
+<section>
+	<header>
+		<a name="platforms"></a>
+		<h2>Human Services Data API (HSDA) Management</h2>
+	</header>
+  <p>This is a HSDA sevice specificaly intended to assist in managing HSDA access, allowing users to get at resources made available any HSDA implementation. Providing the ability to manage users, and the HSDA services they have access to.</p>
+  <div id="hsda-management-ui"></div>
+  <p>This is the API management layer for the HSDA implementation, providing a simple solution that API providers can manage this aspect of operation. Behind the scenes this could be executed with off the shelf API management solutions. The purpose of this is to provide a common API for use across all HSDA implementations.</p>
 </section>
 
 <script>
@@ -145,7 +167,7 @@ window.onload = function() {
 
   // HSDS Search
   const hsda_search_ui = SwaggerUIBundle({
-    url: "http://developer.open.referral.adopta.agency/openapi/hsda.yaml",
+    url: "http://developer.open.referral.adopta.agency/openapi/hsda-serch.yaml",
     dom_id: '#hsda-search-ui',
     presets: [
       SwaggerUIBundle.presets.apis,
@@ -160,7 +182,7 @@ window.onload = function() {
 
   // HSDS Bulk
   const hsda_bulk_ui = SwaggerUIBundle({
-    url: "http://developer.open.referral.adopta.agency/openapi/hsda.yaml",
+    url: "http://developer.open.referral.adopta.agency/openapi/hsda-bulk.yaml",
     dom_id: '#hsda-bulk-ui',
     presets: [
       SwaggerUIBundle.presets.apis,
@@ -172,6 +194,36 @@ window.onload = function() {
     layout: "StandaloneLayout"
   })
   window.ui = hsda_bulk_ui;
+
+  // HSDS Meta
+  const hsda_meta_ui = SwaggerUIBundle({
+    url: "http://developer.open.referral.adopta.agency/openapi/hsda-meta.yaml",
+    dom_id: '#hsda-meta-ui',
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ],
+    plugins: [
+      SwaggerUIBundle.plugins.DownloadUrl
+    ],
+    layout: "StandaloneLayout"
+  })
+  window.ui = hsda_meta_ui;
+
+  // HSDS Management
+  const hsda_management_ui = SwaggerUIBundle({
+    url: "http://developer.open.referral.adopta.agency/openapi/hsda-management.yaml",
+    dom_id: '#hsda-management-ui',
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ],
+    plugins: [
+      SwaggerUIBundle.plugins.DownloadUrl
+    ],
+    layout: "StandaloneLayout"
+  })
+  window.ui = hsda_management_ui;
 
 
 }
