@@ -7,12 +7,12 @@ info:
   description: {{ openapi.info.description }}
   termsOfService: {{ openapi.info.termsOfService }}
   contact:
-    name: {{ openapi.contact.name }}
-    url: {{ openapi.contact.url }}
-    email: {{ openapi.contact.email }}
+    name: {{ openapi.info.contact.name }}
+    url: {{ openapi.info.contact.url }}
+    email: {{ openapi.info.contact.email }}
   license:
-    name: {{ openapi.license.name }}
-    url: {{ openapi.license.url }}
+    name: {{ openapi.info.license.name }}
+    url: {{ openapi.info.license.url }}
   version: {{ openapi.info.version }}
 host: {{ openapi.host }}
 basePath: {{ openapi.basePath }}
