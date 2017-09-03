@@ -1,0 +1,21 @@
+---
+layout: none
+---
+{% assign all_openapi = site.data.api-commons.hsda.yaml  %}
+{% assign swagger = all_openapi.swagger | json | replace: '=>', ':' %}
+{% assign info = all_openapi.info | json | replace: '=>', ':' %}
+{% assign host = all_openapi.host | json | replace: '=>', ':' %}
+{% assign basePath = all_openapi.basePath | json | replace: '=>', ':' %}
+{% assign schemes = all_openapi.schemes | json | replace: '=>', ':' %}
+{% assign produces = all_openapi.produces | json | replace: '=>', ':' %}
+{% assign paths = all_openapi.paths %}
+{% assign definitions = all_openapi.definitions | json | replace: '=>', ':' %}
+{{ swagger }}
+{{ info }}
+{{ host }}
+{{ basePath }}
+{{ schemes }}
+{{ produces }}
+{% for path in paths %}
+  {{ path }}<br />
+{% endfor %}
