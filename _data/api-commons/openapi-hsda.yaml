@@ -188,28 +188,28 @@ paths:
               $ref: "#/definitions/contact_complete"
       tags:
       - Contacts
-  delete:
-    summary: Delete Contact
-    description: Delete Contact
-    operationId: deleteContact
-    parameters:
-      - in: path
-        required: true
-        type: string
-        name: contact_id
-        description: 'The contact id.'
-    tags:
-    - Contacts
-    security:
-    - appid: []
-    - appkey: []
-    responses:
-      '200':
-        description: Contact Response
-        schema:
-          type: array
-          items:
-            $ref: "#/definitions/contact"
+    delete:
+      summary: Delete Contact
+      description: Delete Contact
+      operationId: deleteContact
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: contact_id
+          description: 'The contact id.'
+      tags:
+      - Contacts
+      security:
+      - appid: []
+      - appkey: []
+      responses:
+        '200':
+          description: Contact Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/contact"
   /contacts/{contact_id}/:
     get:
       summary: Get Contact
