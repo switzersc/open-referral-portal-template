@@ -37,7 +37,7 @@ paths:{% for path in openapi.paths %}
           schema:
             type: {{ response[1].schema.type }}
             items:
-              $ref: "{{ response[1].schema.items.$ref }}"{% endfor %}
+              $ref: "{{ response[1].schema.items.['$ref'] }}"{% endfor %}
       tags:{% for tag in verb[1].tags %}
       - {{ tag }}{% endfor %}{% endfor %}{% endfor %}
 securityDefinitions:{% for securityDefinition in openapi.securityDefinitions %}
