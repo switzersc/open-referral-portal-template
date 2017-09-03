@@ -23,11 +23,11 @@ produces:{% for produce in openapi.produces %}
 paths:{% for path in openapi.paths %}
   {{ path[0]}}:{% for verb in path[1] %}
     {{ verb[0]}}:
-      summary: {{ verb.summary }}
-      description: {{ verb.description }}
-      operationId: {{ verb.description }}
+      summary: {{ verb[1].summary }}
+      description: {{ verb[1].description }}
+      operationId: {{ verb[1].description }}
       parameters:
-        {% for parameter in verb.parameters %}{{ verb[0]}}:- in: {{ parameter.in }}
+        {% for parameter in verb[1].parameters %}{{ verb[0]}}:- in: {{ parameter.in }}
           type: {{ parameter.type }}
           name: {{ parameter.name }}
           description: {{ parameter.description }}
