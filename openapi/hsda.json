@@ -26,11 +26,19 @@ paths:{% for path in openapi.paths %}
       summary: {{ verb[1].summary }}
       description: {{ verb[1].description }}
       operationId: {{ verb[1].description }}
-      parameters:
-        {% for parameter in verb[1].parameters %}{{ verb[0]}}:- in: {{ parameter.in }}
+      parameters:{% for parameter in verb[1].parameters %}
+        {{ verb[0]}}:- in: {{ parameter.in }}
           type: {{ parameter.type }}
           name: {{ parameter.name }}
-          description: {{ parameter.description }}
-        {% endfor %}
+          description: {{ parameter.description }}{% endfor %}
+      responses:{% for response in verb[1].responses %}
+        '{{ response[0] }}':
+          description: {{ response[1].description }}
+          schema:
+            type: {{ response[1].schema.type }}
+            items:
+              $ref: "{{ response[1].schema.type.items.$ref }}"{% endfor %}
+      tags:
+      - Contacts
     {% endfor %}
 {% endfor %}
