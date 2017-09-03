@@ -1,7 +1,7 @@
 ---
 layout: none
 ---
-{% assign openapi = site.data.api-commons.hsda %}swagger: {{ openapi.swagger }}
+{% assign openapi = site.data.api-commons.openapi-hsda %}swagger: {{ openapi.swagger }}
 info:
   title: {{ openapi.info.title }}
   description: {{ openapi.info.description }}
