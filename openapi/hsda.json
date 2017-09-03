@@ -43,3 +43,14 @@ paths:{% for path in openapi.paths %}
       - {{ tag }}{% endfor %}
     {% endfor %}
 {% endfor %}
+securityDefinitions:{% for securityDefinition in openapi.securityDefinitions %}
+  {{ securityDefinition[0] }}:
+    type: {{ securityDefinition[1].type }}
+    in: {{ securityDefinition[1].in }}
+    name: {{ securityDefinition[1].name }}{% endfor %}
+definitions:{% for definition in openapi.definitions %}
+  {{ definition[0] }}:
+    properties:{% for property in definition.properties %}
+      {{ property[0] }}:
+        description: '{{ securityDefinition[1].description }}''
+        type: {{ securityDefinition[1].type }}{% endfor %}{% endfor %}
