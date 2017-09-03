@@ -17,9 +17,9 @@ info:
 host: {{ openapi.host }}
 basePath: {{ openapi.basePath }}
 schemes:
-{% for scheme in openapi.schemes %}- {{ scheme }} {% endfor %}
+{% for scheme in openapi.schemes %} - {{ scheme }} {% endfor %}
 produces:
-{% for produce in openapi.produces %}- {{ produce }} {% endfor %}
+{% for produce in openapi.produces %} - {{ produce }} {% endfor %}
 {% for path in openapi.paths %}
   {{ path[0]}}:
     {% for verb in path[0] %}{{ verb[0]}}:
