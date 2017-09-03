@@ -1,0 +1,80 @@
+swagger: '2.0'
+info:
+  title: "Human Services Data Search API"
+  description: "This is a complimentary API to the HSDA API focusing just on search."
+  termsOfService: "https://openreferral.org/documentation/"
+  contact:
+    name: Open Referral
+    url: https://openreferral.org/
+    email: info@openreferral.org
+  license:
+    name: Open Data Commons Public Domain
+    url: http://opendatacommons.org/licenses/pddl/
+  version: v1.2
+host: hsda.api.adopta.agency
+basePath: /
+schemes:
+- http
+produces:
+- application/json
+paths:
+  /search/:
+    get:
+      summary: Get Contacts
+      description: Get Contacts
+      operationId: listContacts
+      parameters:
+        - in: query
+          type: string
+          name: query
+          description: A query to filter list by (up to provider to determine what to search)
+        - in: query
+          type: string
+          name: queries
+          description: A comma separate list of queries with specific fields.
+        - in: query
+          type: number
+          name: page
+          default: 0
+          description: The particular page of results.
+        - in: query
+          type: number
+          name: per_page
+          default: 25
+          description: Number of records to return per page, up to 100.
+        - in: query
+          type: string
+          name: sortby
+          default: name
+          description: Which field to sort by.
+        - in: query
+          type: string
+          name: order
+          default: asc
+          description: Which order to sort by (asc,desc).
+      responses:
+        '200':
+          description: Item Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/item"
+      tags:
+      - Contacts
+securityDefinitions:
+  appid:
+    type: apiKey
+    in: header
+    name: x-appid
+  appkey:
+    type: apiKey
+    in: header
+    name: x-appkey
+definitions:
+  item:
+    properties:
+      id:
+        description: 'Each entry must have a unique identifier.'
+        type: string
+    required:
+      - id

@@ -1,0 +1,98 @@
+swagger: '2.0'
+info:
+  title: "Human Services Data Orchestration API"
+  description: "This is a complimentary API to the HSDA API focusing just on orchestration."
+  termsOfService: "https://openreferral.org/documentation/"
+  contact:
+    name: Open Referral
+    url: https://openreferral.org/
+    email: info@openreferral.org
+  license:
+    name: Open Data Commons Public Domain
+    url: http://opendatacommons.org/licenses/pddl/
+  version: v1.2
+host: hsda.orchestation.api.adopta.agency
+basePath: /
+schemes:
+- http
+produces:
+- application/json
+paths:
+  /services/:
+    get:
+      summary: Services
+      description: The services being used across ochestration.
+      operationId: getServices
+      responses:
+        '200':
+          description: Service Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/service"
+      tags:
+      - Services
+  /event-types/:
+    get:
+      summary: Event Types
+      description: The event types being used across ochestration.
+      operationId: getEventTypes
+      responses:
+        '200':
+          description: Event Types Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/event_type"
+      tags:
+      - Services
+  /events/:
+    get:
+      summary: Events
+      description: The are the events that can occur.
+      operationId: getEvents
+      responses:
+        '200':
+          description: Event Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/event"
+      tags:
+      - Events
+  /webhooks/:
+    get:
+      summary: Webhooks
+      description: The webhooks currently in operation.
+      operationId: getWebhook
+      responses:
+        '200':
+          description: Webhook Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/webhook"
+      tags:
+      - Webhooks
+securityDefinitions:
+  appid:
+    type: apiKey
+    in: header
+    name: x-appid
+  appkey:
+    type: apiKey
+    in: header
+    name: x-appkey
+definitions:
+  service:
+    properties:
+      id:
+  event_type:
+    properties:
+      id:
+  event:
+    properties:
+      id:
+  webhook:
+    properties:
+      id:

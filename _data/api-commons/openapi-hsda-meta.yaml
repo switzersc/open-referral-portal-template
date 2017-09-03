@@ -1,0 +1,51 @@
+swagger: '2.0'
+info:
+  title: "Human Services Data Meta API"
+  description: "This is a complimentary API to the HSDA API focusing just on meta information."
+  termsOfService: "https://openreferral.org/documentation/"
+  contact:
+    name: Open Referral
+    url: https://openreferral.org/
+    email: info@openreferral.org
+  license:
+    name: Open Data Commons Public Domain
+    url: http://opendatacommons.org/licenses/pddl/
+  version: v1.2
+host: hsda.meta.api.adopta.agency
+basePath: /
+schemes:
+- http
+produces:
+- application/json
+paths:
+  /metadata/:
+    get:
+      summary: Get Meta
+      description: Get Meta
+      operationId: listMeta
+      responses:
+        '200':
+          description: Item Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/meta"
+      tags:
+      - Contacts
+securityDefinitions:
+  appid:
+    type: apiKey
+    in: header
+    name: x-appid
+  appkey:
+    type: apiKey
+    in: header
+    name: x-appkey
+definitions:
+  meta:
+    properties:
+      id:
+        description: 'Each entry must have a unique identifier.'
+        type: string
+    required:
+      - id
