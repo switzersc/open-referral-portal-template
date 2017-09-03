@@ -20,8 +20,8 @@ schemes:{% for scheme in openapi.schemes %}
  - {{ scheme }} {% endfor %}
 produces:{% for produce in openapi.produces %}
  - {{ produce }} {% endfor %}
-paths:{% for path in openapi.paths %}
-  {{ path[0]}}:{% for verb in path[1] %}
+paths:{% for path in openapi.paths %}{% if path[0] contains "/complete/" %}
+  {{ path[0] }}:{% for verb in path[1] %}
     {{ verb[0]}}:
       summary: {{ verb[1].summary }}
       description: {{ verb[1].description }}
@@ -39,7 +39,7 @@ paths:{% for path in openapi.paths %}
             items:
               $ref: "{{ response[1].schema.items.['$ref'] }}"{% endfor %}
       tags:{% for tag in verb[1].tags %}
-        - {{ tag }}{% endfor %}{% endfor %}{% endfor %}
+        - {{ tag }}{% endfor %}{% endfor %}{% endif %}{% endfor %}
 securityDefinitions:{% for securityDefinition in openapi.securityDefinitions %}
   {{ securityDefinition[0] }}:
     type: {{ securityDefinition[1].type }}
