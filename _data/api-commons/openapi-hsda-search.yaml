@@ -71,7 +71,7 @@ securityDefinitions:
     in: header
     name: x-appkey
 definitions:
-  item:
+  search:
     properties:
       info:
         type: "array"
@@ -93,14 +93,28 @@ definitions:
         type: "array"
         items:
           $ref: "#/definitions/links"
-    required:
-      - id
   info:
     properties:
-      id:
+      records:
+        description: 'Number of recods returned.'
+        type: integer
+      pages:
+        description: 'Number of pages.'
+        type: integer
+      current_page:
+        description: 'Current page returned.'
+        type: integer
   links:
     properties:
-      id:
+      name:
+        description: 'Name of the link'
+        type: string
+      rel:
+        description: 'The link relation (IANA)'
+        type: string
+      url:
+        description: 'The link URL'
+        type: string
   accessibility_for_disabilities:
     properties:
       id:
@@ -662,27 +676,6 @@ disabilities.'
       - organization_id
       - name
       - status
-  service_at_location:
-    properties:
-      id:
-        description: 'Each entry must have a unique identifier.'
-        type: string
-      service_id:
-        description: 'The identifier of the service at a given location.'
-        type: string
-      location_id:
-        description: 'The identifier of the location where this service operates.'
-        type: string
-      url:
-        description: 'If the service at this location has a specific URL, that can be provided here.'
-        type: string
-      email:
-        description: 'If the service at this location has a specific email address, that can be provided here.'
-        type: string
-    required:
-      - id
-      - service_id
-      - location_id
   service_area:
     properties:
       id:
@@ -696,19 +689,6 @@ disabilities.'
         type: string
       description:
         description: 'A more detailed description of this service area. Used to provide any additional information that cannot be communicated using the structured area and geometry fields.'
-        type: string
-    required:
-      - id
-  taxonomy:
-    properties:
-      id:
-        description: 'Each taxonomy entry must have a unique identifier. If combining multiple taxonomies with overlapping identifiers, use a prefix to distinguish them.'
-        type: string
-      name:
-        description: 'The name of this taxonomy term or category.'
-        type: string
-      parent_id:
-        description: 'If this is a child category in a hierarchical taxonomy, give the identifier of the parent category. For top-level categories, this should be left blank.'
         type: string
     required:
       - id
