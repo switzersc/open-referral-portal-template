@@ -27,7 +27,6 @@ paths:{% for path in openapi.paths %}
       description: {{ verb[1].description }}
       operationId: {{ verb[1].description }}
       parameters:{% for parameter in verb[1].parameters %}
-        {{ verb[0]}}:
           - in: {{ parameter.in }}
             type: {{ parameter.type }}
             name: {{ parameter.name }}
