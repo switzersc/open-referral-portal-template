@@ -16,10 +16,11 @@ info:
   version: {{ openapi.info.version }}
 host: {{ openapi.host }}
 basePath: {{ openapi.basePath }}
-schemes:
-{% for scheme in openapi.schemes %} - {{ scheme }} {% endfor %}
+schemes:{% for scheme in openapi.schemes %}
+ - {{ scheme }} {% endfor %}
 produces:
-{% for produce in openapi.produces %} - {{ produce }} {% endfor %}
+{% for produce in openapi.produces %}
+ - {{ produce }} {% endfor %}
 {% for path in openapi.paths %} {{ path[0]}}:
     {% for verb in path[1] %}   {{ verb[0]}}:
       summary: {{ verb.summary }}
