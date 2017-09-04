@@ -52,7 +52,7 @@ paths:
             items:
               $ref: "#/definitions/meta"
       tags:
-      - Contacts
+      - Meta
   /meta/roll-back/:
     get:
       summary: Roll Back Meta
