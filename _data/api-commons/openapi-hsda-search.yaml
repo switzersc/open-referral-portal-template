@@ -60,7 +60,7 @@ paths:
             items:
               $ref: "#/definitions/search"
       tags:
-      - Seach
+      - Search
 securityDefinitions:
   appid:
     type: apiKey
