@@ -28,6 +28,9 @@ paths:
           name: body
           schema:
             $ref: '#/definitions/contact'
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Contact Response
@@ -47,6 +50,9 @@ paths:
           name: body
           schema:
             $ref: '#/definitions/location'
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Location Response
@@ -66,6 +72,9 @@ paths:
           name: body
           schema:
             $ref: '#/definitions/organization'
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Organization Response
@@ -85,6 +94,9 @@ paths:
           name: body
           schema:
             $ref: '#/definitions/service'
+      security:
+        - appid: []
+        - appkey: []            
       responses:
         '200':
           description: Service Response

@@ -136,6 +136,9 @@ paths:
           name: body
           schema:
             $ref: '#/definitions/contact_complete'
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Contact Complete Response
@@ -179,6 +182,9 @@ paths:
           name: body
           schema:
             $ref: '#/definitions/contact_complete'
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Contact Complete Response
@@ -523,6 +529,9 @@ paths:
           name: body
           schema:
             $ref: '#/definitions/location_complete'
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Location Complete Response
@@ -547,6 +556,9 @@ paths:
           name: body
           schema:
             $ref: '#/definitions/location_complete'
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Location Complete Response
@@ -1813,6 +1825,9 @@ paths:
           name: body
           schema:
             $ref: '#/definitions/organization_complete'
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Organization Complete Response
@@ -1837,6 +1852,9 @@ paths:
           name: body
           schema:
             $ref: '#/definitions/organization_complete'
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Organization Complete Response
@@ -2999,6 +3017,9 @@ paths:
           name: body
           schema:
             $ref: '#/definitions/service_complete'
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Service Complete Response
@@ -3023,6 +3044,9 @@ paths:
           name: body
           schema:
             $ref: '#/definitions/service_complete'
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Service Complete Response
@@ -3820,6 +3844,9 @@ paths:
           name: body
           schema:
             $ref: '#/definitions/language'
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Language Response

@@ -23,6 +23,9 @@ paths:
       summary: Get Meta
       description: Get Meta
       operationId: listMeta
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Item Response
@@ -64,6 +67,9 @@ paths:
           type: string
           name: meta_id
           description: 'The meta id.'
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Meta Response
@@ -98,12 +104,15 @@ paths:
             items:
               $ref: "#/definitions/meta"
       tags:
-      - Meta       
+      - Meta
   /meta/roll-back/:
     get:
       summary: Roll Back Meta
       description: Roll Back Meta - Still working on this one.
       operationId: rollbackMeta
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Rollback Meta Response
@@ -118,6 +127,9 @@ paths:
       summary: Roll Forward Meta
       description: Roll Forward Meta - Still working on this one.
       operationId: rollforwadMeta
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Roll Forward Meta Response
@@ -132,6 +144,9 @@ paths:
       summary: Rollback Meta
       description: Rollback Meta - Still working on this one.
       operationId: getErrors
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Rollback Meta Response
@@ -146,6 +161,9 @@ paths:
       summary: Web Logs
       description: Web Logs - Going to Be Pulling From Apache Web Logs
       operationId: webLogs
+      security:
+        - appid: []
+        - appkey: []      
       responses:
         '200':
           description: Web Logs Response

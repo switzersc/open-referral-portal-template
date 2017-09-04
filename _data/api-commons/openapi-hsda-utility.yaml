@@ -23,6 +23,9 @@ paths:
       summary: Services
       description: The services being used across ochestration.
       operationId: getServices
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Service Response
@@ -37,6 +40,9 @@ paths:
       summary: Validate HSDA Response
       description: Validate HSDA Response
       operationId: valiateHSDAResponse
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Validate HSDA Response
@@ -51,6 +57,9 @@ paths:
       summary: Validate HSDA OpenAPI
       description: Validate HSDA OpenAPI
       operationId: valiateHSDAOpenAPI
+      security:
+        - appid: []
+        - appkey: []      
       responses:
         '200':
           description: Validate HSDA OpenAPI Response

@@ -23,6 +23,9 @@ paths:
       summary: Get Taxonomy
       description: Get Taxonomy
       operationId: listTaxonomy
+      security:
+        - appid: []
+        - appkey: []      
       responses:
         '200':
           description: Item Response

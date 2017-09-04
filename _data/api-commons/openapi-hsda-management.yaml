@@ -52,6 +52,9 @@ paths:
           name: order
           default: asc
           description: Which order to sort by (asc,desc).
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Item Response
@@ -96,6 +99,9 @@ paths:
           type: string
           name: code
           description: A uses code
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Auth Response
@@ -116,6 +122,9 @@ paths:
           type: string
           name: user_id
           description: 'The user id.'
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: User Response
@@ -207,6 +216,9 @@ paths:
           name: order
           default: asc
           description: Which order to sort by (asc,desc).
+      security:
+        - appid: []
+        - appkey: []
       responses:
         '200':
           description: Item Response
@@ -248,6 +260,9 @@ paths:
           type: string
           name: service_id
           description: 'The service id.'
+      security:
+        - appid: []
+        - appkey: []          
       responses:
         '200':
           description: Service Response
