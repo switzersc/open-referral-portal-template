@@ -306,8 +306,8 @@ definitions:
       email:
         description: 'The email for a user.'
         type: string
-      key:
-        description: 'The unique key for user (Github Token)'
+      code:
+        description: 'The unique code for user (Github Token)'
         type: string
     required:
       - id
