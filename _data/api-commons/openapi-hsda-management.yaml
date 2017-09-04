@@ -82,7 +82,7 @@ paths:
               $ref: "#/definitions/user"
       tags:
       - Users
-  /users/auth:
+  /users/auth/:
     get:
       summary: Auth Users
       description: Auth Users
