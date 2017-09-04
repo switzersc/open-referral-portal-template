@@ -3,7 +3,7 @@ info:
   title: "Human Services Data Management API"
   description: "This is a complimentary API to the HSDA API focusing just on management."
   termsOfService: "https://openreferral.org/documentation/"
-  user:
+  contact:
     name: Open Referral
     url: https://openreferral.org/
     email: info@openreferral.org
