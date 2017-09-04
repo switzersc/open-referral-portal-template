@@ -163,7 +163,7 @@ paths:
       operationId: webLogs
       security:
         - appid: []
-        - appkey: []      
+        - appkey: []
       responses:
         '200':
           description: Web Logs Response
@@ -200,13 +200,16 @@ definitions:
       verb:
         description: 'The verb for entry.'
         type: string
-      parameters:
+      request_parameters:
         description: 'The parameters for entry.'
         type: string
-      headers:
+      request_headers:
         description: 'The header for entry.'
         type: string
-      body:
+      request_body:
+        description: 'The body for entry.'
+        type: string
+      response_body:
         description: 'The body for entry.'
         type: string
       status:
