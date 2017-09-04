@@ -45,7 +45,7 @@ paths:
             items:
               $ref: "#/definitions/event_type"
       tags:
-      - Services
+      - Events
   /events/:
     get:
       summary: Events
