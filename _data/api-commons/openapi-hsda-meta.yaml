@@ -53,7 +53,35 @@ paths:
               $ref: "#/definitions/meta"
       tags:
       - Contacts
-  /meta/rollback/:
+  /meta/roll-back/:
+    get:
+      summary: Roll Back Meta
+      description: Roll Back Meta - Still working on this one.
+      operationId: rollbackMeta
+      responses:
+        '200':
+          description: Rollback Meta Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/rollback"
+      tags:
+      - Meta
+  /meta/roll-forward/:
+    get:
+      summary: Roll Forward Meta
+      description: Roll Forward Meta - Still working on this one.
+      operationId: rollforwadMeta
+      responses:
+        '200':
+          description: Roll Forward Meta Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/rollforward"
+      tags:
+      - Meta
+  /errors/:
     get:
       summary: Rollback Meta
       description: Rollback Meta - Still working on this one.
@@ -65,6 +93,20 @@ paths:
             type: array
             items:
               $ref: "#/definitions/rollback"
+      tags:
+      - Meta
+  /web/logs/:
+    get:
+      summary: Web Logs
+      description: Web Logs - Going to Be Pulling From Apache Web Logs
+      operationId: webLogs
+      responses:
+        '200':
+          description: Web Logs Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/weblogs"
       tags:
       - Meta
 securityDefinitions:
@@ -103,10 +145,28 @@ definitions:
       body:
         description: 'The body for entry.'
         type: string
+      status:
+        description: 'The status of this entry.'
+        type: string
     required:
       - id
   rollback:
     properties:
       id:
         description: 'The id for the rollback.'
+        type: string
+  rollforward:
+    properties:
+      id:
+        description: 'The id for the roll foward.'
+        type: string
+  errors:
+    properties:
+      id:
+        description: 'The id for the errors.'
+        type: string
+  weblogs:
+    properties:
+      id:
+        description: 'The id for the web logs.'
         type: string
