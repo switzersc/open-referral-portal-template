@@ -94,7 +94,7 @@ paths:
             items:
               $ref: "#/definitions/rollback"
       tags:
-      - Meta
+      - Errors
   /web/logs/:
     get:
       summary: Web Logs
@@ -108,7 +108,7 @@ paths:
             items:
               $ref: "#/definitions/weblogs"
       tags:
-      - Meta
+      - Logs
 securityDefinitions:
   appid:
     type: apiKey
