@@ -82,6 +82,29 @@ paths:
               $ref: "#/definitions/user"
       tags:
       - Users
+  /users/auth:
+    get:
+      summary: Auth Users
+      description: Auth Users
+      operationId: authUser
+      parameters:
+        - in: query
+          type: string
+          name: login
+          description: A users login
+        - in: query
+          type: string
+          name: code
+          description: A uses code
+      responses:
+        '200':
+          description: Auth Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/service"
+      tags:
+      - Users
   /users/{user_id}/:
     get:
       summary: Get User
