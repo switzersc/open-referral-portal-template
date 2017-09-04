@@ -53,6 +53,20 @@ paths:
               $ref: "#/definitions/meta"
       tags:
       - Contacts
+  /meta/rollback/:
+    get:
+      summary: Rollback Meta
+      description: Rollback Meta - Still working on this one.
+      operationId: rollbackMeta
+      responses:
+        '200':
+          description: Rollback Meta Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/rollback"
+      tags:
+      - Meta
 securityDefinitions:
   appid:
     type: apiKey
@@ -91,3 +105,8 @@ definitions:
         type: string
     required:
       - id
+  rollback:
+    properties:
+      id:
+        description: 'The id for the rollback.'
+        type: string
