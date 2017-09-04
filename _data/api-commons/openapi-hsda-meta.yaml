@@ -32,6 +32,27 @@ paths:
               $ref: "#/definitions/meta"
       tags:
       - Meta
+    post:
+      summary: Add Meta
+      description: Add Meta
+      operationId: addMeta
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/meta'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Meta Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/meta"
+      tags:
+      - Contacts
 securityDefinitions:
   appid:
     type: apiKey
