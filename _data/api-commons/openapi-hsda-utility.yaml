@@ -33,7 +33,7 @@ paths:
       tags:
       - Services
   /validate/hsda/response/:
-    get:
+    post:
       summary: Validate HSDA Response
       description: Validate HSDA Response
       operationId: valiateHSDAResponse
@@ -47,7 +47,7 @@ paths:
       tags:
       - Validate
   /validate/hsda/openapi/:
-    get:
+    post:
       summary: Validate HSDA OpenAPI
       description: Validate HSDA OpenAPI
       operationId: valiateHSDAOpenAPI
