@@ -194,6 +194,9 @@ definitions:
       appid:
         description: 'The appid for entry.'
         type: string
+      system:
+        description: 'The system for entry.'
+        type: string
       path:
         description: 'The path for entry.'
         type: string
