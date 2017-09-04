@@ -14,9 +14,9 @@ info:
 host: hsda.meta.api.adopta.agency
 basePath: /
 schemes:
-- http
+  - http
 produces:
-- application/json
+  - application/json
 paths:
   /metadata/:
     get:
@@ -46,6 +46,27 @@ definitions:
     properties:
       id:
         description: 'Each entry must have a unique identifier.'
+        type: string
+      timestamp:
+        description: 'The timestamp for entry.'
+        type: string
+      appid:
+        description: 'The appid for entry.'
+        type: string
+      path:
+        description: 'The path for entry.'
+        type: string
+      verb:
+        description: 'The verb for entry.'
+        type: string
+      parameters:
+        description: 'The parameters for entry.'
+        type: string
+      headers:
+        description: 'The header for entry.'
+        type: string
+      body:
+        description: 'The body for entry.'
         type: string
     required:
       - id
