@@ -323,6 +323,9 @@ definitions:
       user_id :
         description: 'The id for the user.'
         type: string
+      service:
+        description: 'The service the user has access to.'
+        type: string
       path:
         description: 'The path user has access to.'
         type: string
