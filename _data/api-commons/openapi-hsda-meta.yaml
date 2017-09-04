@@ -85,7 +85,7 @@ paths:
     get:
       summary: Rollback Meta
       description: Rollback Meta - Still working on this one.
-      operationId: rollbackMeta
+      operationId: getErrors
       responses:
         '200':
           description: Rollback Meta Response
