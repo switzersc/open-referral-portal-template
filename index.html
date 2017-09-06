@@ -68,29 +68,43 @@ layout: page
 <!-- Complete -->
 <section>
 	<header>
-		<a name="platforms"></a>
+		<a name="Getting Started"></a>
 		<h2>Getting Started</h2>
 	</header>
   <p>There are eight separate microservices contained as part of this Human Services Data API (HSDA) work. NONE of these are officially part of the specification currently. HSDA is the core service, focusing on the management of organizations, locations, services, contacts, and their sub-resources (ie. addresses, phones, etc.). The other seven microservices are meant to be standalone services that augment the core HSDA service.</p>
   <p>Here is a quick list of the eight services, which there are separate documentation available below:</p>
   <ul>
-    <li><strong><a href="">HSDA</a></strong> - The core service for managing organizations, locations, services, contacts, and other sub-resouces.</li>
-    <li><strong><a href="">HSDA Search</a></strong> - A spin-off search service from the core service, focusing exclusively on searching across HSDA resources.</li>
-    <li><strong><a href="">HSDA Bulk</a></strong> - An indpendent service for managing bulk submissions of data that can be then executed as job(s) on schedule.</li>
-    <li><strong><a href="">HSDA Meta</a></strong> - An independent service for recording all transactions executed via any HSDA implementation, providing comprehensive logging.</li>
-    <li><strong><a href="">HSDA Taxonomy</a></strong> - A spin-off service from the core specification to evolve taxonomy across core resources in multiple formats.</li>
-    <li><strong><a href="">HSDA Management</a></strong> - The simple API management layer for HSDA, leveraging Github authentication to be able to make calls to HSDA APIs.</li>
-    <li><strong><a href="">HSDA Orchestration</a></strong> - An independent service for handling the orchestration of activities across HSDA resources, based on events or schedule.</li>
-    <li><strong><a href="">HSDA Utility</a></strong> - A set of utility APIs for manaing HSDA services, including validation, security, and other operational level needs for implementations.</li>
+    <li><strong><a href="/#HSDA Complete">HSDA Complete</a></strong> - The core service for managing organizations, locations, services, contacts, and other sub-resouces in single API calls.</li>
+    <li><strong><a href="/#HSDA">HSDA</a></strong> - The core service for managing organizations, locations, services, contacts, and other sub-resouces.</li>
+    <li><strong><a href="/#HSDA Search">HSDA Search</a></strong> - A spin-off search service from the core service, focusing exclusively on searching across HSDA resources.</li>
+    <li><strong><a href="/#HSDA Bulk">HSDA Bulk</a></strong> - An indpendent service for managing bulk submissions of data that can be then executed as job(s) on schedule.</li>
+    <li><strong><a href="/#HSDA Meta">HSDA Meta</a></strong> - An independent service for recording all transactions executed via any HSDA implementation, providing comprehensive logging.</li>
+    <li><strong><a href="/#HSDA Taxonomy">HSDA Taxonomy</a></strong> - A spin-off service from the core specification to evolve taxonomy across core resources in multiple formats.</li>
+    <li><strong><a href="/#HSDA Management">HSDA Management</a></strong> - The simple API management layer for HSDA, leveraging Github authentication to be able to make calls to HSDA APIs.</li>
+    <li><strong><a href="/#HSDA Orchestration">HSDA Orchestration</a></strong> - An independent service for handling the orchestration of activities across HSDA resources, based on events or schedule.</li>
+    <li><strong><a href="/#HSDA Utility">HSDA Utility</a></strong> - A set of utility APIs for manaing HSDA services, including validation, security, and other operational level needs for implementations.</li>
   </ul>
   <p>To get started I recommend beginning with authentication which will get you an API key allowing you to make calls across all services, not just the public GET resources. Then spend time with the interactive documentation for each service to better understand how they work independently, but also in concert with each other. It is meant to provide a buffet of HSDA services that work together, operate independently, and can be moved forward as separate projects.</p>
   <p>Once these projects are stabilized they will be submitted for consideration by the Open Referral community. Currently, they are simly an API Evangelist / Adopta.Agency project, working to move forwad the conversation as quickly, and efficiently as possible, using modern API patterns gathered from across the API sector.</p>
 </section>
 
+<!-- Banner -->
+<section id="banner">
+	<div class="content">
+		<header>
+			<h2>Authentication</h2>
+		</header>
+		<p>This implementation uses Github for auth.</p>
+	</div>
+	<span class="image object">
+		<img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github-icon.png" alt="" width="100%" />
+	</span>
+</section>
+
 <!-- Complete -->
 <section>
 	<header>
-		<a name="platforms"></a>
+		<a name="HSDA Complete"></a>
 		<h2>Human Services Data API (HSDA) Complete</h2>
 	</header>
   <p>This is the interactive documentation for the core set of Human Services Data API (HSDA) resources. If you are looking to get a complete responses for all core resources, as well as their sub-resources in a single API call, these are the paths for you. These four endpoints will return complete responses for each resource in a single response.</p>
@@ -101,7 +115,7 @@ layout: page
 <!-- HSDA -->
 <section>
 	<header>
-		<a name="platforms"></a>
+		<a name="HSDA"></a>
 		<h2>Human Services Data API (HSDA)</h2>
 	</header>
   <p>This is the interactive documentation for the core set of Human Services Data API (HSDA) resources. It provides you with everything you need to access 100% of the surface area of the Human Services Specification API (HSDS) using the web. Data is available in a CSV, JSON, or XML format. This set of paths gives you  more granular level of control over resources for developing single page application (SPA), mobile, voice, and other common applications.</p>
@@ -112,7 +126,7 @@ layout: page
 <!-- Search -->
 <section>
 	<header>
-		<a name="platforms"></a>
+		<a name="HSDA Search"></a>
 		<h2>Human Services Data API (HSDA) Search</h2>
 	</header>
   <p>This is a separate HSDA service for searching across all the core human sevices resources, pulling data with refined search criteria, separating search concerns from just working with individual human service resources.</p>
@@ -123,7 +137,7 @@ layout: page
 <!-- Bulk -->
 <section>
 	<header>
-		<a name="platforms"></a>
+		<a name="HSDA Bulk"></a>
 		<h2>Human Services Data API (HSDA) Bulk</h2>
 	</header>
   <p>This is a HSDA sevice specificaly intended to allow the bulk submission of all the core resouces. You can submit multiple organizations, locations, services, and contacts as a single JSON. Each POST to any of the paths will not be processed immediately, but a job will be created allowing it to be run on schedule, or based upon specific events.</p>
@@ -134,7 +148,7 @@ layout: page
 <!-- Meta -->
 <section>
 	<header>
-		<a name="platforms"></a>
+		<a name="HSDA Meta"></a>
 		<h2>Human Services Data API (HSDA) Meta</h2>
 	</header>
   <p>This is a HSDA sevice specificaly intended to manage the meta data around human services data API operations. Essentially this is a logging system, providing access to data about what API calls are made, managing individual resources, as well as any other service in use association with HSDA operations.</p>
@@ -145,7 +159,7 @@ layout: page
 <!-- Management -->
 <section>
 	<header>
-		<a name="platforms"></a>
+		<a name="HSDA Management"></a>
 		<h2>Human Services Data API (HSDA) Management</h2>
 	</header>
   <p>This is a HSDA sevice specificaly intended to assist in managing HSDA access, allowing users to get at resources made available any HSDA implementation. Providing the ability to manage users, and the HSDA services they have access to.</p>
@@ -153,26 +167,26 @@ layout: page
   <p>This is the API management layer for the HSDA implementation, providing a simple solution that API providers can manage this aspect of operation. Behind the scenes this could be executed with off the shelf API management solutions. The purpose of this is to provide a common API for use across all HSDA implementations.</p>
 </section>
 
-<!-- Management -->
-<section>
-	<header>
-		<a name="platforms"></a>
-		<h2>Human Services Data API (HSDA) Utility</h2>
-	</header>
-  <p>This is a HSDA sevice specifically intended to house all utility based APIs, providing a way to develop APIs that assist in the operation of HSDA implementations. These will always be more utilitiy type APIs that don't fit into any other category of HSDA service.</p>
-  <div id="hsda-utility-ui"></div>
-  <p>We will be adding APIs into this service from time to time, but only if they do not fit into their own category of HSDA service. It is the general bucket for HSDA APIs that are useful, but don't have another home.</p>
-</section>
-
 <!-- Orchestration -->
 <section>
 	<header>
-		<a name="platforms"></a>
+		<a name="HSDA Orchestration"></a>
 		<h2>Human Services Data API (HSDA) Orchestration</h2>
 	</header>
   <p>This is a HSDA sevice specifically intended to manage orchestration around HSDA operations, enabling the system to become a two-way street, pushing data outside individual implementations. The system uses webhooks, and events to understand changes made to the HSDA system, and the data stored within.</p>
   <div id="hsda-orchestration-ui"></div>
   <p>This system works in conjunction with the HSDA Meta, and requires access to the logging of all transactions to respond to any overall, or individual event. This makes any HSDA implementation work with one or many other HSDA implementations.</p>
+</section>
+
+<!-- Management -->
+<section>
+	<header>
+		<a name="HSDA Utility"></a>
+		<h2>Human Services Data API (HSDA) Utility</h2>
+	</header>
+  <p>This is a HSDA sevice specifically intended to house all utility based APIs, providing a way to develop APIs that assist in the operation of HSDA implementations. These will always be more utilitiy type APIs that don't fit into any other category of HSDA service.</p>
+  <div id="hsda-utility-ui"></div>
+  <p>We will be adding APIs into this service from time to time, but only if they do not fit into their own category of HSDA service. It is the general bucket for HSDA APIs that are useful, but don't have another home.</p>
 </section>
 
 <script>
@@ -300,3 +314,36 @@ window.onload = function() {
 
 }
 </script>
+
+<section id="banner">
+	<div class="content">
+		<header>
+			<h2>Support</h2>
+		</header>
+		<p>There are three ways that you can get support when using the Drone API--consider one of the following channels when you have a question, comment, or some feedback regarding the API and integration.</p>
+		<table cellpadding="10" cellspacing="10" width="100%">
+			<tr style="border: 1px solid #FFF;">
+
+				<td align="center" valign="top" style="background-color:#FFF;">
+					<a href="https://github.com/human-services/portal/issues"><img src="http://drone.prototype.apievangelist.com/images/bw-github.png" width="75" align="center"></a>
+					<a href="https://github.com/human-services/portal/issues">Github</a>
+				</td>
+
+				<td align="center" valign="top" style="background-color:#FFF;">
+					<a href="https://twitter.com/apievangelist/"><img src="http://drone.prototype.apievangelist.com/images/bw-twitter-icon.png" width="75" align="center"></a>
+					<a href="https://twitter.com/apievangelist/">Twitter</a>
+				</td>
+
+				<td align="center" valign="top" style="background-color:#FFF;">
+					<a href="/cdn-cgi/l/email-protection#e38a8d858ca382938a8695828d84868f8a9097cd808c8e"><img src="http://drone.prototype.apievangelist.com/images/bw-email-at.png" width="75" align="center"></a>
+					<a href="/cdn-cgi/l/email-protection#6f060109002f0e1f060a190e01080a03061c1b410c0002">Email</a>
+				</td>
+
+			</tr>
+		</table>
+		<p>It is recommended that you start with submitting a Github issue, then maybe tweet at us. If your questions or comments require some privacy you should use email. Make sure you look through the existing issues before submitting a new one.</p>
+	</div>
+	<span class="image object">
+		<img src="http://drone.prototype.apievangelist.com/images/support-rectangular.png" alt="" width="5%" />
+	</span>
+</section>
