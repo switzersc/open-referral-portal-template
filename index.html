@@ -74,11 +74,17 @@ layout: page
   <p>There are eight separate microservices contained as part of this Human Services Data API (HSDA) work. NONE of these are officially part of the specification currently. HSDA is the core service, focusing on the management of organizations, locations, services, contacts, and their sub-resources (ie. addresses, phones, etc.). The other seven microservices are meant to be standalone services that augment the core HSDA service.</p>
   <p>Here is a quick list of the eight services, which there are separate documentation available below:</p>
   <ul>
-
+    <li><strong><a href="">HSDA</a></strong> - The core service for managing organizations, locations, services, contacts, and other sub-resouces.</li>
+    <li><strong><a href="">HSDA Search</a></strong> - A spin-off search service from the core service, focusing exclusively on searching across HSDA resources.</li>
+    <li><strong><a href="">HSDA Bulk</a></strong> - An indpendent service for managing bulk submissions of data that can be then executed as job(s) on schedule.</li>
+    <li><strong><a href="">HSDA Meta</a></strong> - An independent service for recording all transactions executed via any HSDA implementation, providing comprehensive logging.</li>
+    <li><strong><a href="">HSDA Taxonomy</a></strong> - A spin-off service from the core specification to evolve taxonomy across core resources in multiple formats.</li>
+    <li><strong><a href="">HSDA Management</a></strong> - The simple API management layer for HSDA, leveraging Github authentication to be able to make calls to HSDA APIs.</li>
+    <li><strong><a href="">HSDA Orchestration</a></strong> - An independent service for handling the orchestration of activities across HSDA resources, based on events or schedule.</li>
+    <li><strong><a href="">HSDA Utility</a></strong> - A set of utility APIs for manaing HSDA services, including validation, security, and other operational level needs for implementations.</li>
   </ul>
   <p>To get started I recommend beginning with authentication which will get you an API key allowing you to make calls across all services, not just the public GET resources. Then spend time with the interactive documentation for each service to better understand how they work independently, but also in concert with each other. It is meant to provide a buffet of HSDA services that work together, operate independently, and can be moved forward as separate projects.</p>
-  <p>Once these projects are stabilized they will be submitted for consideration by the Open Referral community. Currently, they are simly an API Evangelist / Adopta.Agency project, working to move forwad the conversation as quickly, and efficiently as possible, using modern API patterns gathered from across the API sector.
-
+  <p>Once these projects are stabilized they will be submitted for consideration by the Open Referral community. Currently, they are simly an API Evangelist / Adopta.Agency project, working to move forwad the conversation as quickly, and efficiently as possible, using modern API patterns gathered from across the API sector.</p>
 </section>
 
 <!-- Complete -->
