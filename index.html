@@ -98,14 +98,14 @@ layout: page
       console.log($appkey);
       if($appid != '' && $appkey != '')
         {
-        document.getElementById('auth-keys').innerhtml = '';
+        document.getElementById('auth-keys').innerHTML = '';
         $appid_link = '<strong>x-appid</strong> - ' + $appid;
         //console.log($appid_link)
         $appkey_link = '<strong>x-appkey</strong> - ' + $appkey;
         //console.log($appkey_link)
         $auth_html = '<ul>' + $appid_link + $appkey_link + '</ul>';
-        document.getElementById('auth-keys').innerhtml = auth_html;
-        document.getElementById('auth-keys').innerhtml = 'Authentication (AUTHENTICATED)';
+        document.getElementById('auth-keys').innerHTML = auth_html;
+        document.getElementById('auth-keys').innerHTML = 'Authentication (AUTHENTICATED)';
         }
     </script>
 		<header>
