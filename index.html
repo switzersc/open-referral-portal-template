@@ -93,16 +93,15 @@ layout: page
 	<div class="content">
     <script type="text/javascript">
       $appid = getUrlVar('login');
-      console.log($appid);
+      //console.log($appid);
       $appkey = getUrlVar('code');
-      console.log($appkey);
-      if(getUrlVar('login') && getUrlVar('code'))
+      //console.log($appkey);
+      if($appid != '' && $appkey != '')
         {
         $appid_link = '<strong>x-appid</strong> - ' + $appid;
         $('#appid').append($appid_link);
         $appkey_link = '<strong>x-appkey</strong> - ' + $appkey;
         $('#appkey').append($appkey_link);
-
         $('#auth-header').append(' (AUTHENTICATED)');
         }
     </script>
