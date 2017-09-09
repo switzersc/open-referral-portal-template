@@ -92,10 +92,12 @@ layout: page
 <section id="banner">
 	<div class="content">
     <script type="text/javascript">
+      $appid = getUrlVar('login');
+      console.log($appid);
+      $appkey = getUrlVar('code');
+      console.log($appkey);
       if(getUrlVar('login') && getUrlVar('code'))
         {
-        $appid = getUrlVar('login');
-        $appkey = getUrlVar('code');
         $appid_link = '<strong>x-appid</strong> - ' + $appid;
         $('#appid').append($appid_link);
         $appkey_link = '<strong>x-appkey</strong> - ' + $appkey;
