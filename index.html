@@ -109,15 +109,15 @@ layout: page
       if($appid != '' && $appkey != '')
         {
         $('#auth-keys').html('');
-        $appid_link = '<strong>x-appid</strong> - ' + $appid;
+        $appid_link = '<li><strong>x-appid</strong> - ' + $appid + '</li>';
         //console.log($appid_link)
-        $appkey_link = '<strong>x-appkey</strong> - ' + $appkey;
+        $appkey_link = '<li><strong>x-appkey</strong> - ' + $appkey + '</li>';
         //console.log($appkey_link)
         $auth_html = '<ul>' + $appid_link + $appkey_link + '</ul>';
         $('#auth-keys').html($auth_html);
         $('#auth-header').html('Authentication (AUTHENTICATED)');
         }
-    </script>    
+    </script>
     <p>The HSDA Management service will validate your appid and appkey as being a valid Github account and token, then give access to make calls to all API paths, across all services. Invalid API requests will receive a 403 status code for any API requests.</p>
     <p>Any valid Github user and token will work with the API, you do not need to login via the portal every time you are looking to get access for any future applications.</p>
 	</div>
