@@ -84,7 +84,7 @@ definitions:
       id:
         description: 'Each entry must have a unique identifier.'
         type: string
-      service:
+      name:
         description: 'The service name.'
         type: string
       path:
