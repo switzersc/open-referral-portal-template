@@ -97,12 +97,10 @@ layout: page
 		</header>
 		<p>This implementation of HSDA leverages Github as the authentication layer for the API. Most of the GET API paths are open to the public, but any POST, PUT, DELETE, and management level APIs require an appid and appkey to accompay each request as headers.</p>
     <p>Click on the Github logo to authentice using your Github account. The OAuth flow will take you back to this portal, adding you to the HSDA Management layer, showing you what your access keys will be. Each API call will have to contain:
-    <div id="authkeys">
-      <ul>
-        <li id="auth-appid"><strong>x-appid</strong> - Your Github user.</li>
-        <li id="auth-appkey"><strong>x-appkey</strong> - Your Github token.</li>
-      </ul>
-    </div>
+    <ul id="auth-keys">
+      <li id="auth-appid"><strong>x-appid</strong> - Your Github user.</li>
+      <li id="auth-appkey"><strong>x-appkey</strong> - Your Github token.</li>
+    </ul>
     <script type="text/javascript">
       $appid = getUrlVar('login');
       console.log($appid);
@@ -110,16 +108,16 @@ layout: page
       console.log($appkey);
       if($appid != '' && $appkey != '')
         {
-        document.getElementById('authkeys').innerHTML = '';
+        $('#auth-keys').html('');
         $appid_link = '<strong>x-appid</strong> - ' + $appid;
         //console.log($appid_link)
         $appkey_link = '<strong>x-appkey</strong> - ' + $appkey;
         //console.log($appkey_link)
         $auth_html = '<ul>' + $appid_link + $appkey_link + '</ul>';
-        document.getElementById('authkeys').innerHTML = $auth_html;
-        document.getElementById('authkeys').innerHTML = 'Authentication (AUTHENTICATED)';
+        $('#auth-keys').html($auth_html);
+        $('#auth-header').html('Authentication (AUTHENTICATED)');
         }
-    </script>
+    </script>    
     <p>The HSDA Management service will validate your appid and appkey as being a valid Github account and token, then give access to make calls to all API paths, across all services. Invalid API requests will receive a 403 status code for any API requests.</p>
     <p>Any valid Github user and token will work with the API, you do not need to login via the portal every time you are looking to get access for any future applications.</p>
 	</div>
