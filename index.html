@@ -100,10 +100,10 @@ layout: page
         {
         console.log("IN!");
         $appid_link = '<strong>x-appid</strong> - ' + $appid;
-        $('#appid').append($appid_link);
+        $('#appid').html($appid_link);
         $appkey_link = '<strong>x-appkey</strong> - ' + $appkey;
-        $('#appkey').append($appkey_link);
-        $('#auth-header').append(' (AUTHENTICATED)');
+        $('#appkey').html($appkey_link);
+        $('#auth-header').html('Authentication (AUTHENTICATED)');
         }
     </script>
 		<header>
