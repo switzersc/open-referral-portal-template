@@ -47,6 +47,35 @@ paths:
               $ref: "#/definitions/error_response"
       tags:
       - Services
+  /schema/build/:
+    get:
+      summary: Schema Build
+      description: This will generate static files for all definitions in OpenAPIs
+      operationId: schemaBuild
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Schema Build Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/schema_build"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Services
   /validate/hsda/definition/:
     post:
       summary: Validate HSDA Response
@@ -219,3 +248,14 @@ definitions:
       body:
         description: 'The HSDA OpenAPI to validate.'
         type: object
+  schema_build:
+    properties:
+      service:
+        description: 'The service of the schema'
+        type: string
+      definition:
+        description: 'The definition of the schema.'
+        type: string
+      file:
+        description: 'The file name being created.'
+        type: string
