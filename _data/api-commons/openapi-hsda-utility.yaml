@@ -242,12 +242,12 @@ definitions:
     properties:
       body:
         description: 'The HSDA definition to validate.'
-        type: object
+        type: array
   hsda_openapi:
     properties:
       body:
         description: 'The HSDA OpenAPI to validate.'
-        type: object
+        type: array
   schema_build:
     properties:
       service:
