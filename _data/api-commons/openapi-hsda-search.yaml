@@ -79,10 +79,6 @@ securityDefinitions:
 definitions:
   search:
     properties:
-      info:
-        type: "array"
-        items:
-          $ref: "#/definitions/info"
       organizations:
         type: "array"
         items:
@@ -95,32 +91,6 @@ definitions:
         type: "array"
         items:
           $ref: "#/definitions/service"
-      links:
-        type: "array"
-        items:
-          $ref: "#/definitions/links"
-  info:
-    properties:
-      records:
-        description: 'Number of recods returned.'
-        type: integer
-      pages:
-        description: 'Number of pages.'
-        type: integer
-      current_page:
-        description: 'Current page returned.'
-        type: integer
-  links:
-    properties:
-      name:
-        description: 'Name of the link'
-        type: string
-      rel:
-        description: 'The link relation (IANA)'
-        type: string
-      url:
-        description: 'The link URL'
-        type: string
   accessibility_for_disabilities:
     properties:
       id:
