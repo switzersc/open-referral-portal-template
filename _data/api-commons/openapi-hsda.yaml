@@ -6364,6 +6364,7 @@ disabilities.'
         type: string
     required:
       - id
+      - name
   location_complete:
     properties:
       id:
