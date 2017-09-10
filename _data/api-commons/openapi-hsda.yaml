@@ -6337,6 +6337,7 @@ disabilities.'
     required:
       - id
   location:
+    type: object
     properties:
       id:
         description: 'Each location must have a unique identifier.'
