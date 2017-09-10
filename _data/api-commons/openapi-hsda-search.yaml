@@ -10,7 +10,7 @@ info:
   license:
     name: Open Data Commons Public Domain
     url: http://opendatacommons.org/licenses/pddl/
-  version: v1.2
+  version: v1.0
 host: hsda.search.api.adopta.agency
 basePath: /
 schemes:
@@ -59,6 +59,12 @@ paths:
             type: array
             items:
               $ref: "#/definitions/search"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
       tags:
       - Search
 securityDefinitions:
@@ -692,3 +698,11 @@ disabilities.'
         type: string
     required:
       - id
+  error_response:
+    properties:
+      code:
+        description: 'Repeat the HTTP status code'
+        type: integer
+      message:
+        description: 'A plain language message explaining the error'
+        type: integer

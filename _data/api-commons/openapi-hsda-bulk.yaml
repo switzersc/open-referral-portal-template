@@ -10,7 +10,7 @@ info:
   license:
     name: Open Data Commons Public Domain
     url: http://opendatacommons.org/licenses/pddl/
-  version: v1.2
+  version: v1.0
 host: hsda.buapi.adopta.agency
 basePath: /
 schemes:
@@ -96,7 +96,7 @@ paths:
             $ref: '#/definitions/service'
       security:
         - appid: []
-        - appkey: []            
+        - appkey: []
       responses:
         '200':
           description: Service Response
@@ -106,6 +106,81 @@ paths:
               $ref: "#/definitions/service"
       tags:
       - Services
+  /jobs/:
+    get:
+      summary: Get Jobs
+      description: Get Jobs
+      operationId: listJobs
+      parameters:
+        - in: query
+          type: string
+          name: query
+          description: A query to filter list by (up to provider to determine what to search)
+        - in: query
+          type: string
+          name: queries
+          description: A comma separate list of queries with specific fields.
+        - in: query
+          type: number
+          name: page
+          default: 0
+          description: The particular page of results.
+        - in: query
+          type: number
+          name: per_page
+          default: 25
+          description: Number of records to return per page, up to 100.
+        - in: query
+          type: string
+          name: sort_by
+          default: name
+          description: Which field to sort by.
+        - in: query
+          type: string
+          name: order
+          default: asc
+          description: Which order to sort by (asc,desc).
+      responses:
+        '200':
+          description: Job Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/job"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Jobs
+  /jobs/{job_id}/run/:
+    get:
+      summary: Run Job
+      description: Run a specific job
+      operationId: runJob
+      parameters:
+        - in: path
+          type: string
+          name: job_id
+          required: true
+          description: The unique id of the job to run.
+      responses:
+        '200':
+          description: Job Complete Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/job"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Jobs
 securityDefinitions:
   appid:
     type: apiKey
@@ -693,3 +768,29 @@ disabilities.'
         type: string
     required:
       - id
+  job:
+    properties:
+      id:
+        description: 'The unique id of the job'
+        type: string
+      path:
+        description: 'The path the job is being run against.'
+        type: string
+      verb:
+        description: 'The verb the job is being run against.'
+        type: string
+      status:
+        description: 'The status of the job.'
+        type: string
+      complete:
+        description: 'The date the job was completed.'
+        type: string
+        format: date
+  error_response:
+    properties:
+      code:
+        description: 'Repeat the HTTP status code'
+        type: integer
+      message:
+        description: 'A plain language message explaining the error'
+        type: integer

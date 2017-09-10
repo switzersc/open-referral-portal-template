@@ -10,7 +10,7 @@ info:
   license:
     name: Open Data Commons Public Domain
     url: http://opendatacommons.org/licenses/pddl/
-  version: v1.2
+  version: v1.0
 host: hsda.utility.api.adopta.agency
 basePath: /
 schemes:
@@ -33,13 +33,30 @@ paths:
             type: array
             items:
               $ref: "#/definitions/service"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
       tags:
       - Services
-  /validate/hsda/response/:
+  /validate/hsda/definition/:
     post:
       summary: Validate HSDA Response
       description: Validate HSDA Response
       operationId: valiateHSDAResponse
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/hsda_definition'
       security:
         - appid: []
         - appkey: []
@@ -49,7 +66,19 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/validation"
+              $ref: "#/definitions/validate_definition"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
       tags:
       - Validate
   /validate/hsda/openapi/:
@@ -57,6 +86,11 @@ paths:
       summary: Validate HSDA OpenAPI
       description: Validate HSDA OpenAPI
       operationId: valiateHSDAOpenAPI
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/hsda_openapi'
       security:
         - appid: []
         - appkey: []
@@ -66,7 +100,19 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/validation"
+              $ref: "#/definitions/validate_openapi"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
       tags:
       - Validate
 securityDefinitions:
@@ -95,13 +141,66 @@ definitions:
         type: string
     required:
       - id
-      - user_id
+      - name
       - path
       - verb
-  validation:
+  validate_definition:
     properties:
       id:
-        description: 'Each entry must have a unique identifier.'
+        description: 'Each validation has a unique id.'
+        type: string
+      service:
+        description: 'The service that is being validated.'
+        type: string
+      path:
+        description: 'The path that is being validated.'
+        type: string
+      verb:
+        description: 'The verb that is being validated.'
+        type: string
+      valid:
+        description: 'Whether or not the schema was valid.'
+        type: boolean
+      message:
+        description: 'A message describing the validation.'
         type: string
     required:
       - id
+      - service
+      - path
+      - verb
+  validate_openapi:
+    properties:
+      id:
+        description: 'Each validation has a unique id.'
+        type: string
+      service:
+        description: 'The service that is being validated.'
+        type: string
+      valid:
+        description: 'Whether or not the schema was valid.'
+        type: boolean
+      message:
+        description: 'A message describing the validation.'
+        type: string
+    required:
+      - id
+      - service
+  error_response:
+    properties:
+      code:
+        description: 'Repeat the HTTP status code'
+        type: integer
+      message:
+        description: 'A plain language message explaining the error'
+        type: integer
+  hsda_definition:
+    properties:
+      body:
+        description: 'The HSDA definition to validate.'
+        type: object
+  hsda_openapi:
+    properties:
+      body:
+        description: 'The HSDA OpenAPI to validate.'
+        type: object

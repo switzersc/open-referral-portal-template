@@ -10,7 +10,7 @@ info:
   license:
     name: Open Data Commons Public Domain
     url: http://opendatacommons.org/licenses/pddl/
-  version: v1.2
+  version: v1.0
 host: hsda.meta.api.adopta.agency
 basePath: /
 schemes:
@@ -33,6 +33,18 @@ paths:
             type: array
             items:
               $ref: "#/definitions/meta"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
       tags:
       - Meta
     post:
@@ -54,6 +66,18 @@ paths:
             type: array
             items:
               $ref: "#/definitions/meta"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
       tags:
       - Meta
   /meta/{meta_id}/:
@@ -77,6 +101,18 @@ paths:
             type: array
             items:
               $ref: "#/definitions/meta"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
       tags:
       - Meta
     put:
@@ -103,76 +139,20 @@ paths:
             type: array
             items:
               $ref: "#/definitions/meta"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
       tags:
       - Meta
-  /meta/roll-back/:
-    get:
-      summary: Roll Back Meta
-      description: Roll Back Meta - Still working on this one.
-      operationId: rollbackMeta
-      security:
-        - appid: []
-        - appkey: []
-      responses:
-        '200':
-          description: Rollback Meta Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/rollback"
-      tags:
-      - Meta
-  /meta/roll-forward/:
-    get:
-      summary: Roll Forward Meta
-      description: Roll Forward Meta - Still working on this one.
-      operationId: rollforwadMeta
-      security:
-        - appid: []
-        - appkey: []
-      responses:
-        '200':
-          description: Roll Forward Meta Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/rollforward"
-      tags:
-      - Meta
-  /errors/:
-    get:
-      summary: Rollback Meta
-      description: Rollback Meta - Still working on this one.
-      operationId: getErrors
-      security:
-        - appid: []
-        - appkey: []
-      responses:
-        '200':
-          description: Rollback Meta Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/rollback"
-      tags:
-      - Errors
-  /web/logs/:
-    get:
-      summary: Web Logs
-      description: Web Logs - Going to Be Pulling From Apache Web Logs
-      operationId: webLogs
-      security:
-        - appid: []
-        - appkey: []
-      responses:
-        '200':
-          description: Web Logs Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/weblogs"
-      tags:
-      - Logs
 securityDefinitions:
   appid:
     type: apiKey
@@ -240,3 +220,11 @@ definitions:
       id:
         description: 'The id for the web logs.'
         type: string
+  error_response:
+    properties:
+      code:
+        description: 'Repeat the HTTP status code'
+        type: integer
+      message:
+        description: 'A plain language message explaining the error'
+        type: integer
