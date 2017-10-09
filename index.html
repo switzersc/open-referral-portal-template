@@ -74,7 +74,7 @@ layout: page
   <p>There are eight separate microservices contained as part of this Human Services Data API (HSDA) work. NONE of these are officially part of the specification currently. HSDA is the core service, focusing on the management of organizations, locations, services, contacts, and their sub-resources (ie. addresses, phones, etc.). The other seven microservices are meant to be standalone services that augment the core HSDA service.</p>
   <p>Here is a quick list of the eight services, which there are separate documentation available below:</p>
   <ul>
-    <li><strong><a href="/#HSDA Complete">HSDA Complete</a></strong> - The core service for managing organizations, locations, services, contacts, and other sub-resouces in single API calls.</li>
+    <li><strong><a href="/#HSDA Full">HSDA Full</a></strong> - The core service for managing organizations, locations, services, contacts, and other sub-resouces in single API calls.</li>
     <li><strong><a href="/#HSDA">HSDA</a></strong> - The core service for managing organizations, locations, services, contacts, and other sub-resouces.</li>
     <li><strong><a href="/#HSDA Search">HSDA Search</a></strong> - A spin-off search service from the core service, focusing exclusively on searching across HSDA resources.</li>
     <li><strong><a href="/#HSDA Bulk">HSDA Bulk</a></strong> - An indpendent service for managing bulk submissions of data that can be then executed as job(s) on schedule.</li>
@@ -126,14 +126,14 @@ layout: page
 	</span>
 </section>
 
-<!-- Complete -->
+<!-- Full -->
 <section>
 	<header>
-		<a name="HSDA Complete"></a>
-		<h2>Human Services Data API (HSDA) Complete  (v1.2 DRAFT)</h2>
+		<a name="HSDA Full"></a>
+		<h2>Human Services Data API (HSDA) Full  (v1.2 DRAFT)</h2>
 	</header>
-  <p>This is the interactive documentation for the core set of Human Services Data API (HSDA) resources. If you are looking to get a complete responses for all core resources, as well as their sub-resources in a single API call, these are the paths for you. These four endpoints will return complete responses for each resource in a single response.</p>
-  <div id="hsda-complete-ui"></div>
+  <p>This is the interactive documentation for the core set of Human Services Data API (HSDA) resources. If you are looking to get a full responses for all core resources, as well as their sub-resources in a single API call, these are the paths for you. These four endpoints will return full responses for each resource in a single response.</p>
+  <div id="hsda-full-ui"></div>
   <p>This set of paths are intended to be about working with core resouces (ie. organizations, locations, contacts and services), there are other spearate HSDA services that give you access to a variety of systems that support, augment, and work with the core set of Human Services Data API (HSDA) services.</p>
 </section>
 
@@ -218,9 +218,9 @@ layout: page
 window.onload = function() {
 
   // HSDS
-  const hsda_complete_ui = SwaggerUIBundle({
-    url: "http://developer.open.referral.adopta.agency/openapi/hsda-complete.yaml",
-    dom_id: '#hsda-complete-ui',
+  const hsda_full_ui = SwaggerUIBundle({
+    url: "http://developer.open.referral.adopta.agency/openapi/hsda-full.yaml",
+    dom_id: '#hsda-full-ui',
     presets: [
       SwaggerUIBundle.presets.apis,
       SwaggerUIStandalonePreset
@@ -230,7 +230,7 @@ window.onload = function() {
     ],
     layout: "StandaloneLayout"
   })
-  window.ui = hsda_complete_ui;
+  window.ui = hsda_full_ui;
 
   // HSDS
   const hsda_ui = SwaggerUIBundle({
