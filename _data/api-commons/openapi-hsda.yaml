@@ -102,7 +102,7 @@ paths:
               $ref: "#/definitions/error_response"
       tags:
       - Contacts
-  /contacts/complete/:
+  /contacts/full/:
     get:
       summary: Get all contacts with full details
       description: Returns a list of contacts with full details and filtering support
@@ -142,7 +142,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/contact_complete"
+              $ref: "#/definitions/contact_full"
         '500':
           description: Error Response
           schema:
@@ -159,7 +159,7 @@ paths:
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/contact_complete'
+            $ref: '#/definitions/contact_full'
       security:
         - appid: []
         - appkey: []
@@ -169,7 +169,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/contact_complete"
+              $ref: "#/definitions/contact_full"
         '403':
           description: No Access Response
           schema:
@@ -184,7 +184,7 @@ paths:
               $ref: "#/definitions/error_response"
       tags:
       - Contacts
-  /contacts/complete/{contact_id}/:
+  /contacts/full/{contact_id}/:
     get:
       summary: Get contact with full details
       description: Returns a contact entry with full details
@@ -201,7 +201,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/contact_complete"
+              $ref: "#/definitions/contact_full"
         '500':
           description: Error Response
           schema:
@@ -223,7 +223,7 @@ paths:
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/contact_complete'
+            $ref: '#/definitions/contact_full'
       security:
         - appid: []
         - appkey: []
@@ -233,7 +233,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/contact_complete"
+              $ref: "#/definitions/contact_full"
         '403':
           description: No Access Response
           schema:
@@ -639,7 +639,7 @@ paths:
               $ref: "#/definitions/error_response"
       tags:
       - Locations
-  /locations/complete/:
+  /locations/full/:
     get:
       summary: Get all locations with full details
       description: Returns a list of locations with full details and filtering support
@@ -679,7 +679,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/location_complete"
+              $ref: "#/definitions/location_full"
         '500':
           description: Error Response
           schema:
@@ -696,7 +696,7 @@ paths:
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/location_complete'
+            $ref: '#/definitions/location_full'
       security:
         - appid: []
         - appkey: []
@@ -706,7 +706,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/location_complete"
+              $ref: "#/definitions/location_full"
         '403':
           description: No Access Response
           schema:
@@ -721,7 +721,7 @@ paths:
               $ref: "#/definitions/error_response"
       tags:
       - Locations
-  /locations/complete/{location_id}/:
+  /locations/full/{location_id}/:
     get:
       summary: Get location with full details
       description: Returns a location entry with full details
@@ -738,7 +738,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/location_complete"
+              $ref: "#/definitions/location_full"
         '500':
           description: Error Response
           schema:
@@ -760,7 +760,7 @@ paths:
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/location_complete'
+            $ref: '#/definitions/location_full'
       security:
         - appid: []
         - appkey: []
@@ -770,7 +770,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/location_complete"
+              $ref: "#/definitions/location_full"
         '403':
           description: No Access Response
           schema:
@@ -2375,7 +2375,7 @@ paths:
               $ref: "#/definitions/error_response"
       tags:
       - Organizations
-  /organizations/complete/:
+  /organizations/full/:
     get:
       summary: Get list of organizations with full details
       description: Returns a list of organizations with full schema and filtering support
@@ -2415,7 +2415,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/organization_complete"
+              $ref: "#/definitions/organization_full"
         '500':
           description: Error Response
           schema:
@@ -2432,7 +2432,7 @@ paths:
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/organization_complete'
+            $ref: '#/definitions/organization_full'
       security:
         - appid: []
         - appkey: []
@@ -2442,7 +2442,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/organization_complete"
+              $ref: "#/definitions/organization_full"
         '403':
           description: No Access Response
           schema:
@@ -2457,7 +2457,7 @@ paths:
               $ref: "#/definitions/error_response"
       tags:
       - Organizations
-  /organizations/complete/{organization_id}/:
+  /organizations/full/{organization_id}/:
     get:
       summary: Get organization with full details
       description: Returns an organization entry with full details by Id
@@ -2474,7 +2474,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/organization_complete"
+              $ref: "#/definitions/organization_full"
         '500':
           description: Error Response
           schema:
@@ -2496,7 +2496,7 @@ paths:
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/organization_complete'
+            $ref: '#/definitions/organization_full'
       security:
         - appid: []
         - appkey: []
@@ -2506,7 +2506,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/organization_complete"
+              $ref: "#/definitions/organization_full"
         '403':
           description: No Access Response
           schema:
@@ -3965,7 +3965,7 @@ paths:
               $ref: "#/definitions/error_response"
       tags:
       - Services
-  /services/complete/:
+  /services/full/:
     get:
       summary: Get all services with full details
       description: Returns a list of services with full details and filtering support
@@ -4005,7 +4005,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/service_complete"
+              $ref: "#/definitions/service_full"
         '500':
           description: Error Response
           schema:
@@ -4022,7 +4022,7 @@ paths:
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/service_complete'
+            $ref: '#/definitions/service_full'
       security:
         - appid: []
         - appkey: []
@@ -4032,7 +4032,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/service_complete"
+              $ref: "#/definitions/service_full"
         '403':
           description: No Access Response
           schema:
@@ -4047,7 +4047,7 @@ paths:
               $ref: "#/definitions/error_response"
       tags:
       - Services
-  /services/complete/{service_id}/:
+  /services/full/{service_id}/:
     get:
       summary: Get service with full details
       description: Returns a service entry with full details
@@ -4064,7 +4064,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/service_complete"
+              $ref: "#/definitions/service_full"
         '500':
           description: Error Response
           schema:
@@ -4086,7 +4086,7 @@ paths:
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/service_complete'
+            $ref: '#/definitions/service_full'
       security:
         - appid: []
         - appkey: []
@@ -4096,7 +4096,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/service_complete"
+              $ref: "#/definitions/service_full"
         '403':
           description: No Access Response
           schema:
@@ -6200,7 +6200,7 @@ definitions:
         type: string
     required:
       - id
-  contact_complete:
+  contact_full:
     description: Full details about a contact.
     properties:
       id:
@@ -6375,7 +6375,7 @@ definitions:
     required:
       - id
       - name
-  location_complete:
+  location_full:
     description: 'Full location details of an organization.'
     properties:
       id:
@@ -6472,7 +6472,7 @@ definitions:
     required:
       - id
       - description
-  organization_complete:
+  organization_full:
     description: 'Provides a full description of an organization entity'
     properties:
       id:
@@ -6784,7 +6784,7 @@ definitions:
       licenses:
         description: 'An organization may have a license issued by a government entity to operate legally. A list of any such licenses can be provided here.'
         type: string
-  service_complete:
+  service_full:
     description: Full details about a service.
     properties:
       id:
