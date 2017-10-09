@@ -32,7 +32,7 @@ paths:{% for path in openapi.paths %}{% if path[0] contains "/full/" %}
           required: true{% endif %}
           name: {{ parameter.name }}{% if parameter.in != "body" and parameter.description != "" %}
           description: {{ parameter.description }}{% endif %}{% if parameter.in == "body" %}
-          schema:
+          schema: 
             $ref: "{{ parameter.schema.['$ref'] }}"{% endif %}{% endfor %}
       responses:{% for response in verb[1].responses %}
         '{{ response[0] }}':
@@ -54,5 +54,5 @@ definitions:{% for definition in openapi.definitions %}
       {{ property[0] }}:
         description: '{{ property[1].description }}'
         type: {{ property[1].type }}{% if property[1].type == "array" %}
-        items:
+        items: 
           $ref: "{{ property[1].items.['$ref'] }}"{% endif %}{% endfor %}{% endfor %}
