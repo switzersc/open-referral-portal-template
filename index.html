@@ -159,6 +159,17 @@ layout: page
   <p>This service was split off the core HSDA specification with the evolution of v1.2, making it it's own project, and sepaate specification from the core set of resources for working with HSDA information within any implementation.</p>
 </section>
 
+<!-- Taxonomy -->
+<section>
+	<header>
+		<a name="HSDA Taxonomy"></a>
+		<h2>Human Services Data API (HSDA) Taxonomy (v1.2)</h2>
+	</header>
+  <p>This is a separate HSDA service for working with taxonomy across all the core human sevices resources, support any categorization or taxonomy, and allowing for filtering of services by taxonomy.</p>
+  <div id="hsda-taxonomy-ui"></div>
+  <p>This service was split off the core HSDA specification with the evolution of v1.2, making it it's own project, and sepaate specification from the core set of resources for working with HSDA information within any implementation.</p>
+</section>
+
 <!-- Bulk -->
 <section>
 	<header>
@@ -261,6 +272,21 @@ window.onload = function() {
     layout: "StandaloneLayout"
   })
   window.ui = hsda_search_ui;
+
+  // HSDS Taxonomy
+  const hsda_taxonomy_ui = SwaggerUIBundle({
+    url: "https://raw.githubusercontent.com/{{ site.github_org}}/{{ site.github_repo}}/master/_data/api-commons/openapi-hsda-taxonomy.yaml",
+    dom_id: '#hsda-taxonomy-ui',
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ],
+    plugins: [
+      SwaggerUIBundle.plugins.DownloadUrl
+    ],
+    layout: "StandaloneLayout"
+  })
+  window.ui = hsda_taxonomy_ui;
 
   // HSDS Bulk
   const hsda_bulk_ui = SwaggerUIBundle({
