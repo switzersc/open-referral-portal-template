@@ -7045,6 +7045,1353 @@ paths:
               $ref: "#/definitions/regular_schedule"
       tags:
       - Regular Schedules
+  /accessibility/:
+    get:
+      summary: Get Accessibility For Disabilities
+      description: Get Accessibility For Disabilities
+      operationId: listAccessibilityForDisabilities
+      responses:
+        '200':
+          description: Accessibility For Disabilities Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/accessibility_for_disabilities"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Accessibility for Disabilities
+    post:
+      summary: Add Accessibility For Disabilities
+      description: Add Accessibility For Disabilities
+      operationId: addAccessibilityForDisabilities
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/accessibility_for_disabilities'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Accessibility For Disabilities Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/accessibility_for_disabilities"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Accessibility for Disabilities
+  /accessibility/{accessibility_id}/:
+    get:
+      summary: Get Accessibility For Disabilities
+      description: Get Accessibility For Disabilities
+      operationId: getAccessibilityForDisabilities
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: accessibility_id
+          description: 'The unique accessibility for disabilities id.'
+      responses:
+        '200':
+          description: Accessibility For Disabilities Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/accessibility_for_disabilities"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Accessibility for Disabilities
+    put:
+      summary: Update Accessibility For Disabilities
+      description: Update Accessibility For Disabilities
+      operationId: updateAccessibilityForDisabilities
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: accessibility_id
+          description: 'The unique accessibility for disabilities id.'
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/accessibility_for_disabilities'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Accessibility For Disabilities Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/accessibility_for_disabilities"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Accessibility for Disabilities
+    delete:
+      summary: Delete Accessibility For Disabilities
+      description: Delete Accessibility For Disabilities
+      operationId: deleteAccessibilityForDisabilities
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: accessibility_id
+          description: 'The unique accessibility for disabilities id.'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Accessibility For Disabilities Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/accessibility_for_disabilities"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Accessibility for Disabilities
+  /eligibility/:
+    get:
+      summary: Get Eligibilities
+      description: Get Eligibilities
+      operationId: listEligibilities
+      responses:
+        '200':
+          description: Eligibility Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/eligibility"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Eligibility
+    post:
+      summary: Add Eligibility
+      description: Add Eligibility
+      operationId: addEligibility
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/eligibility'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Eligibility Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/eligibility"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Eligibility
+  /eligibility/{eligibility_id}/:
+    get:
+      summary: Get Eligibility
+      description: Get Eligibility
+      operationId: getEligibility
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: eligibility_id
+          description: 'The unique eligibility id.'
+      responses:
+        '200':
+          description: Eligibility Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/eligibility"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Eligibility
+    put:
+      summary: Update Eligibility
+      description: Update Eligibility
+      operationId: updateEligibility
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: eligibility_id
+          description: 'The unique eligibility id.'
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/eligibility'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Eligibility Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/eligibility"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Eligibility
+    delete:
+      summary: Eligibility Contact
+      description: Delete Eligibility
+      operationId: deleteEligibility
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: eligibility_id
+          description: 'The unique eligibility id.'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Eligibility Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/eligibility"
+      tags:
+      - Eligibility
+  /fees/:
+    get:
+      summary: Get Fees
+      description: Get Fees
+      operationId: listFees
+      responses:
+        '200':
+          description: Fees Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/fee"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Fees
+    post:
+      summary: Add Fee
+      description: Add Fee
+      operationId: addFee
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/fee'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Fees Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/fee"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Fees
+  /fees/{feed_id}/:
+    get:
+      summary: Get Fee
+      description: Get Fee
+      operationId: getFee
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: feed_id
+          description: 'The unique feed id.'
+      responses:
+        '200':
+          description: Fees Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/fee"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Fees
+    put:
+      summary: Update Fee
+      description: Update Fee
+      operationId: updateFee
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: feed_id
+          description: 'The unique feed id.'
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/fee'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Fees Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/fee"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Fees
+    delete:
+      summary: Delete Fee
+      description: Delete Fee
+      operationId: deleteFee
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: feed_id
+          description: 'The unique feed id.'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Fees Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/fee"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Fees
+  /funding/:
+    get:
+      summary: Get Fundings
+      description: Get Fundings
+      operationId: listFundings
+      responses:
+        '200':
+          description: Funding Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/funding"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Funding
+    post:
+      summary: Add Funding
+      description: Add Funding
+      operationId: addFunding
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/funding'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Funding Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/funding"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Funding
+  /funding/{funding_id}/:
+    get:
+      summary: Get Funding
+      description: Get Funding
+      operationId: getFunding
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: funding_id
+          description: 'The unique funding id.'
+      responses:
+        '200':
+          description: Funding Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/funding"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Funding
+    put:
+      summary: Update Funding
+      description: Update Funding
+      operationId: updateFunding
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: funding_id
+          description: 'The unique funding id.'
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/funding'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Funding Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/funding"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Funding
+    delete:
+      summary: Delete Funding
+      description: Delete Funding
+      operationId: deleteFunding
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: funding_id
+          description: 'The unique funding id.'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Funding Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/funding"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Funding
+  /interpretation-services/:
+    get:
+      summary: Get Interpretation Services
+      description: Get Interpretation Services
+      operationId: listInterpretationServices
+      responses:
+        '200':
+          description: Interpretation Service Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/interpretation_service"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Interpretation Service
+    post:
+      summary: Add Interpretation Service
+      description: Add Interpretation Service
+      operationId: addInterpretationService
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/interpretation_service'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Interpretation Service Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/interpretation_service"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Interpretation Service
+  /interpretation-services/{interpretation_service_id}/:
+    get:
+      summary: Get Interpretation Service
+      description: Get Interpretation Service
+      operationId: getInterpretationService
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: interpretation_service_id
+          description: 'The unique interpretation services id.'
+      responses:
+        '200':
+          description: Interpretation Service Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/interpretation_service"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Interpretation Service
+    put:
+      summary: Update Interpretation Service
+      description: Update Interpretation Service
+      operationId: updateInterpretationService
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: interpretation_service_id
+          description: 'The unique interpretation services id.'
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/interpretation_service'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Interpretation Service Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/interpretation_service"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Interpretation Service
+    delete:
+      summary: Delete Interpretation Service
+      description: Delete Interpretation Service
+      operationId: deleteInterpretationService
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: interpretation_service_id
+          description: 'The unique interpretation services id.'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Interpretation Service Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/interpretation_service"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Interpretation Service
+  /languages/:
+    get:
+      summary: Get Languages
+      description: Get Languages
+      operationId: listLanguages
+      responses:
+        '200':
+          description: Language Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/language"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Languages
+    post:
+      summary: Add Languages
+      description: Add Languages
+      operationId: addLanguage
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/language'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Language Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/language"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Languages
+  /languages/{language_id}/:
+    get:
+      summary: Get Languages
+      description: Get Languages
+      operationId: getLanguage
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: language_id
+          description: 'The unique language id.'
+      responses:
+        '200':
+          description: Language Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/language"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Languages
+    put:
+      summary: Update Languages
+      description: Update Languages
+      operationId: updateLanguage
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: language_id
+          description: 'The unique language id.'
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/language'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Language Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/language"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Languages
+    delete:
+      summary: Delete Languages
+      description: Delete Languages
+      operationId: deleteLanguage
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: language_id
+          description: 'The unique language id.'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Language Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/language"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Languages
+  /payment-accepted/:
+    get:
+      summary: Get Payment Accepted
+      description: Get Payment Accepted
+      operationId: listPaymentsAccepted
+      responses:
+        '200':
+          description: Payment Accepted Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/payment_accepted"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Payment Accepted
+    post:
+      summary: Add Payment Accepted
+      description: Add Payment Accepted
+      operationId: addPaymentAccepted
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/payment_accepted'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Payment Accepted Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/payment_accepted"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Payment Accepted
+  /payment-accepted/{payment_accepted_id}/:
+    get:
+      summary: Get Payment Accepted
+      description: Get Payment Accepted
+      operationId: getPaymentAccepted
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: payment_accepted_id
+          description: 'The unique payment accepted id.'
+      responses:
+        '200':
+          description: Payment Accepted Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/payment_accepted"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Payment Accepted
+    put:
+      summary: Update Payment Accepted
+      description: Update Payment Accepted
+      operationId: updatePaymentAccepted
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: payment_accepted_id
+          description: 'The unique payment accepted id.'
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/payment_accepted'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Payment Accepted Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/payment_accepted"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Payment Accepted
+    delete:
+      summary: Delete Payment Accepted
+      description: Delete Payment Accepted
+      operationId: deletePaymentAccepted
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: payment_accepted_id
+          description: 'The unique payment accepted id.'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Payment Accepted Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/payment_accepted"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Payment Accepted
+  /required-document/:
+    get:
+      summary: Get Required Document
+      description: Get Required Document
+      operationId: listRequiredDocument
+      responses:
+        '200':
+          description: Required Document Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/required_document"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Required Document
+    post:
+      summary: Add Required Document
+      description: Add Required Document
+      operationId: addRequiredDocument
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/required_document'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Required Document Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/required_document"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Required Document
+  /required-document/{required_document_id}/:
+    get:
+      summary: Get Required Document
+      description: Get Required Document
+      operationId: getRequiredDocuments
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: required_document_id
+          description: 'The unique required document id.'
+      responses:
+        '200':
+          description: Required Document Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/required_document"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Required Document
+    put:
+      summary: Update Required Document
+      description: Update Required Document
+      operationId: updateRequiredDocument
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: required_document_id
+          description: 'The unique required document id.'
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/required_document'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Required Document Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/required_document"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Required Document
+    delete:
+      summary: Delete Required Document
+      description: Delete Required Document
+      operationId: deleteRequiredDocument
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: required_document_id
+          description: 'The unique required document id.'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Required Document Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/required_document"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Required Document
+  /service-area/:
+    get:
+      summary: Get Service Areas
+      description: Get Service Areas
+      operationId: listServiceAreas
+      responses:
+        '200':
+          description: Required Document Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/service_area"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Service Area
+    post:
+      summary: Add Service Area
+      description: Add Service Area
+      operationId: addServiceAreas
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/service_area'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Service Area Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/service_area"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Service Area
+  /service-area/{service_area_id}/:
+    get:
+      summary: Get Service Area
+      description: Get Service Area
+      operationId: getServiceArea
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: service_area_id
+          description: 'The unique service area id.'
+      responses:
+        '200':
+          description: Service Area Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/service_area"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Service Area
+    put:
+      summary: Update Service Area
+      description: Update Service Area
+      operationId: updateServiceArea
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: service_area_id
+          description: 'The unique service area id.'
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/service_area'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Service Area Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/service_area"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Service Area
+    delete:
+      summary: Delete Service Area
+      description: Delete Service Area
+      operationId: deleteServiceArea
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: service_area_id
+          description: 'The unique service area id.'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Service Area Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/service_area"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Service Area
 securityDefinitions:
   appid:
     type: apiKey
@@ -7214,7 +8561,7 @@ definitions:
       - closed
       - start_date
       - end_date
-  intepretation_services:
+  interpretation_service:
     description: 'Describes interpretation services offered in different languages'
     properties:
       id:
