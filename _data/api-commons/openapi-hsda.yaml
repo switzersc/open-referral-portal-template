@@ -6149,12 +6149,6 @@ paths:
       summary: Get Phones
       description: Get Phones
       operationId: listPhones
-      parameters:
-        - in: path
-          required: true
-          type: string
-          name: contact_id
-          description: 'The unique contact id.'
       responses:
         '200':
           description: Phone Response
@@ -6916,12 +6910,6 @@ paths:
       summary: Get Regular Schedules
       description: Get Regular Schedules
       operationId: listRegularSchedules
-      parameters:
-        - in: path
-          required: true
-          type: string
-          name: location_id
-          description: 'The unique location id.'
       responses:
         '200':
           description: Regular Schedule Response
@@ -6942,8 +6930,8 @@ paths:
       description: Add Regular Schedule
       operationId: addRegularSchedule
       parameters:
-          description: 'The unique location id.'
-        - in: body
+        - description: 'The unique location id.'
+          in: body
           name: body
           schema:
             $ref: '#/definitions/regular_schedule'
