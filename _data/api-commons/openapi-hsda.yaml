@@ -6144,6 +6144,919 @@ paths:
               $ref: "#/definitions/error_response"
       tags:
       - Services
+  /phones/:
+    get:
+      summary: Get Phones
+      description: Get Phones
+      operationId: listPhones
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: contact_id
+          description: 'The unique contact id.'
+      responses:
+        '200':
+          description: Phone Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/phone"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Phones
+    post:
+      summary: Add Phone
+      description: Add Phone
+      operationId: addPhone
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/phone'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Phone Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/phone"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Phones
+  /phones/{phone_id}/:
+    get:
+      summary: Get Phone
+      description: get Phone
+      operationId: getPhone
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: phone_id
+          description: The unique phone id.
+      responses:
+        '200':
+          description: Contact Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/phone"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Phones
+    put:
+      summary: Update Phone
+      description: Update Phone
+      operationId: updatePhone
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: phone_id
+          description: 'The unique phone id.'
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/phone'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Phone Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/phone"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Phones
+    delete:
+      summary: Delete Phone
+      description: Delete Phone
+      operationId: deletePhone
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: phone_id
+          description: 'The unique phone id.'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Phone Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/phone"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Phones
+  /programs/:
+    get:
+      summary: Get Programs
+      description: Get Programs
+      operationId: listPrograms
+      responses:
+        '200':
+          description: Program Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/program"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Programs
+    post:
+      summary: Add Program
+      description: Add Program
+      operationId: addProgram
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/program'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Program Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/program"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Programs
+  /programs/{program_id}/:
+    get:
+      summary: Get Program
+      description: Get Program
+      operationId: getProgram
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: program_id
+          description: 'The unique program id.'
+      responses:
+        '200':
+          description: Program Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/program"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Programs
+    put:
+      summary: Update Program
+      description: Update Program
+      operationId: updateProgram
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: program_id
+          description: 'The unique program id.'
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/program'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Program Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/program"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Programs
+    delete:
+      summary: Delete Program
+      description: Delete Program
+      operationId: deleteProgram
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: program_id
+          description: 'The unique program id.'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Program Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/program"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Programs
+  /postal-address/:
+    get:
+      summary: Get Postal Addresses
+      description: Get Postal Addresses
+      operationId: listPostalAddresses
+      responses:
+        '200':
+          description: Postal Address Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/postal_address"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Postal Address
+    post:
+      summary: Add Postal Adress
+      description: Add Postal Adress
+      operationId: addPostalAddress
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/postal_address'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Postal Address Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/postal_address"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Postal Address
+  /postal-address/{postal_address_id}/:
+    get:
+      summary: Get Postal Address
+      description: Get Postal Address
+      operationId: getPostalAddress
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: postal_address_id
+          description: 'The unique postal address id.'
+      responses:
+        '200':
+          description: Postal Address Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/postal_address"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Postal Address
+    put:
+      summary: Update Postal Address
+      description: Postal Mailing Address
+      operationId: updatePostalAddress
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: postal_address_id
+          description: 'The unique postal address id.'
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/postal_address'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Postal Address Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/postal_address"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Postal Address
+    delete:
+      summary: Delete Postal Address
+      description: Delete Postal Address
+      operationId: deletePostalAddress
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: postal_address_id
+          description: 'The unique postal address id.'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Postal Address Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/postal_address"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Postal Address
+  /physical-address/:
+    get:
+      summary: Get Physical Address
+      description: Get Physical Address
+      operationId: listPhysicalAddresses
+      responses:
+        '200':
+          description: Postal Address Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/physical_address"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Physical Address
+    post:
+      summary: Add Physical Adress
+      description: Add Physical Adress
+      operationId: addPhysicalAddress
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/physical_address'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Physical Address Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/physical_address"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Physical Address
+  /physical-address/{physical_address_id}/:
+    get:
+      summary: Get Physical Address
+      description: Get Physical Address
+      operationId: getPhysicalAddress
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: physical_address_id
+          description: 'The unique postal address id.'
+      responses:
+        '200':
+          description: Physical Address Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/physical_address"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Physical Address
+    put:
+      summary: Update Physical Address
+      description: Update Physical Address
+      operationId: updatePhysicalAddress
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: physical_address_id
+          description: 'The unique physical address id.'
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/physical_address'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Physical Address Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/physical_address"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Physical Address
+    delete:
+      summary: Delete Physical Address
+      description: Delete Physical Address
+      operationId: deletePhysicalAddress
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: physical_address_id
+          description: 'The unique physical address id.'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Physical Address Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/physical_address"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Physical Address
+  /holiday-schedule/:
+    get:
+      summary: Get Holiday Schedule
+      description: Get Holiday Schedule
+      operationId: listHolidaySchedules
+      responses:
+        '200':
+          description: Holiday Schedule Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/holiday_schedule"
+        '404':
+          description: Not Found Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Holiday Schedules
+    post:
+      summary: Add Holiday Schedule
+      description: Add Holiday Schedule
+      operationId: addHolidaySchedule
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/holiday_schedule'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Holiday Schedule Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/holiday_schedule"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Holiday Schedules
+  /holiday-schedule/{holiday_schedule_id}/:
+    get:
+      summary: Get Holiday Schedule
+      description: Get Holiday Schedule
+      operationId: getHolidaySchedule
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: holiday_schedule_id
+          description: 'The unique holiday schedule id.'
+      responses:
+        '200':
+          description: Holiday Schedule Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/holiday_schedule"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Holiday Schedules
+    put:
+      summary: Update Holiday Schedule
+      description: Update Holiday Schedule
+      operationId: updateHolidaySchedule
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: holiday_schedule_id
+          description: 'The unique holiday schedule id.'
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/holiday_schedule'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Holiday Schedule Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/holiday_schedule"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Holiday Schedules
+    delete:
+      summary: Delete Holiday Schedule
+      description: Delete Holiday Schedule
+      operationId: deleteHolidaySchedule
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: holiday_schedule_id
+          description: 'The unique holiday schdule id.'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Holiday Schedule Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/holiday_schedule"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Holiday Schedules
+  /regular-schedule/:
+    get:
+      summary: Get Regular Schedules
+      description: Get Regular Schedules
+      operationId: listRegularSchedules
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: location_id
+          description: 'The unique location id.'
+      responses:
+        '200':
+          description: Regular Schedule Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/regular_schedule"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Regular Schedules
+    post:
+      summary: Add Regular Schedule
+      description: Add Regular Schedule
+      operationId: addRegularSchedule
+      parameters:
+          description: 'The unique location id.'
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/regular_schedule'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Regular Schedule Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/regular_schedule"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Regular Schedules
+  /regular-schedule/{regular_schedule_id}/:
+    get:
+      summary: Get Regular Schedule
+      description: Get Regular Schedule
+      operationId: getRegularSchedule
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: regular_schedule_id
+          description: 'The unique regular schedule id.'
+      responses:
+        '200':
+          description: Regular Schedule Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/regular_schedule"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Regular Schedules
+    put:
+      summary: Update Regular Schedule
+      description: Update Regular Schedule
+      operationId: updateRegularSchedule
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: regular_schedule_id
+          description: 'The unique regular schedule id.'
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/regular_schedule'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Regular Schedule Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/regular_schedule"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Regular Schedules
+    delete:
+      summary: Delete Regular Schedule
+      description: Delete Regular Schedule
+      operationId: deleteRegularSchedule
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: regular_schedule_id
+          description: 'The unique regular schedule id.'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Regular Schedule Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/regular_schedule"
+      tags:
+      - Regular Schedules
 securityDefinitions:
   appid:
     type: apiKey
