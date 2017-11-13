@@ -106,6 +106,290 @@ paths:
               $ref: "#/definitions/service"
       tags:
       - Services
+  /datapackages/:
+    get:
+      summary: Get Data Packages
+      description: Get Data Packages
+      operationId: listDataPackages
+      parameters:
+        - in: query
+          type: string
+          name: query
+          description: A query to filter list by name.
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Data Package Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/datapackage"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Data Package Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/datapackage"
+      tags:
+      - Data Package
+    post:
+      summary: Submit Data Package
+      description: Submit Data Package JSON File For Processing
+      operationId: submitDataPackage
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/datapackage'
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Data Package Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/datapackage"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Data Package
+  /datapackages/{datapackage_id}/:
+    get:
+      summary: Get Data Package
+      description: Get a single data package using its id.
+      operationId: getDataPackage
+      parameters:
+        - in: path
+          type: string
+          name: datapackage_id
+          required: true
+          description: The unique id of the datapackage.
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Data Package Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/datapackage"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Data Package
+    delete:
+      summary: Delete Data Package
+      description: Delete a data package and its resources
+      operationId: deleteDataPackage
+      parameters:
+        - in: path
+          type: string
+          name: datapackage_id
+          required: true
+          description: The unique id of the datapackage.
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Delete Data Package Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/regular_schedule"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Data Package
+  /datapackages/{datapackage_id}/resources/:
+    get:
+      summary: Get Data Packages Resources
+      description: Get all data package resources.
+      operationId: listDataPackageResources
+      parameters:
+        - in: path
+          type: string
+          name: datapackage_id
+          required: true
+          description: The unique id of the datapackage.
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Data Package Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/resource"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Data Package Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/datapackage"
+      tags:
+      - Data Package
+  /datapackages/{datapackage_id}/resources/{resource_id}/:
+    get:
+      summary: Get Data Packages Resources
+      description: Get all data package resources.
+      operationId: listDataPackageResource
+      parameters:
+        - in: path
+          type: string
+          name: datapackage_id
+          required: true
+          description: The unique id of the datapackage.
+        - in: path
+          type: string
+          name: resource_id
+          required: true
+          description: The unique id of the datapackage resource.
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Data Package Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/resource"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Data Package
+    delete:
+      summary: Delete Data Package Resource
+      description: Delete Data Package Resource
+      operationId: deleteDataPackageResource
+      parameters:
+        - in: path
+          type: string
+          name: datapackage_id
+          required: true
+          description: The unique id of the datapackage.
+        - in: path
+          type: string
+          name: resource_id
+          required: true
+          description: The unique id of the datapackage resource.
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Data Package Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/resource"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Data Package
+  /datapackages/{datapackage_id}/resources/{resource_id}/process/:
+    get:
+      summary: Process Data Packages Resource
+      description: Process this data package resource
+      operationId: processDataPackageResource
+      parameters:
+        - in: path
+          type: string
+          name: datapackage_id
+          required: true
+          description: The unique id of the datapackage.
+        - in: path
+          type: string
+          name: resource_id
+          required: true
+          description: The unique id of the datapackage resource.
+      security:
+        - appid: []
+        - appkey: []
+      responses:
+        '200':
+          description: Data Package Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/resource"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Data Package
   /jobs/:
     get:
       summary: Get Jobs
@@ -779,6 +1063,9 @@ disabilities.'
       verb:
         description: 'The verb the job is being run against.'
         type: string
+      body:
+        description: 'The body of the job.'
+        type: object
       status:
         description: 'The status of the job.'
         type: string
@@ -794,3 +1081,35 @@ disabilities.'
       message:
         description: 'A plain language message explaining the error'
         type: integer
+  datapackage:
+    properties:
+      id:
+        description: 'The id for the data package.'
+        type: string
+      name:
+        description: 'The url friendly slug name for the data package.'
+        type: string
+      datapackage_version:
+        description: 'The version of the data package.'
+        type: string
+      title:
+        description: 'The title for the data package.'
+        type: string
+      description:
+        description: 'The description for the data package.'
+        type: string
+      version:
+        description: 'The version for the data being imported.'
+        type: string
+      resources:
+        type: "array"
+        items:
+          $ref: "#/definitions/resource"
+  resource:
+    properties:
+      path:
+        description: 'The path for the data package resource.'
+        type: string
+      url:
+        description: 'The url for the data package resource.'
+        type: string
