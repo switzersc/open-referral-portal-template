@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  title: "Human Services Data Taxonomy API"
+  title: "Holmes County Human Services Data Taxonomy API"
   description: "This is a complimentary API to the HSDA API focusing just on taxonomy."
   termsOfService: "https://openreferral.org/documentation/"
   contact:
@@ -11,7 +11,7 @@ info:
     name: Open Data Commons Public Domain
     url: http://opendatacommons.org/licenses/pddl/
   version: v1.0
-host: hsda.taxonomy.api.adopta.agency
+host: holmes.county.hsda.taxonomy.api.adopta.agency
 basePath: /
 schemes:
 - http
@@ -68,7 +68,7 @@ paths:
               $ref: "#/definitions/error_response"
       tags:
       - Taxonomy
-  /taxonomys/{taxonomy_id}/:
+  /taxonomy/{taxonomy_id}/:
     get:
       summary: Get Taxonomy
       description: Get Taxonomy
@@ -220,7 +220,7 @@ paths:
               $ref: "#/definitions/error_response"
       tags:
       - Services
-  /services/complete/{taxonomy_name}/:
+  /services/full/{taxonomy_name}/:
     get:
       summary: Get Services (Complete)
       description: Get Services (Complete)
@@ -265,7 +265,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/service_complete"
+              $ref: "#/definitions/service_full"
         '500':
           description: Error Response
           schema:
@@ -354,7 +354,7 @@ definitions:
       licenses:
         description: 'An organization may have a license issued by a government entity to operate legally. A list of any such licenses can be provided here.'
         type: string
-  service_complete:
+  service_full:
     properties:
       id:
         description: 'Each service must have a unique identifier.'
