@@ -2,8 +2,8 @@ name: Open Referral API
 url: http://developer.open.referral.adopta.agency/
 
 author:
-  name: 'Kin Lane'
-  email: 'info@apievangelist.com'
+  name: 'Open Referral'
+  email: 'info@openreferral.org'
 markdown: kramdown
 
 permalink: /:categories/:year/:month/:day/:title/
@@ -17,11 +17,16 @@ delete_color: FF9900;
 github_org: human-services
 github_repo: portal
 
+# Social media for header
+twitter: openreferral
+github: openreferral
+
+
 # URL to the issues page for this
 support_title: Support
 support_description: If you need any help, have questions, or would like to get involved, please use the following links.
-support_email: info@apievangelist.com
-support_twitter: apievangelist
+support_email: info@openreferral.org
+support_twitter: openreferral
 
 # Login area
 login:
@@ -38,7 +43,9 @@ status_key: ASzjKOjFKPYC0D-RBGPWtw
 status_id: 1572918
 
 # Footer
-footer_title: API Evangelist
-footer_link: http://apievangelist.com
-footer_image_source: https://s3.amazonaws.com/kinlane-productions/footer/empowered-by-you-banner.png
+footer_title: Open Referral Developer Portal
+footer_link: http://openreferral.org
+footer_image_source: http://openreferral.org
 footer_image_width: 60
+
+gems: [jekyll-paginate]

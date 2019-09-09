@@ -1,4 +1,4 @@
 ---
-layout: none
+layout: null
 ---
 {% assign show_json = site.data.api-commons.schema | json | replace: '=>', ':' %}{{ show_json }}

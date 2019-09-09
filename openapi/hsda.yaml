@@ -1,5 +1,5 @@
 ---
-layout: none
+layout: null
 ---
 {% assign openapi = site.data.api-commons.openapi-hsda %}swagger: "{{ openapi.swagger }}"
 info:

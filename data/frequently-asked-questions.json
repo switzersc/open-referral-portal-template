@@ -1,4 +1,4 @@
 ---
-layout: none
+layout: null
 ---
 {% assign show_json = site.data.api-commons.api-frequently-asked-questions | json | replace: '=>', ':' %}{{ show_json }}
